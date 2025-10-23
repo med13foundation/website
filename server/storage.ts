@@ -1,37 +1,39 @@
-import { type User, type InsertUser } from "@shared/schema";
+import { type NewsletterSubscriber, type InsertNewsletterSubscriber } from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// modify the interface with any CRUD methods
-// you might need
-
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  addNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
+  getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private newsletterSubscribers: Map<string, NewsletterSubscriber>;
 
   constructor() {
-    this.users = new Map();
+    this.newsletterSubscribers = new Map();
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
+  async addNewsletterSubscriber(insertSubscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
+    const existingSubscriber = Array.from(this.newsletterSubscribers.values()).find(
+      (sub) => sub.email === insertSubscriber.email
     );
+    
+    if (existingSubscriber) {
+      return existingSubscriber;
+    }
+
+    const id = randomUUID();
+    const subscriber: NewsletterSubscriber = {
+      id,
+      email: insertSubscriber.email,
+      subscribedAt: new Date(),
+    };
+    this.newsletterSubscribers.set(id, subscriber);
+    return subscriber;
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
+    return Array.from(this.newsletterSubscribers.values());
   }
 }
 
