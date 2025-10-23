@@ -17,21 +17,21 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#about" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
+            <a href="#about" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
               Who We Are
-            </Link>
-            <Link href="#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
+            </a>
+            <a href="#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               Get Involved
-            </Link>
-            <Link href="#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
+            </a>
+            <a href="#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
               Roadmap
-            </Link>
-            <Link href="#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
+            </a>
+            <a href="#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
               Events
-            </Link>
-            <Link href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
+            </a>
+            <a href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               Contact
-            </Link>
+            </a>
             <Button 
               variant="destructive" 
               size="sm"
@@ -55,21 +55,46 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <Link href="#about" className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" data-testid="link-mobile-about">
+            <a 
+              href="#about" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-about"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Who We Are
-            </Link>
-            <Link href="#get-involved" className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" data-testid="link-mobile-get-involved">
+            </a>
+            <a 
+              href="#get-involved" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-get-involved"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Get Involved
-            </Link>
-            <Link href="#roadmap" className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" data-testid="link-mobile-roadmap">
+            </a>
+            <a 
+              href="#roadmap" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-roadmap"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Roadmap
-            </Link>
-            <Link href="#events" className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" data-testid="link-mobile-events">
+            </a>
+            <a 
+              href="#events" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-events"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Events
-            </Link>
-            <Link href="#contact" className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" data-testid="link-mobile-contact">
+            </a>
+            <a 
+              href="#contact" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-contact"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               Contact
-            </Link>
+            </a>
             <Button 
               variant="destructive" 
               className="w-full"
