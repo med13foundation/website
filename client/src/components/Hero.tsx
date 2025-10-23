@@ -17,18 +17,18 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button 
               size="lg"
-              onClick={() => console.log('Join Research Cohort clicked')}
+              asChild
               data-testid="button-join-research"
             >
-              Join Research Cohort
+              <a href="#get-involved">Join Research Cohort</a>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              onClick={() => console.log('Learn Our Story clicked')}
+              asChild
               data-testid="button-learn-story"
             >
-              Learn Our Story
+              <a href="#about">Learn Our Story</a>
             </Button>
           </div>
 

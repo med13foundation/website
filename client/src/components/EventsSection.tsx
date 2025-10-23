@@ -45,10 +45,10 @@ export default function EventsSection() {
                 <Button 
                   variant="outline" 
                   className="w-full mt-4"
-                  onClick={() => console.log('Register interest clicked')}
+                  asChild
                   data-testid="button-register-interest"
                 >
-                  Register Interest
+                  <a href="#contact">Register Interest</a>
                 </Button>
               </div>
             </CardContent>
@@ -69,10 +69,10 @@ export default function EventsSection() {
               <Button 
                 variant="outline" 
                 className="w-full"
-                onClick={() => console.log('Learn more clicked')}
+                asChild
                 data-testid="button-learn-more"
               >
-                Learn More
+                <a href="https://combinedbrain.org" target="_blank" rel="noopener noreferrer">Learn More</a>
               </Button>
             </CardContent>
           </Card>

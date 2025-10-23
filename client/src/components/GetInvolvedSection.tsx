@@ -57,10 +57,10 @@ export default function GetInvolvedSection() {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={() => console.log(`${pathway.title} clicked`)}
+                    asChild
                     data-testid={`button-${pathway.testId}`}
                   >
-                    {pathway.action}
+                    <a href="#contact">{pathway.action}</a>
                   </Button>
                 </CardContent>
               </Card>

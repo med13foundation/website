@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
@@ -12,19 +11,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-story">
+                <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-story">
                   Our Story
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-community">
+                <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-community">
                   Our Community
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
+                <a href="#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
                   Research Roadmap
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -35,19 +34,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
+                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
                   Join Research Cohort
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-board">
+                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-board">
                   Board Opportunities
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-volunteer">
+                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-volunteer">
                   Volunteer
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -63,9 +62,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
+                <a href="#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
                   Events
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
