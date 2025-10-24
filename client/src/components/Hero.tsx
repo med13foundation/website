@@ -12,16 +12,16 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Warm Overlay Gradient - Teal to Coral with higher opacity for readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/94 via-primary/92 to-secondary/94" />
+      {/* Warm Overlay Gradient - Teal to Coral, balanced for readability and image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/87 via-primary/85 to-secondary/89" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg" data-testid="text-hero-title" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
             A world where every individual with MED13 syndrome reaches their full potential
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="text-lg sm:text-xl text-white mb-8 leading-relaxed drop-shadow-md" data-testid="text-hero-subtitle" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
             The MED13 Foundation unites families, researchers, and clinicians to accelerate scientific discovery, fund research toward treatments and a cure, and support families through their diagnostic journey.
           </p>
 
