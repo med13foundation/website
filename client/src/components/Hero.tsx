@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker } from "lucide-react";
-import heroBackground from "@assets/generated_images/Medical_research_DNA_background_4036f26a.png";
+import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
 
 export default function Hero() {
   return (
