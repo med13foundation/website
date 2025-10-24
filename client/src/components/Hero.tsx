@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker } from "lucide-react";
-import heroBackground from "@assets/generated_images/Warm_family_togetherness_hero_background_8e23be62.png";
+import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
 
 export default function Hero() {
   return (
@@ -12,16 +12,16 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Warm Overlay Gradient - Teal to Coral, balanced for readability and image visibility */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/87 via-primary/85 to-secondary/89" />
+      {/* Dark Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 drop-shadow-lg" data-testid="text-hero-title" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
             A world where every individual with MED13 syndrome reaches their full potential
           </h1>
-          <p className="text-lg sm:text-xl text-white mb-8 leading-relaxed drop-shadow-md" data-testid="text-hero-subtitle" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
             The MED13 Foundation unites families, researchers, and clinicians to accelerate scientific discovery, fund research toward treatments and a cure, and support families through their diagnostic journey.
           </p>
 

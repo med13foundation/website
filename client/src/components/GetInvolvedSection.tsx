@@ -2,10 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.png";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function GetInvolvedSection() {
-  const ref = useScrollAnimation();
   const pathways = [
     {
       icon: FlaskConical,
@@ -42,7 +40,7 @@ export default function GetInvolvedSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-accent/95 via-background/92 to-muted/95" />
       
       {/* Content */}
-      <div ref={ref} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-get-involved-title">
             Get Involved

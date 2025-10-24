@@ -1,14 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function EventsSection() {
-  const ref = useScrollAnimation();
-  
   return (
     <section id="events" className="py-16 sm:py-24 bg-muted">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 opacity-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-events-title">
             Upcoming Events
