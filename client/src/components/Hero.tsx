@@ -12,8 +12,8 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Dark Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
+      {/* Warm Overlay Gradient - Teal to Coral */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/88 via-primary/85 to-secondary/88" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
