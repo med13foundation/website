@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker } from "lucide-react";
-import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
+import heroBackground from "@assets/generated_images/Warm_family_togetherness_hero_background_8e23be62.png";
 
 export default function Hero() {
   return (
@@ -12,8 +12,8 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Warm Overlay Gradient - Teal to Coral */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/88 via-primary/85 to-secondary/88" />
+      {/* Warm Overlay Gradient - Teal to Coral with higher opacity for readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/94 via-primary/92 to-secondary/94" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
