@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logoImage from "@assets/logo1_1761608990696.png";
+import logoImage from "@assets/Gemini_Generated_Image_3a9y2y3a9y2y3a9y_1761607632880.png";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,8 +15,7 @@ export default function Navigation() {
             <img 
               src={logoImage} 
               alt="MED13 Foundation Logo" 
-              className="h-12 w-12 object-contain"
-              style={{ mixBlendMode: 'multiply' }}
+              className="h-10 w-10"
               data-testid="logo-image"
             />
             <span className="text-xl font-heading font-bold text-primary" data-testid="logo-text">
