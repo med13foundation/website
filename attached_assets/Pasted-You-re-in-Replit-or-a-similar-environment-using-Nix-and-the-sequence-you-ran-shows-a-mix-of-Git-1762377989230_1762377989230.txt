@@ -1,0 +1,116 @@
+You’re in Replit (or a similar environment using Nix), and the sequence you ran shows **a mix of Git setup issues** plus a small environment confusion. Let’s break it down clearly:
+
+---
+
+### 🧩 What Happened Step-by-Step
+
+1. **Initial Status**
+
+   ```
+   git status
+   ```
+
+   → Shows you’re on `main` and have an untracked `README.md`.
+   ✅ Normal — means the file is new and not yet staged.
+
+2. **You tried `git add .`**
+
+   ```
+   fatal: Unable to create '/home/runner/workspace/.git/index.lock': File exists.
+   ```
+
+   → Git creates a temporary “lock file” (`.git/index.lock`) during operations.
+   If a prior Git process (e.g., a commit, add, or merge) crashed, this file remains and prevents new operations.
+
+   ✅ Solution:
+
+   ```
+   rm -f .git/index.lock
+   ```
+
+   Then rerun:
+
+   ```
+   git add .
+   ```
+
+3. **Commit worked fine afterward**
+
+   ```
+   git commit -m "Initial commit..."
+   ```
+
+   → ✅ Your commit succeeded.
+
+4. **Then you ran `remote add origin ...`**
+
+   ```
+   remote add origin https://github.com/me13foundation/website.git
+   ```
+
+   ❌ Problem: you typed `remote add` instead of `git remote add`.
+
+   The terminal tried to execute a command named `remote`, not a `git` subcommand.
+   Replit’s environment found a program called `remote-exec` via Nix and tried to install it — but that’s unrelated.
+
+   ✅ Correct command:
+
+   ```bash
+   git remote add origin https://github.com/me13foundation/website.git
+   ```
+
+5. **Next, `git branch -M main` failed**
+
+   ```
+   error: could not lock config file .git/config
+   fatal: branch is renamed, but update of config-file failed
+   ```
+
+   → This is another lock issue. Likely, `.git/config.lock` exists because a previous Git command was interrupted.
+
+   ✅ Fix:
+
+   ```bash
+   rm -f .git/config.lock
+   git branch -M main
+   ```
+
+---
+
+### ✅ Correct Fix and Push Sequence
+
+Run these commands exactly, in order:
+
+```bash
+# 1. Clean up old lock files
+rm -f .git/index.lock
+rm -f .git/config.lock
+
+# 2. Verify your branch
+git status
+
+# 3. Ensure README.md is committed
+git add .
+git commit -m "Initial commit: MED13 Foundation website"
+
+# 4. Set up remote correctly
+git remote add origin https://github.com/me13foundation/website.git
+
+# 5. Ensure branch name
+git branch -M main
+
+# 6. Push to GitHub
+git push -u origin main
+```
+
+---
+
+### ⚠️ Common Pitfalls in Replit
+
+* Replit sometimes keeps Git processes open when you use the built-in Git GUI — causing `.lock` files.
+* Always use `git` commands in the shell, **not** the Replit sidebar buttons, for complex operations.
+* If you get errors like “Cannot resolve the remote workspace,” that’s a Replit integration bug; it’s safe to ignore if you’re only pushing to GitHub manually.
+
+---
+
+Would you like me to give you a **one-line script** to safely reset all Git locks and reinitialize the remote (so you can just paste it and fix everything)?
