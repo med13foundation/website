@@ -35,10 +35,10 @@ export default function Navigation() {
             <Button 
               variant="destructive" 
               size="sm"
-              onClick={() => console.log('Donate clicked')}
+              asChild
               data-testid="button-donate"
             >
-              Donate
+              <a href="?campaign=743443">Donate</a>
             </Button>
           </div>
 
@@ -98,10 +98,10 @@ export default function Navigation() {
             <Button 
               variant="destructive" 
               className="w-full"
-              onClick={() => console.log('Donate clicked')}
+              asChild
               data-testid="button-mobile-donate"
             >
-              Donate
+              <a href="?campaign=743443">Donate</a>
             </Button>
           </div>
         </div>
