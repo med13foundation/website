@@ -12,10 +12,30 @@ export default function ClassyDonation() {
       document.body.appendChild(script);
     }
 
+    // Apply strong hiding styles to prevent Classy from showing the form
+    const applyHiddenStyles = () => {
+      const donationDiv = document.getElementById("GawfU8SxTQR56_jOBk7A9");
+      if (donationDiv) {
+        donationDiv.style.display = "none";
+        donationDiv.style.visibility = "hidden";
+        donationDiv.style.opacity = "0";
+        donationDiv.style.position = "absolute";
+        donationDiv.style.pointerEvents = "none";
+        donationDiv.style.width = "0";
+        donationDiv.style.height = "0";
+        donationDiv.style.overflow = "hidden";
+      }
+    };
+
+    // Apply styles immediately
+    applyHiddenStyles();
+
+    // Also apply after a short delay in case Classy SDK modifies it
+    const timer = setTimeout(applyHiddenStyles, 100);
+
     // Cleanup function
     return () => {
-      // Note: We don't remove the script on unmount because it might be needed again
-      // and Classy's SDK handles its own state
+      clearTimeout(timer);
     };
   }, []);
 
@@ -23,7 +43,16 @@ export default function ClassyDonation() {
     <div
       id="GawfU8SxTQR56_jOBk7A9"
       {...({ classy: "743443" } as any)}
-      style={{ display: "none" }}
+      style={{
+        display: "none",
+        visibility: "hidden",
+        opacity: 0,
+        position: "absolute",
+        pointerEvents: "none",
+        width: 0,
+        height: 0,
+        overflow: "hidden"
+      }}
     />
   );
 }
