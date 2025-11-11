@@ -1,7 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
-import DonationSection from "@/components/DonationSection";
 import GetInvolvedSection from "@/components/GetInvolvedSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import EventsSection from "@/components/EventsSection";
@@ -14,7 +13,6 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <DonationSection />
       <AboutSection />
       <GetInvolvedSection />
       <RoadmapSection />
