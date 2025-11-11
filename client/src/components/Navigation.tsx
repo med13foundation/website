@@ -32,14 +32,6 @@ export default function Navigation() {
             <a href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               Contact
             </a>
-            <Button 
-              variant="destructive" 
-              size="sm"
-              asChild
-              data-testid="button-donate"
-            >
-              <a href="?campaign=743443">Donate</a>
-            </Button>
           </div>
 
           <button
@@ -95,14 +87,6 @@ export default function Navigation() {
             >
               Contact
             </a>
-            <Button 
-              variant="destructive" 
-              className="w-full"
-              asChild
-              data-testid="button-mobile-donate"
-            >
-              <a href="?campaign=743443">Donate</a>
-            </Button>
           </div>
         </div>
       )}
