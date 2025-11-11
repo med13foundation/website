@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FlaskConical, Users2, HandHeart } from "lucide-react";
+import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.png";
 
 export default function GetInvolvedSection() {
@@ -25,6 +25,14 @@ export default function GetInvolvedSection() {
       description: "Every talent makes a difference. We need help with website development, grant writing, event planning, social media, translation, data management, and family mentorship for newly diagnosed families.",
       action: "Get Involved",
       testId: "volunteer"
+    },
+    {
+      icon: Heart,
+      title: "Support Our Mission",
+      description: "Your financial contribution accelerates research and provides direct support to families navigating MED13 syndrome. Every donation brings us closer to treatments and a cure.",
+      action: "Make a Donation",
+      testId: "donate",
+      isDonation: true
     }
   ];
 
@@ -46,11 +54,11 @@ export default function GetInvolvedSection() {
             Get Involved
           </h2>
           <p className="text-lg text-muted-foreground">
-            Three ways to make an impact in the MED13 community
+            Four ways to make an impact in the MED13 community
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             return (
@@ -65,14 +73,25 @@ export default function GetInvolvedSection() {
                   <CardDescription className="text-sm mb-6 flex-1">
                     {pathway.description}
                   </CardDescription>
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
-                    asChild
-                    data-testid={`button-${pathway.testId}`}
-                  >
-                    <a href="#contact">{pathway.action}</a>
-                  </Button>
+                  {pathway.isDonation ? (
+                    <Button 
+                      variant="default" 
+                      className="w-full"
+                      asChild
+                      data-testid={`button-${pathway.testId}`}
+                    >
+                      <a href="?campaign=743443">{pathway.action}</a>
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      asChild
+                      data-testid={`button-${pathway.testId}`}
+                    >
+                      <a href="#contact">{pathway.action}</a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             );
