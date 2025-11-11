@@ -8,6 +8,32 @@ The MED13 Foundation website is a single-page application built to support famil
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+### November 11, 2025 - Donation Integration & Get Involved Enhancement
+
+**Component-Based Classy Integration:**
+- Created `ClassyDonation.tsx` React component to manage Classy.org donation integration
+- Component dynamically loads Classy SDK script (https://giving.classy.org/embedded/api/sdk/js/70982)
+- Manages donation target div lifecycle (id="GawfU8SxTQR56_jOBk7A9", campaign 743443)
+- Prevents conflicts between static HTML and React application structure
+- Integrated at app root level in `App.tsx`
+
+**Get Involved Section Updates:**
+- Expanded from 3 to 4 pathway cards
+- Added "Support Our Mission" donation card as 4th option with Heart icon
+- Donation button uses primary variant for visual emphasis
+- Updated responsive grid: 2 columns (md), 4 columns (lg)
+- Donation accessible from both navigation bar and Get Involved section
+
+**Design Updates:**
+- Shifted from clinical medical design to warm, family-centered aesthetic
+- New color palette: Soft Teal (#68B0AB), Coral-Peach (#FFB6A0), Sunlight Yellow (#FFD166)
+- Updated typography: Nunito Sans (headings), Inter (body), Playfair Display (highlights)
+- Replaced background images with family-focused themes
+
+**Note:** Classy donation form requires domain whitelisting in campaign settings for full functionality.
+
 ## System Architecture
 
 ### Frontend Architecture
