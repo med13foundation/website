@@ -80,7 +80,7 @@ export default function GetInvolvedSection() {
                       asChild
                       data-testid={`button-${pathway.testId}`}
                     >
-                      <a href="?campaign=743443">{pathway.action}</a>
+                      <a href="#donate">{pathway.action}</a>
                     </Button>
                   ) : (
                     <Button 

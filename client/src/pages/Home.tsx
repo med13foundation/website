@@ -6,6 +6,7 @@ import RoadmapSection from "@/components/RoadmapSection";
 import EventsSection from "@/components/EventsSection";
 import QuickFacts from "@/components/QuickFacts";
 import NewsletterSection from "@/components/NewsletterSection";
+import ClassyDonation from "@/components/ClassyDonation";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <EventsSection />
       <QuickFacts />
       <NewsletterSection />
+      <ClassyDonation />
       <Footer />
     </div>
   );

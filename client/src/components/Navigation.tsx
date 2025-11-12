@@ -38,7 +38,7 @@ export default function Navigation() {
               asChild
               data-testid="button-donate"
             >
-              <a href="?campaign=743443">Donate</a>
+              <a href="#donate">Donate</a>
             </Button>
           </div>
 
@@ -101,7 +101,7 @@ export default function Navigation() {
               asChild
               data-testid="button-mobile-donate"
             >
-              <a href="?campaign=743443">Donate</a>
+              <a href="#donate" onClick={() => setMobileMenuOpen(false)}>Donate</a>
             </Button>
           </div>
         </div>
