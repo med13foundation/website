@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import logoImage from "@assets/med13-logo.png";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,13 +10,7 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-3">
-            <img 
-              src={logoImage} 
-              alt="MED13 Foundation Logo" 
-              className="h-10 w-10"
-              data-testid="logo-image"
-            />
+          <Link href="/" className="flex items-center">
             <span className="text-xl font-heading font-bold text-primary" data-testid="logo-text">
               MED13 Foundation
             </span>
