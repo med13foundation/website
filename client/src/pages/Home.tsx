@@ -19,8 +19,8 @@ export default function Home() {
       <RoadmapSection />
       <EventsSection />
       <QuickFacts />
-      <NewsletterSection />
       <ClassyDonation />
+      <NewsletterSection />
       <Footer />
     </div>
   );
