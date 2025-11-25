@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema } from "@shared/schema";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzn5L0TA2SgCbk674ZGVIqIRum--prhR499phsVf4DtVUTinkLmcrxlIDyCxSBRJD7r/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwVFq_IlOZWEu3ffzTnSWMFpcgELZ_3Tca5Z5pfZitAbbu7aIcsdZfReejpAo-TXLL/exec";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/newsletter/subscribe", async (req, res) => {
