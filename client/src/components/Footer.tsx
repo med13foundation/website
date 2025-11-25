@@ -87,7 +87,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com/groups/med13"
+                href="https://www.facebook.com/profile.php?id=61584064750085"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground"
