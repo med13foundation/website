@@ -2,34 +2,36 @@
  * 📌 Developer Note — Google Sheets Email Subscription Integration
  * 
  * This component connects the website's email subscription form to a Google Sheet
- * using a Google Apps Script Webhook.
+ * via our backend server (to avoid CORS issues).
  * 
  * 🔧 How it works:
- * - When a user enters their email and submits the form,
- *   JavaScript sends a POST request to the Google Apps Script endpoint:
- *   https://script.google.com/macros/s/AKfycbzn5L0TA2SgCbk674ZGVIqIRum--prhR499phsVf4DtVUTinkLmcrxlIDyCxSBRJD7r/exec
- * - The Apps Script receives the email and writes it to a Google Sheet
- *   (1 row per subscriber, including timestamp)
- * - We use `mode: "no-cors"` because Apps Script's public endpoints
- *   do not return standard CORS headers
+ * - Frontend sends POST to /api/newsletter/subscribe with { email }
+ * - Backend validates the email and forwards it to Google Apps Script
+ * - Apps Script writes the email to a Google Sheet
+ * - Backend also stores subscriber locally for backup
+ * 
+ * 📐 Apps Script should read the email like this:
+ *   function doPost(e) {
+ *     const data = JSON.parse(e.postData.contents);
+ *     const email = data.email;
+ *     // ... write to sheet
+ *   }
  * 
  * 🛟 Notes for Integration:
- * - Do NOT change the endpoint unless a new Apps Script deployment is made
+ * - To update the Google Script URL, modify GOOGLE_SCRIPT_URL in server/routes.ts
  * - The script prevents double submissions and gives user-friendly messages
- * - Since no-cors mode doesn't return readable response, we assume success if no error
  * - If the UI is redesigned, ensure functionality remains intact
  * 
  * 🚀 Purpose:
  * Allows us to collect newsletter subscribers directly into a Google Sheet
- * without needing a backend server, database, or API key management.
+ * using our backend server as a proxy to avoid CORS issues.
  */
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzn5L0TA2SgCbk674ZGVIqIRum--prhR499phsVf4DtVUTinkLmcrxlIDyCxSBRJD7r/exec";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -44,14 +46,8 @@ export default function NewsletterSection() {
     setIsSubmitting(true);
     
     try {
-      const formData = new FormData();
-      formData.append("email", email);
-      
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData,
-      });
+      const result = await apiRequest("POST", "/api/newsletter/subscribe", { email });
+      console.log("Subscription result:", result);
       
       toast({
         title: "Thank you for subscribing!",
@@ -59,6 +55,7 @@ export default function NewsletterSection() {
       });
       setEmail("");
     } catch (error) {
+      console.error("Subscription error:", error);
       toast({
         title: "Subscription failed",
         description: "Please try again later.",
