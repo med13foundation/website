@@ -56,7 +56,7 @@ export default function EventsSection() {
 
           <Card data-testid="card-combinedbrain-meeting">
             <CardHeader>
-              <CardTitle className="text-xl font-heading">COMBINEDBrain Annual Meeting</CardTitle>
+              <CardTitle className="text-xl font-heading">COMBINEDBrain In-person Clinical Readiness Day</CardTitle>
               <CardDescription className="flex items-center gap-2 mt-2">
                 <Calendar className="w-4 h-4" />
                 <span>Check COMBINEDBrain website for details</span>
