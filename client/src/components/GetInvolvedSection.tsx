@@ -23,8 +23,9 @@ export default function GetInvolvedSection() {
       icon: HandHeart,
       title: "Volunteer Your Skills",
       description: "Every talent makes a difference. We need help with website development, grant writing, event planning, social media, translation, data management, and family mentorship for newly diagnosed families.",
-      action: "Get Involved",
-      testId: "volunteer"
+      action: "Email Us to Volunteer",
+      testId: "volunteer",
+      isVolunteer: true
     },
     {
       icon: Heart,
@@ -81,6 +82,15 @@ export default function GetInvolvedSection() {
                       data-testid={`button-${pathway.testId}`}
                     >
                       <a href="#donate">{pathway.action}</a>
+                    </Button>
+                  ) : pathway.isVolunteer ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      asChild
+                      data-testid={`button-${pathway.testId}`}
+                    >
+                      <a href="mailto:research@med13.org">{pathway.action}</a>
                     </Button>
                   ) : (
                     <Button 
