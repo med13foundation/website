@@ -1,3 +1,34 @@
+/**
+ * 📌 Developer Note — Email Subscription Integration
+ * 
+ * This component connects the website's email subscription form to the backend API
+ * which handles subscriber management and storage.
+ * 
+ * 🔧 How it works:
+ * - When a user enters their email and submits the form,
+ *   a POST request is sent to `/api/newsletter/subscribe`
+ * - The backend validates the email and stores it in the database
+ * - Users receive toast notifications for success or error feedback
+ * - The form resets after successful subscription
+ * 
+ * 🛟 Notes for Integration:
+ * - Uses React Query mutations for API communication
+ * - Email validation happens both client-side (HTML5) and server-side
+ * - Toast notifications provide user-friendly feedback
+ * - Loading state prevents double submissions (button shows "Subscribing...")
+ * - Component styling uses Tailwind CSS with primary color theme
+ * 
+ * 📐 Component API:
+ * - No props required
+ * - Manages its own state (email input, loading state)
+ * - Displays within a primary-colored section with white text
+ * - Responsive layout: single column on mobile, flex row on desktop
+ * 
+ * 🚀 Purpose:
+ * Allows users to subscribe to the MED13 Foundation newsletter for research updates,
+ * family stories, and community events.
+ */
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
