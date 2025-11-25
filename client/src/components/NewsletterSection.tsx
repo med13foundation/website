@@ -1,68 +1,72 @@
 /**
- * 📌 Developer Note — Email Subscription Integration
+ * 📌 Developer Note — Google Sheets Email Subscription Integration
  * 
- * This component connects the website's email subscription form to the backend API
- * which handles subscriber management and storage.
+ * This component connects the website's email subscription form to a Google Sheet
+ * using a Google Apps Script Webhook.
  * 
  * 🔧 How it works:
  * - When a user enters their email and submits the form,
- *   a POST request is sent to `/api/newsletter/subscribe`
- * - The backend validates the email and stores it in the database
- * - Users receive toast notifications for success or error feedback
- * - The form resets after successful subscription
+ *   JavaScript sends a POST request to the Google Apps Script endpoint:
+ *   https://script.google.com/macros/s/AKfycbzn5L0TA2SgCbk674ZGVIqIRum--prhR499phsVf4DtVUTinkLmcrxlIDyCxSBRJD7r/exec
+ * - The Apps Script receives the email and writes it to a Google Sheet
+ *   (1 row per subscriber, including timestamp)
+ * - We use `mode: "no-cors"` because Apps Script's public endpoints
+ *   do not return standard CORS headers
  * 
  * 🛟 Notes for Integration:
- * - Uses React Query mutations for API communication
- * - Email validation happens both client-side (HTML5) and server-side
- * - Toast notifications provide user-friendly feedback
- * - Loading state prevents double submissions (button shows "Subscribing...")
- * - Component styling uses Tailwind CSS with primary color theme
- * 
- * 📐 Component API:
- * - No props required
- * - Manages its own state (email input, loading state)
- * - Displays within a primary-colored section with white text
- * - Responsive layout: single column on mobile, flex row on desktop
+ * - Do NOT change the endpoint unless a new Apps Script deployment is made
+ * - The script prevents double submissions and gives user-friendly messages
+ * - Since no-cors mode doesn't return readable response, we assume success if no error
+ * - If the UI is redesigned, ensure functionality remains intact
  * 
  * 🚀 Purpose:
- * Allows users to subscribe to the MED13 Foundation newsletter for research updates,
- * family stories, and community events.
+ * Allows us to collect newsletter subscribers directly into a Google Sheet
+ * without needing a backend server, database, or API key management.
  */
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzn5L0TA2SgCbk674ZGVIqIRum--prhR499phsVf4DtVUTinkLmcrxlIDyCxSBRJD7r/exec";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const subscribeMutation = useMutation({
-    mutationFn: async (email: string) => {
-      return apiRequest('POST', '/api/newsletter/subscribe', { email });
-    },
-    onSuccess: () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+      
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
+      
       toast({
         title: "Thank you for subscribing!",
         description: "You'll receive our monthly newsletter with research updates and community news.",
       });
       setEmail("");
-    },
-    onError: (error: any) => {
+    } catch (error) {
       toast({
         title: "Subscription failed",
-        description: error.message || "Please try again later.",
+        description: "Please try again later.",
         variant: "destructive",
       });
-    },
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    subscribeMutation.mutate(email);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,10 +92,10 @@ export default function NewsletterSection() {
           <Button 
             type="submit" 
             variant="secondary"
-            disabled={subscribeMutation.isPending}
+            disabled={isSubmitting}
             data-testid="button-newsletter-submit"
           >
-            {subscribeMutation.isPending ? "Subscribing..." : "Subscribe"}
+            {isSubmitting ? "Subscribing..." : "Subscribe"}
           </Button>
         </form>
       </div>
