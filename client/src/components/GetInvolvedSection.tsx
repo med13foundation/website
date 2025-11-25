@@ -9,15 +9,17 @@ export default function GetInvolvedSection() {
       icon: FlaskConical,
       title: "Join Our Research Cohort",
       description: "Your participation drives discovery. Enroll in our patient registry and contribute to the biorepository to provide crucial data for natural history studies and enable researchers worldwide to study MED13 syndrome.",
-      action: "Learn How to Participate",
-      testId: "research"
+      action: "Contact Us",
+      testId: "research",
+      email: "research@med13.org"
     },
     {
       icon: Users2,
       title: "Join Our Board of Directors",
       description: "Shape the future of MED13 research and advocacy. We're seeking parents, medical advisors, fundraising professionals, and advocates to guide our strategic direction through quarterly meetings and committee work.",
-      action: "Apply to the Board",
-      testId: "board"
+      action: "Contact Us",
+      testId: "board",
+      email: "research@med13.org"
     },
     {
       icon: HandHeart,
@@ -84,7 +86,7 @@ export default function GetInvolvedSection() {
                     >
                       <a href="#donate">{pathway.action}</a>
                     </Button>
-                  ) : pathway.isVolunteer ? (
+                  ) : pathway.email ? (
                     <div className="text-center" data-testid={`button-${pathway.testId}`}>
                       <p className="text-sm text-muted-foreground mb-2">{pathway.action}</p>
                       <p className="font-semibold text-primary">{pathway.email}</p>
