@@ -75,18 +75,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="mailto:info@med13foundation.org" className="hover:text-foreground" data-testid="link-footer-email-general">
-                  info@med13foundation.org
-                </a>
-              </li>
-              <li>
-                <a href="mailto:research@med13foundation.org" className="hover:text-foreground" data-testid="link-footer-email-research">
-                  research@med13foundation.org
-                </a>
-              </li>
-              <li>
-                <a href="mailto:media@med13foundation.org" className="hover:text-foreground" data-testid="link-footer-email-media">
-                  media@med13foundation.org
+                <a href="mailto:research@med13.org" className="hover:text-foreground" data-testid="link-footer-email-research">
+                  research@med13.org
                 </a>
               </li>
             </ul>
