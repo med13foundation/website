@@ -1,7 +1,5 @@
 import { type NewsletterSubscriber, type InsertNewsletterSubscriber } from "@shared/schema";
 import { randomUUID } from "crypto";
-import * as fs from "fs";
-import * as path from "path";
 
 export interface IStorage {
   addNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
@@ -31,31 +29,11 @@ export class MemStorage implements IStorage {
       subscribedAt: new Date(),
     };
     this.newsletterSubscribers.set(id, subscriber);
-    
-    // Log new subscriber
-    this.logNewSubscriber(subscriber);
-    
     return subscriber;
   }
 
   async getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
     return Array.from(this.newsletterSubscribers.values());
-  }
-
-  private logNewSubscriber(subscriber: NewsletterSubscriber): void {
-    const timestamp = new Date().toISOString();
-    const message = `[${timestamp}] New newsletter subscriber: ${subscriber.email}`;
-    
-    // Log to console
-    console.log("📧 " + message);
-    
-    // Log to file
-    try {
-      const logFile = path.join(process.cwd(), "newsletter-subscribers.log");
-      fs.appendFileSync(logFile, message + "\n", "utf-8");
-    } catch (error) {
-      console.error("Failed to write to log file:", error);
-    }
   }
 }
 
