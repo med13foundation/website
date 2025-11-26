@@ -2,9 +2,12 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border">
@@ -12,33 +15,34 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
             <span className="text-xl font-heading font-bold text-primary" data-testid="logo-text">
-              MED13 Foundation
+              {t('nav.logo')}
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <a href="#about" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
-              Who We Are
+              {t('nav.about')}
             </a>
             <a href="#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
-              Get Involved
+              {t('nav.getInvolved')}
             </a>
             <a href="#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
-              Roadmap
+              {t('nav.roadmap')}
             </a>
             <a href="#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
-              Events
+              {t('nav.events')}
             </a>
             <a href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
-              Contact
+              {t('nav.contact')}
             </a>
+            <LanguageSwitcher />
             <Button 
               variant="destructive" 
               size="sm"
               asChild
               data-testid="button-donate"
             >
-              <a href="#donate">Donate</a>
+              <a href="#donate">{t('nav.donate')}</a>
             </Button>
           </div>
 
@@ -61,7 +65,7 @@ export default function Navigation() {
               data-testid="link-mobile-about"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Who We Are
+              {t('nav.about')}
             </a>
             <a 
               href="#get-involved" 
@@ -69,7 +73,7 @@ export default function Navigation() {
               data-testid="link-mobile-get-involved"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Get Involved
+              {t('nav.getInvolved')}
             </a>
             <a 
               href="#roadmap" 
@@ -77,7 +81,7 @@ export default function Navigation() {
               data-testid="link-mobile-roadmap"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Roadmap
+              {t('nav.roadmap')}
             </a>
             <a 
               href="#events" 
@@ -85,7 +89,7 @@ export default function Navigation() {
               data-testid="link-mobile-events"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Events
+              {t('nav.events')}
             </a>
             <a 
               href="#contact" 
@@ -93,15 +97,18 @@ export default function Navigation() {
               data-testid="link-mobile-contact"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              {t('nav.contact')}
             </a>
+            <div className="px-3 py-2">
+              <LanguageSwitcher />
+            </div>
             <Button 
               variant="destructive" 
               className="w-full"
               asChild
               data-testid="button-mobile-donate"
             >
-              <a href="#donate" onClick={() => setMobileMenuOpen(false)}>Donate</a>
+              <a href="#donate" onClick={() => setMobileMenuOpen(false)}>{t('nav.donate')}</a>
             </Button>
           </div>
         </div>

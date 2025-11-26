@@ -1,28 +1,31 @@
 import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer id="contact" className="bg-card border-t border-card-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="font-heading font-semibold text-foreground mb-4" data-testid="text-footer-about">
-              About
+              {t('footer.about')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-story">
-                  Our Story
+                  {t('footer.ourStory')}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-community">
-                  Our Community
+                  {t('footer.ourCommunity')}
                 </a>
               </li>
               <li>
                 <a href="#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
-                  Research Roadmap
+                  {t('footer.researchRoadmap')}
                 </a>
               </li>
             </ul>
@@ -30,22 +33,22 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading font-semibold text-foreground mb-4" data-testid="text-footer-get-involved">
-              Get Involved
+              {t('footer.getInvolved')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
-                  Join Research Cohort
+                  {t('footer.joinResearch')}
                 </a>
               </li>
               <li>
                 <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-board">
-                  Board Opportunities
+                  {t('footer.boardOpportunities')}
                 </a>
               </li>
               <li>
                 <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-volunteer">
-                  Volunteer
+                  {t('footer.volunteer')}
                 </a>
               </li>
             </ul>
@@ -53,17 +56,17 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading font-semibold text-foreground mb-4" data-testid="text-footer-resources">
-              Resources
+              {t('footer.resources')}
             </h3>
             <ul className="space-y-2">
               <li>
                 <a href="https://combinedbrain.org" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-combinedbrain">
-                  COMBINEDBrain
+                  {t('footer.combinedbrain')}
                 </a>
               </li>
               <li>
                 <a href="#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
-                  Events
+                  {t('footer.events')}
                 </a>
               </li>
             </ul>
@@ -71,7 +74,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading font-semibold text-foreground mb-4" data-testid="text-footer-contact">
-              Contact
+              {t('footer.contact')}
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
@@ -112,13 +115,12 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
-              © 2025 MED13 Foundation. All rights reserved.
+              {t('footer.copyright')}
             </p>
           </div>
 
           <p className="text-xs text-muted-foreground text-center mt-4">
-            A patient-led organization operating under fiscal sponsorship while pursuing 501(c)(3) status. 
-            Committed to transparency, collaboration, and urgency.
+            {t('footer.fiscalNote')}
           </p>
         </div>
       </div>

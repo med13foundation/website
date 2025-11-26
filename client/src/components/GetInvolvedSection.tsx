@@ -2,39 +2,41 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.png";
+import { useTranslation } from "react-i18next";
 
 export default function GetInvolvedSection() {
+  const { t } = useTranslation();
+
   const pathways = [
     {
       icon: FlaskConical,
-      title: "Join Our Research Cohort",
-      description: "Your participation drives discovery. Enroll in our patient registry and contribute to the biorepository to provide crucial data for natural history studies and enable researchers worldwide to study MED13 syndrome.",
-      action: "Contact Us",
+      titleKey: "getInvolved.researchTitle",
+      descKey: "getInvolved.researchDesc",
+      actionKey: "getInvolved.contactUs",
       testId: "research",
       email: "research@med13.org"
     },
     {
       icon: Users2,
-      title: "Join Our Board of Directors",
-      description: "Shape the future of MED13 research and advocacy. We're seeking parents, medical advisors, fundraising professionals, and advocates to guide our strategic direction through quarterly meetings and committee work.",
-      action: "Contact Us",
+      titleKey: "getInvolved.boardTitle",
+      descKey: "getInvolved.boardDesc",
+      actionKey: "getInvolved.contactUs",
       testId: "board",
       email: "research@med13.org"
     },
     {
       icon: HandHeart,
-      title: "Volunteer Your Skills",
-      description: "Every talent makes a difference. We need help with website development, grant writing, event planning, social media, translation, data management, and family mentorship for newly diagnosed families.",
-      action: "Contact Us",
+      titleKey: "getInvolved.volunteerTitle",
+      descKey: "getInvolved.volunteerDesc",
+      actionKey: "getInvolved.contactUs",
       testId: "volunteer",
-      isVolunteer: true,
       email: "research@med13.org"
     },
     {
       icon: Heart,
-      title: "Support Our Mission",
-      description: "Your financial contribution accelerates research and provides direct support to families navigating MED13 syndrome. Every donation brings us closer to treatments and a cure.",
-      action: "Make a Donation",
+      titleKey: "getInvolved.donateTitle",
+      descKey: "getInvolved.donateDesc",
+      actionKey: "getInvolved.makeDonation",
       testId: "donate",
       isDonation: true
     }
@@ -55,10 +57,10 @@ export default function GetInvolvedSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-get-involved-title">
-            Get Involved
+            {t('getInvolved.title')}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Four ways to make an impact in the MED13 community
+            {t('getInvolved.subtitle')}
           </p>
         </div>
 
@@ -71,11 +73,11 @@ export default function GetInvolvedSection() {
                   <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
-                  <CardTitle className="text-xl font-heading">{pathway.title}</CardTitle>
+                  <CardTitle className="text-xl font-heading">{t(pathway.titleKey)}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
                   <CardDescription className="text-sm mb-6 flex-1">
-                    {pathway.description}
+                    {t(pathway.descKey)}
                   </CardDescription>
                   {pathway.isDonation ? (
                     <Button 
@@ -84,11 +86,11 @@ export default function GetInvolvedSection() {
                       asChild
                       data-testid={`button-${pathway.testId}`}
                     >
-                      <a href="#donate">{pathway.action}</a>
+                      <a href="#donate">{t(pathway.actionKey)}</a>
                     </Button>
                   ) : pathway.email ? (
                     <div className="text-center" data-testid={`button-${pathway.testId}`}>
-                      <p className="text-sm text-muted-foreground mb-2">{pathway.action}</p>
+                      <p className="text-sm text-muted-foreground mb-2">{t(pathway.actionKey)}</p>
                       <p className="font-semibold text-primary">{pathway.email}</p>
                     </div>
                   ) : (
@@ -98,7 +100,7 @@ export default function GetInvolvedSection() {
                       asChild
                       data-testid={`button-${pathway.testId}`}
                     >
-                      <a href="#contact">{pathway.action}</a>
+                      <a href="#contact">{t(pathway.actionKey)}</a>
                     </Button>
                   )}
                 </CardContent>

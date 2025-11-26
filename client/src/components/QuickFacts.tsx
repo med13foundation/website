@@ -1,14 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Dna, Users, Calendar, MapPin, Activity, Puzzle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function QuickFacts() {
+  const { t } = useTranslation();
+
   const facts = [
-    { icon: Users, label: "Affected worldwide", value: "51+", testId: "affected" },
-    { icon: Dna, label: "Inheritance", value: "De novo (92%)", testId: "inheritance" },
-    { icon: Activity, label: "Speech disorders", value: "100%", testId: "speech" },
-    { icon: Puzzle, label: "Autism prevalence", value: "41%", testId: "autism" },
-    { icon: Calendar, label: "First described", value: "2018", testId: "year" },
-    { icon: MapPin, label: "Gene location", value: "17q23.2", testId: "location" },
+    { icon: Users, labelKey: "quickFacts.affected", valueKey: "quickFacts.affectedValue", testId: "affected" },
+    { icon: Dna, labelKey: "quickFacts.inheritance", valueKey: "quickFacts.inheritanceValue", testId: "inheritance" },
+    { icon: Activity, labelKey: "quickFacts.speech", valueKey: "quickFacts.speechValue", testId: "speech" },
+    { icon: Puzzle, labelKey: "quickFacts.autism", valueKey: "quickFacts.autismValue", testId: "autism" },
+    { icon: Calendar, labelKey: "quickFacts.year", valueKey: "quickFacts.yearValue", testId: "year" },
+    { icon: MapPin, labelKey: "quickFacts.location", valueKey: "quickFacts.locationValue", testId: "location" },
   ];
 
   return (
@@ -16,10 +19,10 @@ export default function QuickFacts() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-facts-title">
-            Quick Facts About MED13 Syndrome
+            {t('quickFacts.title')}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Understanding the condition at a glance
+            {t('quickFacts.subtitle')}
           </p>
         </div>
 
@@ -35,10 +38,10 @@ export default function QuickFacts() {
                     </div>
                     <div>
                       <p className="text-2xl font-heading font-bold text-foreground mb-1" data-testid={`value-${fact.testId}`}>
-                        {fact.value}
+                        {t(fact.valueKey)}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        {fact.label}
+                        {t(fact.labelKey)}
                       </p>
                     </div>
                   </div>
@@ -52,10 +55,10 @@ export default function QuickFacts() {
           <Card className="bg-accent">
             <CardContent className="p-6">
               <p className="text-sm text-foreground">
-                <strong>Key features:</strong> Developmental delays, speech disorders (100%), intellectual disability, distinctive facial features
+                <strong>{t('quickFacts.keyFeatures')}</strong> {t('quickFacts.keyFeaturesDesc')}
               </p>
               <p className="text-sm text-foreground mt-2">
-                <strong>Associated conditions:</strong> Autism (41%), ADHD (23%), epilepsy (14%)
+                <strong>{t('quickFacts.associatedConditions')}</strong> {t('quickFacts.associatedConditionsDesc')}
               </p>
             </CardContent>
           </Card>

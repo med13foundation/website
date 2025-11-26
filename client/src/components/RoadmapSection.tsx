@@ -1,61 +1,64 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Circle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function RoadmapSection() {
+  const { t } = useTranslation();
+
   const phases = [
     {
-      year: "Year 1-2",
-      title: "Foundation Building",
+      yearKey: "roadmap.phase1Year",
+      titleKey: "roadmap.phase1Title",
       status: "in-progress",
-      items: [
-        "Establish organizational structure and COMBINEDBrain membership",
-        "Launch patient registry and biorepository enrollment",
-        "Form Scientific Advisory Board",
-        "Create family support network"
+      itemKeys: [
+        "roadmap.phase1Item1",
+        "roadmap.phase1Item2",
+        "roadmap.phase1Item3",
+        "roadmap.phase1Item4"
       ]
     },
     {
-      year: "Year 2-3",
-      title: "Research Infrastructure",
+      yearKey: "roadmap.phase2Year",
+      titleKey: "roadmap.phase2Title",
       status: "upcoming",
-      items: [
-        "Commission Strategic Research Plan",
-        "Fund initial research grants",
-        "Develop clinical outcome measures",
-        "Host first family/researcher conference"
+      itemKeys: [
+        "roadmap.phase2Item1",
+        "roadmap.phase2Item2",
+        "roadmap.phase2Item3",
+        "roadmap.phase2Item4"
       ]
     },
     {
-      year: "Year 4-5",
-      title: "Preclinical Development",
+      yearKey: "roadmap.phase3Year",
+      titleKey: "roadmap.phase3Title",
       status: "upcoming",
-      items: [
-        "Support animal model development",
-        "Fund drug repurposing screens",
-        "Explore gene therapy approaches",
-        "Build clinical trial network"
+      itemKeys: [
+        "roadmap.phase3Item1",
+        "roadmap.phase3Item2",
+        "roadmap.phase3Item3",
+        "roadmap.phase3Item4"
       ]
     },
     {
-      year: "Year 6-7",
-      title: "Trial Readiness",
+      yearKey: "roadmap.phase4Year",
+      titleKey: "roadmap.phase4Title",
       status: "upcoming",
-      items: [
-        "Complete natural history study",
-        "Validate biomarkers",
-        "Engage with FDA",
-        "Prepare trial protocols"
+      itemKeys: [
+        "roadmap.phase4Item1",
+        "roadmap.phase4Item2",
+        "roadmap.phase4Item3",
+        "roadmap.phase4Item4"
       ]
     },
     {
-      year: "Year 8+",
-      title: "Clinical Trials",
+      yearKey: "roadmap.phase5Year",
+      titleKey: "roadmap.phase5Title",
       status: "upcoming",
-      items: [
-        "Phase 1 safety studies",
-        "Expanded access programs",
-        "Long-term outcome tracking"
+      itemKeys: [
+        "roadmap.phase5Item1",
+        "roadmap.phase5Item2",
+        "roadmap.phase5Item3"
       ]
     }
   ];
@@ -65,10 +68,10 @@ export default function RoadmapSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-roadmap-title">
-            Roadmap to Treatment
+            {t('roadmap.title')}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Following the proven path from foundation to clinical trials
+            {t('roadmap.subtitle')}
           </p>
         </div>
 
@@ -84,23 +87,23 @@ export default function RoadmapSection() {
                       <Circle className="w-6 h-6 text-muted-foreground" />
                     )}
                     <div>
-                      <CardTitle className="text-xl font-heading">{phase.title}</CardTitle>
-                      <p className="text-sm text-muted-foreground mt-1">{phase.year}</p>
+                      <CardTitle className="text-xl font-heading">{t(phase.titleKey)}</CardTitle>
+                      <p className="text-sm text-muted-foreground mt-1">{t(phase.yearKey)}</p>
                     </div>
                   </div>
                   {phase.status === "in-progress" && (
                     <Badge variant="secondary" data-testid="badge-in-progress">
-                      In Progress
+                      {t('roadmap.inProgress')}
                     </Badge>
                   )}
                 </div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  {phase.items.map((item, itemIndex) => (
+                  {phase.itemKeys.map((itemKey, itemIndex) => (
                     <li key={itemIndex} className="text-sm text-foreground flex items-start gap-2">
                       <span className="text-muted-foreground mt-1">•</span>
-                      <span>{item}</span>
+                      <span>{t(itemKey)}</span>
                     </li>
                   ))}
                 </ul>

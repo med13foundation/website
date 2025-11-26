@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function ClassyDonation() {
+  const { t } = useTranslation();
+
   useEffect(() => {
-    // Load Classy script if not already loaded
     const scriptId = "classy-donation-script";
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
@@ -18,10 +20,10 @@ export default function ClassyDonation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-donate-title">
-            Support Our Mission
+            {t('donate.title')}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Your contribution helps accelerate research and support families affected by MED13 syndrome
+            {t('donate.subtitle')}
           </p>
         </div>
         
