@@ -10,6 +10,31 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 26, 2025 - Multi-Language Support (i18n)
+
+**Internationalization Architecture:**
+- Implemented i18next and react-i18next for full multi-language support
+- Created scalable translation file structure: `client/src/i18n/locales/{lang}.json`
+- Currently supports English (en) and Spanish (es)
+- Language preference persisted in localStorage and synced with document.documentElement.lang
+
+**Translation System:**
+- Translation keys organized by section (nav.*, hero.*, about.*, getInvolved.*, roadmap.*, events.*, quickFacts.*, newsletter.*, donate.*, footer.*)
+- All major components updated to use useTranslation() hook
+- LanguageSwitcher component added to Navigation (desktop and mobile)
+
+**Adding New Languages:**
+1. Create new JSON file: `client/src/i18n/locales/{lang}.json` (copy structure from en.json)
+2. Import in `client/src/i18n/index.ts` and add to resources object
+3. Add language code to supportedLngs array
+4. Add language option to LanguageSwitcher.tsx languages array
+
+**Key Files:**
+- `client/src/i18n/index.ts` - i18n configuration
+- `client/src/i18n/locales/en.json` - English translations
+- `client/src/i18n/locales/es.json` - Spanish translations
+- `client/src/components/LanguageSwitcher.tsx` - Language selection dropdown
+
 ### November 11, 2025 - Donation Integration & Get Involved Enhancement
 
 **Component-Based Classy Integration:**
@@ -108,6 +133,12 @@ Preferred communication style: Simple, everyday language.
 - @hookform/resolvers for Zod schema integration
 - Zod for runtime type validation and schema definition
 - drizzle-zod for automatic schema generation from database models
+
+**Internationalization:**
+- i18next for core translation engine with fallback language support
+- react-i18next for React integration (useTranslation hook)
+- Translation files stored in `client/src/i18n/locales/` as JSON
+- Currently supports: English (en), Spanish (es)
 
 **Third-Party Services (Mentioned in Content):**
 - COMBINEDBrain - Biorepository consortium partnership (external integration)
