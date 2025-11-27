@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import logoUrl from "@assets/Med 13_1764216026949.png";
 
 export default function AboutSection() {
   const { t } = useTranslation();
@@ -8,9 +9,20 @@ export default function AboutSection() {
     <section id="about" className="py-16 sm:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4 text-center" data-testid="text-about-title">
-            {t('about.title')}
-          </h2>
+          <div className="flex flex-col items-center mb-8">
+            <div className="mb-6 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl w-40 h-40 mx-auto"></div>
+              <img 
+                src={logoUrl} 
+                alt="MED13 Foundation Logo" 
+                className="h-32 w-32 sm:h-40 sm:w-40 relative drop-shadow-xl hover:scale-105 transition-transform duration-300"
+                data-testid="logo-about"
+              />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-2 text-center" data-testid="text-about-title">
+              {t('about.title')}
+            </h2>
+          </div>
           <p className="text-lg text-muted-foreground mb-12 text-center">
             {t('about.subtitle')}
           </p>
