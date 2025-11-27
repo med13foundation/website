@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker } from "lucide-react";
 import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
+import logoUrl from "@assets/Med 13_1764216026949.png";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {
@@ -21,6 +22,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
+          <img 
+            src={logoUrl} 
+            alt="MED13 Foundation Logo" 
+            className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-6 drop-shadow-lg animate-pulse-subtle"
+            data-testid="logo-hero"
+          />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
