@@ -16,8 +16,8 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Dark Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
+      {/* Light Overlay */}
+      <div className="absolute inset-0 bg-white/85" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,20 +25,20 @@ export default function Hero() {
           <img 
             src={logoUrl} 
             alt="MED13 Foundation Logo" 
-            className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-6 drop-shadow-lg animate-pulse-subtle"
+            className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-8 drop-shadow-lg"
             data-testid="logo-hero"
           />
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary mb-6" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="text-lg sm:text-xl text-foreground mb-8 leading-relaxed" data-testid="text-hero-subtitle">
             {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button 
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 border-white"
+              variant="destructive"
               asChild
               data-testid="button-join-research"
             >
@@ -47,7 +47,6 @@ export default function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
               asChild
               data-testid="button-learn-story"
             >
@@ -56,11 +55,11 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-families">
+            <Badge variant="outline" className="px-4 py-2 text-sm" data-testid="badge-families">
               <Users className="w-4 h-4 mr-2" />
               {t('hero.familiesWorldwide')}
             </Badge>
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-research">
+            <Badge variant="outline" className="px-4 py-2 text-sm" data-testid="badge-research">
               <Beaker className="w-4 h-4 mr-2" />
               {t('hero.foundationBuilding')}
             </Badge>
