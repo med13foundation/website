@@ -16,13 +16,8 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Dark Overlay with Spotlight Effect on Logo Area */}
-      <div 
-        className="absolute inset-0" 
-        style={{
-          background: `radial-gradient(circle at center top, rgba(27, 75, 126, 0.3) 0%, rgba(27, 75, 126, 0.7) 25%, rgba(27, 75, 126, 0.85) 60%, rgba(27, 75, 126, 0.9) 100%)`
-        }}
-      />
+      {/* Dark Overlay Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +25,7 @@ export default function Hero() {
           <img 
             src={logoUrl} 
             alt="MED13 Foundation Logo" 
-            className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-8 drop-shadow-lg"
+            className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-6 drop-shadow-lg animate-pulse-subtle"
             data-testid="logo-hero"
           />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
