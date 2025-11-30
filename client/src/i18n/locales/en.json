@@ -123,12 +123,12 @@
   },
   "newsletter": {
     "title": "Stay Informed",
-    "subtitle": "Subscribe to our monthly newsletter for research progress, family stories, and community events",
+    "subtitle": "Subscribe to our bi-annual newsletter for research progress, family stories, and community events",
     "placeholder": "Enter your email",
     "subscribe": "Subscribe",
     "subscribing": "Subscribing...",
     "successTitle": "Thank you for subscribing!",
-    "successDesc": "You'll receive our monthly newsletter with research updates and community news.",
+    "successDesc": "You'll receive our bi-annual newsletter with research updates and community news.",
     "errorTitle": "Subscription failed",
     "errorDesc": "Please try again later."
   },

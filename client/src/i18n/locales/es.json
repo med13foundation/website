@@ -123,12 +123,12 @@
   },
   "newsletter": {
     "title": "Mantente Informado",
-    "subtitle": "Suscríbete a nuestro boletín mensual para conocer el progreso de la investigación, historias de familias y eventos comunitarios",
+    "subtitle": "Suscríbete a nuestro boletín semestral para conocer el progreso de la investigación, historias de familias y eventos comunitarios",
     "placeholder": "Ingresa tu correo electrónico",
     "subscribe": "Suscribirse",
     "subscribing": "Suscribiendo...",
     "successTitle": "¡Gracias por suscribirte!",
-    "successDesc": "Recibirás nuestro boletín mensual con actualizaciones de investigación y noticias de la comunidad.",
+    "successDesc": "Recibirás nuestro boletín semestral con actualizaciones de investigación y noticias de la comunidad.",
     "errorTitle": "Error en la suscripción",
     "errorDesc": "Por favor, inténtalo de nuevo más tarde."
   },
