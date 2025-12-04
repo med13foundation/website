@@ -1,54 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
 import logoUrl from "@assets/Med 13_1764216026949.png";
-import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
 
 export default function Flyer() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header Section */}
-      <section className="relative py-16 sm:py-24 overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroBackground})` }}
-        />
-        
-        {/* Dark Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/95" />
-        
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white print:bg-white">
+      {/* Header Section - Clean for Print */}
+      <section className="py-12 sm:py-16 bg-white print:bg-white border-b-4 border-primary print:border-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <img 
-              src={logoUrl} 
-              alt="MED13 Foundation Logo" 
-              className="h-24 w-24 sm:h-32 sm:w-32 mx-auto mb-8 drop-shadow-xl"
-              data-testid="logo-flyer"
-            />
+            <div className="mb-6 flex justify-center">
+              <div className="p-4 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg">
+                <img 
+                  src={logoUrl} 
+                  alt="MED13 Foundation Logo" 
+                  className="h-24 w-24 sm:h-28 sm:w-28"
+                  data-testid="logo-flyer"
+                />
+              </div>
+            </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white mb-2" data-testid="text-flyer-title">
+            <h1 className="text-5xl sm:text-6xl font-heading font-bold text-primary mb-3 print:text-black" data-testid="text-flyer-title">
               MED13 FOUNDATION
             </h1>
             
-            <p className="text-2xl sm:text-3xl font-heading font-semibold text-white/95 mb-8">
+            <p className="text-2xl sm:text-3xl font-heading font-semibold text-foreground mb-6 print:text-black">
               Advancing Research & Supporting Families
             </p>
             
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
+            <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mb-6 print:bg-black"></div>
+            
+            <p className="text-base sm:text-lg text-foreground leading-relaxed max-w-2xl mx-auto print:text-black">
               MED13 syndrome is an ultra-rare genetic condition affecting neurodevelopment. With limited cases identified worldwide, there is a critical need for collaborative research to better understand this condition and develop effective interventions.
             </p>
-
-            <div className="flex justify-center">
-              <ChevronDown className="w-8 h-8 text-white animate-bounce" />
-            </div>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 sm:py-20 bg-background">
+      <section className="py-12 sm:py-16 bg-white print:bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* About MED13 Syndrome */}
           <div className="mb-16">
@@ -146,18 +136,17 @@ export default function Flyer() {
           </div>
 
           {/* Call to Action */}
-          <section className="relative py-16 bg-gradient-to-r from-primary to-secondary rounded-lg overflow-hidden">
-            <div className="absolute inset-0 bg-black/10" />
-            <div className="relative max-w-3xl mx-auto px-6 text-center">
-              <h2 className="text-4xl font-heading font-bold text-white mb-6">Join Us in Making a Difference</h2>
-              <p className="text-lg text-white/90 mb-8">
+          <section className="py-12 bg-primary print:bg-white print:border-4 print:border-black rounded-lg overflow-hidden my-8">
+            <div className="max-w-3xl mx-auto px-6 text-center">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white print:text-black mb-4">Join Us in Making a Difference</h2>
+              <p className="text-base sm:text-lg text-white/95 print:text-black mb-6">
                 Every research partnership brings us closer to understanding MED13 syndrome and developing treatments. Your expertise in epilepsy research could be crucial in improving outcomes for our community.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center print:gap-2">
                 <Button 
                   size="lg"
-                  className="bg-white text-primary hover:bg-white/90 font-semibold"
+                  className="bg-white text-primary hover:bg-white/90 font-semibold print:bg-black print:text-white print:border print:border-black"
                   asChild
                   data-testid="button-contact-research"
                 >
@@ -166,7 +155,7 @@ export default function Flyer() {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white/10 font-semibold"
+                  className="border-white text-white hover:bg-white/10 font-semibold print:border-2 print:border-black print:text-black print:bg-transparent"
                   asChild
                   data-testid="button-learn-more"
                 >
@@ -176,10 +165,10 @@ export default function Flyer() {
             </div>
           </section>
 
-          {/* Footer Info */}
-          <div className="mt-16 text-center text-muted-foreground">
-            <p className="mb-2">Visit us at: med13foundation.org</p>
-            <p>Contact: research@med13.org</p>
+          {/* Footer Info - Print Friendly */}
+          <div className="py-8 text-center border-t border-gray-200 print:border-t-2 print:border-black">
+            <p className="mb-2 font-semibold text-foreground print:text-black">Visit us at: med13foundation.org</p>
+            <p className="text-foreground print:text-black">Contact: research@med13.org</p>
           </div>
         </div>
       </section>
