@@ -14,7 +14,7 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-3 hover-elevate rounded-lg transition-all">
+          <Link href="/" className="flex items-center gap-3 rounded-lg">
             <img 
               src={logoUrl} 
               alt="MED13 Foundation Logo" 
