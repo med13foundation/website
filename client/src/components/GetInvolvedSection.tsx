@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
-import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.png";
+import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
 
 export default function GetInvolvedSection() {

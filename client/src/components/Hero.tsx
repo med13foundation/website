@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker } from "lucide-react";
-import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.png";
+import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {
@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 min-h-[2.5em]" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
           <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
