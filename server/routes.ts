@@ -6,7 +6,7 @@ import { insertNewsletterSubscriberSchema } from "@shared/schema";
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
 
-const SITE_URL = "https://med13foundation.org";
+const SITE_URL = "https://med13.org";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Sitemap.xml for SEO

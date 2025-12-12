@@ -20,7 +20,7 @@ Preferred communication style: Simple, everyday language.
 
 **Sitemap Configuration:**
 - Dynamic sitemap generation with current date as lastmod
-- Configured for med13foundation.org domain
+- Configured for med13.org domain
 - Weekly change frequency with priority 1.0
 
 **Key Endpoints:**
