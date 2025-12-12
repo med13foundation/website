@@ -6,7 +6,34 @@ import { insertNewsletterSubscriberSchema } from "@shared/schema";
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
 
+const SITE_URL = "https://med13foundation.org";
+
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Sitemap.xml for SEO
+  app.get("/sitemap.xml", (_req, res) => {
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`;
+    res.header("Content-Type", "application/xml");
+    res.send(sitemap);
+  });
+
+  // Robots.txt for search engine crawling
+  app.get("/robots.txt", (_req, res) => {
+    const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml`;
+    res.header("Content-Type", "text/plain");
+    res.send(robots);
+  });
+
   app.post("/api/newsletter/subscribe", async (req, res) => {
     try {
       const validatedData = insertNewsletterSubscriberSchema.parse(req.body);

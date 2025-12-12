@@ -10,6 +10,23 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### December 12, 2025 - SEO & Sitemap
+
+**SEO Improvements:**
+- Added `/sitemap.xml` endpoint for search engine indexing
+- Added `/robots.txt` endpoint allowing full site crawling
+- Verified no "noindex" meta tags exist
+- Updated newsletter frequency to "bi-annual" in both English and Spanish
+
+**Sitemap Configuration:**
+- Dynamic sitemap generation with current date as lastmod
+- Configured for med13foundation.org domain
+- Weekly change frequency with priority 1.0
+
+**Key Endpoints:**
+- `GET /sitemap.xml` - XML sitemap for search engines
+- `GET /robots.txt` - Crawler permissions and sitemap reference
+
 ### November 26, 2025 - Multi-Language Support (i18n)
 
 **Internationalization Architecture:**
