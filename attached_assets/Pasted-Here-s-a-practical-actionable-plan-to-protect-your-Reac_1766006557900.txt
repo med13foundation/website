@@ -1,0 +1,104 @@
+Here’s a **practical, actionable plan** to protect your React pages from *the latest* known vulnerabilities — including critical issues reported in December 2025 — as well as general security hardening you should apply.
+
+---
+
+## 🚨 1. **Update vulnerable React / RSC packages immediately**
+
+A *critical remote-code-execution (RCE) vulnerability* in React Server Components (CVE-2025-55182, aka “React2Shell”) affects many React 19 / RSC builds and related frameworks like Next.js. It’s being actively exploited in the wild. ([Unit 42][1])
+
+**What to update:**
+
+* **React Server Components packages**
+  If you use RSC or a framework that depends on it:
+
+  * `react-server-dom-webpack`, `react-server-dom-parcel`, `react-server-dom-turbopack`:
+    ➤ Upgrade to **19.0.1**, **19.1.2**, **19.2.1**, or later patched versions for your React 19.x line. ([React][2])
+* **React core / react-dom:**
+  React itself may also include related fixes; ensure you’re running a patched 19.x release — **not** 19.0.0, 19.1.0/1, or 19.2.0. ([React][2])
+* **Next.js / frameworks built on RSC:**
+  Upgrade to fixed versions (e.g., Next.js **15.1.9+, 15.2.6+, …, 16.0.7+**) with RSC fixes. ([Unit 42][1])
+
+**Steps:**
+
+```sh
+# Example with npm
+npm install react@latest react-dom@latest \
+  react-server-dom-webpack@latest \
+  react-server-dom-parcel@latest \
+  react-server-dom-turbopack@latest
+```
+
+Then **redeploy your application** so the patched versions are actually running in production. ([Google Cloud][3])
+
+---
+
+## 🔍 2. **Audit all your dependencies**
+
+Even if you’re not using React Server Components, **other libraries** might be vulnerable.
+
+* Run dependency audits regularly:
+
+```sh
+npm audit
+# or
+yarn audit
+```
+
+* Use automated tools (e.g., **Dependabot**, **Snyk**, **GitHub Security Alerts**) to flag and update insecure libraries. ([Medium][4])
+
+Keep both *direct* and *transitive* dependencies up to date — attackers can exploit deep dependency chains. ([corgea.com][5])
+
+---
+
+## 🛡 3. **React-specific security best practices**
+
+Even after dependency updates, secure coding practices minimize risk from common attacks like XSS, broken auth, etc.:
+
+**XSS / content injection**
+
+* Avoid `dangerouslySetInnerHTML` unless absolutely necessary. If you must, *sanitize* user content with a library like **DOMPurify** before rendering. ([DEV Community][6])
+
+**Avoid exposing secrets**
+
+* Don’t embed API keys or credentials in the frontend bundle; treat all frontend code as public. ([nareshit.com][7])
+
+**Authorization checks**
+
+* Perform sensitive authorization on the *server* (backend API), not just client-side guards. ([DEV Community][8])
+
+**Regular scanning**
+
+* Integrate security scanners into CI/CD to catch issues early (linting, audit tools, dependency checks). ([Cyber Sierra][9])
+
+---
+
+## 🧪 4. **Deploy safeguards around your app**
+
+While patching is the *primary defense*, additional protective layers help:
+
+* **Web Application Firewall (WAF)** rules to catch malformed RSC payloads temporarily until patches are deployed. ([Google Cloud][3])
+* **Network protections / rate limiting** to reduce exposure to automated exploit attempts.
+
+---
+
+## 📌 Summary — Immediate checklist
+
+✅ Upgrade RSC-related packages to **patched React 19.x / Next.js versions**
+✅ Audit and update all npm dependencies (direct and transitive)
+✅ Avoid unsafe coding patterns (like unvalidated HTML injection)
+✅ Use security tooling (npm/yarn audit, Snyk, Dependabot)
+✅ Redeploy after updates and verify updated versions in production
+
+---
+
+If you want, I can help you **generate a script or CI workflow** (e.g., GitHub Actions) that enforces dependency updates and security scanning automatically for your project.
+
+[1]: https://unit42.paloaltonetworks.com/cve-2025-55182-react-and-cve-2025-66478-next/?utm_source=chatgpt.com "Exploitation of Critical Vulnerability in React Server ..."
+[2]: https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components?utm_source=chatgpt.com "Critical Security Vulnerability in React Server Components"
+[3]: https://cloud.google.com/blog/products/identity-security/responding-to-cve-2025-55182?utm_source=chatgpt.com "Responding to CVE-2025-55182 | Google Cloud Blog"
+[4]: https://medium.com/whatfix-techblog/reactjs-security-best-practices-6542b71a5577?utm_source=chatgpt.com "ReactJS Security Best Practices"
+[5]: https://corgea.com/Learn/react-security-best-practices-2025?utm_source=chatgpt.com "React Security Best Practices 2025"
+[6]: https://dev.to/kristiyanvelkov/react-js-security-best-practices-15g7?utm_source=chatgpt.com "React JS - Security Best Practices"
+[7]: https://nareshit.com/blogs/react-security-best-practices-developers-should-know?utm_source=chatgpt.com "React Security Best Practices Developers Must Know Guide"
+[8]: https://dev.to/kashifnehal/reactjs-security-best-practices-a-comprehensive-guide-4jjj?utm_source=chatgpt.com "React.js Security Best Practices: A Comprehensive Guide"
+[9]: https://cybersierra.co/blog/react-security-checklist/?utm_source=chatgpt.com "React Security Checklist: Essential Practices Every ..."
