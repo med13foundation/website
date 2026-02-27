@@ -1,40 +1,33 @@
-import { type NewsletterSubscriber, type InsertNewsletterSubscriber } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { type NewsletterSubscriber, type InsertNewsletterSubscriber, newsletterSubscribers } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   addNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
   getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
 }
 
-export class MemStorage implements IStorage {
-  private newsletterSubscribers: Map<string, NewsletterSubscriber>;
-
-  constructor() {
-    this.newsletterSubscribers = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async addNewsletterSubscriber(insertSubscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
-    const existingSubscriber = Array.from(this.newsletterSubscribers.values()).find(
-      (sub) => sub.email === insertSubscriber.email
-    );
-    
-    if (existingSubscriber) {
-      return existingSubscriber;
+    const [existing] = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, insertSubscriber.email));
+
+    if (existing) {
+      return existing;
     }
 
-    const id = randomUUID();
-    const subscriber: NewsletterSubscriber = {
-      id,
-      email: insertSubscriber.email,
-      subscribedAt: new Date(),
-    };
-    this.newsletterSubscribers.set(id, subscriber);
+    const [subscriber] = await db
+      .insert(newsletterSubscribers)
+      .values(insertSubscriber)
+      .returning();
     return subscriber;
   }
 
   async getNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
-    return Array.from(this.newsletterSubscribers.values());
+    return await db.select().from(newsletterSubscribers);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
