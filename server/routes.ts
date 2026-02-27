@@ -2,6 +2,7 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema } from "@shared/schema";
+import { sendNewsletterEmail } from "./email";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
@@ -140,6 +141,21 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
         sanitized.sentAt = new Date(sanitized.sentAt);
       }
       const newsletter = await storage.updateNewsletter(req.params.id, sanitized);
+      
+      // If marked as sent, trigger email delivery to all subscribers
+      if (sanitized.status === "sent") {
+        const subscribers = await storage.getNewsletterSubscribers();
+        // We do this asynchronously to not block the response
+        Promise.all(subscribers.map(sub => 
+          sendNewsletterEmail({
+            to: sub.email,
+            subject: newsletter.title,
+            html: newsletter.content,
+            newsletterId: newsletter.id
+          })
+        )).catch(err => console.error("Batch email sending failed:", err));
+      }
+
       res.json({ success: true, newsletter });
     } catch (error) {
       res.status(500).json({ error: "Failed to update newsletter" });
