@@ -25,7 +25,7 @@ export async function sendNewsletterEmail({
 
   try {
     const data = await resend.emails.send({
-      from: 'MED13 Foundation <newsletter@med13.org>',
+      from: 'MED13 Foundation <research@med13.org>',
       to: [to],
       subject: subject,
       html: `
