@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema } from "@shared/schema";
@@ -8,8 +8,21 @@ const GOOGLE_SCRIPT_URL =
 
 const SITE_URL = "https://med13.org";
 
+const ADMIN_PASSWORD = "admins";
+
+function requireAdminAuth(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ error: "Authentication required" });
+  }
+  const token = authHeader.slice(7);
+  if (token !== ADMIN_PASSWORD) {
+    return res.status(403).json({ error: "Invalid credentials" });
+  }
+  next();
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Sitemap.xml for SEO
   app.get("/sitemap.xml", (_req, res) => {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -24,7 +37,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.send(sitemap);
   });
 
-  // Robots.txt for search engine crawling
   app.get("/robots.txt", (_req, res) => {
     const robots = `User-agent: *
 Allow: /
@@ -34,25 +46,20 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     res.send(robots);
   });
 
-  // Newsletter Subscriptions
+  // Public: Newsletter Subscription
   app.post("/api/newsletter/subscribe", async (req, res) => {
     try {
       const validatedData = insertNewsletterSubscriberSchema.parse(req.body);
-
-      // Forward to Google Sheets (legacy behavior preserved)
       try {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8",
-          },
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({ email: validatedData.email }),
           redirect: "follow",
         });
       } catch (e) {
         console.error("Google Sheets sync failed", e);
       }
-
       const subscriber = await storage.addNewsletterSubscriber(validatedData);
       res.json({ success: true, subscriber });
     } catch (error: any) {
@@ -64,7 +71,18 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
-  app.get("/api/newsletter/subscribers", async (_req, res) => {
+  // Admin: Auth check
+  app.post("/api/admin/login", (req, res) => {
+    const { password } = req.body;
+    if (password === ADMIN_PASSWORD) {
+      res.json({ success: true, token: ADMIN_PASSWORD });
+    } else {
+      res.status(403).json({ error: "Invalid password" });
+    }
+  });
+
+  // Admin: Subscribers
+  app.get("/api/admin/subscribers", requireAdminAuth, async (_req, res) => {
     try {
       const subscribers = await storage.getNewsletterSubscribers();
       res.json({ subscribers });
@@ -73,8 +91,17 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
-  // Newsletter Management (Admin/Internal)
-  app.get("/api/newsletters", async (_req, res) => {
+  app.delete("/api/admin/subscribers/:id", requireAdminAuth, async (req, res) => {
+    try {
+      await storage.deleteSubscriber(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to delete subscriber" });
+    }
+  });
+
+  // Admin: Newsletters
+  app.get("/api/admin/newsletters", requireAdminAuth, async (_req, res) => {
     try {
       const newsletters = await storage.getNewsletters();
       res.json({ newsletters });
@@ -83,7 +110,7 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
-  app.post("/api/newsletters", async (req, res) => {
+  app.post("/api/admin/newsletters", requireAdminAuth, async (req, res) => {
     try {
       const validatedData = insertNewsletterSchema.parse(req.body);
       const newsletter = await storage.createNewsletter(validatedData);
@@ -97,12 +124,31 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
-  app.patch("/api/newsletters/:id", async (req, res) => {
+  app.patch("/api/admin/newsletters/:id", requireAdminAuth, async (req, res) => {
     try {
-      const newsletter = await storage.updateNewsletter(req.params.id, req.body);
+      const allowedFields: Record<string, boolean> = { title: true, content: true, status: true, sentAt: true };
+      const sanitized: Record<string, any> = {};
+      for (const key of Object.keys(req.body)) {
+        if (allowedFields[key]) {
+          sanitized[key] = req.body[key];
+        }
+      }
+      if (sanitized.status && !["draft", "sent"].includes(sanitized.status)) {
+        return res.status(400).json({ error: "Invalid status value" });
+      }
+      const newsletter = await storage.updateNewsletter(req.params.id, sanitized);
       res.json({ success: true, newsletter });
     } catch (error) {
       res.status(500).json({ error: "Failed to update newsletter" });
+    }
+  });
+
+  app.delete("/api/admin/newsletters/:id", requireAdminAuth, async (req, res) => {
+    try {
+      await storage.deleteNewsletter(req.params.id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to delete newsletter" });
     }
   });
 

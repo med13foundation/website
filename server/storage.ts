@@ -12,6 +12,8 @@ export interface IStorage {
   getNewsletters(): Promise<Newsletter[]>;
   getNewsletter(id: string): Promise<Newsletter | undefined>;
   updateNewsletter(id: string, update: Partial<Newsletter>): Promise<Newsletter>;
+  deleteNewsletter(id: string): Promise<void>;
+  deleteSubscriber(id: string): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -67,6 +69,13 @@ export class DatabaseStorage implements IStorage {
       throw new Error("Newsletter not found");
     }
     return newsletter;
+  }
+  async deleteNewsletter(id: string): Promise<void> {
+    await db.delete(newsletters).where(eq(newsletters.id, id));
+  }
+
+  async deleteSubscriber(id: string): Promise<void> {
+    await db.delete(newsletterSubscribers).where(eq(newsletterSubscribers.id, id));
   }
 }
 

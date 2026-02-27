@@ -10,6 +10,50 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### February 27, 2026 - Admin Dashboard & Newsletter Management
+
+**Database Migration:**
+- Migrated from in-memory storage (MemStorage) to live PostgreSQL database (Replit Helium)
+- Created `server/db.ts` for Drizzle ORM database connection via `DATABASE_URL`
+- Database is app-scoped (Helium) and not accessible from external systems
+
+**Admin Dashboard (`/admin`):**
+- Password-protected admin panel (test password: `admins`)
+- Simple Bearer token auth via `Authorization` header
+- Login page at `/admin` with session-based token storage
+- Two tabs: Subscribers and Newsletters
+
+**Newsletter Management:**
+- Full CRUD for newsletters (create, read, update, delete)
+- Rich text editor using Tiptap with toolbar: bold, italic, underline, strikethrough, headings (H1-H3), lists, blockquotes, text alignment, links, colors, undo/redo
+- Newsletter preview with site-matched styling
+- Draft/Sent status tracking with mark-as-sent functionality
+- Editor styles match the MED13 website design (fonts, colors, spacing)
+
+**Subscriber Management:**
+- View all email subscribers with join dates
+- Delete individual subscribers with confirmation dialog
+- Subscriber count badge
+
+**Key Files:**
+- `server/db.ts` - Database connection configuration
+- `server/routes.ts` - All API routes with admin auth middleware
+- `client/src/pages/Admin.tsx` - Admin dashboard page
+- `client/src/components/RichTextEditor.tsx` - Tiptap rich text editor
+- `client/src/lib/adminAuth.ts` - Client-side admin auth utilities
+
+**Admin API Endpoints (all require Bearer token):**
+- `POST /api/admin/login` - Authenticate with password
+- `GET /api/admin/subscribers` - List all subscribers
+- `DELETE /api/admin/subscribers/:id` - Remove a subscriber
+- `GET /api/admin/newsletters` - List all newsletters
+- `POST /api/admin/newsletters` - Create a newsletter
+- `PATCH /api/admin/newsletters/:id` - Update a newsletter
+- `DELETE /api/admin/newsletters/:id` - Delete a newsletter
+
+**Dependencies Added:**
+- `@tiptap/react`, `@tiptap/starter-kit`, `@tiptap/extension-underline`, `@tiptap/extension-text-align`, `@tiptap/extension-link`, `@tiptap/extension-color`, `@tiptap/extension-text-style`, `@tiptap/extension-image`, `@tiptap/pm`
+
 ### December 12, 2025 - SEO & Sitemap
 
 **SEO Improvements:**
