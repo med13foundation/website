@@ -31,6 +31,7 @@ import {
   FileText,
   Lock,
   Eye,
+  Link2,
 } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import DOMPurify from "dompurify";
@@ -452,6 +453,20 @@ function NewslettersTab() {
                   >
                     <Edit className="w-4 h-4" />
                   </Button>
+                  {nl.status === "sent" && (
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      onClick={async () => {
+                        const url = `${window.location.origin}/newsletter/${nl.id}`;
+                        await navigator.clipboard.writeText(url);
+                        toast({ title: "Share link copied" });
+                      }}
+                      data-testid={`button-copy-link-${nl.id}`}
+                    >
+                      <Link2 className="w-4 h-4 text-primary" />
+                    </Button>
+                  )}
                   {nl.status === "draft" && (
                     <Button
                       size="icon"

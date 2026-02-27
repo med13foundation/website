@@ -51,8 +51,23 @@ Preferred communication style: Simple, everyday language.
 - `PATCH /api/admin/newsletters/:id` - Update a newsletter
 - `DELETE /api/admin/newsletters/:id` - Delete a newsletter
 
+**Public Newsletter Pages:**
+- Each sent newsletter has a shareable URL at `/newsletter/:id`
+- Page includes: Navigation, hero banner with background image, article with MED13 logo, Share button, Footer
+- Styled to match the main website (same fonts, colors, spacing, hero treatment)
+- Only "sent" newsletters are publicly visible; draft newsletters return 404
+- Share button uses Web Share API (or clipboard fallback)
+- Admin can copy share link for sent newsletters from the newsletter list
+
+**Key Files Added:**
+- `client/src/pages/NewsletterView.tsx` - Public newsletter view page
+
+**Public API Endpoints:**
+- `GET /api/public/newsletters/:id` - View a single published newsletter (sent only)
+
 **Dependencies Added:**
 - `@tiptap/react`, `@tiptap/starter-kit`, `@tiptap/extension-underline`, `@tiptap/extension-text-align`, `@tiptap/extension-link`, `@tiptap/extension-color`, `@tiptap/extension-text-style`, `@tiptap/extension-image`, `@tiptap/pm`
+- `dompurify`, `@types/dompurify` - HTML sanitization for newsletter content
 
 ### December 12, 2025 - SEO & Sitemap
 

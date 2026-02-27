@@ -136,6 +136,9 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
       if (sanitized.status && !["draft", "sent"].includes(sanitized.status)) {
         return res.status(400).json({ error: "Invalid status value" });
       }
+      if (sanitized.sentAt && typeof sanitized.sentAt === "string") {
+        sanitized.sentAt = new Date(sanitized.sentAt);
+      }
       const newsletter = await storage.updateNewsletter(req.params.id, sanitized);
       res.json({ success: true, newsletter });
     } catch (error) {
@@ -149,6 +152,19 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete newsletter" });
+    }
+  });
+
+  // Public: View a single published newsletter
+  app.get("/api/public/newsletters/:id", async (req, res) => {
+    try {
+      const newsletter = await storage.getNewsletter(req.params.id);
+      if (!newsletter || newsletter.status !== "sent") {
+        return res.status(404).json({ error: "Newsletter not found" });
+      }
+      res.json({ newsletter });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch newsletter" });
     }
   });
 
