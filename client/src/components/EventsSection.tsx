@@ -18,7 +18,7 @@ export default function EventsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Card data-testid="card-family-conference">
             <CardHeader>
               <CardTitle className="text-xl font-heading">{t('events.conferenceTitle')}</CardTitle>
@@ -76,6 +76,29 @@ export default function EventsSection() {
                 data-testid="button-learn-more"
               >
                 <a href="https://combinedbrain.org/conferences/" target="_blank" rel="noopener noreferrer">{t('events.learnMore')}</a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card data-testid="card-monthly-gathering">
+            <CardHeader>
+              <CardTitle className="text-xl font-heading">{t('events.monthlyTitle')}</CardTitle>
+              <CardDescription className="flex items-center gap-2 mt-2">
+                <Calendar className="w-4 h-4" />
+                <span>{t('events.monthlyDate')}</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-foreground mb-6">
+                {t('events.monthlyDesc')}
+              </p>
+              <Button 
+                variant="outline" 
+                className="w-full"
+                asChild
+                data-testid="button-monthly-rsvp"
+              >
+                <a href="https://forms.gle/HBAJpfaU7ain3kx86" target="_blank" rel="noopener noreferrer">{t('events.monthlyRsvp')}</a>
               </Button>
             </CardContent>
           </Card>
