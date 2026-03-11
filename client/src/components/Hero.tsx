@@ -46,6 +46,15 @@ export default function Hero() {
             >
               <a href="#about">{t('hero.learnStory')}</a>
             </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
+              asChild
+              data-testid="button-support-mission"
+            >
+              <a href="#donate">{t('hero.supportMission')}</a>
+            </Button>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
