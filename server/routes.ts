@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema } from "@shared/schema";
 import { sendNewsletterEmail } from "./email";
+import { syncSubscribersFromSheet } from "./googleSheets";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
@@ -89,6 +90,16 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
       res.json({ subscribers });
     } catch (error) {
       res.status(500).json({ error: "Failed to retrieve subscribers" });
+    }
+  });
+
+  app.post("/api/admin/subscribers/sync", requireAdminAuth, async (_req, res) => {
+    try {
+      const result = await syncSubscribersFromSheet();
+      res.json({ success: true, ...result });
+    } catch (error: any) {
+      console.error("Google Sheets sync error:", error);
+      res.status(500).json({ error: "Failed to sync from Google Sheets" });
     }
   });
 

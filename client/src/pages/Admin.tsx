@@ -32,6 +32,7 @@ import {
   Lock,
   Eye,
   Link2,
+  RefreshCw,
 } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import DOMPurify from "dompurify";
@@ -120,6 +121,24 @@ function SubscribersTab() {
     },
   });
 
+  const syncMutation = useMutation({
+    mutationFn: async () => {
+      const res = await adminFetch("/api/admin/subscribers/sync", { method: "POST" });
+      if (!res.ok) throw new Error("Failed to sync");
+      return res.json();
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/subscribers"] });
+      toast({
+        title: "Google Sheets sync complete",
+        description: `${data.imported} imported, ${data.skipped} already existed${data.errors?.length ? `, ${data.errors.length} errors` : ""}`,
+      });
+    },
+    onError: () => {
+      toast({ title: "Sync failed", description: "Could not sync from Google Sheets", variant: "destructive" });
+    },
+  });
+
   const subscribers = data?.subscribers || [];
 
   if (isLoading) {
@@ -138,9 +157,21 @@ function SubscribersTab() {
         <h2 className="text-lg font-heading font-semibold" data-testid="text-subscribers-heading">
           Email Subscribers
         </h2>
-        <Badge variant="secondary" data-testid="badge-subscriber-count">
-          {subscribers.length} total
-        </Badge>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => syncMutation.mutate()}
+            disabled={syncMutation.isPending}
+            data-testid="button-sync-sheets"
+          >
+            <RefreshCw className={`w-4 h-4 mr-2 ${syncMutation.isPending ? "animate-spin" : ""}`} />
+            {syncMutation.isPending ? "Syncing..." : "Sync from Google Sheets"}
+          </Button>
+          <Badge variant="secondary" data-testid="badge-subscriber-count">
+            {subscribers.length} total
+          </Badge>
+        </div>
       </div>
 
       {subscribers.length === 0 ? (
