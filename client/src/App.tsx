@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
 import NewsletterView from "@/pages/NewsletterView";
+import Unsubscribe from "@/pages/Unsubscribe";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home}/>
       <Route path="/admin" component={Admin}/>
       <Route path="/newsletter/:id" component={NewsletterView}/>
+      <Route path="/unsubscribe" component={Unsubscribe}/>
       <Route component={NotFound} />
     </Switch>
   );

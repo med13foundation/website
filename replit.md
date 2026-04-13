@@ -10,6 +10,34 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### April 13, 2026 - Newsletter System Upgrade
+
+**Editor Enhancements:**
+- Image insertion via URL
+- Font size control (small/normal/large/x-large)
+- Text highlight with 8 preset highlight colors
+- Visual color picker with 20 preset text colors + custom hex input
+- Table support (insert, add/remove rows/columns, delete)
+- Call-to-action button insertion (styled inline buttons with links)
+- Text alignment: added justify option
+- Clear formatting button
+- Word and character count in footer bar
+- Placeholder text using Tiptap Placeholder extension
+
+**New Tiptap Extensions:**
+- `@tiptap/extension-highlight`, `@tiptap/extension-table`, `@tiptap/extension-table-row`, `@tiptap/extension-table-cell`, `@tiptap/extension-table-header`, `@tiptap/extension-placeholder`, `@tiptap/extension-character-count`
+
+**System Improvements:**
+- Unsubscribe support: every email includes an unsubscribe link; new `/unsubscribe` page; `POST /api/newsletter/unsubscribe` endpoint; `List-Unsubscribe` email header
+- Test email: send a preview to any email before publishing (`POST /api/admin/newsletters/:id/test-email`)
+- Duplicate newsletter: clone any newsletter as a new draft (`POST /api/admin/newsletters/:id/duplicate`)
+- Email batching: sends in batches of 10 with 1-second delay to avoid rate limits
+- Send confirmation dialog: publishing now requires explicit confirmation
+- Branded email template: styled header with MED13 logo colors, footer with unsubscribe + view-in-browser links
+
+**New Files:**
+- `client/src/pages/Unsubscribe.tsx` - Public unsubscribe page
+
 ### February 27, 2026 - Admin Dashboard & Newsletter Management
 
 **Database Migration:**

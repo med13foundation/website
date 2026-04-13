@@ -2,7 +2,7 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema } from "@shared/schema";
-import { sendNewsletterEmail } from "./email";
+import { sendNewsletterEmail, sendNewsletterBatch, sendTestEmail } from "./email";
 import { syncSubscribersFromSheet } from "./googleSheets";
 
 const GOOGLE_SCRIPT_URL =
@@ -73,6 +73,20 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
+  // Public: Unsubscribe
+  app.post("/api/newsletter/unsubscribe", async (req, res) => {
+    try {
+      const { email } = req.body;
+      if (!email || typeof email !== "string") {
+        return res.status(400).json({ error: "Email is required" });
+      }
+      await storage.removeSubscriberByEmail(email);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to unsubscribe" });
+    }
+  });
+
   // Admin: Auth check
   app.post("/api/admin/login", (req, res) => {
     const { password } = req.body;
@@ -136,8 +150,56 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
+  // Admin: Duplicate newsletter
+  app.post("/api/admin/newsletters/:id/duplicate", requireAdminAuth, async (req, res) => {
+    try {
+      const original = await storage.getNewsletter(req.params.id);
+      if (!original) {
+        return res.status(404).json({ error: "Newsletter not found" });
+      }
+      const duplicate = await storage.createNewsletter({
+        title: `${original.title} (Copy)`,
+        content: original.content,
+      });
+      res.json({ success: true, newsletter: duplicate });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to duplicate newsletter" });
+    }
+  });
+
+  // Admin: Send test email
+  app.post("/api/admin/newsletters/:id/test-email", requireAdminAuth, async (req, res) => {
+    try {
+      const { email } = req.body;
+      if (!email) {
+        return res.status(400).json({ error: "Email address is required" });
+      }
+      const newsletter = await storage.getNewsletter(req.params.id);
+      if (!newsletter) {
+        return res.status(404).json({ error: "Newsletter not found" });
+      }
+      const result = await sendTestEmail({
+        to: email,
+        subject: newsletter.title,
+        html: newsletter.content,
+        newsletterId: newsletter.id,
+      });
+      if (!result.success) {
+        return res.status(500).json({ error: "Email delivery failed" });
+      }
+      res.json({ success: true, id: result.id });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to send test email" });
+    }
+  });
+
   app.patch("/api/admin/newsletters/:id", requireAdminAuth, async (req, res) => {
     try {
+      const existing = await storage.getNewsletter(req.params.id);
+      if (!existing) {
+        return res.status(404).json({ error: "Newsletter not found" });
+      }
+
       const allowedFields: Record<string, boolean> = { title: true, content: true, status: true, sentAt: true };
       const sanitized: Record<string, any> = {};
       for (const key of Object.keys(req.body)) {
@@ -153,18 +215,20 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
       }
       const newsletter = await storage.updateNewsletter(req.params.id, sanitized);
       
-      // If marked as sent, trigger email delivery to all subscribers
-      if (sanitized.status === "sent") {
+      const isNewSend = sanitized.status === "sent" && existing.status === "draft";
+      if (isNewSend) {
         const subscribers = await storage.getNewsletterSubscribers();
-        // We do this asynchronously to not block the response
-        Promise.all(subscribers.map(sub => 
-          sendNewsletterEmail({
-            to: sub.email,
-            subject: newsletter.title,
-            html: newsletter.content,
-            newsletterId: newsletter.id
-          })
-        )).catch(err => console.error("Batch email sending failed:", err));
+        sendNewsletterBatch({
+          subscribers,
+          subject: newsletter.title,
+          html: newsletter.content,
+          newsletterId: newsletter.id,
+        }).then(result => {
+          console.log(`Newsletter "${newsletter.title}" sent: ${result.sent} delivered, ${result.failed} failed`);
+          if (result.errors.length > 0) {
+            console.log("Send errors:", result.errors.slice(0, 10));
+          }
+        }).catch(err => console.error("Batch email sending failed:", err));
       }
 
       res.json({ success: true, newsletter });

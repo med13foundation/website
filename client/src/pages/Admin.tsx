@@ -34,6 +34,8 @@ import {
   Link2,
   RefreshCw,
   Calendar,
+  Copy,
+  TestTube,
 } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import DOMPurify from "dompurify";
@@ -423,7 +425,45 @@ function NewslettersTab() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/admin/newsletters"] });
-      toast({ title: "Newsletter marked as sent" });
+      toast({ title: "Newsletter published & emails sending" });
+    },
+  });
+
+  const duplicateMutation = useMutation({
+    mutationFn: async (id: string) => {
+      const res = await adminFetch(`/api/admin/newsletters/${id}/duplicate`, { method: "POST" });
+      if (!res.ok) throw new Error("Failed to duplicate");
+      return res.json();
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/newsletters"] });
+      toast({ title: "Newsletter duplicated" });
+      setSelected(data.newsletter);
+      setView("editor");
+    },
+    onError: () => {
+      toast({ title: "Failed to duplicate", variant: "destructive" });
+    },
+  });
+
+  const [testEmailTarget, setTestEmailTarget] = useState("");
+  const [testEmailNlId, setTestEmailNlId] = useState("");
+  const testEmailMutation = useMutation({
+    mutationFn: async ({ id, email }: { id: string; email: string }) => {
+      const res = await adminFetch(`/api/admin/newsletters/${id}/test-email`, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Failed to send test");
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({ title: "Test email sent" });
+      setTestEmailTarget("");
+      setTestEmailNlId("");
+    },
+    onError: () => {
+      toast({ title: "Failed to send test email", variant: "destructive" });
     },
   });
 
@@ -510,6 +550,7 @@ function NewslettersTab() {
                     variant="ghost"
                     onClick={() => { setSelected(nl); setView("preview"); }}
                     data-testid={`button-preview-newsletter-${nl.id}`}
+                    title="Preview"
                   >
                     <Eye className="w-4 h-4" />
                   </Button>
@@ -518,9 +559,57 @@ function NewslettersTab() {
                     variant="ghost"
                     onClick={() => { setSelected(nl); setView("editor"); }}
                     data-testid={`button-edit-newsletter-${nl.id}`}
+                    title="Edit"
                   >
                     <Edit className="w-4 h-4" />
                   </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    onClick={() => duplicateMutation.mutate(nl.id)}
+                    data-testid={`button-duplicate-newsletter-${nl.id}`}
+                    title="Duplicate"
+                  >
+                    <Copy className="w-4 h-4" />
+                  </Button>
+                  <AlertDialog open={testEmailNlId === nl.id} onOpenChange={(open) => { if (!open) { setTestEmailNlId(""); setTestEmailTarget(""); } }}>
+                    <AlertDialogTrigger asChild>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        onClick={() => setTestEmailNlId(nl.id)}
+                        data-testid={`button-test-email-${nl.id}`}
+                        title="Send test email"
+                      >
+                        <TestTube className="w-4 h-4" />
+                      </Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Send Test Email</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Send a preview of "{nl.title}" to test how it looks in an inbox.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <Input
+                        type="email"
+                        placeholder="your@email.com"
+                        value={testEmailTarget}
+                        onChange={(e) => setTestEmailTarget(e.target.value)}
+                        data-testid="input-test-email-address"
+                      />
+                      <AlertDialogFooter>
+                        <AlertDialogCancel data-testid="button-cancel-test-email">Cancel</AlertDialogCancel>
+                        <AlertDialogAction
+                          disabled={!testEmailTarget.trim() || testEmailMutation.isPending}
+                          onClick={() => testEmailMutation.mutate({ id: nl.id, email: testEmailTarget })}
+                          data-testid="button-confirm-test-email"
+                        >
+                          {testEmailMutation.isPending ? "Sending..." : "Send Test"}
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                   {nl.status === "sent" && (
                     <Button
                       size="icon"
@@ -531,23 +620,45 @@ function NewslettersTab() {
                         toast({ title: "Share link copied" });
                       }}
                       data-testid={`button-copy-link-${nl.id}`}
+                      title="Copy share link"
                     >
                       <Link2 className="w-4 h-4 text-primary" />
                     </Button>
                   )}
                   {nl.status === "draft" && (
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      onClick={() => markSentMutation.mutate(nl.id)}
-                      data-testid={`button-mark-sent-${nl.id}`}
-                    >
-                      <Send className="w-4 h-4 text-primary" />
-                    </Button>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button
+                          size="icon"
+                          variant="ghost"
+                          data-testid={`button-mark-sent-${nl.id}`}
+                          title="Publish & send"
+                        >
+                          <Send className="w-4 h-4 text-primary" />
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Publish & Send Newsletter?</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            This will publish "{nl.title}" and send it to all subscribers via email. This action cannot be undone.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel data-testid="button-cancel-send">Cancel</AlertDialogCancel>
+                          <AlertDialogAction
+                            onClick={() => markSentMutation.mutate(nl.id)}
+                            data-testid="button-confirm-send"
+                          >
+                            Publish & Send
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
                   )}
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
-                      <Button size="icon" variant="ghost" data-testid={`button-delete-newsletter-${nl.id}`}>
+                      <Button size="icon" variant="ghost" data-testid={`button-delete-newsletter-${nl.id}`} title="Delete">
                         <Trash2 className="w-4 h-4 text-destructive" />
                       </Button>
                     </AlertDialogTrigger>

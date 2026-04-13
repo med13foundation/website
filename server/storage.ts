@@ -6,6 +6,7 @@ export interface IStorage {
   // Subscribers
   addNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
   getNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
+  removeSubscriberByEmail(email: string): Promise<void>;
   
   // Newsletters
   createNewsletter(newsletter: InsertNewsletter): Promise<Newsletter>;
@@ -18,10 +19,11 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async addNewsletterSubscriber(insertSubscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
+    const normalizedEmail = insertSubscriber.email.toLowerCase();
     const [existing] = await db
       .select()
       .from(newsletterSubscribers)
-      .where(eq(newsletterSubscribers.email, insertSubscriber.email));
+      .where(eq(newsletterSubscribers.email, normalizedEmail));
 
     if (existing) {
       return existing;
@@ -29,7 +31,7 @@ export class DatabaseStorage implements IStorage {
 
     const [subscriber] = await db
       .insert(newsletterSubscribers)
-      .values(insertSubscriber)
+      .values({ ...insertSubscriber, email: normalizedEmail })
       .returning();
     return subscriber;
   }
@@ -76,6 +78,10 @@ export class DatabaseStorage implements IStorage {
 
   async deleteSubscriber(id: string): Promise<void> {
     await db.delete(newsletterSubscribers).where(eq(newsletterSubscribers.id, id));
+  }
+
+  async removeSubscriberByEmail(email: string): Promise<void> {
+    await db.delete(newsletterSubscribers).where(eq(newsletterSubscribers.email, email.toLowerCase()));
   }
 }
 

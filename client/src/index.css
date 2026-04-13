@@ -409,6 +409,53 @@
   margin: 1rem 0;
 }
 
+.tiptap table,
+.newsletter-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.tiptap table td,
+.tiptap table th,
+.newsletter-content table td,
+.newsletter-content table th {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tiptap table th,
+.newsletter-content table th {
+  background: hsl(var(--muted));
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.tiptap table td,
+.newsletter-content table td {
+  font-size: 0.875rem;
+}
+
+.tiptap .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+  height: 0;
+}
+
+.tiptap mark {
+  border-radius: 0.125rem;
+  padding: 0.125rem 0.25rem;
+}
+
+.newsletter-content mark {
+  border-radius: 0.125rem;
+  padding: 0.125rem 0.25rem;
+}
+
 @layer utilities {
 
   /* Hide ugly search cancel button in Chrome until we can style it properly */
