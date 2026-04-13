@@ -33,11 +33,15 @@ import {
   Eye,
   Link2,
   RefreshCw,
+  Calendar,
 } from "lucide-react";
 import RichTextEditor from "@/components/RichTextEditor";
 import DOMPurify from "dompurify";
 import type { Newsletter, NewsletterSubscriber } from "@shared/schema";
 import { Link } from "wouter";
+import logoUrl from "@assets/Med 13_1764216026949.png";
+import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
+import { Separator } from "@/components/ui/separator";
 
 function LoginForm({ onLogin }: { onLogin: () => void }) {
   const [password, setPassword] = useState("");
@@ -312,6 +316,12 @@ function NewsletterEditor({
 }
 
 function NewsletterPreview({ newsletter, onClose }: { newsletter: Newsletter; onClose: () => void }) {
+  const formattedDate = new Date(newsletter.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2 flex-wrap">
@@ -319,34 +329,61 @@ function NewsletterPreview({ newsletter, onClose }: { newsletter: Newsletter; on
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </Button>
-        <h2 className="text-lg font-heading font-semibold">Preview</h2>
+        <h2 className="text-lg font-heading font-semibold">Preview (as published)</h2>
       </div>
-      <Card>
-        <CardContent className="py-6">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-6 pb-4 border-b">
-              <h1 className="text-2xl font-heading font-bold text-primary mb-1" data-testid="text-preview-title">
-                {newsletter.title}
-              </h1>
-              <p className="text-xs text-muted-foreground">
-                {new Date(newsletter.createdAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-            </div>
-            <div
-              className="prose prose-sm max-w-none"
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(newsletter.content) }}
-              data-testid="text-preview-content"
-            />
-            <div className="mt-8 pt-4 border-t text-center text-xs text-muted-foreground">
-              MED13 Foundation Newsletter
+
+      <div className="rounded-lg overflow-hidden border border-border">
+        <section className="relative py-12 sm:py-16 overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroBackground})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
+          <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Badge
+              variant="outline"
+              className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white"
+            >
+              <Calendar className="w-3 h-3 mr-1" />
+              {formattedDate}
+            </Badge>
+            <h1
+              className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-4"
+              data-testid="text-preview-title"
+            >
+              {newsletter.title}
+            </h1>
+          </div>
+        </section>
+
+        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-background">
+          <div className="flex items-center gap-3 mb-8">
+            <img src={logoUrl} alt="MED13 Foundation" className="h-10 w-10" />
+            <div>
+              <p className="text-sm font-heading font-semibold">MED13 Foundation</p>
+              <p className="text-xs text-muted-foreground">Newsletter</p>
             </div>
           </div>
-        </CardContent>
-      </Card>
+
+          <Separator className="mb-8" />
+
+          <div
+            className="newsletter-content prose prose-sm sm:prose max-w-none"
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(newsletter.content) }}
+            data-testid="text-preview-content"
+          />
+
+          <Separator className="my-10" />
+
+          <div className="text-center py-6">
+            <img src={logoUrl} alt="MED13 Foundation" className="h-14 w-14 mx-auto mb-3" />
+            <p className="text-sm font-heading font-semibold text-foreground mb-1">MED13 Foundation</p>
+            <p className="text-xs text-muted-foreground mb-4">
+              Supporting families affected by MED13 syndrome
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }
