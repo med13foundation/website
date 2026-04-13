@@ -104,7 +104,10 @@
     "monthlyTitle": "Monthly Family Gatherings",
     "monthlyDate": "First Monday of each month",
     "monthlyDesc": "Join our monthly gathering to connect with other MED13 families. We'll meet for one hour on Google Meet, rotating times each month so families across time zones can join. Each call starts with introductions and check-ins, then we reflect on a short prompt sent the week before. Invite-only to keep it comfortable.",
-    "monthlyRsvp": "RSVP for Monthly Calls"
+    "monthlyRsvp": "RSVP for Monthly Calls",
+    "newsletterArchiveTitle": "Newsletter Archive",
+    "newsletterArchiveSubtitle": "Read our past newsletters and stay up to date with the MED13 community",
+    "readNewsletter": "Read"
   },
   "quickFacts": {
     "title": "Quick Facts About MED13 Syndrome",

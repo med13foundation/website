@@ -1,7 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Calendar, MapPin, Users, FileText } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 
 export default function EventsSection() {
   const { t } = useTranslation();
@@ -103,7 +106,64 @@ export default function EventsSection() {
             </CardContent>
           </Card>
         </div>
+
+        <NewsletterArchive />
       </div>
     </section>
+  );
+}
+
+function NewsletterArchive() {
+  const { t } = useTranslation();
+
+  const { data } = useQuery<{ newsletters: { id: string; title: string; sentAt: string }[] }>({
+    queryKey: ["/api/public/newsletters"],
+  });
+
+  const newsletters = data?.newsletters || [];
+
+  if (newsletters.length === 0) return null;
+
+  return (
+    <div className="mt-16 max-w-3xl mx-auto">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-newsletter-archive-title">
+          {t('events.newsletterArchiveTitle')}
+        </h3>
+        <p className="text-muted-foreground" data-testid="text-newsletter-archive-subtitle">
+          {t('events.newsletterArchiveSubtitle')}
+        </p>
+      </div>
+      <div className="space-y-3">
+        {newsletters.map((nl) => (
+          <Link key={nl.id} href={`/newsletter/${nl.id}`}>
+            <Card className="hover-elevate cursor-pointer" data-testid={`card-newsletter-archive-${nl.id}`}>
+              <CardContent className="flex items-center justify-between gap-3 py-4 flex-wrap">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 shrink-0">
+                    <FileText className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium truncate" data-testid={`text-archive-title-${nl.id}`}>
+                      {nl.title}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {new Date(nl.sentAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </p>
+                  </div>
+                </div>
+                <Badge variant="outline" className="shrink-0">
+                  {t('events.readNewsletter')}
+                </Badge>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

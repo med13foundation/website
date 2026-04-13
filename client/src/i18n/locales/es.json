@@ -104,7 +104,10 @@
     "monthlyTitle": "Reuniones Mensuales Familiares",
     "monthlyDate": "Primer lunes de cada mes",
     "monthlyDesc": "Únete a nuestro encuentro mensual para conectarte con otras familias MED13. Nos reuniremos durante una hora en Google Meet, alternando horarios cada mes para que las familias de diferentes zonas horarias puedan asistir. Cada llamada comienza con introducciones y actualizaciones, luego reflexionamos sobre un tema breve enviado la semana anterior. Invitación exclusiva para mantenerlo cómodo.",
-    "monthlyRsvp": "RSVP para Llamadas Mensuales"
+    "monthlyRsvp": "RSVP para Llamadas Mensuales",
+    "newsletterArchiveTitle": "Archivo de Boletines",
+    "newsletterArchiveSubtitle": "Lee nuestros boletines anteriores y mantente al día con la comunidad MED13",
+    "readNewsletter": "Leer"
   },
   "quickFacts": {
     "title": "Datos Rápidos sobre el Síndrome MED13",

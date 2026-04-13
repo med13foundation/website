@@ -182,7 +182,18 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
     }
   });
 
-  // Public: View a single published newsletter
+  app.get("/api/public/newsletters", async (_req, res) => {
+    try {
+      const allNewsletters = await storage.getNewsletters();
+      const published = allNewsletters
+        .filter((nl) => nl.status === "sent")
+        .map((nl) => ({ id: nl.id, title: nl.title, sentAt: nl.sentAt }));
+      res.json({ newsletters: published });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch newsletters" });
+    }
+  });
+
   app.get("/api/public/newsletters/:id", async (req, res) => {
     try {
       const newsletter = await storage.getNewsletter(req.params.id);
