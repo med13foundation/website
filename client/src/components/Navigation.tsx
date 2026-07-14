@@ -27,22 +27,22 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <a href="#about" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
+            <Link href="/who-we-are" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
               {t('nav.about')}
-            </a>
-            <a href="#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
+            </Link>
+            <a href="/#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </a>
-            <a href="#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
+            <a href="/#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
               {t('nav.roadmap')}
             </a>
-            <a href="#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
+            <a href="/#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
               {t('nav.events')}
             </a>
             <Link href="/gala" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-gala">
               {t('gala.navLink')}
             </Link>
-            <a href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
+            <a href="/#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               {t('nav.contact')}
             </a>
             <LanguageSwitcher />
@@ -52,7 +52,7 @@ export default function Navigation() {
               asChild
               data-testid="button-donate"
             >
-              <a href="#donate">{t('nav.donate')}</a>
+              <a href="/#donate">{t('nav.donate')}</a>
             </Button>
           </div>
 
@@ -69,16 +69,16 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <a 
-              href="#about" 
+            <Link 
+              href="/who-we-are" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-about"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('nav.about')}
-            </a>
+            </Link>
             <a 
-              href="#get-involved" 
+              href="/#get-involved" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-get-involved"
               onClick={() => setMobileMenuOpen(false)}
@@ -86,7 +86,7 @@ export default function Navigation() {
               {t('nav.getInvolved')}
             </a>
             <a 
-              href="#roadmap" 
+              href="/#roadmap" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-roadmap"
               onClick={() => setMobileMenuOpen(false)}
@@ -94,7 +94,7 @@ export default function Navigation() {
               {t('nav.roadmap')}
             </a>
             <a 
-              href="#events" 
+              href="/#events" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-events"
               onClick={() => setMobileMenuOpen(false)}
@@ -110,7 +110,7 @@ export default function Navigation() {
               {t('gala.navLink')}
             </Link>
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-contact"
               onClick={() => setMobileMenuOpen(false)}
@@ -126,7 +126,7 @@ export default function Navigation() {
               asChild
               data-testid="button-mobile-donate"
             >
-              <a href="#donate" onClick={() => setMobileMenuOpen(false)}>{t('nav.donate')}</a>
+              <a href="/#donate" onClick={() => setMobileMenuOpen(false)}>{t('nav.donate')}</a>
             </Button>
           </div>
         </div>

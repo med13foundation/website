@@ -40,6 +40,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>${SITE_URL}/who-we-are</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>`;
     res.header("Content-Type", "application/xml");
     res.send(sitemap);

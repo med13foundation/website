@@ -8,6 +8,7 @@ import Admin from "@/pages/Admin";
 import NewsletterView from "@/pages/NewsletterView";
 import Unsubscribe from "@/pages/Unsubscribe";
 import Gala from "@/pages/Gala";
+import WhoWeAre from "@/pages/WhoWeAre";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/newsletter/:id" component={NewsletterView}/>
       <Route path="/unsubscribe" component={Unsubscribe}/>
       <Route path="/gala" component={Gala}/>
+      <Route path="/who-we-are" component={WhoWeAre}/>
       <Route component={NotFound} />
     </Switch>
   );

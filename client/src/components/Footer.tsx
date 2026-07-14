@@ -14,17 +14,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-story">
+                <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-story">
                   {t('footer.ourStory')}
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-community">
+                <a href="/#about" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-community">
                   {t('footer.ourCommunity')}
                 </a>
               </li>
               <li>
-                <a href="#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
+                <a href="/#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
                   {t('footer.researchRoadmap')}
                 </a>
               </li>
@@ -37,17 +37,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
+                <a href="/#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
                   {t('footer.joinResearch')}
                 </a>
               </li>
               <li>
-                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-board">
+                <a href="/#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-board">
                   {t('footer.boardOpportunities')}
                 </a>
               </li>
               <li>
-                <a href="#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-volunteer">
+                <a href="/#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-volunteer">
                   {t('footer.volunteer')}
                 </a>
               </li>
@@ -65,7 +65,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
+                <a href="/#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
                   {t('footer.events')}
                 </a>
               </li>
