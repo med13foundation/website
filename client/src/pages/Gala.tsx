@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import logoUrl from "@assets/Med 13_1764216026949.png";
+import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "research@med13.org";
 
@@ -98,7 +98,7 @@ export default function Gala() {
         <SparkleAccent className="w-7 h-7 text-[#2D7A89]/50 bottom-10 right-[18%]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img src={logoUrl} alt="MED13 Foundation Logo" className="h-16 w-16 mx-auto mb-6" data-testid="img-gala-logo" />
+          <img src={logoUrl} alt="MED13 Foundation Logo" className="h-20 w-auto mx-auto mb-6" data-testid="img-gala-logo" />
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#E67E5C] mb-4" data-testid="text-gala-eyebrow">
             {t("gala.eyebrow")}
           </p>
