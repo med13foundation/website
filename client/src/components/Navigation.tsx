@@ -39,6 +39,9 @@ export default function Navigation() {
             <a href="#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
               {t('nav.events')}
             </a>
+            <Link href="/gala" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-gala">
+              {t('gala.navLink')}
+            </Link>
             <a href="#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               {t('nav.contact')}
             </a>
@@ -98,6 +101,14 @@ export default function Navigation() {
             >
               {t('nav.events')}
             </a>
+            <Link 
+              href="/gala" 
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
+              data-testid="link-mobile-gala"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('gala.navLink')}
+            </Link>
             <a 
               href="#contact" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 

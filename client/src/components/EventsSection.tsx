@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -20,6 +20,29 @@ export default function EventsSection() {
             {t('events.subtitle')}
           </p>
         </div>
+
+        <Card className="max-w-6xl mx-auto mb-8" data-testid="card-gala-event">
+          <CardHeader>
+            <CardTitle className="text-xl font-heading flex items-center gap-2 flex-wrap">
+              <Sparkles className="w-5 h-5 text-primary" />
+              {t('gala.eventCardTitle')}
+            </CardTitle>
+            <CardDescription className="flex items-center gap-2 mt-2">
+              <Calendar className="w-4 h-4" />
+              <span>{t('gala.eventCardDate')}</span>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-start gap-2 text-sm mb-4">
+              <MapPin className="w-4 h-4 mt-0.5 text-muted-foreground" />
+              <span className="text-foreground">{t('gala.location')}, {t('gala.address')}</span>
+            </div>
+            <p className="text-sm text-foreground mb-6">{t('gala.eventCardDesc')}</p>
+            <Button asChild data-testid="button-gala-details">
+              <Link href="/gala">{t('gala.eventCardButton')}</Link>
+            </Button>
+          </CardContent>
+        </Card>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <Card data-testid="card-family-conference">
