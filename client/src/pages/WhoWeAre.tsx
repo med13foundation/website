@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Users, Microscope, Handshake } from "lucide-react";
+import { Mail, Users, Microscope, Stethoscope, Handshake } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -34,6 +34,12 @@ const advisors: Member[] = [
   { id: "katrina-cooper", name: "Katrina Cooper, PhD", roleKey: "whoWeAre.advisor3Role" },
   { id: "angelica-delgado-vega", name: "Angelica Delgado-Vega, MD, PhD", roleKey: "whoWeAre.advisor4Role" },
   { id: "ann-nordgren", name: "Ann Nordgren, MD, PhD", roleKey: "whoWeAre.advisor5Role" },
+  { id: "dylan-taatjes", name: "Dylan J. Taatjes, PhD", roleKey: "whoWeAre.advisor6Role" },
+  { id: "katja-brose", name: "Katja Brose, PhD", roleKey: "whoWeAre.advisor7Role" },
+];
+
+const clinicians: Member[] = [
+  { id: "carla-marini", name: "Carla Marini, MD, PhD", roleKey: "whoWeAre.clinician1Role" },
 ];
 
 const partners = [
@@ -189,8 +195,28 @@ export default function WhoWeAre() {
         </div>
       </section>
 
+      {/* Clinical Advisory Board */}
+      <section className="py-16 bg-muted/40" data-testid="section-who-cab">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="flex justify-center mb-3">
+              <Stethoscope className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+            </div>
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
+              {t("whoWeAre.cabTitle")}
+            </h2>
+            <p className="text-muted-foreground">{t("whoWeAre.cabSubtitle")}</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+            {clinicians.map((m) => (
+              <MemberCard key={m.id} member={m} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Board Openings */}
-      <section className="py-16 bg-muted/40" data-testid="section-who-openings">
+      <section className="py-16" data-testid="section-who-openings">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-heading font-bold text-foreground mb-4">
             {t("whoWeAre.openingsTitle")}
@@ -206,7 +232,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Partners */}
-      <section className="py-16" data-testid="section-who-partners">
+      <section className="py-16 bg-muted/40" data-testid="section-who-partners">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-3">
             <Handshake className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
