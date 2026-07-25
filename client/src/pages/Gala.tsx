@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "research@med13.org";
+const SPONSOR_EMAIL = "partnerships@med13.org";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -72,11 +73,17 @@ export default function Gala() {
     { icon: UtensilsCrossed, title: t("gala.auction4Title"), desc: t("gala.auction4Desc") },
   ];
 
-  const sponsors = [1, 2, 3, 4, 5].map((i) => ({
+  const sponsors = [1, 2, 3, 4, 5, 6].map((i) => ({
     title: t(`gala.sponsor${i}Title`),
     amount: t(`gala.sponsor${i}Amount`),
     desc: t(`gala.sponsor${i}Desc`),
     featured: i === 1,
+  }));
+
+  const moments = [1, 2, 3, 4, 5].map((i) => ({
+    title: t(`gala.moment${i}Title`),
+    amount: t(`gala.moment${i}Amount`),
+    desc: t(`gala.moment${i}Desc`),
   }));
 
   const funds = [1, 2, 3].map((i) => ({
@@ -306,7 +313,7 @@ export default function Gala() {
             {t("gala.sponsorDeadline")}
           </p>
           <Button className="mt-4" variant="outline" asChild data-testid="button-gala-sponsor-contact">
-            <a href={`mailto:${RSVP_EMAIL}?subject=Sponsorship%20-%20An%20Evening%20for%20Answers`}>
+            <a href={`mailto:${SPONSOR_EMAIL}?subject=Sponsorship%20-%20An%20Evening%20for%20Answers`}>
               <Mail className="w-4 h-4 mr-2" />
               {t("gala.sponsorContact")}
             </a>
@@ -314,8 +321,37 @@ export default function Gala() {
         </div>
       </section>
 
+      {/* Named moments */}
+      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-moments">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10">
+            <p className="text-sm font-semibold tracking-widest uppercase text-destructive mb-3">{t("gala.momentsEyebrow")}</p>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-4" data-testid="text-gala-moments-title">
+              {t("gala.momentsTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground">{t("gala.momentsDesc")}</p>
+          </div>
+          <div className="space-y-4">
+            {moments.map((m, i) => (
+              <Card key={i} data-testid={`card-gala-moment-${i + 1}`}>
+                <CardContent className="pt-6 flex items-start justify-between gap-4 flex-wrap">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold tracking-widest uppercase text-secondary mb-2">{m.title}</p>
+                    <p className="text-sm text-muted-foreground">{m.desc}</p>
+                  </div>
+                  <p className="text-2xl font-heading font-bold text-primary shrink-0">{m.amount}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6" data-testid="text-gala-moments-inkind">
+            {t("gala.momentsInKind")}
+          </p>
+        </div>
+      </section>
+
       {/* What your gift funds */}
-      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-funds">
+      <section className="py-16 sm:py-24" data-testid="section-gala-funds">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <p className="text-sm font-semibold tracking-widest uppercase text-destructive mb-3">{t("gala.fundsEyebrow")}</p>
