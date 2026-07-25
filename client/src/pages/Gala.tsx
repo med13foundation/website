@@ -23,7 +23,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import logoUrl from "@assets/gala_disco_logo.png";
 
-const RSVP_EMAIL = "research@med13.org";
+const RSVP_EMAIL = "gala@med13.org";
 const SPONSOR_EMAIL = "partnerships@med13.org";
 
 function SparkleAccent({ className }: { className?: string }) {
