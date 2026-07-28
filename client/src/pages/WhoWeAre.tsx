@@ -36,7 +36,7 @@ const directors: Member[] = [
     photo: "/images/riyad_hafeez.jpg",
     bio: "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity oversight, and digital innovation across Saudi Arabia and international markets, spanning sectors from banking and government to health and retail. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion care and advocacy for affected families. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
   },
-  { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role" },
+  { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role", photo: "/images/blair_young.png" },
   {
     id: "charlotte-buchanan",
     name: "Charlotte Buchanan",
