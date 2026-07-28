@@ -121,7 +121,7 @@ const partners: Partner[] = [
 
   { name: "MED12 Foundation", logo: "/images/med12_foundation.png" },
   { name: "MED13L Foundation", logo: "/images/med13l_foundation.png" },
-  { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance.png", tall: true },
+  { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", tall: true },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
@@ -141,12 +141,12 @@ function MemberCard({ member }: { member: Member }) {
   return (
     <Card className="overflow-hidden" data-testid={`card-member-${member.id}`}>
       {/* Photo */}
-      <div className="w-full aspect-square bg-[#68B0AB]/10 overflow-hidden">
+      <div className="w-full h-44 bg-[#68B0AB]/10 overflow-hidden">
         {member.photo ? (
           <img
             src={member.photo}
             alt={member.name}
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top grayscale"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
