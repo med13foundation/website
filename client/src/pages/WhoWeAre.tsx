@@ -95,6 +95,7 @@ const clinicians: Member[] = [
     id: "angelica-delgado-vega",
     name: "Angelica Delgado-Vega, MD, PhD",
     roleKey: "whoWeAre.advisor4Role",
+    photo: "/images/angelica_delgado.png",
     bio: "Clinical geneticist focused on the diagnosis and characterization of rare neurodevelopmental disorders, contributing European clinical and genomic expertise.",
   },
   {
