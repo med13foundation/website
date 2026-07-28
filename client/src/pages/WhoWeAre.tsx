@@ -27,7 +27,7 @@ const directors: Member[] = [
   },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez.png" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik.png" },
-  { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role" },
+  { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role", photo: "/images/cindy_badon.png" },
   { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role", photo: "/images/marissa_shorey.png" },
   {
     id: "riyad-hafeez",
