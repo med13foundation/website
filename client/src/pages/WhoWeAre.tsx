@@ -102,6 +102,7 @@ const clinicians: Member[] = [
     id: "ann-nordgren",
     name: "Ann Nordgren, MD, PhD",
     roleKey: "whoWeAre.advisor5Role",
+    photo: "/images/ann_nordgren.png",
     bio: "Senior clinical geneticist at Karolinska Institute in Stockholm, specializing in rare genetic disorders and rare disease gene discovery and diagnostics.",
   },
 ];
