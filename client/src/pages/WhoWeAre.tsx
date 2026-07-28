@@ -23,7 +23,7 @@ const directors: Member[] = [
     name: "Amy Krystosik, PhD, MPH",
     roleKey: "whoWeAre.director1Role",
     photo: "/images/amy_krystosik.png",
-    bio: "Epidemiologist and data scientist turned rare-disease founder. After her son's MED13 diagnosis, she founded the MED13 Foundation in 2024 to build the infrastructure families need to reach emerging therapies — a biorepository, natural-history registry, and clinical protocols developed through COMBINEDBrain. Previously spent six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology; MPH in international health and development; postdoctoral training in pediatric infectious disease epidemiology and community health at Stanford School of Medicine.",
+    bio: "Epidemiologist and data scientist who became a rare-disease founder after her son's MED13 diagnosis. She founded the MED13 Foundation in 2024 to build the infrastructure families need to reach emerging therapies, including a biorepository, natural-history registry, and clinical protocols developed through COMBINEDBrain. She previously spent six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology; MPH in international health and development; postdoctoral training in pediatric infectious disease epidemiology and community health at Stanford School of Medicine.",
   },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez.png" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik.png" },
@@ -63,7 +63,8 @@ const advisors: Member[] = [
     id: "dylan-taatjes",
     name: "Dylan J. Taatjes, PhD",
     roleKey: "whoWeAre.advisor6Role",
-    bio: "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module — the machinery at the center of the Medopathies. His landmark discovery established foundational links between the gene transcription disrupted across all three MEDopathy genes.",
+    photo: "/images/dylan_taatjes.png",
+    bio: "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module, the machinery at the center of the Medopathies. His landmark discovery established foundational links in the gene transcription disrupted across all three MEDopathy genes.",
   },
   {
     id: "katja-brose",
@@ -77,7 +78,7 @@ const advisors: Member[] = [
     name: "Kuang-Lei Tsai, PhD",
     roleKey: "whoWeAre.advisor8Role",
     photo: "/images/kuanglei_tsai_drive.jpg",
-    bio: "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex — including the critical role of the MED13 subunit in regulating Mediator activity — and how alterations in this complex contribute to human disease.",
+    bio: "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease.",
   },
 ];
 
