@@ -51,6 +51,7 @@ const advisors: Member[] = [
     id: "alicia-campbell",
     name: "Alicia Campbell, PhD",
     roleKey: "whoWeAre.advisor2Role",
+    photo: "/images/alicia_campbell.png",
     bio: "Research Program Coordinator at the Brown Virtual Integrated Special Needs Center. Her doctoral work centered on mitochondrial structure and cellular membrane composition dynamics. She focuses on translational research and researcher-clinician-advocate collaborations.",
   },
   {
