@@ -18,14 +18,29 @@ interface Member {
 }
 
 const directors: Member[] = [
-  { id: "amy-krystosik", name: "Amy Krystosik, PhD, MPH", roleKey: "whoWeAre.director1Role" },
+  {
+    id: "amy-krystosik",
+    name: "Amy Krystosik, PhD, MPH",
+    roleKey: "whoWeAre.director1Role",
+    bio: "Epidemiologist and data scientist who co-founded the MED13 Foundation after her son Arturo was diagnosed with MED13 syndrome. Formerly a data scientist at the Chan Zuckerberg Initiative, where she built research infrastructure for rare disease. PhD in Epidemiology from Kent State, MPH from Tulane, and postdoctoral training at Stanford. She is also co-founding Artana Bio, a precision medicine company using AI to accelerate rare disease therapeutic development.",
+  },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role" },
   { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role" },
   { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role" },
-  { id: "riyad-hafeez", name: "Riyad Hafeez", roleKey: "whoWeAre.director6Role" },
+  {
+    id: "riyad-hafeez",
+    name: "Riyad Hafeez",
+    roleKey: "whoWeAre.director6Role",
+    bio: "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity, and digital innovation across Saudi Arabia and international markets. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion rare disease advocacy alongside his professional work. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
+  },
   { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role" },
-  { id: "charlotte-buchanan", name: "Charlotte Buchanan", roleKey: "whoWeAre.director8Role" },
+  {
+    id: "charlotte-buchanan",
+    name: "Charlotte Buchanan",
+    roleKey: "whoWeAre.director8Role",
+    bio: "Mom to a son with MED13-related syndrome and an expert at navigating therapies and healthcare providers. Passionate about research and advocacy, she also works in product management in the healthcare technology space. She lives in North Carolina with her husband Jon and two boys.",
+  },
 ];
 
 const advisors: Member[] = [
@@ -35,25 +50,41 @@ const advisors: Member[] = [
   { id: "angelica-delgado-vega", name: "Angelica Delgado-Vega, MD, PhD", roleKey: "whoWeAre.advisor4Role" },
   { id: "ann-nordgren", name: "Ann Nordgren, MD, PhD", roleKey: "whoWeAre.advisor5Role" },
   { id: "dylan-taatjes", name: "Dylan J. Taatjes, PhD", roleKey: "whoWeAre.advisor6Role" },
-  { id: "katja-brose", name: "Katja Brose, PhD", roleKey: "whoWeAre.advisor7Role" },
+  {
+    id: "katja-brose",
+    name: "Katja Brose, PhD",
+    roleKey: "whoWeAre.advisor7Role",
+    photo: "/images/katja_brose.jpg",
+  },
 ];
 
 const clinicians: Member[] = [
-  { id: "carla-marini", name: "Carla Marini, MD, PhD", roleKey: "whoWeAre.clinician1Role" },
+  {
+    id: "carla-marini",
+    name: "Carla Marini, MD, PhD",
+    roleKey: "whoWeAre.clinician1Role",
+    photo: "/images/carla_marini.jpg",
+  },
 ];
 
-const partners = [
-  "COMBINEDBrain",
-  "Rare Village Foundation",
-  "CureNDD",
-  "Simons Searchlight",
-  "MED12 Foundation",
-  "MED13L Foundation",
-  "UCSF Rare Disease Center",
-  "Muotri Lab — UC San Diego",
-  "Ultragenyx",
-  "EveryLife Foundation",
-  "NORD",
+interface Partner {
+  name: string;
+  logo?: string;
+}
+
+const partners: Partner[] = [
+  { name: "COMBINEDBrain" },
+  { name: "Rare Village Foundation" },
+  { name: "CureNDD" },
+  { name: "Simons Searchlight" },
+  { name: "MED12 Foundation" },
+  { name: "MED13L Foundation" },
+  { name: "UCSF Rare Disease Center" },
+  { name: "Muotri Lab — UC San Diego" },
+  { name: "Ultragenyx" },
+  { name: "EveryLife Foundation" },
+  { name: "NORD" },
+  { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
 function initials(name: string) {
@@ -86,9 +117,15 @@ function MemberCard({ member }: { member: Member }) {
             {t(member.roleKey)}
           </p>
         </div>
-        <p className="text-xs text-muted-foreground/70 italic">
-          {member.bio ?? t("whoWeAre.bioComingSoon")}
-        </p>
+        {member.bio ? (
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {member.bio}
+          </p>
+        ) : (
+          <p className="text-xs text-muted-foreground/60 italic">
+            {t("whoWeAre.bioComingSoon")}
+          </p>
+        )}
       </CardContent>
     </Card>
   );
@@ -243,13 +280,27 @@ export default function WhoWeAre() {
           <p className="text-muted-foreground mb-8">{t("whoWeAre.partnersSubtitle")}</p>
           <div className="flex flex-wrap justify-center gap-3">
             {partners.map((p) => (
-              <span
-                key={p}
-                className="px-4 py-2 rounded-md bg-[#68B0AB]/10 text-sm font-medium text-[#1d5f66]"
-                data-testid={`text-partner-${p.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
-              >
-                {p}
-              </span>
+              p.logo ? (
+                <span
+                  key={p.name}
+                  className="flex items-center px-4 py-2 rounded-md bg-[#68B0AB]/10"
+                  data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
+                >
+                  <img
+                    src={p.logo}
+                    alt={p.name}
+                    className="h-8 w-auto object-contain"
+                  />
+                </span>
+              ) : (
+                <span
+                  key={p.name}
+                  className="px-4 py-2 rounded-md bg-[#68B0AB]/10 text-sm font-medium text-[#1d5f66]"
+                  data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
+                >
+                  {p.name}
+                </span>
+              )
             ))}
           </div>
         </div>
