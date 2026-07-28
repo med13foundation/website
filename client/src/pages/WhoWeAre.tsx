@@ -58,6 +58,7 @@ const advisors: Member[] = [
     id: "katrina-cooper",
     name: "Katrina Cooper, PhD",
     roleKey: "whoWeAre.advisor3Role",
+    photo: "/images/katrina_cooper.png",
     bio: "Molecular cell biologist studying the fundamental cellular mechanisms relevant to rare disease, bringing bench-science depth to the alliance's scientific program.",
   },
   {
