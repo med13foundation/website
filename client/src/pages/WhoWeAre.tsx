@@ -14,7 +14,7 @@ interface Member {
   name: string;
   roleKey: string;
   photo?: string;
-  bio?: string;
+  bioKey?: string;
 }
 
 const directors: Member[] = [
@@ -23,7 +23,7 @@ const directors: Member[] = [
     name: "Amy Krystosik, PhD, MPH",
     roleKey: "whoWeAre.director1Role",
     photo: "/images/amy_krystosik.png",
-    bio: "Epidemiologist and data scientist who became a rare-disease founder after her son's MED13 diagnosis. She founded the MED13 Foundation in 2024 to build the infrastructure families need to reach emerging therapies, including a biorepository, natural-history registry, and clinical protocols developed through COMBINEDBrain. She previously spent six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology; MPH in international health and development; postdoctoral training in pediatric infectious disease epidemiology and community health at Stanford School of Medicine.",
+    bioKey: "whoWeAre.director1Bio",
   },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez.png" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik.png" },
@@ -34,7 +34,7 @@ const directors: Member[] = [
     name: "Riyad Hafeez",
     roleKey: "whoWeAre.director6Role",
     photo: "/images/riyad_hafeez.jpg",
-    bio: "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity oversight, and digital innovation across Saudi Arabia and international markets, spanning sectors from banking and government to health and retail. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion care and advocacy for affected families. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
+    bioKey: "whoWeAre.director6Bio",
   },
   { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role", photo: "/images/blair_young.png" },
   {
@@ -42,7 +42,7 @@ const directors: Member[] = [
     name: "Charlotte Buchanan",
     roleKey: "whoWeAre.director8Role",
     photo: "/images/charlotte_buchanan.png",
-    bio: "Mom to a son with MED13-related syndrome and an expert at navigating therapies and healthcare providers. Passionate about research and advocacy, she also works in product management in the healthcare technology space. She lives in North Carolina with her husband Jon and two boys.",
+    bioKey: "whoWeAre.director8Bio",
   },
 ];
 
@@ -52,35 +52,35 @@ const advisors: Member[] = [
     name: "Alicia Campbell, PhD",
     roleKey: "whoWeAre.advisor2Role",
     photo: "/images/alicia_campbell.png",
-    bio: "Research Program Coordinator at the Brown Virtual Integrated Special Needs Center. Her doctoral work centered on mitochondrial structure and cellular membrane composition dynamics. She focuses on translational research and researcher-clinician-advocate collaborations.",
+    bioKey: "whoWeAre.advisor2Bio",
   },
   {
     id: "katrina-cooper",
     name: "Katrina Cooper, PhD",
     roleKey: "whoWeAre.advisor3Role",
     photo: "/images/katrina_cooper.png",
-    bio: "Molecular cell biologist studying the fundamental cellular mechanisms relevant to rare disease, bringing bench-science depth to the alliance's scientific program.",
+    bioKey: "whoWeAre.advisor3Bio",
   },
   {
     id: "dylan-taatjes",
     name: "Dylan J. Taatjes, PhD",
     roleKey: "whoWeAre.advisor6Role",
     photo: "/images/dylan_taatjes.png",
-    bio: "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module, the machinery at the center of the Medopathies. His landmark discovery established foundational links in the gene transcription disrupted across all three MEDopathy genes.",
+    bioKey: "whoWeAre.advisor6Bio",
   },
   {
     id: "katja-brose",
     name: "Katja Brose, PhD",
     roleKey: "whoWeAre.advisor7Role",
     photo: "/images/katja_brose_drive.jpg",
-    bio: "Neuroscientist and scientific strategist with 25+ years of experience launching and growing scientific initiatives. Founder of Lark Science Advisors; formerly Neuroscience Program Lead at Chan Zuckerberg Initiative, where she established the Neurodegeneration Challenge Network and helped develop the N=1 Collaborative, which strengthened partnerships between researchers and patient organizations. Previously Editor-in-Chief of Neuron at Cell Press.",
+    bioKey: "whoWeAre.advisor7Bio",
   },
   {
     id: "kuanglei-tsai",
     name: "Kuang-Lei Tsai, PhD",
     roleKey: "whoWeAre.advisor8Role",
     photo: "/images/kuanglei_tsai_drive.jpg",
-    bio: "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease.",
+    bioKey: "whoWeAre.advisor8Bio",
   },
 ];
 
@@ -96,14 +96,14 @@ const clinicians: Member[] = [
     name: "Angelica Delgado-Vega, MD, PhD",
     roleKey: "whoWeAre.advisor4Role",
     photo: "/images/angelica_delgado.png",
-    bio: "Clinical geneticist focused on the diagnosis and characterization of rare neurodevelopmental disorders, contributing European clinical and genomic expertise.",
+    bioKey: "whoWeAre.advisor4Bio",
   },
   {
     id: "ann-nordgren",
     name: "Ann Nordgren, MD, PhD",
     roleKey: "whoWeAre.advisor5Role",
     photo: "/images/ann_nordgren.png",
-    bio: "Senior clinical geneticist at Karolinska Institute in Stockholm, specializing in rare genetic disorders and rare disease gene discovery and diagnostics.",
+    bioKey: "whoWeAre.advisor5Bio",
   },
 ];
 
@@ -166,9 +166,9 @@ function MemberCard({ member }: { member: Member }) {
             {t(member.roleKey)}
           </p>
         </div>
-        {member.bio ? (
+        {member.bioKey ? (
           <p className="text-xs text-muted-foreground leading-relaxed">
-            {member.bio}
+            {t(member.bioKey)}
           </p>
         ) : (
           <p className="text-xs text-muted-foreground/50 italic">

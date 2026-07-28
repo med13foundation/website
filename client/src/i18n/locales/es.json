@@ -138,7 +138,16 @@
     "successTitle": "¡Gracias por suscribirte!",
     "successDesc": "Recibirás nuestro boletín semestral con actualizaciones de investigación y noticias de la comunidad.",
     "errorTitle": "Error en la suscripción",
-    "errorDesc": "Por favor, inténtalo de nuevo más tarde."
+    "errorDesc": "Por favor, inténtalo de nuevo más tarde.",
+    "viewNotFound": "Boletín No Encontrado",
+    "viewNotFoundDesc": "Este boletín no existe o aún no ha sido publicado.",
+    "viewBackHome": "Volver al Inicio",
+    "viewHome": "Inicio",
+    "viewShare": "Compartir",
+    "viewLinkCopied": "Enlace copiado al portapapeles",
+    "viewLabel": "Boletín",
+    "viewTagline": "Apoyando a familias afectadas por el síndrome MED13",
+    "viewVisitSite": "Visitar Nuestro Sitio Web"
   },
   "donate": {
     "title": "Apoya Nuestra Misión",
@@ -336,6 +345,16 @@
     "cabTitle": "Consejo Asesor Clínico",
     "cabSubtitle": "Clínicos tratantes que guían la atención y la investigación clínica para las familias MED13",
     "clinician1Role": "Directora de Neuropsiquiatría Infantil · Hospital Infantil G. Salesi, Ancona, Italia · Epilepsia Pediátrica",
-    "advisor8Role": "UTHealth Houston · Profesor Asociado de Bioquímica y Biología Molecular"
+    "advisor8Role": "UTHealth Houston · Profesor Asociado de Bioquímica y Biología Molecular",
+    "director1Bio": "Epidemióloga y científica de datos que se convirtió en fundadora de enfermedades raras tras el diagnóstico de MED13 de su hijo. Fundó la Fundación MED13 en 2025 para construir la infraestructura que las familias necesitan para acceder a terapias emergentes, incluidos un biorrepositorio, un registro de historial natural y protocolos clínicos desarrollados a través de COMBINEDBrain. Anteriormente trabajó seis años como científica de datos en el Chan Zuckerberg Initiative y una década construyendo cohortes de investigación en salud global. Doctorado en Epidemiología; Maestría en Salud Pública en salud y desarrollo internacional; formación posdoctoral en epidemiología de enfermedades infecciosas pediátricas y salud comunitaria en la Escuela de Medicina de Stanford.",
+    "director6Bio": "Líder tecnológico con más de dos décadas en estrategia de TI empresarial, supervisión de ciberseguridad e innovación digital en Arabia Saudita y mercados internacionales, abarcando sectores desde la banca y el gobierno hasta la salud y el comercio. El diagnóstico de su hija menor con el síndrome MED13 lo inspiró a defender la atención y los derechos de las familias afectadas. Contribuye a la defensa del paciente, la aceleración de la investigación y el desarrollo del biorrepositorio en la Fundación MED13.",
+    "director8Bio": "Madre de un hijo con síndrome relacionado con MED13 y experta en navegar entre terapias y proveedores de atención médica. Apasionada por la investigación y la defensa, también trabaja en gestión de productos en el sector de tecnología de la salud. Vive en Carolina del Norte con su esposo Jon y dos hijos.",
+    "advisor2Bio": "Coordinadora de Programas de Investigación en el Centro de Necesidades Especiales Integradas Virtuales de Brown. Su trabajo doctoral se centró en la estructura mitocondrial y la dinámica de la composición de la membrana celular. Se enfoca en la investigación traslacional y las colaboraciones entre investigadores, médicos y defensores.",
+    "advisor3Bio": "Bióloga celular molecular que estudia los mecanismos celulares fundamentales relevantes para las enfermedades raras, aportando profundidad científica al programa científico de la alianza.",
+    "advisor4Bio": "Genetista clínica especializada en el diagnóstico y la caracterización de trastornos del neurodesarrollo raros, aportando experiencia clínica y genómica europea.",
+    "advisor5Bio": "Genetista clínica sénior en el Instituto Karolinska en Estocolmo, especializada en trastornos genéticos raros y en el descubrimiento de genes de enfermedades raras y diagnósticos.",
+    "advisor6Bio": "Dirige un laboratorio que define la arquitectura y la función del complejo Mediador y su módulo quinasa CDK8, la maquinaria en el centro de las MEDopathías. Su descubrimiento estableció vínculos fundamentales en la transcripción génica afectada en los tres genes de las MEDopathías.",
+    "advisor7Bio": "Neurocientífica y estratega científica con más de 25 años de experiencia en el lanzamiento y crecimiento de iniciativas científicas. Fundadora de Lark Science Advisors; anteriormente directora del Programa de Neurociencia en el Chan Zuckerberg Initiative, donde estableció la Red de Desafíos de Neurodegeneración y contribuyó al Collaborative N=1, que fortaleció las alianzas entre investigadores y organizaciones de pacientes. Anteriormente editora en jefe de Neuron en Cell Press.",
+    "advisor8Bio": "Profesor Asociado de Bioquímica y Biología Molecular en la Escuela de Medicina McGovern, UTHealth Houston. Reconocido internacionalmente por sus estudios pioneros de cryo-EM sobre la estructura y función del complejo Mediador, incluido el papel crítico de la subunidad MED13 en la regulación de la actividad del Mediador, y cómo las alteraciones en este complejo contribuyen a las enfermedades humanas."
   }
 }

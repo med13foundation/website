@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
+import { useTranslation } from "react-i18next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -29,20 +30,21 @@ function NewsletterSkeleton() {
 }
 
 function NewsletterNotFound() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <div className="max-w-3xl mx-auto px-4 py-20 text-center">
         <h1 className="text-2xl font-heading font-bold mb-4" data-testid="text-newsletter-not-found">
-          Newsletter Not Found
+          {t("newsletter.viewNotFound")}
         </h1>
         <p className="text-muted-foreground mb-6">
-          This newsletter doesn't exist or hasn't been published yet.
+          {t("newsletter.viewNotFoundDesc")}
         </p>
         <Link href="/">
           <Button data-testid="button-go-home">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t("newsletter.viewBackHome")}
           </Button>
         </Link>
       </div>
@@ -54,6 +56,7 @@ function NewsletterNotFound() {
 export default function NewsletterView() {
   const params = useParams<{ id: string }>();
   const { toast } = useToast();
+  const { t, i18n } = useTranslation();
 
   const { data, isLoading, error } = useQuery<{ newsletter: Newsletter }>({
     queryKey: ["/api/public/newsletters", params.id],
@@ -66,11 +69,11 @@ export default function NewsletterView() {
         await navigator.share({ title: data?.newsletter.title, url });
       } else {
         await navigator.clipboard.writeText(url);
-        toast({ title: "Link copied to clipboard" });
+        toast({ title: t("newsletter.viewLinkCopied") });
       }
     } catch {
       await navigator.clipboard.writeText(url);
-      toast({ title: "Link copied to clipboard" });
+      toast({ title: t("newsletter.viewLinkCopied") });
     }
   };
 
@@ -78,7 +81,7 @@ export default function NewsletterView() {
   if (error || !data?.newsletter) return <NewsletterNotFound />;
 
   const newsletter = data.newsletter;
-  const formattedDate = new Date(newsletter.createdAt).toLocaleDateString("en-US", {
+  const formattedDate = new Date(newsletter.createdAt).toLocaleDateString(i18n.language, {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -117,7 +120,7 @@ export default function NewsletterView() {
                 data-testid="button-newsletter-back-home"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Home
+                {t("newsletter.viewHome")}
               </Button>
             </Link>
             <Button
@@ -127,7 +130,7 @@ export default function NewsletterView() {
               data-testid="button-newsletter-share"
             >
               <Share2 className="w-4 h-4 mr-2" />
-              Share
+              {t("newsletter.viewShare")}
             </Button>
           </div>
         </div>
@@ -138,7 +141,7 @@ export default function NewsletterView() {
           <img src={logoUrl} alt="MED13 Foundation" className="h-10 w-10" data-testid="img-newsletter-logo" />
           <div>
             <p className="text-sm font-heading font-semibold" data-testid="text-newsletter-org">MED13 Foundation</p>
-            <p className="text-xs text-muted-foreground">Newsletter</p>
+            <p className="text-xs text-muted-foreground">{t("newsletter.viewLabel")}</p>
           </div>
         </div>
 
@@ -156,11 +159,11 @@ export default function NewsletterView() {
           <img src={logoUrl} alt="MED13 Foundation" className="h-14 w-14 mx-auto mb-3" />
           <p className="text-sm font-heading font-semibold text-foreground mb-1">MED13 Foundation</p>
           <p className="text-xs text-muted-foreground mb-4">
-            Supporting families affected by MED13 syndrome
+            {t("newsletter.viewTagline")}
           </p>
           <Link href="/">
             <Button variant="outline" data-testid="button-newsletter-visit-site">
-              Visit Our Website
+              {t("newsletter.viewVisitSite")}
             </Button>
           </Link>
         </div>

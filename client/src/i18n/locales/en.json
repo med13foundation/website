@@ -138,7 +138,16 @@
     "successTitle": "Thank you for subscribing!",
     "successDesc": "You'll receive our bi-annual newsletter with research updates and community news.",
     "errorTitle": "Subscription failed",
-    "errorDesc": "Please try again later."
+    "errorDesc": "Please try again later.",
+    "viewNotFound": "Newsletter Not Found",
+    "viewNotFoundDesc": "This newsletter doesn't exist or hasn't been published yet.",
+    "viewBackHome": "Back to Home",
+    "viewHome": "Home",
+    "viewShare": "Share",
+    "viewLinkCopied": "Link copied to clipboard",
+    "viewLabel": "Newsletter",
+    "viewTagline": "Supporting families affected by MED13 syndrome",
+    "viewVisitSite": "Visit Our Website"
   },
   "donate": {
     "title": "Support Our Mission",
@@ -336,6 +345,16 @@
     "cabTitle": "Clinical Advisory Board",
     "cabSubtitle": "Treating clinicians guiding care and clinical research for MED13 families",
     "clinician1Role": "Director of Child Neuropsychiatry · G. Salesi Children's Hospital, Ancona, Italy · Pediatric Epilepsy",
-    "advisor8Role": "UTHealth Houston · Associate Professor of Biochemistry & Molecular Biology"
+    "advisor8Role": "UTHealth Houston · Associate Professor of Biochemistry & Molecular Biology",
+    "director1Bio": "Epidemiologist and data scientist who became a rare-disease founder after her son's MED13 diagnosis. She founded the MED13 Foundation in 2025 to build the infrastructure families need to reach emerging therapies, including a biorepository, natural-history registry, and clinical protocols developed through COMBINEDBrain. She previously spent six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology; MPH in international health and development; postdoctoral training in pediatric infectious disease epidemiology and community health at Stanford School of Medicine.",
+    "director6Bio": "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity oversight, and digital innovation across Saudi Arabia and international markets, spanning sectors from banking and government to health and retail. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion care and advocacy for affected families. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
+    "director8Bio": "Mom to a son with MED13-related syndrome and an expert at navigating therapies and healthcare providers. Passionate about research and advocacy, she also works in product management in the healthcare technology space. She lives in North Carolina with her husband Jon and two boys.",
+    "advisor2Bio": "Research Program Coordinator at the Brown Virtual Integrated Special Needs Center. Her doctoral work centered on mitochondrial structure and cellular membrane composition dynamics. She focuses on translational research and researcher-clinician-advocate collaborations.",
+    "advisor3Bio": "Molecular cell biologist studying the fundamental cellular mechanisms relevant to rare disease, bringing bench-science depth to the alliance's scientific program.",
+    "advisor4Bio": "Clinical geneticist focused on the diagnosis and characterization of rare neurodevelopmental disorders, contributing European clinical and genomic expertise.",
+    "advisor5Bio": "Senior clinical geneticist at Karolinska Institute in Stockholm, specializing in rare genetic disorders and rare disease gene discovery and diagnostics.",
+    "advisor6Bio": "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module, the machinery at the center of the Medopathies. His landmark discovery established foundational links in the gene transcription disrupted across all three MEDopathy genes.",
+    "advisor7Bio": "Neuroscientist and scientific strategist with 25+ years of experience launching and growing scientific initiatives. Founder of Lark Science Advisors; formerly Neuroscience Program Lead at Chan Zuckerberg Initiative, where she established the Neurodegeneration Challenge Network and helped develop the N=1 Collaborative, which strengthened partnerships between researchers and patient organizations. Previously Editor-in-Chief of Neuron at Cell Press.",
+    "advisor8Bio": "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease."
   }
 }
