@@ -44,12 +44,15 @@ const directors: Member[] = [
     photo: "/images/charlotte_buchanan.png",
     bioKey: "whoWeAre.director8Bio",
   },
+];
+
+const staff: Member[] = [
   {
     id: "manasa-chandrasekar",
     name: "Manasa Chandrasekar",
-    roleKey: "whoWeAre.director9Role",
+    roleKey: "whoWeAre.staff1Role",
     photo: "/images/manasa_chandrasekar.jpg",
-    bioKey: "whoWeAre.director9Bio",
+    bioKey: "whoWeAre.staff1Bio",
   },
 ];
 
@@ -268,8 +271,28 @@ export default function WhoWeAre() {
         </div>
       </section>
 
+      {/* Our Team */}
+      <section className="py-16" data-testid="section-who-staff">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="flex justify-center mb-3">
+              <Handshake className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+            </div>
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
+              {t("whoWeAre.staffTitle")}
+            </h2>
+            <p className="text-muted-foreground">{t("whoWeAre.staffSubtitle")}</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-2xl mx-auto">
+            {staff.map((m) => (
+              <MemberCard key={m.id} member={m} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Scientific Advisory Board */}
-      <section className="py-16" data-testid="section-who-sab">
+      <section className="py-16 bg-muted/40" data-testid="section-who-sab">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
