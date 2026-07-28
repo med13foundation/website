@@ -23,7 +23,7 @@ const directors: Member[] = [
     name: "Amy Krystosik, PhD, MPH",
     roleKey: "whoWeAre.director1Role",
     photo: "/images/amy_krystosik.png",
-    bio: "Epidemiologist and data scientist who became a rare disease founder after her son Arturo was diagnosed with MED13 syndrome. She co-founded the MED13 Foundation in 2024, drawing on six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology from Kent State, MPH from Tulane, postdoctoral training at Stanford. She is also co-founding Artana Bio, a precision medicine company using AI to accelerate rare disease therapeutic development.",
+    bio: "Epidemiologist and data scientist turned rare-disease founder. After her son's MED13 diagnosis, she founded the MED13 Foundation in 2024 to build the infrastructure families need to reach emerging therapies — a biorepository, natural-history registry, and clinical protocols developed through COMBINEDBrain. Previously spent six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology; MPH in international health and development; postdoctoral training in pediatric infectious disease epidemiology and community health at Stanford School of Medicine.",
   },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez.png" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik.png" },
@@ -47,10 +47,24 @@ const directors: Member[] = [
 ];
 
 const advisors: Member[] = [
-  { id: "alicia-campbell", name: "Alicia Campbell, PhD", roleKey: "whoWeAre.advisor2Role" },
-  { id: "katrina-cooper", name: "Katrina Cooper, PhD", roleKey: "whoWeAre.advisor3Role" },
-
-  { id: "dylan-taatjes", name: "Dylan J. Taatjes, PhD", roleKey: "whoWeAre.advisor6Role" },
+  {
+    id: "alicia-campbell",
+    name: "Alicia Campbell, PhD",
+    roleKey: "whoWeAre.advisor2Role",
+    bio: "Research Program Coordinator at the Brown Virtual Integrated Special Needs Center. Her doctoral work centered on mitochondrial structure and cellular membrane composition dynamics. She focuses on translational research and researcher-clinician-advocate collaborations.",
+  },
+  {
+    id: "katrina-cooper",
+    name: "Katrina Cooper, PhD",
+    roleKey: "whoWeAre.advisor3Role",
+    bio: "Molecular cell biologist studying the fundamental cellular mechanisms relevant to rare disease, bringing bench-science depth to the alliance's scientific program.",
+  },
+  {
+    id: "dylan-taatjes",
+    name: "Dylan J. Taatjes, PhD",
+    roleKey: "whoWeAre.advisor6Role",
+    bio: "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module — the machinery at the center of the Medopathies. His landmark discovery established foundational links between the gene transcription disrupted across all three MEDopathy genes.",
+  },
   {
     id: "katja-brose",
     name: "Katja Brose, PhD",
@@ -74,8 +88,18 @@ const clinicians: Member[] = [
     roleKey: "whoWeAre.clinician1Role",
     photo: "/images/carla_marini.jpg",
   },
-  { id: "angelica-delgado-vega", name: "Angelica Delgado-Vega, MD, PhD", roleKey: "whoWeAre.advisor4Role" },
-  { id: "ann-nordgren", name: "Ann Nordgren, MD, PhD", roleKey: "whoWeAre.advisor5Role" },
+  {
+    id: "angelica-delgado-vega",
+    name: "Angelica Delgado-Vega, MD, PhD",
+    roleKey: "whoWeAre.advisor4Role",
+    bio: "Clinical geneticist focused on the diagnosis and characterization of rare neurodevelopmental disorders, contributing European clinical and genomic expertise.",
+  },
+  {
+    id: "ann-nordgren",
+    name: "Ann Nordgren, MD, PhD",
+    roleKey: "whoWeAre.advisor5Role",
+    bio: "Senior clinical geneticist at Karolinska Institute in Stockholm, specializing in rare genetic disorders and rare disease gene discovery and diagnostics.",
+  },
 ];
 
 interface Partner {
