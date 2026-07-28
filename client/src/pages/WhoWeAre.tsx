@@ -46,7 +46,6 @@ const directors: Member[] = [
 ];
 
 const advisors: Member[] = [
-  { id: "alysson-muotri", name: "Alysson Muotri, PhD", roleKey: "whoWeAre.advisor1Role" },
   { id: "alicia-campbell", name: "Alicia Campbell, PhD", roleKey: "whoWeAre.advisor2Role" },
   { id: "katrina-cooper", name: "Katrina Cooper, PhD", roleKey: "whoWeAre.advisor3Role" },
 
