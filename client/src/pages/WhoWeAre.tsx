@@ -119,7 +119,7 @@ const partners: Partner[] = [
   { name: "Rare Village Foundation", logo: "/images/rare_village.png" },
   { name: "CureNDD", logo: "/images/curendd.png" },
 
-  { name: "MED12 Foundation", logo: "/images/med12_foundation.png" },
+  { name: "MED12 Foundation", logo: "/images/med12_foundation_no_bg.png" },
   { name: "MED13L Foundation", logo: "/images/med13l_foundation.png" },
   { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", tall: true },
   { name: "REN", logo: "/images/ren_logo.avif" },
@@ -146,7 +146,7 @@ function MemberCard({ member }: { member: Member }) {
           <img
             src={member.photo}
             alt={member.name}
-            className="w-full h-full object-cover object-top grayscale"
+            className="w-full h-full object-contain grayscale"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
