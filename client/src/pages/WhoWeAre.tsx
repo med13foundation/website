@@ -70,20 +70,16 @@ const clinicians: Member[] = [
 interface Partner {
   name: string;
   logo?: string;
+  darkBg?: boolean;
 }
 
 const partners: Partner[] = [
-  { name: "COMBINEDBrain" },
-  { name: "Rare Village Foundation" },
-  { name: "CureNDD" },
+  { name: "COMBINEDBrain", logo: "/images/combined_brain.png" },
+  { name: "Rare Village Foundation", logo: "/images/rare_village.png" },
+  { name: "CureNDD", logo: "/images/curendd.png" },
   { name: "Simons Searchlight" },
-  { name: "MED12 Foundation" },
-  { name: "MED13L Foundation" },
-  { name: "UCSF Rare Disease Center" },
-  { name: "Muotri Lab — UC San Diego" },
-  { name: "Ultragenyx" },
-  { name: "EveryLife Foundation" },
-  { name: "NORD" },
+  { name: "MED12 Foundation", logo: "/images/med12_foundation.png" },
+  { name: "MED13L Foundation", logo: "/images/med13l_foundation.png", darkBg: true },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
@@ -278,24 +274,24 @@ export default function WhoWeAre() {
             {t("whoWeAre.partnersTitle")}
           </h2>
           <p className="text-muted-foreground mb-8">{t("whoWeAre.partnersSubtitle")}</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center items-center gap-4">
             {partners.map((p) => (
               p.logo ? (
                 <span
                   key={p.name}
-                  className="flex items-center px-4 py-2 rounded-md bg-[#68B0AB]/10"
+                  className={`flex items-center justify-center px-5 py-3 rounded-lg h-16 ${p.darkBg ? "bg-gray-900" : "bg-[#68B0AB]/10"}`}
                   data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
                 >
                   <img
                     src={p.logo}
                     alt={p.name}
-                    className="h-8 w-auto object-contain"
+                    className="h-9 w-auto max-w-[140px] object-contain"
                   />
                 </span>
               ) : (
                 <span
                   key={p.name}
-                  className="px-4 py-2 rounded-md bg-[#68B0AB]/10 text-sm font-medium text-[#1d5f66]"
+                  className="flex items-center justify-center px-5 py-3 rounded-lg h-16 bg-[#68B0AB]/10 text-sm font-medium text-[#1d5f66]"
                   data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
                 >
                   {p.name}
