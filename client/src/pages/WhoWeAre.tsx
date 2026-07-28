@@ -44,6 +44,13 @@ const directors: Member[] = [
     photo: "/images/charlotte_buchanan.png",
     bioKey: "whoWeAre.director8Bio",
   },
+  {
+    id: "manasa-chandrasekar",
+    name: "Manasa Chandrasekar",
+    roleKey: "whoWeAre.director9Role",
+    photo: "/images/manasa_chandrasekar.jpg",
+    bioKey: "whoWeAre.director9Bio",
+  },
 ];
 
 const advisors: Member[] = [
