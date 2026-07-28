@@ -356,5 +356,14 @@
     "advisor6Bio": "Dirige un laboratorio que define la arquitectura y la función del complejo Mediador y su módulo quinasa CDK8, la maquinaria en el centro de las MEDopathías. Su descubrimiento estableció vínculos fundamentales en la transcripción génica afectada en los tres genes de las MEDopathías.",
     "advisor7Bio": "Neurocientífica y estratega científica con más de 25 años de experiencia en el lanzamiento y crecimiento de iniciativas científicas. Fundadora de Lark Science Advisors; anteriormente directora del Programa de Neurociencia en el Chan Zuckerberg Initiative, donde estableció la Red de Desafíos de Neurodegeneración y contribuyó al Collaborative N=1, que fortaleció las alianzas entre investigadores y organizaciones de pacientes. Anteriormente editora en jefe de Neuron en Cell Press.",
     "advisor8Bio": "Profesor Asociado de Bioquímica y Biología Molecular en la Escuela de Medicina McGovern, UTHealth Houston. Reconocido internacionalmente por sus estudios pioneros de cryo-EM sobre la estructura y función del complejo Mediador, incluido el papel crítico de la subunidad MED13 en la regulación de la actividad del Mediador, y cómo las alteraciones en este complejo contribuyen a las enfermedades humanas."
+  },
+  "unsubscribe": {
+    "title": "Cancelar Suscripción",
+    "desc": "Ingresa tu correo electrónico para cancelar la suscripción al boletín de la Fundación MED13.",
+    "button": "Cancelar Suscripción",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "successTitle": "Has cancelado tu suscripción",
+    "successDesc": "Ya no recibirás boletines de la Fundación MED13. Lamentamos verte partir.",
+    "backHome": "Volver al Inicio"
   }
 }

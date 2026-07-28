@@ -137,7 +137,7 @@ export default function EventsSection() {
 }
 
 function NewsletterArchive() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const { data } = useQuery<{ newsletters: { id: string; title: string; sentAt: string }[] }>({
     queryKey: ["/api/public/newsletters"],
@@ -171,7 +171,7 @@ function NewsletterArchive() {
                       {nl.title}
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      {new Date(nl.sentAt).toLocaleDateString("en-US", {
+                      {new Date(nl.sentAt).toLocaleDateString(i18n.language, {
                         year: "numeric",
                         month: "long",
                         day: "numeric",

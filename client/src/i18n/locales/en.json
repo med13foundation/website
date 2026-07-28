@@ -356,5 +356,14 @@
     "advisor6Bio": "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module, the machinery at the center of the Medopathies. His landmark discovery established foundational links in the gene transcription disrupted across all three MEDopathy genes.",
     "advisor7Bio": "Neuroscientist and scientific strategist with 25+ years of experience launching and growing scientific initiatives. Founder of Lark Science Advisors; formerly Neuroscience Program Lead at Chan Zuckerberg Initiative, where she established the Neurodegeneration Challenge Network and helped develop the N=1 Collaborative, which strengthened partnerships between researchers and patient organizations. Previously Editor-in-Chief of Neuron at Cell Press.",
     "advisor8Bio": "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease."
+  },
+  "unsubscribe": {
+    "title": "Unsubscribe",
+    "desc": "Enter your email to unsubscribe from the MED13 Foundation newsletter.",
+    "button": "Unsubscribe",
+    "error": "Something went wrong. Please try again.",
+    "successTitle": "You've been unsubscribed",
+    "successDesc": "You will no longer receive newsletters from MED13 Foundation. We're sorry to see you go.",
+    "backHome": "Back to Home"
   }
 }

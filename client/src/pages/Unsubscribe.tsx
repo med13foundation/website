@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSearch } from "wouter";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,7 @@ export default function Unsubscribe() {
   const prefilled = params.get("email") || "";
   const [email, setEmail] = useState(prefilled);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { t } = useTranslation();
 
   const handleUnsubscribe = async () => {
     if (!email.trim()) return;
@@ -39,16 +41,15 @@ export default function Unsubscribe() {
           <CardContent className="py-12 text-center">
             <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
             <h1 className="text-xl font-heading font-bold mb-2" data-testid="text-unsubscribe-success">
-              You've been unsubscribed
+              {t("unsubscribe.successTitle")}
             </h1>
             <p className="text-muted-foreground mb-6">
-              You will no longer receive newsletters from MED13 Foundation.
-              We're sorry to see you go.
+              {t("unsubscribe.successDesc")}
             </p>
             <Link href="/">
               <Button variant="outline" data-testid="button-unsubscribe-home">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
+                {t("unsubscribe.backHome")}
               </Button>
             </Link>
           </CardContent>
@@ -63,10 +64,10 @@ export default function Unsubscribe() {
         <CardContent className="py-10 text-center">
           <MailX className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
           <h1 className="text-xl font-heading font-bold mb-2" data-testid="text-unsubscribe-title">
-            Unsubscribe
+            {t("unsubscribe.title")}
           </h1>
           <p className="text-muted-foreground mb-6">
-            Enter your email to unsubscribe from the MED13 Foundation newsletter.
+            {t("unsubscribe.desc")}
           </p>
           <div className="flex gap-2">
             <Input
@@ -81,18 +82,18 @@ export default function Unsubscribe() {
               disabled={!email.trim() || status === "loading"}
               data-testid="button-unsubscribe-confirm"
             >
-              {status === "loading" ? "..." : "Unsubscribe"}
+              {status === "loading" ? "..." : t("unsubscribe.button")}
             </Button>
           </div>
           {status === "error" && (
             <p className="text-sm text-destructive mt-3" data-testid="text-unsubscribe-error">
-              Something went wrong. Please try again.
+              {t("unsubscribe.error")}
             </p>
           )}
           <Link href="/">
             <Button variant="ghost" className="mt-4" data-testid="button-unsubscribe-back">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
+              {t("unsubscribe.backHome")}
             </Button>
           </Link>
         </CardContent>
