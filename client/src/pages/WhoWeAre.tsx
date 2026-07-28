@@ -91,6 +91,7 @@ const partners: Partner[] = [
 
   { name: "MED12 Foundation", logo: "/images/med12_foundation.png" },
   { name: "MED13L Foundation", logo: "/images/med13l_foundation.png" },
+  { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance.png" },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
@@ -108,19 +109,30 @@ function initials(name: string) {
 function MemberCard({ member }: { member: Member }) {
   const { t } = useTranslation();
   return (
-    <Card data-testid={`card-member-${member.id}`}>
-      <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
-        <Avatar className="h-24 w-24">
-          {member.photo && <AvatarImage src={member.photo} alt={member.name} className="object-cover object-top" />}
-          <AvatarFallback className="text-xl font-heading bg-[#68B0AB]/20 text-[#1d5f66]">
-            {initials(member.name)}
-          </AvatarFallback>
-        </Avatar>
+    <Card className="overflow-hidden" data-testid={`card-member-${member.id}`}>
+      {/* Photo */}
+      <div className="w-full aspect-square bg-[#68B0AB]/10 overflow-hidden">
+        {member.photo ? (
+          <img
+            src={member.photo}
+            alt={member.name}
+            className="w-full h-full object-cover object-top"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="text-4xl font-heading font-bold text-[#1d5f66]/40">
+              {initials(member.name)}
+            </span>
+          </div>
+        )}
+      </div>
+      {/* Info */}
+      <CardContent className="pt-4 pb-5 flex flex-col gap-2">
         <div>
-          <h3 className="font-heading font-bold text-foreground" data-testid={`text-member-name-${member.id}`}>
+          <h3 className="font-heading font-bold text-foreground leading-snug" data-testid={`text-member-name-${member.id}`}>
             {member.name}
           </h3>
-          <p className="text-sm text-muted-foreground mt-1" data-testid={`text-member-role-${member.id}`}>
+          <p className="text-sm text-[#2D7A89] font-medium mt-0.5" data-testid={`text-member-role-${member.id}`}>
             {t(member.roleKey)}
           </p>
         </div>
@@ -129,7 +141,7 @@ function MemberCard({ member }: { member: Member }) {
             {member.bio}
           </p>
         ) : (
-          <p className="text-xs text-muted-foreground/60 italic">
+          <p className="text-xs text-muted-foreground/50 italic">
             {t("whoWeAre.bioComingSoon")}
           </p>
         )}
@@ -290,13 +302,13 @@ export default function WhoWeAre() {
               p.logo ? (
                 <span
                   key={p.name}
-                  className={`flex items-center justify-center px-5 py-3 rounded-lg h-16 ${p.darkBg ? "bg-gray-900" : "bg-[#68B0AB]/10"}`}
+                  className="flex items-center justify-center px-6 py-4 h-24"
                   data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
                 >
                   <img
                     src={p.logo}
                     alt={p.name}
-                    className="h-9 w-auto max-w-[140px] object-contain"
+                    className="h-full w-auto max-w-[160px] object-contain"
                   />
                 </span>
               ) : (
