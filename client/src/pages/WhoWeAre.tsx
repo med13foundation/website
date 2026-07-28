@@ -41,6 +41,7 @@ const directors: Member[] = [
     id: "charlotte-buchanan",
     name: "Charlotte Buchanan",
     roleKey: "whoWeAre.director8Role",
+    photo: "/images/charlotte_buchanan.png",
     bio: "Mom to a son with MED13-related syndrome and an expert at navigating therapies and healthcare providers. Passionate about research and advocacy, she also works in product management in the healthcare technology space. She lives in North Carolina with her husband Jon and two boys.",
   },
 ];
