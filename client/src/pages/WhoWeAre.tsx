@@ -22,13 +22,13 @@ const directors: Member[] = [
     id: "amy-krystosik",
     name: "Amy Krystosik, PhD, MPH",
     roleKey: "whoWeAre.director1Role",
-    photo: "/images/amy_krystosik.jpg",
+    photo: "/images/amy_krystosik.png",
     bio: "Epidemiologist and data scientist who became a rare disease founder after her son Arturo was diagnosed with MED13 syndrome. She co-founded the MED13 Foundation in 2024, drawing on six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology from Kent State, MPH from Tulane, postdoctoral training at Stanford. She is also co-founding Artana Bio, a precision medicine company using AI to accelerate rare disease therapeutic development.",
   },
-  { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role" },
-  { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role" },
+  { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez.png" },
+  { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik.png" },
   { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role" },
-  { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role" },
+  { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role", photo: "/images/marissa_shorey.png" },
   {
     id: "riyad-hafeez",
     name: "Riyad Hafeez",
@@ -110,7 +110,7 @@ function MemberCard({ member }: { member: Member }) {
     <Card data-testid={`card-member-${member.id}`}>
       <CardContent className="pt-6 flex flex-col items-center text-center gap-3">
         <Avatar className="h-24 w-24">
-          {member.photo && <AvatarImage src={member.photo} alt={member.name} />}
+          {member.photo && <AvatarImage src={member.photo} alt={member.name} className="object-cover object-top" />}
           <AvatarFallback className="text-xl font-heading bg-[#68B0AB]/20 text-[#1d5f66]">
             {initials(member.name)}
           </AvatarFallback>
