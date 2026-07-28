@@ -22,7 +22,8 @@ const directors: Member[] = [
     id: "amy-krystosik",
     name: "Amy Krystosik, PhD, MPH",
     roleKey: "whoWeAre.director1Role",
-    bio: "Epidemiologist and data scientist who co-founded the MED13 Foundation after her son Arturo was diagnosed with MED13 syndrome. Formerly a data scientist at the Chan Zuckerberg Initiative, where she built research infrastructure for rare disease. PhD in Epidemiology from Kent State, MPH from Tulane, and postdoctoral training at Stanford. She is also co-founding Artana Bio, a precision medicine company using AI to accelerate rare disease therapeutic development.",
+    photo: "/images/amy_krystosik.jpg",
+    bio: "Epidemiologist and data scientist who became a rare disease founder after her son Arturo was diagnosed with MED13 syndrome. She co-founded the MED13 Foundation in 2024, drawing on six years as a data scientist at the Chan Zuckerberg Initiative and a decade building global health research cohorts. PhD in Epidemiology from Kent State, MPH from Tulane, postdoctoral training at Stanford. She is also co-founding Artana Bio, a precision medicine company using AI to accelerate rare disease therapeutic development.",
   },
   { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role" },
@@ -32,7 +33,8 @@ const directors: Member[] = [
     id: "riyad-hafeez",
     name: "Riyad Hafeez",
     roleKey: "whoWeAre.director6Role",
-    bio: "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity, and digital innovation across Saudi Arabia and international markets. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion rare disease advocacy alongside his professional work. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
+    photo: "/images/riyad_hafeez.jpg",
+    bio: "C-suite technology leader with over two decades in enterprise IT strategy, cybersecurity oversight, and digital innovation across Saudi Arabia and international markets, spanning sectors from banking and government to health and retail. His youngest daughter's diagnosis with MED13 syndrome inspired him to champion care and advocacy for affected families. He contributes to patient advocacy, research acceleration, and biorepository development at the MED13 Foundation.",
   },
   { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role" },
   {
@@ -47,14 +49,21 @@ const advisors: Member[] = [
   { id: "alysson-muotri", name: "Alysson Muotri, PhD", roleKey: "whoWeAre.advisor1Role" },
   { id: "alicia-campbell", name: "Alicia Campbell, PhD", roleKey: "whoWeAre.advisor2Role" },
   { id: "katrina-cooper", name: "Katrina Cooper, PhD", roleKey: "whoWeAre.advisor3Role" },
-  { id: "angelica-delgado-vega", name: "Angelica Delgado-Vega, MD, PhD", roleKey: "whoWeAre.advisor4Role" },
-  { id: "ann-nordgren", name: "Ann Nordgren, MD, PhD", roleKey: "whoWeAre.advisor5Role" },
+
   { id: "dylan-taatjes", name: "Dylan J. Taatjes, PhD", roleKey: "whoWeAre.advisor6Role" },
   {
     id: "katja-brose",
     name: "Katja Brose, PhD",
     roleKey: "whoWeAre.advisor7Role",
-    photo: "/images/katja_brose.jpg",
+    photo: "/images/katja_brose_drive.jpg",
+    bio: "Neuroscientist and scientific strategist with 25+ years of experience launching and growing scientific initiatives. Founder of Lark Science Advisors; formerly Neuroscience Program Lead at Chan Zuckerberg Initiative, where she established the Neurodegeneration Challenge Network and helped develop the N=1 Collaborative, which strengthened partnerships between researchers and patient organizations. Previously Editor-in-Chief of Neuron at Cell Press.",
+  },
+  {
+    id: "kuanglei-tsai",
+    name: "Kuang-Lei Tsai, PhD",
+    roleKey: "whoWeAre.advisor8Role",
+    photo: "/images/kuanglei_tsai_drive.jpg",
+    bio: "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex — including the critical role of the MED13 subunit in regulating Mediator activity — and how alterations in this complex contribute to human disease.",
   },
 ];
 
@@ -65,6 +74,8 @@ const clinicians: Member[] = [
     roleKey: "whoWeAre.clinician1Role",
     photo: "/images/carla_marini.jpg",
   },
+  { id: "angelica-delgado-vega", name: "Angelica Delgado-Vega, MD, PhD", roleKey: "whoWeAre.advisor4Role" },
+  { id: "ann-nordgren", name: "Ann Nordgren, MD, PhD", roleKey: "whoWeAre.advisor5Role" },
 ];
 
 interface Partner {
@@ -77,9 +88,9 @@ const partners: Partner[] = [
   { name: "COMBINEDBrain", logo: "/images/combined_brain.png" },
   { name: "Rare Village Foundation", logo: "/images/rare_village.png" },
   { name: "CureNDD", logo: "/images/curendd.png" },
-  { name: "Simons Searchlight" },
+
   { name: "MED12 Foundation", logo: "/images/med12_foundation.png" },
-  { name: "MED13L Foundation", logo: "/images/med13l_foundation.png", darkBg: true },
+  { name: "MED13L Foundation", logo: "/images/med13l_foundation.png" },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
