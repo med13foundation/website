@@ -26,10 +26,10 @@ const directors: Member[] = [
     photo: "/images/amy_krystosik_no_bg.png",
     bioKey: "whoWeAre.director1Bio",
   },
-  { id: "alvaro-alvarez", name: "Álvaro Álvarez Peralta", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez_no_bg.png" },
+  { id: "alvaro-alvarez", name: "Álvaro Álvarez Peralta", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez_no_bg.png", bioKey: "whoWeAre.director2Bio" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik_no_bg.png" },
-  { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role", photo: "/images/cindy_badon_no_bg.png" },
-  { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role", photo: "/images/marissa_shorey_no_bg.png" },
+  { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role", photo: "/images/cindy_badon_no_bg.png", bioKey: "whoWeAre.director4Bio" },
+  { id: "marissa-shorey", name: "Marissa Shorey, PMP", roleKey: "whoWeAre.director5Role", photo: "/images/marissa_shorey_no_bg.png", bioKey: "whoWeAre.director5Bio" },
   {
     id: "riyad-hafeez",
     name: "Riyad Hafeez",
@@ -37,7 +37,7 @@ const directors: Member[] = [
     photo: "/images/riyad_hafeez_no_bg.png",
     bioKey: "whoWeAre.director6Bio",
   },
-  { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role", photo: "/images/blair_young_no_bg.png" },
+  { id: "blair-young", name: "Blair Young", roleKey: "whoWeAre.director7Role", photo: "/images/blair_young_no_bg.png", bioKey: "whoWeAre.director7Bio" },
   {
     id: "charlotte-buchanan",
     name: "Charlotte Buchanan",
@@ -98,6 +98,7 @@ const advisors: Member[] = [
     id: "melissa-haendel",
     name: "Melissa Haendel, PhD",
     roleKey: "whoWeAre.advisor9Role",
+    photo: "/images/melissa_haendel_no_bg.png",
     bioKey: "whoWeAre.advisor9Bio",
   },
 ];
