@@ -15,6 +15,7 @@ interface Member {
   roleKey: string;
   photo?: string;
   bioKey?: string;
+  photoScale?: string;
 }
 
 const directors: Member[] = [
@@ -52,6 +53,7 @@ const staff: Member[] = [
     name: "Manasa Chandrasekar",
     roleKey: "whoWeAre.staff1Role",
     photo: "/images/manasa_chandrasekar_no_bg.png",
+    photoScale: "scale-150 origin-top",
     bioKey: "whoWeAre.staff1Bio",
   },
 ];
@@ -130,7 +132,7 @@ const partners: Partner[] = [
   { name: "CureNDD", logo: "/images/curendd.png" },
 
   { name: "MED12 Foundation", logo: "/images/med12_foundation_no_bg.png" },
-  { name: "MED13L Foundation", logo: "/images/med13l_foundation.png" },
+  { name: "MED13L Foundation", logo: "/images/med13l_foundation_trimmed.png" },
   { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", tall: true },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
@@ -156,7 +158,7 @@ function MemberCard({ member }: { member: Member }) {
           <img
             src={member.photo}
             alt={member.name}
-            className="w-full h-full object-contain grayscale"
+            className={`w-full h-full object-contain grayscale${member.photoScale ? ` ${member.photoScale}` : ""}`}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
