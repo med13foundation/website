@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText, Sparkles } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles, Play } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -44,7 +44,7 @@ export default function EventsSection() {
           </CardContent>
         </Card>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           <Card data-testid="card-family-conference">
             <CardHeader>
               <CardTitle className="text-xl font-heading">{t('events.conferenceTitle')}</CardTitle>
@@ -106,6 +106,29 @@ export default function EventsSection() {
             </CardContent>
           </Card>
 
+          <Card data-testid="card-roadshows">
+            <CardHeader>
+              <CardTitle className="text-xl font-heading">{t('events.roadshowsTitle')}</CardTitle>
+              <CardDescription className="flex items-center gap-2 mt-2">
+                <Calendar className="w-4 h-4" />
+                <span>{t('events.roadshowsDate')}</span>
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-foreground mb-6">
+                {t('events.roadshowsDesc')}
+              </p>
+              <Button
+                variant="outline"
+                className="w-full"
+                asChild
+                data-testid="button-roadshows"
+              >
+                <a href="https://docs.google.com/presentation/d/1IjaHILXj7AlBDlbTJgvYrkBS_0bnI8VCnTIiPXJ7JGM/edit?slide=id.g3b4b5122442_1_12#slide=id.g3b4b5122442_1_12" target="_blank" rel="noopener noreferrer">{t('events.roadshowsButton')}</a>
+              </Button>
+            </CardContent>
+          </Card>
+
           <Card data-testid="card-monthly-gathering">
             <CardHeader>
               <CardTitle className="text-xl font-heading">{t('events.monthlyTitle')}</CardTitle>
@@ -126,6 +149,36 @@ export default function EventsSection() {
               >
                 <a href="https://forms.gle/HBAJpfaU7ain3kx86" target="_blank" rel="noopener noreferrer">{t('events.monthlyRsvp')}</a>
               </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Featured Media */}
+        <div className="mt-16 max-w-3xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-3">
+              <Play className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
+              {t('events.mediaTitle')}
+            </h3>
+            <p className="text-muted-foreground">{t('events.mediaSubtitle')}</p>
+          </div>
+          <Card data-testid="card-featured-video">
+            <CardContent className="p-0 overflow-hidden rounded-xl">
+              <div className="aspect-video w-full">
+                <iframe
+                  src="https://www.youtube.com/embed/m50_661nci0"
+                  title={t('events.mediaVideoTitle')}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-6">
+                <h4 className="font-heading font-bold text-foreground mb-1">{t('events.mediaVideoTitle')}</h4>
+                <p className="text-sm text-muted-foreground">{t('events.mediaVideoDesc')}</p>
+              </div>
             </CardContent>
           </Card>
         </div>
