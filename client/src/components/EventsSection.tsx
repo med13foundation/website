@@ -101,7 +101,7 @@ export default function EventsSection() {
                 asChild
                 data-testid="button-learn-more"
               >
-                <a href="https://combinedbrain.org/conferences/" target="_blank" rel="noopener noreferrer">{t('events.learnMore')}</a>
+                <a href="https://combinedbrain.org/News/13614445" target="_blank" rel="noopener noreferrer">{t('events.learnMore')}</a>
               </Button>
             </CardContent>
           </Card>
