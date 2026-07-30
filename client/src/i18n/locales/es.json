@@ -258,7 +258,7 @@
     "sponsor5Title": "Patrocinador Colaborador",
     "sponsor5Amount": "$1,000",
     "sponsor5Desc": "Nombre en el programa impreso y en la página de patrocinadores de med13.org, más 2 entradas a la recepción.",
-    "sponsorDeadline": "Confirme antes del 15 de agosto de 2026 para aparecer en todos los materiales impresos y la señalización.",
+    "sponsorDeadline": "Confirme antes del 21 de agosto de 2026 para aparecer en todos los materiales impresos y la señalización.",
     "sponsorContact": "Ser Patrocinador",
     "fundsEyebrow": "Caso de Inversión",
     "fundsTitle1": "Financiando el puente del diagnóstico al",
@@ -313,7 +313,13 @@
     "moment5Title": "Subasta en Vivo y Recaudación",
     "moment5Amount": "$5,000",
     "moment5Desc": "Señalización con su nombre en la subasta, un crédito en cada tarjeta de puja y reconocimiento desde el podio a medida que se levantan las paletas.",
-    "momentsInKind": "También se aceptan patrocinios en especie: sede, catering, impresión, artículos para la subasta y fotografía reducen el costo de la velada y cuentan al nivel equivalente."
+    "momentsInKind": "También se aceptan patrocinios en especie: sede, catering, impresión, artículos para la subasta y fotografía reducen el costo de la velada y cuentan al nivel equivalente.",
+    "symposiumEyebrow": "Viernes, 9 de octubre · Pre-Evento",
+    "symposiumTitle": "Simposio Científico Virtual de la Alianza MEDopathies",
+    "symposiumDate": "Viernes, 9 de octubre de 2026 · 10:00 AM – 4:00 PM hora del Pacífico · En línea",
+    "symposiumDesc": "El día antes de la Gala, únete a científicos y defensores para una jornada completa de presentaciones sobre investigación de MEDopathies, con los últimos avances en MED13, MED13L y condiciones relacionadas.",
+    "symposiumSpeakersLabel": "Ponentes Confirmados",
+    "symposiumSpeakers": "Kuang-Lei Tsai · Dylan Taatjes · P.J. Brooks · Nadav Ahituv · Ryan Boudreau · Maya Arce · Carla Marini · Ze-Xuan Li · Terry Jo Bichell · Jean Chia"
   },
   "whoWeAre": {
     "navLink": "Quiénes Somos",

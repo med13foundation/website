@@ -258,7 +258,7 @@
     "sponsor5Title": "Partner Sponsor",
     "sponsor5Amount": "$1,000",
     "sponsor5Desc": "Name in the printed program and on the sponsor page at med13.org, plus 2 tickets to the reception.",
-    "sponsorDeadline": "Confirm by August 15, 2026 to appear on all printed materials and signage.",
+    "sponsorDeadline": "Confirm by August 21, 2026 to appear on all printed materials and signage.",
     "sponsorContact": "Become a Sponsor",
     "fundsEyebrow": "Case for Investment",
     "fundsTitle1": "Funding the bridge from diagnosis to",
@@ -313,7 +313,13 @@
     "moment5Title": "Live Auction & Paddle Raise",
     "moment5Amount": "$5,000",
     "moment5Desc": "Named signage at the auction display, a credit on every bid card, and recognition from the podium as the paddles go up.",
-    "momentsInKind": "Sponsorships are also welcome in kind — venue, catering, print, auction items, and photography all reduce the cost of the evening and count at the equivalent level."
+    "momentsInKind": "Sponsorships are also welcome in kind — venue, catering, print, auction items, and photography all reduce the cost of the evening and count at the equivalent level.",
+    "symposiumEyebrow": "Friday, October 9 · Pre-Event",
+    "symposiumTitle": "MEDopathies Alliance Virtual Scientific Symposium",
+    "symposiumDate": "Friday, October 9, 2026 · 10:00 AM – 4:00 PM Pacific · Online",
+    "symposiumDesc": "The day before the Gala, join scientists and advocates for a full day of presentations on MEDopathies research — covering the latest advances in MED13, MED13L, and related conditions.",
+    "symposiumSpeakersLabel": "Confirmed Speakers",
+    "symposiumSpeakers": "Kuang-Lei Tsai · Dylan Taatjes · P.J. Brooks · Nadav Ahituv · Ryan Boudreau · Maya Arce · Carla Marini · Ze-Xuan Li · Terry Jo Bichell · Jean Chia"
   },
   "whoWeAre": {
     "navLink": "Who We Are",

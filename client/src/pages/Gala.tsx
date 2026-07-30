@@ -197,8 +197,35 @@ export default function Gala() {
         </div>
       </section>
 
+      {/* Symposium */}
+      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-symposium">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold tracking-widest uppercase text-destructive mb-3">
+            {t("gala.symposiumEyebrow")}
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-2" data-testid="text-gala-symposium-title">
+            {t("gala.symposiumTitle")}
+          </h2>
+          <p className="text-base font-semibold text-[#2a2a2a] mb-4 flex items-center gap-2" data-testid="text-gala-symposium-date">
+            <Calendar className="w-4 h-4 text-primary shrink-0" />
+            {t("gala.symposiumDate")}
+          </p>
+          <p className="text-lg text-muted-foreground mb-6" data-testid="text-gala-symposium-desc">
+            {t("gala.symposiumDesc")}
+          </p>
+          <div className="rounded-lg border border-border bg-background p-5" data-testid="card-gala-symposium-speakers">
+            <p className="text-xs font-semibold tracking-widest uppercase text-secondary mb-3">
+              {t("gala.symposiumSpeakersLabel")}
+            </p>
+            <p className="text-sm text-foreground leading-relaxed" data-testid="text-gala-symposium-speakers">
+              {t("gala.symposiumSpeakers")}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Program */}
-      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-program">
+      <section className="py-16 sm:py-24" data-testid="section-gala-program">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-widest uppercase text-destructive mb-3">{t("gala.programEyebrow")}</p>
