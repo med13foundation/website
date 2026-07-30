@@ -15,7 +15,7 @@ interface Member {
   roleKey: string;
   photo?: string;
   bioKey?: string;
-  photoScale?: string;
+  photoImgClass?: string;
 }
 
 const directors: Member[] = [
@@ -26,7 +26,7 @@ const directors: Member[] = [
     photo: "/images/amy_krystosik_no_bg.png",
     bioKey: "whoWeAre.director1Bio",
   },
-  { id: "alvaro-alvarez", name: "Álvaro Álvarez", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez_no_bg.png" },
+  { id: "alvaro-alvarez", name: "Álvaro Álvarez Peralta", roleKey: "whoWeAre.director2Role", photo: "/images/alvaro_alvarez_no_bg.png" },
   { id: "ed-krystosik", name: "Ed Krystosik", roleKey: "whoWeAre.director3Role", photo: "/images/ed_krystosik_no_bg.png" },
   { id: "cindy-badon", name: "Cindy Badon", roleKey: "whoWeAre.director4Role", photo: "/images/cindy_badon_no_bg.png" },
   { id: "marissa-shorey", name: "Marissa Shorey", roleKey: "whoWeAre.director5Role", photo: "/images/marissa_shorey_no_bg.png" },
@@ -53,7 +53,7 @@ const staff: Member[] = [
     name: "Manasa Chandrasekar",
     roleKey: "whoWeAre.staff1Role",
     photo: "/images/manasa_chandrasekar_no_bg.png",
-    photoScale: "scale-150 origin-top",
+    photoImgClass: "object-cover object-top",
     bioKey: "whoWeAre.staff1Bio",
   },
 ];
@@ -94,6 +94,12 @@ const advisors: Member[] = [
     photo: "/images/kuanglei_tsai_no_bg.png",
     bioKey: "whoWeAre.advisor8Bio",
   },
+  {
+    id: "melissa-haendel",
+    name: "Melissa Haendel, PhD",
+    roleKey: "whoWeAre.advisor9Role",
+    bioKey: "whoWeAre.advisor9Bio",
+  },
 ];
 
 const clinicians: Member[] = [
@@ -102,6 +108,7 @@ const clinicians: Member[] = [
     name: "Carla Marini, MD, PhD",
     roleKey: "whoWeAre.clinician1Role",
     photo: "/images/carla_marini_no_bg.png",
+    bioKey: "whoWeAre.clinician1Bio",
   },
   {
     id: "angelica-delgado-vega",
@@ -158,7 +165,7 @@ function MemberCard({ member }: { member: Member }) {
           <img
             src={member.photo}
             alt={member.name}
-            className={`w-full h-full object-contain grayscale${member.photoScale ? ` ${member.photoScale}` : ""}`}
+            className={`w-full h-full ${member.photoImgClass ?? "object-contain"} grayscale`}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

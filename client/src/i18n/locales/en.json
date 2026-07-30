@@ -328,7 +328,7 @@
     "partnersTitle": "Our Partners",
     "partnersSubtitle": "We are grateful to the organizations who have welcomed the MED13 Foundation into their networks",
     "director1Role": "Co-founder & President · Epidemiologist & Data Scientist",
-    "director2Role": "Co-founder & VP Engineering · Biomedical Data Scientist, Stanford Medicine",
+    "director2Role": "Co-founder & Chief Technology Officer",
     "director3Role": "VP Finance",
     "director4Role": "Community Outreach & Patient Advocacy",
     "director5Role": "Program Manager",
@@ -359,7 +359,10 @@
     "advisor5Bio": "Senior clinical geneticist at Karolinska Institute in Stockholm, specializing in rare genetic disorders and rare disease gene discovery and diagnostics.",
     "advisor6Bio": "Leads a lab defining the architecture and function of the Mediator complex and its CDK8 kinase module, the machinery at the center of the Medopathies. His landmark discovery established foundational links in the gene transcription disrupted across all three MEDopathy genes.",
     "advisor7Bio": "Neuroscientist and scientific strategist with 25+ years of experience launching and growing scientific initiatives. Founder of Lark Science Advisors; formerly Neuroscience Program Lead at Chan Zuckerberg Initiative, where she established the Neurodegeneration Challenge Network and helped develop the N=1 Collaborative, which strengthened partnerships between researchers and patient organizations. Previously Editor-in-Chief of Neuron at Cell Press.",
-    "advisor8Bio": "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease."
+    "advisor8Bio": "Associate Professor of Biochemistry and Molecular Biology at McGovern Medical School, UTHealth Houston. Internationally recognized for pioneering cryo-EM studies on the structure and function of the Mediator complex, including the critical role of the MED13 subunit in regulating Mediator activity, and how alterations in this complex contribute to human disease.",
+    "advisor9Role": "TISLAB, UNC · Monarch Initiative · Precision Health & Data Infrastructure",
+    "advisor9Bio": "Director of precision health and translational informatics at UNC and co-founder of the Monarch Initiative. She builds the data and ontology infrastructure that helps rare diagnoses get recognized, studied, and linked to mechanism — making it possible for researchers to find and connect the patients who need them.",
+    "clinician1Bio": "Internationally recognized pediatric neurologist and expert in epilepsy and neurogenetics. She earned her PhD at the University of Melbourne under Prof. Samuel Berkovic, has authored more than 300 publications (H-index 66), and directs the Pediatric Neuropsychiatry Unit at Salesi Children's Hospital. She is collecting MED13 samples and co-authoring the MED13 GeneReview."
   },
   "unsubscribe": {
     "title": "Unsubscribe",
