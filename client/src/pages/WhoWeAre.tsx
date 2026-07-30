@@ -56,6 +56,13 @@ const staff: Member[] = [
     photoImgClass: "object-cover object-top",
     bioKey: "whoWeAre.staff1Bio",
   },
+  {
+    id: "izabela-rezende",
+    name: "Izabela M. Rezende, PhD",
+    roleKey: "whoWeAre.staff2Role",
+    photo: "/images/izabela_rezende_no_bg.png",
+    bioKey: "whoWeAre.staff2Bio",
+  },
 ];
 
 const advisors: Member[] = [
