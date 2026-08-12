@@ -429,7 +429,7 @@ export default function Gala() {
           </p>
           <div className="text-center mt-6">
             <Button size="lg" variant="destructive" asChild data-testid="button-gala-donate">
-              <a href="/#donate">{t("gala.donateButton")}</a>
+              <a href="https://med13.org/?campaign=743443&frequency=one-time#donate" target="_blank" rel="noopener noreferrer">{t("gala.donateButton")}</a>
             </Button>
           </div>
         </div>
