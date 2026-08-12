@@ -147,8 +147,7 @@ export default function Gala() {
             asChild
             data-testid="button-gala-rsvp"
           >
-            <a href={`mailto:${RSVP_EMAIL}?subject=RSVP%20-%20An%20Evening%20for%20Answers`}>
-              <Mail className="w-4 h-4 mr-2" />
+            <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
               {t("gala.rsvp")}
             </a>
           </Button>
