@@ -12,7 +12,6 @@ import {
   Music,
   Microscope,
   Sparkles,
-  Mail,
   ArrowLeft,
   Wine,
   Tent,
@@ -24,7 +23,6 @@ import Footer from "@/components/Footer";
 import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "gala@med13.org";
-const SPONSOR_EMAIL = "partnerships@med13.org";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -338,8 +336,7 @@ export default function Gala() {
             {t("gala.sponsorDeadline")}
           </p>
           <Button className="mt-4" variant="outline" asChild data-testid="button-gala-sponsor-contact">
-            <a href={`mailto:${SPONSOR_EMAIL}?subject=Sponsorship%20-%20An%20Evening%20for%20Answers`}>
-              <Mail className="w-4 h-4 mr-2" />
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdn_spAtvG94tqcqpN1bvK0UwOsUfqiswTzmJpuvF855E2Isw/viewform?usp=sharing&ouid=100823584681284292020" target="_blank" rel="noopener noreferrer">
               {t("gala.sponsorContact")}
             </a>
           </Button>
