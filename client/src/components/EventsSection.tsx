@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -208,6 +208,42 @@ export default function EventsSection() {
               </div>
             </CardContent>
           </Card>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <Card data-testid="card-media-article-1">
+              <CardHeader>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticle1Title')}</CardTitle>
+                <CardDescription>{t('events.mediaArticle1Desc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-1">
+                  <a
+                    href="https://sparkforautism.org/discover_article/family-discovers-cause-of-sons-autism-and-a-path-forward/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card data-testid="card-media-article-2">
+              <CardHeader>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticle2Title')}</CardTitle>
+                <CardDescription>{t('events.mediaArticle2Desc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-2">
+                  <a
+                    href="https://medium.com/@cindybadon/what-a-genetic-diagnosis-can-mean-for-a-child-on-the-spectrum-89ef08a11091"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         <NewsletterArchive />
