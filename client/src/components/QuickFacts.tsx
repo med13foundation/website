@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Dna, Users, Calendar, MapPin, Activity, Puzzle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -12,6 +13,22 @@ export default function QuickFacts() {
     { icon: Puzzle, labelKey: "quickFacts.autism", valueKey: "quickFacts.autismValue", testId: "autism" },
     { icon: Calendar, labelKey: "quickFacts.year", valueKey: "quickFacts.yearValue", testId: "year" },
     { icon: MapPin, labelKey: "quickFacts.location", valueKey: "quickFacts.locationValue", testId: "location" },
+  ];
+
+  const keyFeatures = [
+    "quickFacts.keyFeature1",
+    "quickFacts.keyFeature2",
+    "quickFacts.keyFeature3",
+    "quickFacts.keyFeature4",
+    "quickFacts.keyFeature5",
+    "quickFacts.keyFeature6",
+    "quickFacts.keyFeature7",
+  ];
+
+  const associatedConditions = [
+    "quickFacts.associatedCondition1",
+    "quickFacts.associatedCondition2",
+    "quickFacts.associatedCondition3",
   ];
 
   return (
@@ -51,17 +68,37 @@ export default function QuickFacts() {
           })}
         </div>
 
-        <div className="mt-8 max-w-3xl mx-auto">
-          <Card className="bg-accent">
-            <CardContent className="p-6">
-              <p className="text-sm text-foreground">
-                <strong>{t('quickFacts.keyFeatures')}</strong> {t('quickFacts.keyFeaturesDesc')}
-              </p>
-              <p className="text-sm text-foreground mt-2">
-                <strong>{t('quickFacts.associatedConditions')}</strong> {t('quickFacts.associatedConditionsDesc')}
-              </p>
-            </CardContent>
-          </Card>
+        <div className="mt-8 max-w-4xl mx-auto space-y-5" data-testid="fact-highlights">
+          <div data-testid="key-features-pills">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">{t('quickFacts.keyFeatures')}</p>
+            <div className="flex flex-wrap gap-2">
+              {keyFeatures.map((featureKey, index) => (
+                <Badge
+                  key={featureKey}
+                  variant="outline"
+                  className="rounded-full border-primary/30 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary"
+                  data-testid={`pill-key-feature-${index}`}
+                >
+                  {t(featureKey)}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div data-testid="associated-conditions-pills">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary-foreground">{t('quickFacts.associatedConditions')}</p>
+            <div className="flex flex-wrap gap-2">
+              {associatedConditions.map((conditionKey, index) => (
+                <Badge
+                  key={conditionKey}
+                  variant="outline"
+                  className="rounded-full border-secondary/60 bg-secondary/30 px-3 py-1.5 text-sm font-medium text-secondary-foreground"
+                  data-testid={`pill-associated-condition-${index}`}
+                >
+                  {t(conditionKey)}
+                </Badge>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

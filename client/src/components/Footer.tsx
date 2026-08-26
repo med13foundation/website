@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
@@ -65,8 +65,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
+                <a href="/news-and-events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
                   {t('footer.events')}
+                </a>
+              </li>
+              <li>
+                <a href="/gala" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-gala">
+                  {t('footer.gala')}
+                </a>
+              </li>
+              <li>
+                <a href="/symposium" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-symposium">
+                  {t('footer.symposium')}
                 </a>
               </li>
               <li>
@@ -109,20 +119,16 @@ export default function Footer() {
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <button
-                className="text-muted-foreground hover:text-foreground cursor-not-allowed opacity-50"
-                disabled
-                data-testid="link-footer-twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </button>
-              <button
-                className="text-muted-foreground hover:text-foreground cursor-not-allowed opacity-50"
-                disabled
+              <a
+                href="https://www.linkedin.com/company/med13-foundation/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground"
+                aria-label="MED13 Foundation on LinkedIn"
                 data-testid="link-footer-linkedin"
               >
                 <Linkedin className="w-5 h-5" />
-              </button>
+              </a>
             </div>
 
             <p className="text-sm text-muted-foreground" data-testid="text-footer-copyright">

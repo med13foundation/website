@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -181,7 +181,7 @@ export default function EventsSection() {
         </div>
 
         {/* Featured Media */}
-        <div className="mt-16 max-w-3xl mx-auto">
+        <div id="press-room" className="mt-16 max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-3">
               <Play className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
@@ -246,6 +246,103 @@ export default function EventsSection() {
           </div>
         </div>
 
+        {/* The Constellation campaign theme */}
+        <div className="relative mt-16 overflow-hidden rounded-2xl border border-primary/20 bg-primary px-6 py-10 text-primary-foreground shadow-sm sm:px-10 sm:py-12" data-testid="section-constellation-theme">
+          <div className="pointer-events-none absolute -right-8 -top-8 opacity-10" aria-hidden="true">
+            <Star className="h-32 w-32 fill-primary-foreground text-primary-foreground" />
+          </div>
+          <div className="relative max-w-3xl">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/80">
+              <Star className="h-4 w-4 fill-primary-foreground text-primary-foreground" aria-hidden="true" />
+              {t('events.constellationEyebrow')}
+            </div>
+            <h3 className="mt-3 font-heading text-3xl font-bold text-primary-foreground sm:text-4xl" data-testid="text-constellation-title">
+              {t('events.constellationTitle')}
+            </h3>
+            <p className="mt-3 font-heading text-xl font-semibold leading-relaxed text-primary-foreground" data-testid="text-constellation-tagline">
+              {t('events.constellationTagline')}
+            </p>
+            <Button variant="secondary" className="mt-5" asChild data-testid="button-share-your-story">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdUyQYZiOEHNsuywUdwtFFsM1-3bV2AZv1OtjsRYRfMltaSoA/viewform?usp=sharing&ouid=100823584681284292020"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('events.shareYourStory')} <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <p className="mt-5 text-base leading-relaxed text-primary-foreground/85">{t('events.constellationIntro')}</p>
+            <p className="mt-4 text-base leading-relaxed text-primary-foreground/85">{t('events.constellationMetaphor')}</p>
+            <p className="mt-5 font-medium leading-relaxed text-primary-foreground">{t('events.constellationDignity')}</p>
+          </div>
+        </div>
+
+        {/* Star of the Month */}
+        <div id="star-of-month" className="mt-16 max-w-6xl mx-auto" data-testid="section-star-of-month">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-3">
+              <Star className="h-6 w-6 fill-[#E67E5C] text-[#E67E5C]" aria-hidden="true" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-star-of-month-title">
+              {t('events.starOfMonthTitle')}
+            </h3>
+            <p className="text-muted-foreground">{t('events.starOfMonthSubtitle')}</p>
+          </div>
+
+          <Card className="overflow-hidden" data-testid="card-star-of-month-arturo">
+            <div className="grid md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+              <div className="bg-muted">
+                <img
+                  src="/images/news/arturo.webp"
+                  alt={t('events.starOfMonthImageAlt')}
+                  className="h-full min-h-[320px] w-full object-cover object-center"
+                  data-testid="img-star-of-month-arturo"
+                />
+              </div>
+              <div className="p-6 sm:p-8">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-widest text-secondary">{t('events.starOfMonthDate')}</p>
+                    <h4 className="mt-1 font-heading text-3xl font-bold text-foreground" data-testid="text-star-of-month-name">
+                      {t('events.starOfMonthName')}
+                    </h4>
+                  </div>
+                  <dl className="flex gap-5 text-sm">
+                    <div>
+                      <dt className="font-semibold text-muted-foreground">{t('events.starOfMonthAgeLabel')}</dt>
+                      <dd className="mt-1 font-bold text-foreground">{t('events.starOfMonthAge')}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-muted-foreground">{t('events.starOfMonthCountryLabel')}</dt>
+                      <dd className="mt-1 font-bold text-foreground">{t('events.starOfMonthCountry')}</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                  <div>
+                    <h5 className="font-heading text-lg font-bold text-foreground">{t('events.starOfMonthLovesTitle')}</h5>
+                    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                      <li>• {t('events.starOfMonthLove1')}</li>
+                      <li>• {t('events.starOfMonthLove2')}</li>
+                      <li>• {t('events.starOfMonthLove3')}</li>
+                      <li>• {t('events.starOfMonthLove4')}</li>
+                      <li>• {t('events.starOfMonthLove5')}</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-heading text-lg font-bold text-foreground">{t('events.starOfMonthJourneyTitle')}</h5>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t('events.starOfMonthJourney1')}</p>
+                  </div>
+                </div>
+
+                <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{t('events.starOfMonthJourney2')}</p>
+                <p className="mt-4 text-base font-medium leading-relaxed text-foreground">{t('events.starOfMonthClosing')}</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+
         <NewsletterArchive />
       </div>
     </section>
@@ -264,7 +361,7 @@ function NewsletterArchive() {
   if (newsletters.length === 0) return null;
 
   return (
-    <div className="mt-16 max-w-3xl mx-auto">
+    <div id="newsletter" className="mt-16 max-w-3xl mx-auto">
       <div className="text-center mb-8">
         <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-newsletter-archive-title">
           {t('events.newsletterArchiveTitle')}
