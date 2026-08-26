@@ -269,6 +269,9 @@ export default function Gala() {
               {t("gala.symposiumSpeakers")}
             </p>
           </div>
+           <p className="mt-5 text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
+             {t("gala.symposiumRegistrationComingSoon")}
+           </p>
         </div>
       </section>
 

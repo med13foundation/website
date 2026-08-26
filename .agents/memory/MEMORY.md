@@ -1,0 +1,1 @@
+- [Gala content alignment](gala-content-alignment.md) — Keep public Gala details synchronized with the approved outreach materials; never publish a registration CTA without its final destination.
