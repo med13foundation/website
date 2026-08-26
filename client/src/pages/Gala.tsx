@@ -17,6 +17,7 @@ import {
   Tent,
   Ship,
   UtensilsCrossed,
+  Video,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -90,6 +91,14 @@ export default function Gala() {
     desc: t(`gala.funds${i}Desc`),
   }));
 
+  const readinessStats = [
+    { value: "125+", label: t("gala.readinessFamilies") },
+    { value: "17", label: t("gala.readinessCountries") },
+    { value: "51", label: t("gala.readinessRegistry") },
+    { value: "9", label: t("gala.readinessStudy") },
+    { value: "2", label: t("gala.readinessLines") },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -139,18 +148,35 @@ export default function Gala() {
             </div>
           </div>
 
-          <Button
-            size="lg"
-            className="bg-[#E67E5C] border-[#d96a45] text-white"
-            asChild
-            data-testid="button-gala-rsvp"
-          >
-            <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
-              {t("gala.rsvp")}
-            </a>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button
+              size="lg"
+              className="bg-[#E67E5C] border-[#d96a45] text-white"
+              asChild
+              data-testid="button-gala-rsvp"
+            >
+              <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
+                {t("gala.rsvp")}
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              asChild
+              data-testid="button-gala-livestream"
+            >
+              <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
+                <Video className="w-4 h-4 mr-2" />
+                {t("gala.livestreamButton")}
+              </a>
+            </Button>
+          </div>
           <p className="text-sm text-[#4a4a4a] mt-4" data-testid="text-gala-rsvp-note">
             {t("gala.rsvpNote")}
+          </p>
+          <p className="text-sm text-[#4a4a4a] mt-1" data-testid="text-gala-livestream-note">
+            {t("gala.livestreamNote")}
           </p>
         </div>
       </section>
@@ -190,6 +216,31 @@ export default function Gala() {
             <p className="text-sm font-semibold text-secondary mt-3" data-testid="text-gala-quote-attribution">
               {t("gala.quoteAttribution")}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trial readiness */}
+      <section className="bg-primary py-12 sm:py-16" data-testid="section-gala-trial-readiness">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary-foreground/75 mb-3">
+              {t("gala.readinessEyebrow")}
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-primary-foreground" data-testid="text-gala-trial-readiness-title">
+              {t("gala.readinessTitle")}
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {readinessStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-5 text-center"
+              >
+                <p className="text-4xl font-heading font-bold text-[#FFD9C7]">{stat.value}</p>
+                <p className="mt-2 text-sm leading-snug text-primary-foreground/90">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
