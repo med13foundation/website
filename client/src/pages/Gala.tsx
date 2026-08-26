@@ -171,6 +171,29 @@ export default function Gala() {
                 {t("gala.livestreamButton")}
               </a>
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              asChild
+              data-testid="button-gala-sponsor"
+            >
+              <a
+                href="#sponsorship"
+                onClick={(event) => {
+                  event.preventDefault();
+                  const sponsorshipSection = document.getElementById("sponsorship");
+                  if (sponsorshipSection) {
+                    const headerOffset = 88;
+                    const targetTop = sponsorshipSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+                    window.scrollTo({ top: targetTop, behavior: "auto" });
+                    window.history.pushState(null, "", "#sponsorship");
+                  }
+                }}
+              >
+                {t("gala.sponsorButton")}
+              </a>
+            </Button>
           </div>
           <p className="text-sm text-[#4a4a4a] mt-4" data-testid="text-gala-rsvp-note">
             {t("gala.rsvpNote")}
@@ -261,14 +284,6 @@ export default function Gala() {
           <p className="text-lg text-muted-foreground mb-6" data-testid="text-gala-symposium-desc">
             {t("gala.symposiumDesc")}
           </p>
-          <div className="rounded-lg border border-border bg-background p-5" data-testid="card-gala-symposium-speakers">
-            <p className="text-xs font-semibold tracking-widest uppercase text-secondary mb-3">
-              {t("gala.symposiumSpeakersLabel")}
-            </p>
-            <p className="text-sm text-foreground leading-relaxed" data-testid="text-gala-symposium-speakers">
-              {t("gala.symposiumSpeakers")}
-            </p>
-          </div>
           <div className="mt-5 flex flex-wrap items-center gap-4">
             <p className="text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
               {t("gala.symposiumRegistrationComingSoon")}
@@ -363,7 +378,7 @@ export default function Gala() {
       </section>
 
       {/* Sponsorship */}
-      <section className="py-16 sm:py-24" data-testid="section-gala-sponsorship">
+      <section id="sponsorship" className="scroll-mt-24 py-16 sm:py-24" data-testid="section-gala-sponsorship">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <p className="text-sm font-semibold tracking-widest uppercase text-destructive mb-3">{t("gala.sponsorEyebrow")}</p>

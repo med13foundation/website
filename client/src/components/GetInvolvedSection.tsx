@@ -4,7 +4,7 @@ import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
 
-export default function GetInvolvedSection() {
+export default function GetInvolvedSection({ donationHref = "#donate" }: { donationHref?: string }) {
   const { t } = useTranslation();
 
   const pathways = [
@@ -86,7 +86,7 @@ export default function GetInvolvedSection() {
                       asChild
                       data-testid={`button-${pathway.testId}`}
                     >
-                      <a href="#donate">{t(pathway.actionKey)}</a>
+                      <a href={donationHref}>{t(pathway.actionKey)}</a>
                     </Button>
                   ) : pathway.email ? (
                     <div className="text-center" data-testid={`button-${pathway.testId}`}>

@@ -98,7 +98,13 @@ export default function EventsSection() {
                   asChild
                   data-testid="button-register-interest"
                 >
-                  <a href="#contact">{t('events.registerInterest')}</a>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScLNRechZiJeFobenqjbw7THYj419ZWW-5_nHYa00h9EzGICw/viewform?usp=sharing&ouid=100823584681284292020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.registerInterest')}
+                  </a>
                 </Button>
               </div>
             </CardContent>

@@ -8,6 +8,15 @@
     "contact": "Contact",
     "donate": "Donate"
   },
+  "home": {
+    "missionEyebrow": "Our mission",
+    "missionButton": "Meet the people behind the work",
+    "featuredEventsEyebrow": "Stay connected",
+    "featuredEventsSubtitle": "Meet us at an upcoming gathering or explore the latest opportunities to connect.",
+    "viewAllEvents": "View all news and events",
+    "getInvolvedEyebrow": "Make a difference",
+    "getInvolvedSubtitle": "Choose a way to help move research and family support forward."
+  },
   "hero": {
     "title": "A world where every individual with MED13 syndrome reaches their full potential",
     "subtitle": "The MED13 Foundation unites families, researchers, and clinicians to accelerate scientific discovery, fund research toward treatments, and support families through their diagnostic journey.",
@@ -296,6 +305,7 @@
     "resources": "Resources",
     "combinedbrain": "COMBINEDBrain",
     "events": "Events",
+    "simonsSearchlight": "Simons Searchlight",
     "contact": "Contact",
     "copyright": "© 2026 MED13 Foundation. All rights reserved.",
     "fiscalNote": "MED13 Foundation is a fiscally sponsored project of Rare Village, a 501(c)(3) nonprofit, EIN 83-4699994. Gifts are tax-deductible less the fair market value of goods received."
@@ -384,6 +394,7 @@
     "sponsor5Amount": "$1,000",
     "sponsor5Desc": "Name in the printed program and on the sponsor page at med13.org, plus 2 tickets to the reception.",
     "sponsorDeadline": "Confirm by September 21, 2026 to appear on all printed materials and signage.",
+    "sponsorButton": "Sponsor",
     "sponsorContact": "Become a Sponsor",
     "fundsEyebrow": "Case for Investment",
     "fundsTitle1": "Funding the bridge from diagnosis to",

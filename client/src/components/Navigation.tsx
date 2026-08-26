@@ -30,15 +30,15 @@ export default function Navigation() {
             <Link href="/who-we-are" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
               {t('nav.about')}
             </Link>
-            <a href="/#get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
+            <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
-            </a>
-            <a href="/#roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
+            </Link>
+            <Link href="/roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
               {t('nav.roadmap')}
-            </a>
-            <a href="/#events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
+            </Link>
+            <Link href="/news-and-events" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-events">
               {t('nav.events')}
-            </a>
+            </Link>
             <Link href="/gala" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-gala">
               {t('gala.navLink')}
             </Link>
@@ -77,30 +77,30 @@ export default function Navigation() {
             >
               {t('nav.about')}
             </Link>
-            <a 
-              href="/#get-involved" 
+            <Link 
+              href="/get-involved" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-get-involved"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('nav.getInvolved')}
-            </a>
-            <a 
-              href="/#roadmap" 
+            </Link>
+            <Link 
+              href="/roadmap" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-roadmap"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('nav.roadmap')}
-            </a>
-            <a 
-              href="/#events" 
+            </Link>
+            <Link 
+              href="/news-and-events" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
               data-testid="link-mobile-events"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('nav.events')}
-            </a>
+            </Link>
             <Link 
               href="/gala" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 

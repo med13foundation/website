@@ -8,6 +8,15 @@
     "contact": "Contacto",
     "donate": "Donar"
   },
+  "home": {
+    "missionEyebrow": "Nuestra misión",
+    "missionButton": "Conoce a las personas detrás del trabajo",
+    "featuredEventsEyebrow": "Mantente conectado",
+    "featuredEventsSubtitle": "Únete a nosotros en un próximo encuentro o descubre nuevas formas de conectarte.",
+    "viewAllEvents": "Ver todas las noticias y eventos",
+    "getInvolvedEyebrow": "Marca la diferencia",
+    "getInvolvedSubtitle": "Elige una forma de impulsar la investigación y el apoyo a las familias."
+  },
   "hero": {
     "title": "Un mundo donde cada individuo con síndrome MED13 alcance su máximo potencial",
     "subtitle": "La Fundación MED13 une a familias, investigadores y médicos para acelerar el descubrimiento científico, financiar investigación hacia tratamientos, y apoyar a las familias en su camino diagnóstico.",
@@ -296,6 +305,7 @@
     "resources": "Recursos",
     "combinedbrain": "COMBINEDBrain",
     "events": "Eventos",
+    "simonsSearchlight": "Simons Searchlight",
     "contact": "Contacto",
     "copyright": "© 2026 Fundación MED13. Todos los derechos reservados.",
     "fiscalNote": "La Fundación MED13 es un proyecto patrocinado fiscalmente por Rare Village, una organización sin fines de lucro 501(c)(3), EIN 83-4699994. Las donaciones son deducibles de impuestos menos el valor justo de mercado de los bienes recibidos."
@@ -384,6 +394,7 @@
     "sponsor5Amount": "$1,000",
     "sponsor5Desc": "Nombre en el programa impreso y en la página de patrocinadores de med13.org, más 2 entradas a la recepción.",
     "sponsorDeadline": "Confirme antes del 21 de septiembre de 2026 para aparecer en todos los materiales impresos y la señalización.",
+    "sponsorButton": "Patrocinar",
     "sponsorContact": "Ser Patrocinador",
     "fundsEyebrow": "Caso de Inversión",
     "fundsTitle1": "Financiando el puente del diagnóstico al",

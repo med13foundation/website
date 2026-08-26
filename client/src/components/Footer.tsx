@@ -24,7 +24,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
+                <a href="/roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
                   {t('footer.researchRoadmap')}
                 </a>
               </li>
@@ -67,6 +67,17 @@ export default function Footer() {
               <li>
                 <a href="/#events" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-events">
                   {t('footer.events')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.simonssearchlight.org/gene-guide/med13/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                  data-testid="link-footer-simons-searchlight"
+                >
+                  {t('footer.simonsSearchlight')}
                 </a>
               </li>
             </ul>

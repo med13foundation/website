@@ -26,12 +26,11 @@ export default function ClassyDonation() {
             {t('donate.subtitle')}
           </p>
         </div>
-        
-        <div className="max-w-2xl mx-auto">
+
+        <div className="max-w-2xl mx-auto" data-testid="donation-form">
           <div
             id="GawfU8SxTQR56_jOBk7A9"
             {...({ classy: "743443" } as any)}
-            data-testid="donation-form"
           />
         </div>
       </div>

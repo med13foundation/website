@@ -10,6 +10,9 @@ import Unsubscribe from "@/pages/Unsubscribe";
 import Gala from "@/pages/Gala";
 import Symposium from "@/pages/Symposium";
 import WhoWeAre from "@/pages/WhoWeAre";
+import NewsAndEvents from "@/pages/NewsAndEvents";
+import Roadmap from "@/pages/Roadmap";
+import GetInvolved from "@/pages/GetInvolved";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/gala" component={Gala}/>
       <Route path="/symposium" component={Symposium}/>
       <Route path="/who-we-are" component={WhoWeAre}/>
+      <Route path="/news-and-events" component={NewsAndEvents}/>
+      <Route path="/roadmap" component={Roadmap}/>
+      <Route path="/get-involved" component={GetInvolved}/>
       <Route component={NotFound} />
     </Switch>
   );
