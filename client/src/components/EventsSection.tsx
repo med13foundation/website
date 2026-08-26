@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText, Sparkles, Play } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -40,6 +40,27 @@ export default function EventsSection() {
             <p className="text-sm text-foreground mb-6">{t('gala.eventCardDesc')}</p>
             <Button asChild data-testid="button-gala-details">
               <Link href="/gala">{t('gala.eventCardButton')}</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card className="max-w-6xl mx-auto mb-8 overflow-hidden border-primary/20 bg-primary text-primary-foreground" data-testid="card-symposium-event">
+          <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <Video className="h-5 w-5 text-[#bfe9d2]" />
+              </div>
+              <div>
+                <CardTitle className="text-xl font-heading text-primary-foreground">{t('symposium.title')}</CardTitle>
+                <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground/75">
+                  <Calendar className="h-4 w-4" />
+                  <span>{t('symposium.date')} · {t('symposium.format')}</span>
+                </CardDescription>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground/85">{t('symposium.eventCardDesc')}</p>
+              </div>
+            </div>
+            <Button variant="secondary" className="shrink-0" asChild data-testid="button-symposium-details">
+              <Link href="/symposium">{t('symposium.eventCardButton')}</Link>
             </Button>
           </CardContent>
         </Card>

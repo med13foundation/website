@@ -269,9 +269,16 @@ export default function Gala() {
               {t("gala.symposiumSpeakers")}
             </p>
           </div>
-           <p className="mt-5 text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
-             {t("gala.symposiumRegistrationComingSoon")}
-           </p>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <p className="text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
+              {t("gala.symposiumRegistrationComingSoon")}
+            </p>
+            <Button variant="outline" size="sm" asChild data-testid="button-gala-symposium-details">
+              <Link href="/symposium">
+                {t("gala.symposiumDetailsButton")} <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
