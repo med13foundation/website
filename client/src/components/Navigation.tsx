@@ -81,6 +81,11 @@ export default function Navigation() {
                     {t('nav.eventsPressRoom')}
                   </a>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/news-and-events#stories-and-essays" data-testid="link-events-stories-and-essays">
+                    {t('nav.eventsStoriesAndEssays')}
+                  </a>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <a href="/#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
@@ -184,6 +189,14 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t('nav.eventsPressRoom')}
+                </a>
+                <a
+                  href="/news-and-events#stories-and-essays"
+                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
+                  data-testid="link-mobile-events-stories-and-essays"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t('nav.eventsStoriesAndEssays')}
                 </a>
               </div>
             </div>

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function NewsAndEvents() {
   useEffect(() => {
-    let intervalId: ReturnType<typeof window.setInterval> | undefined;
+    let intervalId: number | undefined;
 
     const alignHashTarget = () => {
       if (intervalId) window.clearInterval(intervalId);

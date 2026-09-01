@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink, Star } from "lucide-react";
+import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink, Star, BookOpen } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -244,6 +244,38 @@ export default function EventsSection() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Stories and Essays */}
+        <div id="stories-and-essays" className="mt-16 max-w-4xl mx-auto" data-testid="section-stories-and-essays">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-3">
+              <BookOpen className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-stories-and-essays-title">
+              {t('events.storiesAndEssaysTitle')}
+            </h3>
+            <p className="text-muted-foreground">{t('events.storiesAndEssaysSubtitle')}</p>
+          </div>
+          <Card className="overflow-hidden border-primary/20" data-testid="card-reflection-essay">
+            <CardHeader className="border-b border-border bg-primary/5">
+              <div className="flex flex-wrap items-start justify-between gap-4">
+                <div>
+                  <CardTitle className="font-heading text-2xl sm:text-3xl">{t('events.reflectionTitle')}</CardTitle>
+                  <CardDescription className="mt-2 text-base">
+                    {t('events.reflectionByline')}
+                  </CardDescription>
+                </div>
+                <Badge variant="secondary" className="shrink-0">
+                  {t('events.reflectionDate')}
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-5 p-6 sm:p-8">
+              <p className="text-base leading-relaxed text-foreground">{t('events.reflectionParagraph1')}</p>
+              <p className="text-base leading-relaxed text-foreground">{t('events.reflectionParagraph2')}</p>
+            </CardContent>
+          </Card>
         </div>
 
         {/* The Constellation campaign theme */}
