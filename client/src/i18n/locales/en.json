@@ -20,7 +20,8 @@
     "missionButton": "Meet the people behind the work",
     "featuredEventsEyebrow": "Stay connected",
     "featuredEventsSubtitle": "Meet us at an upcoming gathering or explore the latest opportunities to connect.",
-    "viewAllEvents": "View all news and events",
+      "viewAllEvents": "View all news and events",
+      "upcomingEventLabel": "Upcoming event",
     "getInvolvedEyebrow": "Make a difference",
     "getInvolvedSubtitle": "Choose a way to help move research and family support forward."
   },

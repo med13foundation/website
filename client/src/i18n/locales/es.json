@@ -20,7 +20,8 @@
     "missionButton": "Conoce a las personas detrás del trabajo",
     "featuredEventsEyebrow": "Mantente conectado",
     "featuredEventsSubtitle": "Únete a nosotros en un próximo encuentro o descubre nuevas formas de conectarte.",
-    "viewAllEvents": "Ver todas las noticias y eventos",
+      "viewAllEvents": "Ver todas las noticias y eventos",
+      "upcomingEventLabel": "Próximo evento",
     "getInvolvedEyebrow": "Marca la diferencia",
     "getInvolvedSubtitle": "Elige una forma de impulsar la investigación y el apoyo a las familias."
   },

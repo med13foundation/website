@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Users, Beaker } from "lucide-react";
+import { Users, Beaker, Sparkles, ArrowRight } from "lucide-react";
 import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -21,6 +22,18 @@ export default function Hero() {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
+          <Link
+            href="/gala"
+            className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            data-testid="link-top-gala-invitation"
+          >
+            <Sparkles className="h-4 w-4 shrink-0 text-[#bfe9d2]" aria-hidden="true" />
+            <span className="min-w-0">
+              <span className="font-semibold">{t('home.upcomingEventLabel')}:</span>{' '}
+              <span>{t('gala.eventCardTitle')} · {t('gala.eventCardDate')}</span>
+            </span>
+            <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </Link>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 min-h-[2.5em]" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
