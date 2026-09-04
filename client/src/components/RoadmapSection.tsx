@@ -11,6 +11,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase1Year",
       titleKey: "roadmap.phase1Title",
       status: "in-progress",
+      rowClass: "border-l-[#68B0AB] bg-[#EAF7F5]",
+      accentClass: "text-[#2D7A89]",
+      bulletClass: "text-[#2D7A89]",
       itemKeys: [
         "roadmap.phase1Item1",
         "roadmap.phase1Item2",
@@ -22,6 +25,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase2Year",
       titleKey: "roadmap.phase2Title",
       status: "upcoming",
+      rowClass: "border-l-[#E67E5C] bg-[#FFF0EA]",
+      accentClass: "text-[#C55E41]",
+      bulletClass: "text-[#C55E41]",
       itemKeys: [
         "roadmap.phase2Item1",
         "roadmap.phase2Item2",
@@ -33,6 +39,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase3Year",
       titleKey: "roadmap.phase3Title",
       status: "upcoming",
+      rowClass: "border-l-[#F1BD4A] bg-[#FFF8E4]",
+      accentClass: "text-[#A87308]",
+      bulletClass: "text-[#A87308]",
       itemKeys: [
         "roadmap.phase3Item1",
         "roadmap.phase3Item2",
@@ -44,6 +53,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase4Year",
       titleKey: "roadmap.phase4Title",
       status: "upcoming",
+      rowClass: "border-l-[#4A9D69] bg-[#ECF7F0]",
+      accentClass: "text-[#34784D]",
+      bulletClass: "text-[#34784D]",
       itemKeys: [
         "roadmap.phase4Item1",
         "roadmap.phase4Item2",
@@ -55,6 +67,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase5Year",
       titleKey: "roadmap.phase5Title",
       status: "upcoming",
+      rowClass: "border-l-[#D96B9F] bg-[#FCEEF5]",
+      accentClass: "text-[#A94272]",
+      bulletClass: "text-[#A94272]",
       itemKeys: [
         "roadmap.phase5Item1",
         "roadmap.phase5Item2",
@@ -77,14 +92,18 @@ export default function RoadmapSection() {
 
         <div className="grid gap-6">
           {phases.map((phase, index) => (
-            <Card key={index} data-testid={`card-phase-${index}`}>
+            <Card
+              key={index}
+              className={`border-l-[6px] shadow-sm ${phase.rowClass}`}
+              data-testid={`card-phase-${index}`}
+            >
               <CardHeader>
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div className="flex items-center gap-3">
                     {phase.status === "in-progress" ? (
-                      <CheckCircle2 className="w-6 h-6 text-chart-4" />
+                      <CheckCircle2 className={`w-6 h-6 ${phase.accentClass}`} />
                     ) : (
-                      <Circle className="w-6 h-6 text-muted-foreground" />
+                      <Circle className={`w-6 h-6 ${phase.accentClass}`} />
                     )}
                     <div>
                       <CardTitle className="text-xl font-heading">{t(phase.titleKey)}</CardTitle>
@@ -102,7 +121,7 @@ export default function RoadmapSection() {
                 <ul className="space-y-2">
                   {phase.itemKeys.map((itemKey, itemIndex) => (
                     <li key={itemIndex} className="text-sm text-foreground flex items-start gap-2">
-                      <span className="text-muted-foreground mt-1">•</span>
+                      <span className={`${phase.bulletClass} mt-1 font-bold`}>•</span>
                       <span>{t(itemKey)}</span>
                     </li>
                   ))}
