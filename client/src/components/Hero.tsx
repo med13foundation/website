@@ -69,7 +69,7 @@ export default function Hero() {
               asChild
               data-testid="button-support-mission"
             >
-              <a href="#donate">{t('hero.supportMission')}</a>
+              <a href="/get-involved">{t('hero.supportMission')}</a>
             </Button>
           </div>
 
