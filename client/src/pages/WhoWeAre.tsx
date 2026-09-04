@@ -212,13 +212,46 @@ export default function WhoWeAre() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (window.location.hash !== "#funders") return;
+    let intervalId: number | undefined;
 
-    const timeoutId = window.setTimeout(() => {
-      document.getElementById("funders")?.scrollIntoView({ block: "start" });
-    }, 100);
+    const scrollToSection = () => {
+      if (intervalId !== undefined) window.clearInterval(intervalId);
+      if (!window.location.hash) return;
 
-    return () => window.clearTimeout(timeoutId);
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      let attempts = 0;
+      let stablePasses = 0;
+
+      intervalId = window.setInterval(() => {
+        attempts += 1;
+        const target = document.getElementById(id);
+
+        if (target) {
+          const headerOffset = 64;
+          const currentTop = target.getBoundingClientRect().top;
+
+          if (Math.abs(currentTop - headerOffset) > 2) {
+            const targetTop = currentTop + window.scrollY - headerOffset;
+            window.scrollTo(0, Math.max(0, targetTop));
+            stablePasses = 0;
+          } else {
+            stablePasses += 1;
+          }
+        }
+
+        if (stablePasses >= 5 || attempts >= 50) {
+          if (intervalId !== undefined) window.clearInterval(intervalId);
+        }
+      }, 100);
+    };
+
+    scrollToSection();
+    window.addEventListener("hashchange", scrollToSection);
+
+    return () => {
+      if (intervalId !== undefined) window.clearInterval(intervalId);
+      window.removeEventListener("hashchange", scrollToSection);
+    };
   }, []);
 
   useEffect(() => {
@@ -247,7 +280,7 @@ export default function WhoWeAre() {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-24" data-testid="section-who-hero">
+        <section id="who-overview" className="scroll-mt-16 relative overflow-hidden py-20 sm:py-24" data-testid="section-who-hero">
         <div className="absolute inset-0 bg-gradient-to-b from-[#68B0AB] via-[#b8d8d3] to-background" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-who-title">
@@ -263,7 +296,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16" data-testid="section-who-story">
+      <section id="our-story" className="scroll-mt-16 py-16" data-testid="section-who-story">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-heading font-bold text-foreground mb-6 text-center">
             {t("whoWeAre.storyTitle")}
@@ -280,7 +313,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Board of Directors */}
-      <section className="py-16 bg-muted/40" data-testid="section-who-board">
+      <section id="board-of-directors" className="scroll-mt-16 py-16 bg-muted/40" data-testid="section-who-board">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
@@ -300,7 +333,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Our Team */}
-      <section className="py-16" data-testid="section-who-staff">
+      <section id="our-team" className="scroll-mt-16 py-16" data-testid="section-who-staff">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
@@ -320,7 +353,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Scientific Advisory Board */}
-      <section className="py-16 bg-muted/40" data-testid="section-who-sab">
+      <section id="scientific-advisory-board" className="scroll-mt-16 py-16 bg-muted/40" data-testid="section-who-sab">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
@@ -340,7 +373,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Clinical Advisory Board */}
-      <section className="py-16 bg-muted/40" data-testid="section-who-cab">
+      <section id="clinical-advisory-board" className="scroll-mt-16 py-16 bg-muted/40" data-testid="section-who-cab">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
@@ -360,7 +393,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Board Openings */}
-      <section className="py-16" data-testid="section-who-openings">
+      <section id="board-openings" className="scroll-mt-16 py-16" data-testid="section-who-openings">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-heading font-bold text-foreground mb-4">
             {t("whoWeAre.openingsTitle")}
@@ -434,7 +467,7 @@ export default function WhoWeAre() {
       </section>
 
       {/* Partners */}
-      <section className="py-16 bg-muted/40" data-testid="section-who-partners">
+      <section id="partners" className="scroll-mt-16 py-16 bg-muted/40" data-testid="section-who-partners">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-3">
             <Handshake className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />

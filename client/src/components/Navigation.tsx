@@ -33,9 +33,62 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/who-we-are" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-about">
-              {t('nav.about')}
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                data-testid="button-about-menu"
+              >
+                {t('nav.about')}
+                <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-64">
+                <DropdownMenuItem asChild>
+                  <Link href="/who-we-are" data-testid="link-about-overview">
+                    {t('nav.aboutOverview')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#our-story" data-testid="link-about-story">
+                    {t('nav.aboutStory')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#board-of-directors" data-testid="link-about-board">
+                    {t('nav.aboutBoard')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#our-team" data-testid="link-about-team">
+                    {t('nav.aboutTeam')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#scientific-advisory-board" data-testid="link-about-scientific-advisors">
+                    {t('nav.aboutScientificAdvisors')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#clinical-advisory-board" data-testid="link-about-clinical-advisors">
+                    {t('nav.aboutClinicalAdvisors')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#board-openings" data-testid="link-about-board-openings">
+                    {t('nav.aboutBoardOpenings')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#funders" data-testid="link-about-funders">
+                    {t('nav.aboutFunders')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="/who-we-are#partners" data-testid="link-about-partners">
+                    {t('nav.aboutPartners')}
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </Link>
@@ -115,14 +168,32 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <Link 
-              href="/who-we-are" 
-              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
-              data-testid="link-mobile-about"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t('nav.about')}
-            </Link>
+            <div className="px-3 py-2" data-testid="mobile-about-menu">
+              <p className="text-base font-semibold text-foreground mb-1">{t('nav.about')}</p>
+              <div className="border-l border-border ml-1 pl-3 space-y-1">
+                {[
+                  ["", "aboutOverview", "overview"],
+                  ["#our-story", "aboutStory", "story"],
+                  ["#board-of-directors", "aboutBoard", "board"],
+                  ["#our-team", "aboutTeam", "team"],
+                  ["#scientific-advisory-board", "aboutScientificAdvisors", "scientific-advisors"],
+                  ["#clinical-advisory-board", "aboutClinicalAdvisors", "clinical-advisors"],
+                  ["#board-openings", "aboutBoardOpenings", "board-openings"],
+                  ["#funders", "aboutFunders", "funders"],
+                  ["#partners", "aboutPartners", "partners"],
+                ].map(([hash, label, testId]) => (
+                  <a
+                    key={label}
+                    href={`/who-we-are${hash}`}
+                    className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
+                    data-testid={`link-mobile-about-${testId}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t(`nav.${label}`)}
+                  </a>
+                ))}
+              </div>
+            </div>
             <Link 
               href="/get-involved" 
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
