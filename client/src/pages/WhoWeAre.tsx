@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Users, Microscope, Stethoscope, Handshake } from "lucide-react";
+import { Mail, Users, Microscope, Stethoscope, Handshake, Award, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -212,6 +212,16 @@ export default function WhoWeAre() {
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (window.location.hash !== "#funders") return;
+
+    const timeoutId = window.setTimeout(() => {
+      document.getElementById("funders")?.scrollIntoView({ block: "start" });
+    }, 100);
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
+
+  useEffect(() => {
     document.title = "Who We Are - Board & Scientific Advisors | MED13 Foundation";
     const metaDesc = document.querySelector('meta[name="description"]');
     const prevDesc = metaDesc?.getAttribute("content") ?? null;
@@ -362,6 +372,64 @@ export default function WhoWeAre() {
               {t("whoWeAre.openingsButton")}
             </a>
           </Button>
+        </div>
+      </section>
+
+      {/* Funders */}
+      <section id="funders" className="scroll-mt-16 py-16 bg-[#f4f8f5]" data-testid="section-who-funders">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="flex justify-center mb-3">
+              <Award className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+            </div>
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
+              {t("whoWeAre.fundersTitle")}
+            </h2>
+            <p className="text-muted-foreground">{t("whoWeAre.fundersSubtitle")}</p>
+          </div>
+
+          <Card className="overflow-hidden border-primary/20 shadow-sm" data-testid="card-funder-anthropic">
+            <div className="grid md:grid-cols-[0.8fr_1.2fr]">
+              <a
+                href="https://www.anthropic.com/news/rare-disease-research-grants"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-48 items-center justify-center bg-[#f7f6f2] p-8 transition-colors hover:bg-[#efede7]"
+                aria-label={t("whoWeAre.anthropicLinkLabel")}
+                data-testid="link-funder-anthropic-logo"
+              >
+                <img
+                  src="/images/anthropic-wordmark.svg"
+                  alt={t("whoWeAre.anthropicLogoAlt")}
+                  className="w-full max-w-[285px]"
+                />
+              </a>
+              <CardContent className="flex flex-col justify-center p-6 sm:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+                  {t("whoWeAre.anthropicProgram")}
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold text-foreground sm:text-3xl" data-testid="text-anthropic-award">
+                  {t("whoWeAre.anthropicAward")}
+                </h3>
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  {t("whoWeAre.anthropicDescription")}
+                </p>
+                <p className="mt-4 font-medium leading-relaxed text-foreground">
+                  {t("whoWeAre.anthropicThanks")}
+                </p>
+                <Button variant="outline" className="mt-6 self-start" asChild data-testid="button-anthropic-announcement">
+                  <a
+                    href="https://www.anthropic.com/news/rare-disease-research-grants"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("whoWeAre.anthropicReadAnnouncement")}
+                    <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </a>
+                </Button>
+              </CardContent>
+            </div>
+          </Card>
         </div>
       </section>
 
