@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { RESEARCH_COHORT_FORM_URL } from "@/lib/links";
+import { CLASSY_DONATION_URL, RESEARCH_COHORT_FORM_URL } from "@/lib/links";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker, Sparkles, ArrowRight } from "lucide-react";
 import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
@@ -42,7 +42,7 @@ export default function Hero() {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 mb-12">
             <Button 
               size="lg"
               className="bg-white text-primary hover:bg-white/90 border-white"
@@ -69,7 +69,16 @@ export default function Hero() {
               asChild
               data-testid="button-support-mission"
             >
-              <a href="/get-involved">{t('hero.supportMission')}</a>
+              <a href={CLASSY_DONATION_URL}>{t('hero.supportMission')}</a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
+              asChild
+              data-testid="button-get-involved"
+            >
+              <a href="/get-involved">{t('hero.getInvolved')}</a>
             </Button>
           </div>
 
