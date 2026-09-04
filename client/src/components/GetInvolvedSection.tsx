@@ -13,7 +13,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       icon: FlaskConical,
       titleKey: "getInvolved.researchTitle",
       descKey: "getInvolved.researchDesc",
-      actionKey: "getInvolved.contactUs",
+      actionKey: "getInvolved.joinCohortAction",
       testId: "research",
       email: "research@med13.org",
       formUrl: RESEARCH_COHORT_FORM_URL
@@ -30,7 +30,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       icon: HandHeart,
       titleKey: "getInvolved.volunteerTitle",
       descKey: "getInvolved.volunteerDesc",
-      actionKey: "getInvolved.contactUs",
+      actionKey: "getInvolved.volunteerAction",
       testId: "volunteer",
       email: "research@med13.org",
       formUrl: VOLUNTEER_FORM_URL
@@ -91,21 +91,25 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
                     >
                       <a href={donationHref}>{t(pathway.actionKey)}</a>
                     </Button>
+                  ) : pathway.formUrl ? (
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      asChild
+                      data-testid={`button-${pathway.testId}`}
+                    >
+                      <a
+                        href={pathway.formUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t(pathway.actionKey)}
+                      </a>
+                    </Button>
                   ) : pathway.email ? (
                     <div className="text-center" data-testid={`button-${pathway.testId}`}>
                       <p className="text-sm text-muted-foreground mb-2">{t(pathway.actionKey)}</p>
-                      {pathway.formUrl ? (
-                        <a
-                          href={pathway.formUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold text-primary underline-offset-4 hover:underline"
-                        >
-                          {pathway.email}
-                        </a>
-                      ) : (
-                        <p className="font-semibold text-primary">{pathway.email}</p>
-                      )}
+                      <p className="font-semibold text-primary">{pathway.email}</p>
                     </div>
                   ) : (
                     <Button 
