@@ -2,15 +2,14 @@ import { FlaskConical, HandHeart, Users2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { RESEARCH_COHORT_FORM_URL } from "@/lib/links";
+import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
 
-const communityConnectionFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc5l6wk6J2sCPBU5-cqa82MvYhRAqa-ivPsLPLrvAlh5Iay5w/viewform?usp=sharing&ouid=100823584681284292020";
 const boardContactEmail = "mailto:research@med13.org";
 
 const pathways = [
   { icon: FlaskConical, titleKey: "getInvolved.researchTitle", descKey: "getInvolved.researchDesc", testId: "research", formUrl: RESEARCH_COHORT_FORM_URL },
   { icon: Users2, titleKey: "getInvolved.boardTitle", descKey: "getInvolved.boardDesc", testId: "board", formUrl: boardContactEmail },
-  { icon: HandHeart, titleKey: "getInvolved.volunteerTitle", descKey: "getInvolved.volunteerDesc", testId: "volunteer", formUrl: communityConnectionFormUrl },
+  { icon: HandHeart, titleKey: "getInvolved.volunteerTitle", descKey: "getInvolved.volunteerDesc", testId: "volunteer", formUrl: VOLUNTEER_FORM_URL },
 ];
 
 export default function GetInvolvedPreview() {

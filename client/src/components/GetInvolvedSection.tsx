@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
-import { RESEARCH_COHORT_CONTACT_FORM_URL } from "@/lib/links";
+import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
 
 export default function GetInvolvedSection({ donationHref = "#donate" }: { donationHref?: string }) {
   const { t } = useTranslation();
@@ -16,7 +16,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       actionKey: "getInvolved.contactUs",
       testId: "research",
       email: "research@med13.org",
-      formUrl: RESEARCH_COHORT_CONTACT_FORM_URL
+      formUrl: RESEARCH_COHORT_FORM_URL
     },
     {
       icon: Users2,
@@ -32,7 +32,8 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       descKey: "getInvolved.volunteerDesc",
       actionKey: "getInvolved.contactUs",
       testId: "volunteer",
-      email: "research@med13.org"
+      email: "research@med13.org",
+      formUrl: VOLUNTEER_FORM_URL
     },
     {
       icon: Heart,
