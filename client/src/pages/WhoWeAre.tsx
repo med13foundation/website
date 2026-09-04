@@ -139,6 +139,7 @@ interface Partner {
   logo?: string;
   darkBg?: boolean;
   tall?: boolean;
+  wide?: boolean;
 }
 
 const partners: Partner[] = [
@@ -148,7 +149,7 @@ const partners: Partner[] = [
 
   { name: "MED12 Foundation", logo: "/images/med12_foundation_no_bg.png" },
   { name: "MED13L Foundation", logo: "/images/med13l_foundation_trimmed.png" },
-  { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", tall: true },
+  { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", wide: true },
   { name: "REN", logo: "/images/ren_logo.avif" },
 ];
 
@@ -385,7 +386,13 @@ export default function WhoWeAre() {
                   <img
                     src={p.logo}
                     alt={p.name}
-                    className={`object-contain ${p.tall ? "h-32 w-auto max-w-[200px]" : "h-full w-auto max-w-[160px]"}`}
+                    className={`object-contain ${
+                      p.wide
+                        ? "h-auto max-h-20 w-full max-w-[320px]"
+                        : p.tall
+                          ? "h-32 w-auto max-w-[200px]"
+                          : "h-full w-auto max-w-[160px]"
+                    }`}
                   />
                 </span>
               ) : (

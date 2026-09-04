@@ -231,7 +231,7 @@ export default function Symposium() {
                 <img
                   src="/images/medopathies_alliance_no_bg.png"
                   alt={t("symposium.logoAlt")}
-                  className="mx-auto mb-8 w-56 sm:w-64 lg:mx-0"
+                  className="mx-auto mb-8 w-full max-w-sm lg:mx-0"
                   data-testid="img-symposium-logo"
                 />
                 <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-secondary" data-testid="text-symposium-eyebrow">
