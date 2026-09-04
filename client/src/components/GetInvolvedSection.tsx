@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
+import { RESEARCH_COHORT_CONTACT_FORM_URL } from "@/lib/links";
 
 export default function GetInvolvedSection({ donationHref = "#donate" }: { donationHref?: string }) {
   const { t } = useTranslation();
@@ -14,7 +15,8 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       descKey: "getInvolved.researchDesc",
       actionKey: "getInvolved.contactUs",
       testId: "research",
-      email: "research@med13.org"
+      email: "research@med13.org",
+      formUrl: RESEARCH_COHORT_CONTACT_FORM_URL
     },
     {
       icon: Users2,
@@ -91,7 +93,18 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
                   ) : pathway.email ? (
                     <div className="text-center" data-testid={`button-${pathway.testId}`}>
                       <p className="text-sm text-muted-foreground mb-2">{t(pathway.actionKey)}</p>
-                      <p className="font-semibold text-primary">{pathway.email}</p>
+                      {pathway.formUrl ? (
+                        <a
+                          href={pathway.formUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-primary underline-offset-4 hover:underline"
+                        >
+                          {pathway.email}
+                        </a>
+                      ) : (
+                        <p className="font-semibold text-primary">{pathway.email}</p>
+                      )}
                     </div>
                   ) : (
                     <Button 
