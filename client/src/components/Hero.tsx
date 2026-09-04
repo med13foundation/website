@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { RESEARCH_COHORT_FORM_URL } from "@/lib/links";
 import { Badge } from "@/components/ui/badge";
 import { Users, Beaker, Sparkles, ArrowRight } from "lucide-react";
 import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
@@ -48,7 +49,9 @@ export default function Hero() {
               asChild
               data-testid="button-join-research"
             >
-              <a href="#get-involved">{t('hero.joinResearch')}</a>
+              <a href={RESEARCH_COHORT_FORM_URL} target="_blank" rel="noopener noreferrer">
+                {t('hero.joinResearch')}
+              </a>
             </Button>
             <Button 
               variant="outline" 

@@ -1,5 +1,6 @@
 import { Facebook, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { RESEARCH_COHORT_FORM_URL } from "@/lib/links";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -37,7 +38,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/#get-involved" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-research">
+                <a
+                  href={RESEARCH_COHORT_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                  data-testid="link-footer-research"
+                >
                   {t('footer.joinResearch')}
                 </a>
               </li>
