@@ -93,7 +93,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
                     </Button>
                   ) : pathway.formUrl ? (
                     <Button
-                      variant="outline"
+                      variant="default"
                       className="w-full"
                       asChild
                       data-testid={`button-${pathway.testId}`}
