@@ -7,7 +7,7 @@ export default function GetInvolved() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <GetInvolvedSection donationHref="/#donate" />
+        <GetInvolvedSection donationHref="/?campaign=743443&frequency=one-time#donate" />
       </main>
       <Footer />
     </div>
