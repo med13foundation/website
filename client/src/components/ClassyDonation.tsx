@@ -9,7 +9,7 @@ export default function ClassyDonation() {
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = "https://giving.classy.org/embedded/api/sdk/js/70982";
+      script.src = "https://giving.gofundme.com/embedded/api/checkout/sdk/js/70982";
       script.async = true;
       document.body.appendChild(script);
     }
