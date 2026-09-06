@@ -21,6 +21,31 @@ export default function EventsSection() {
           </p>
         </div>
 
+        <Card className="max-w-6xl mx-auto mb-8 overflow-hidden border-secondary/50 bg-gradient-to-br from-secondary/15 via-background to-background" data-testid="card-hope-practice-event">
+          <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary/25">
+                <Sparkles className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <div className="mb-2 flex flex-wrap gap-2">
+                  <Badge variant="secondary">{t("hopePractice.communityTag")}</Badge>
+                  <Badge variant="secondary">{t("hopePractice.freeTag")}</Badge>
+                </div>
+                <CardTitle className="text-xl font-heading">{t("hopePractice.title")}</CardTitle>
+                <CardDescription className="mt-2 flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>{t("hopePractice.cardDate")}</span>
+                </CardDescription>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/80">{t("hopePractice.cardBlurb")}</p>
+              </div>
+            </div>
+            <Button className="shrink-0" asChild data-testid="button-hope-practice-details">
+              <Link href="/news-and-events/hope-is-a-practice">{t("hopePractice.details")}</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
         <Card className="max-w-6xl mx-auto mb-8" data-testid="card-gala-event">
           <CardHeader>
             <CardTitle className="text-xl font-heading flex items-center gap-2 flex-wrap">

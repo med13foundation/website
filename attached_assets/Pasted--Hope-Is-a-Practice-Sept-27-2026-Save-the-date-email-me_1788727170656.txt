@@ -1,0 +1,85 @@
+# "Hope Is a Practice" – Sept 27, 2026
+## Save-the-date email + med13.org/news-and-events copy
+
+Companion to `MED13_HopeIsAPractice_SaveTheDate.ics` (attach the .ics to the email, or add it as a Google Calendar event and paste the "Add to calendar" link).
+
+---
+
+## 1. Save-the-date email (Bay Area community list)
+
+**From:** Amy Krystosik <amy@med13.org> (not the Gmail address)
+**To:** yourself. **Bcc:** the community list. Never Cc; some recipients have not disclosed their family's situation to anyone.
+**Subject:** Save the date, Sept 27: "Hope Is a Practice," a Sunday morning with the MED13 community in Palo Alto
+
+Dear friends,
+
+I would love for you to join us on **Sunday, September 27 at 10:30 a.m.** at the Unitarian Universalist Church of Palo Alto for a service called **"Hope Is a Practice."** UUCPA is hosting it, and we are shaping it together with members of the rare disease and disability community.
+
+The idea is simple. For families like ours, hope is not a feeling that arrives. It is something we practice, one ordinary day at a time, and something no one should have to practice alone. The morning will include readings and music, a short reflection from me, a "hope stars" activity that children and adults do side by side, and coffee hour afterward, where our MED13 team will be around for anyone who wants to talk.
+
+A few things worth knowing up front:
+
+- **Everyone is welcome,** of any faith or none. You do not need to be part of the congregation.
+- **This is not a fundraiser.** There is no MED13 ask; the morning offering is the church's own.
+- **Children are welcome.** They join for the story at the start and then head to the church's programs.
+- **It is livestreamed and recorded,** as every UUCPA service is, so people who cannot be there can still join. If you would rather stay off camera, you can take part from your seat.
+
+**Where:** UUCPA, 505 E Charleston Rd, Palo Alto, CA 94306 (free parking on site)
+**Online:** [livestream link, to confirm with UUCPA]
+**Add to calendar:** attached
+
+No RSVP needed. Just come. If you have a question or would like to help shape the morning behind the scenes, reply to this note.
+
+With gratitude,
+Amy
+
+Amy Krystosik
+Co-founder and President, MED13 Foundation
+a fiscally sponsored project of Rare Village Foundation
+med13.org
+
+P.S. Two weeks later, on **Saturday, October 10**, we return to the same hall for the MED13 Foundation's first gala. Details at med13.org/gala; a separate invitation is on its way.
+
+---
+
+## 2. Reminder email (send Wed Sept 23 or Thu Sept 24)
+
+**Subject:** This Sunday, 10:30 a.m.: "Hope Is a Practice" in Palo Alto
+
+A quick reminder that "Hope Is a Practice" is this Sunday, September 27, at 10:30 a.m. at UUCPA (505 E Charleston Rd, Palo Alto). Come as you are; everyone is welcome and there is nothing to bring or sign up for. Watching from home works too: [livestream link]. See you there. – Amy
+
+---
+
+## 3. med13.org/news-and-events entry
+
+Match whatever card or listing format the page already uses. Suggested fields:
+
+**Headline:** Hope Is a Practice: a Sunday service with the MED13 community
+**Date/time:** Sunday, September 27, 2026 · 10:30 a.m. PT
+**Location:** Unitarian Universalist Church of Palo Alto, 505 E Charleston Rd, Palo Alto, CA 94306 · also livestreamed
+**Tags:** Community · Bay Area · Free
+
+**Blurb (about 120 words):**
+
+The Unitarian Universalist Church of Palo Alto is hosting a Sunday service on the theme "Hope Is a Practice," created together with the MED13 Foundation and community members living with rare disease and disability. For families like ours, hope is not a feeling that arrives; it is something we practice, one ordinary day at a time, and something no one has to practice alone.
+
+The morning includes readings and music, a short reflection from MED13 co-founder Amy Krystosik, a "hope stars" activity for all ages, and coffee hour afterward. Everyone is welcome, of any faith or none. This is not a fundraiser; the morning offering is the church's own. The service is livestreamed and recorded, as all UUCPA services are.
+
+**Buttons:** "Add to calendar" (link the .ics) · "Watch online" (UUCPA livestream link) · "Directions" (Google Maps link)
+
+**One line below the card, optional:** "Also this fall: the Medopathies Virtual Symposium (Oct 9) and the MED13 Foundation's first gala (Oct 10)." Link each to its own page. This keeps the three fall dates visible without turning the service listing into a pitch.
+
+**After the event, swap the card for a short recap:** one or two sentences, the constellation photo (people's backs or the board only; no identifiable children without a signed release), and the recording link if UUCPA is comfortable with it being linked from med13.org. Ask them; it is their recording.
+
+---
+
+## 4. Before you hit send: the checklist
+
+1. **Rev. Cat's sign-off on public wording.** It is UUCPA's service, livestream, and sanctuary. Send her section 1 and section 3 together and ask for a yes on both, plus the exact livestream URL and whether she wants the service listed on UUCPA's own calendar the same way.
+2. **Livestream link.** Placeholder in both the email and the .ics. Do not send with a placeholder.
+3. **Parking and accessibility line.** Confirm the lot, step-free entry, and whether hearing assistance is available. Rare disease families will read for this.
+4. **Blair's arc is not mentioned anywhere in public copy.** Keep it that way until she has said how she wants credit handled.
+5. **No family names, no diagnoses, no "featured family."** The only named person is you.
+6. **Photo policy for the day.** Decide now whether MED13 will photograph the constellation board and coffee hour, and get the church's OK. Anything with a child's face needs a guardian-signed release before it appears on med13.org or in gala collateral.
+7. **Sender address.** amy@med13.org, Bcc only. If the list is over roughly 100 names, send from your email platform (Mailchimp or similar) so it does not land in spam and so unsubscribes are honored.
+8. **Log it.** This is a cultivation touchpoint, not a fundraising event. Tag attendees in the donor pipeline as "warm, Sept 27" so the gala follow-up two weeks later is personal.
