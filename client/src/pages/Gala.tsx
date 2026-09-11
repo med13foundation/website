@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "gala@med13.org";
+const AUCTION_URL = "https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup/auction";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -151,6 +152,17 @@ export default function Gala() {
           <div className="flex flex-wrap justify-center gap-3">
             <Button
               size="lg"
+              className="bg-[#1d5f66] text-white hover:bg-[#174f55]"
+              asChild
+              data-testid="button-gala-auction-hero"
+            >
+              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
+                <Gavel className="w-4 h-4 mr-2" />
+                {t("gala.auctionButton")}
+              </a>
+            </Button>
+            <Button
+              size="lg"
               className="bg-[#E67E5C] border-[#d96a45] text-white"
               asChild
               data-testid="button-gala-rsvp"
@@ -200,6 +212,9 @@ export default function Gala() {
           </p>
           <p className="text-sm text-[#4a4a4a] mt-1" data-testid="text-gala-livestream-note">
             {t("gala.livestreamNote")}
+          </p>
+          <p className="text-sm font-semibold text-[#1d5f66] mt-2" data-testid="text-gala-auction-opening">
+            {t("gala.auctionOpening")}
           </p>
         </div>
       </section>
@@ -322,7 +337,7 @@ export default function Gala() {
       </section>
 
       {/* Auction */}
-      <section className="py-16 sm:py-24" data-testid="section-gala-auction">
+      <section id="auction" className="py-16 sm:py-24" data-testid="section-gala-auction">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-widest uppercase text-secondary mb-3">{t("gala.auctionEyebrow")}</p>
@@ -342,6 +357,15 @@ export default function Gala() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button size="lg" asChild data-testid="button-gala-auction">
+              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
+                <Gavel className="mr-2 h-4 w-4" />
+                {t("gala.auctionButton")}
+              </a>
+            </Button>
+            <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
           </div>
         </div>
       </section>
