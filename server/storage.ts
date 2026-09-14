@@ -1,4 +1,4 @@
-import { type NewsletterSubscriber, type InsertNewsletterSubscriber, type Newsletter, type InsertNewsletter, newsletterSubscribers, newsletters } from "@shared/schema";
+import { type NewsletterSubscriber, type InsertNewsletterSubscriber, type Newsletter, type InsertNewsletter, type InsertSymposiumRegistration, type SymposiumRegistration, newsletterSubscribers, newsletters, symposiumRegistrations } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -15,9 +15,23 @@ export interface IStorage {
   updateNewsletter(id: string, update: Partial<Newsletter>): Promise<Newsletter>;
   deleteNewsletter(id: string): Promise<void>;
   deleteSubscriber(id: string): Promise<void>;
+  addSymposiumRegistration(registration: InsertSymposiumRegistration): Promise<SymposiumRegistration>;
 }
 
 export class DatabaseStorage implements IStorage {
+  async addSymposiumRegistration(registration: InsertSymposiumRegistration): Promise<SymposiumRegistration> {
+    const normalizedEmail = registration.email.toLowerCase();
+    const [saved] = await db
+      .insert(symposiumRegistrations)
+      .values({ ...registration, email: normalizedEmail })
+      .onConflictDoUpdate({
+        target: symposiumRegistrations.email,
+        set: { name: registration.name },
+      })
+      .returning();
+    return saved;
+  }
+
   async addNewsletterSubscriber(insertSubscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
     const normalizedEmail = insertSubscriber.email.toLowerCase();
     const [existing] = await db

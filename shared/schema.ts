@@ -18,6 +18,13 @@ export const newsletters = pgTable("newsletters", {
   sentAt: timestamp("sent_at"),
 });
 
+export const symposiumRegistrations = pgTable("symposium_registrations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: text("name").notNull(),
+  email: text("email").notNull().unique(),
+  registeredAt: timestamp("registered_at").notNull().defaultNow(),
+});
+
 export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).pick({
   email: true,
 }).extend({
@@ -31,8 +38,18 @@ export const insertNewsletterSchema = createInsertSchema(newsletters).omit({
   sentAt: true,
 });
 
+export const insertSymposiumRegistrationSchema = createInsertSchema(symposiumRegistrations).pick({
+  name: true,
+  email: true,
+}).extend({
+  name: z.string().trim().min(1, "Name is required").max(120),
+  email: z.string().trim().email("Please enter a valid email address").max(320),
+});
+
 export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 
 export type InsertNewsletter = z.infer<typeof insertNewsletterSchema>;
 export type Newsletter = typeof newsletters.$inferSelect;
+export type InsertSymposiumRegistration = z.infer<typeof insertSymposiumRegistrationSchema>;
+export type SymposiumRegistration = typeof symposiumRegistrations.$inferSelect;

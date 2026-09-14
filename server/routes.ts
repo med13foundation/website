@@ -1,7 +1,7 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertNewsletterSubscriberSchema, insertNewsletterSchema } from "@shared/schema";
+import { insertNewsletterSubscriberSchema, insertNewsletterSchema, insertSymposiumRegistrationSchema } from "@shared/schema";
 import { sendNewsletterEmail, sendNewsletterBatch, sendTestEmail } from "./email";
 import { syncSubscribersFromSheet } from "./googleSheets";
 
@@ -81,6 +81,21 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
         res.status(400).json({ error: error.errors });
       } else {
         res.status(500).json({ error: "Failed to subscribe" });
+      }
+    }
+  });
+
+  app.post("/api/symposium/register", async (req, res) => {
+    try {
+      const registration = insertSymposiumRegistrationSchema.parse(req.body);
+      await storage.addSymposiumRegistration(registration);
+      res.json({ success: true });
+    } catch (error: any) {
+      if (error.name === "ZodError") {
+        res.status(400).json({ error: error.errors });
+      } else {
+        console.error("Symposium registration failed", error);
+        res.status(500).json({ error: "Failed to register" });
       }
     }
   });
