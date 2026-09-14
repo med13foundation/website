@@ -1,12 +1,9 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, ArrowRight, BookOpenText, CalendarDays, CheckCircle2, Clock3, Globe2, LockKeyhole, PlayCircle, Users, Video } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenText, CalendarDays, Clock3, Globe2, LockKeyhole, PlayCircle, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { apiRequest } from "@/lib/queryClient";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -44,23 +41,6 @@ function Initials({ name }: { name: string }) {
 
 export default function Symposium() {
   const { t } = useTranslation();
-  const [registrationName, setRegistrationName] = useState("");
-  const [registrationEmail, setRegistrationEmail] = useState("");
-  const [registrationState, setRegistrationState] = useState<"idle" | "submitting" | "success" | "error">("idle");
-
-  const submitRegistration = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setRegistrationState("submitting");
-    try {
-      await apiRequest("POST", "/api/symposium/register", {
-        name: registrationName,
-        email: registrationEmail,
-      });
-      setRegistrationState("success");
-    } catch {
-      setRegistrationState("error");
-    }
-  };
 
   useEffect(() => {
     document.title = t("symposium.metaTitle");
@@ -263,29 +243,11 @@ export default function Symposium() {
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground lg:text-xl" data-testid="text-symposium-intro">
                   {t("symposium.heroIntro")}
                 </p>
-                {registrationState === "success" ? (
-                  <div className="mt-8 flex items-center justify-center gap-2 rounded-xl border border-primary/15 bg-white/80 px-5 py-4 text-primary lg:justify-start" data-testid="status-symposium-registration-success">
-                    <CheckCircle2 className="h-5 w-5" />
-                    <span className="font-semibold">{t("symposium.registrationSuccess")}</span>
-                  </div>
-                ) : (
-                  <form className="mt-8 grid gap-3 rounded-xl border border-primary/10 bg-white/70 p-4 text-left sm:grid-cols-2" onSubmit={submitRegistration}>
-                    <div className="space-y-1.5">
-                      <Label htmlFor="symposium-name">{t("symposium.registrationName")}</Label>
-                      <Input id="symposium-name" value={registrationName} onChange={(event) => setRegistrationName(event.target.value)} autoComplete="name" required data-testid="input-symposium-name" />
-                    </div>
-                    <div className="space-y-1.5">
-                      <Label htmlFor="symposium-email">{t("symposium.registrationEmail")}</Label>
-                      <Input id="symposium-email" type="email" value={registrationEmail} onChange={(event) => setRegistrationEmail(event.target.value)} autoComplete="email" required data-testid="input-symposium-email" />
-                    </div>
-                    <Button className="sm:col-span-2" size="lg" type="submit" disabled={registrationState === "submitting"} data-testid="button-symposium-registration">
-                      {registrationState === "submitting" ? t("symposium.registrationSubmitting") : t("symposium.registrationStatus")}
-                    </Button>
-                    {registrationState === "error" && (
-                      <p className="text-sm text-destructive sm:col-span-2" role="alert">{t("symposium.registrationError")}</p>
-                    )}
-                  </form>
-                )}
+                <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+                  <Button size="lg" disabled data-testid="button-symposium-registration">
+                    {t("symposium.registrationStatus")}
+                  </Button>
+                </div>
                 <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-start">
                   <Button size="lg" variant="outline" asChild data-testid="button-symposium-program">
                     <a href="#program">
