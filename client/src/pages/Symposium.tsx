@@ -244,8 +244,14 @@ export default function Symposium() {
                   {t("symposium.heroIntro")}
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-                  <Button size="lg" disabled data-testid="button-symposium-registration">
-                    {t("symposium.registrationStatus")}
+                  <Button size="lg" asChild data-testid="button-symposium-registration">
+                    <a
+                      href="https://us02web.zoom.us/webinar/register/WN_X9wRqoaiSMm3Hwj-PZR-Xw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("symposium.registrationStatus")}
+                    </a>
                   </Button>
                 </div>
                 <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-start">
