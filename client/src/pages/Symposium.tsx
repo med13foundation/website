@@ -105,7 +105,7 @@ export default function Symposium() {
     },
     {
       time: t("symposium.session6Time"),
-      type: t("symposium.keynoteLabel"),
+      type: t("symposium.afternoonKeynoteLabel"),
       title: t("symposium.session6Title"),
       description: t("symposium.session6Description"),
       speakers: t("symposium.session6Speakers"),
