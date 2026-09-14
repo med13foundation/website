@@ -322,10 +322,6 @@ export default function Symposium() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 flex items-start gap-3 border-t border-border pt-6">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
-                  <p className="text-sm leading-relaxed text-muted-foreground">{t("symposium.openAccessNote")}</p>
-                </div>
               </div>
             </div>
           </div>
