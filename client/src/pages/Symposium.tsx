@@ -121,6 +121,7 @@ export default function Symposium() {
       time: t("symposium.session8Time"),
       title: t("symposium.session8Title"),
       description: t("symposium.session8Description"),
+      speakers: t("symposium.session8Speakers"),
     },
   ];
 
