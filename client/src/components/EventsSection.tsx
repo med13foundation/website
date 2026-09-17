@@ -5,48 +5,9 @@ import { Calendar, MapPin, Users, FileText, Sparkles, Play, Video, ExternalLink,
 import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
-import { useEffect, useState } from "react";
-import {
-  Carousel,
-  type CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export default function EventsSection() {
   const { t } = useTranslation();
-  const [starCarouselApi, setStarCarouselApi] = useState<CarouselApi>();
-
-  useEffect(() => {
-    if (!starCarouselApi) return;
-
-    const rotation = window.setInterval(() => {
-      if (starCarouselApi.canScrollNext()) {
-        starCarouselApi.scrollNext();
-      } else {
-        starCarouselApi.scrollTo(0);
-      }
-    }, 8000);
-
-    return () => window.clearInterval(rotation);
-  }, [starCarouselApi]);
-
-  const monthlyStars = [
-    {
-      id: "xander",
-      image: "/images/news/xander-september-2026.webp",
-      prefix: "starOfMonthSeptember",
-      loves: 4,
-    },
-    {
-      id: "arturo",
-      image: "/images/news/arturo.webp",
-      prefix: "starOfMonth",
-      loves: 5,
-    },
-  ] as const;
 
   return (
     <section id="events" className="py-16 sm:py-24 bg-muted">
@@ -396,97 +357,6 @@ export default function EventsSection() {
             <p className="mt-4 text-base leading-relaxed text-primary-foreground/85">{t('events.constellationMetaphor')}</p>
             <p className="mt-5 font-medium leading-relaxed text-primary-foreground">{t('events.constellationDignity')}</p>
           </div>
-        </div>
-
-        {/* Star of the Month */}
-        <div id="star-of-month" className="mt-16 max-w-6xl mx-auto" data-testid="section-star-of-month">
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-3">
-              <Star className="h-6 w-6 fill-[#E67E5C] text-[#E67E5C]" aria-hidden="true" />
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-star-of-month-title">
-              {t('events.starOfMonthTitle')}
-            </h3>
-            <p className="text-muted-foreground">{t('events.starOfMonthSubtitle')}</p>
-          </div>
-
-          <Carousel
-            setApi={setStarCarouselApi}
-            opts={{ loop: true }}
-            className="px-8 sm:px-12"
-            aria-label={t("events.starCarouselLabel")}
-          >
-            <CarouselContent>
-              {monthlyStars.map((star) => (
-                <CarouselItem key={star.id}>
-                  <Card className="overflow-hidden" data-testid={`card-star-of-month-${star.id}`}>
-                    <div className="grid md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-                      <div className="bg-muted">
-                        <img
-                          src={star.image}
-                          alt={t(`events.${star.prefix}ImageAlt`)}
-                          className="h-full min-h-[320px] w-full object-cover object-center"
-                          data-testid={`img-star-of-month-${star.id}`}
-                        />
-                      </div>
-                      <div className="p-6 sm:p-8">
-                        <div className="flex flex-wrap items-start justify-between gap-4">
-                          <div>
-                            <p className="text-sm font-semibold uppercase tracking-widest text-secondary">
-                              {t(`events.${star.prefix}Date`)}
-                            </p>
-                            <h4 className="mt-1 font-heading text-3xl font-bold text-foreground">
-                              {t(`events.${star.prefix}Name`)}
-                            </h4>
-                          </div>
-                          <dl className="flex gap-5 text-sm">
-                            <div>
-                              <dt className="font-semibold text-muted-foreground">{t("events.starOfMonthAgeLabel")}</dt>
-                              <dd className="mt-1 font-bold text-foreground">{t(`events.${star.prefix}Age`)}</dd>
-                            </div>
-                            <div>
-                              <dt className="font-semibold text-muted-foreground">{t("events.starOfMonthCountryLabel")}</dt>
-                              <dd className="mt-1 font-bold text-foreground">{t(`events.${star.prefix}Country`)}</dd>
-                            </div>
-                          </dl>
-                        </div>
-
-                        <div className="mt-6 grid gap-6 lg:grid-cols-2">
-                          <div>
-                            <h5 className="font-heading text-lg font-bold text-foreground">
-                              {t(`events.${star.prefix}LovesTitle`)}
-                            </h5>
-                            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                              {Array.from({ length: star.loves }, (_, index) => (
-                                <li key={index}>• {t(`events.${star.prefix}Love${index + 1}`)}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div>
-                            <h5 className="font-heading text-lg font-bold text-foreground">
-                              {t(`events.${star.prefix}JourneyTitle`)}
-                            </h5>
-                            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                              {t(`events.${star.prefix}Journey1`)}
-                            </p>
-                          </div>
-                        </div>
-
-                        <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                          {t(`events.${star.prefix}Journey2`)}
-                        </p>
-                        <p className="mt-4 text-base font-medium leading-relaxed text-foreground">
-                          {t(`events.${star.prefix}Closing`)}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0" aria-label={t("events.previousStar")} />
-            <CarouselNext className="right-0" aria-label={t("events.nextStar")} />
-          </Carousel>
         </div>
 
         <NewsletterArchive />
