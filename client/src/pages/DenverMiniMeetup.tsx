@@ -87,7 +87,7 @@ export default function DenverMiniMeetup() {
                 </Button>
               </div>
             </div>
-            <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-8 rounded-3xl border border-primary/10 bg-white/70 p-8 shadow-sm sm:p-10">
+            <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-8 p-8 sm:p-10">
               <div className="flex items-center gap-4">
                 <img
                   src={med13Logo}
@@ -153,7 +153,7 @@ export default function DenverMiniMeetup() {
                       href={COMBINEDBRAIN_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-20 items-center justify-center rounded-xl border bg-white p-3 transition-colors hover:border-primary/40"
+                      className="flex min-h-20 items-center justify-center p-3 transition-opacity hover:opacity-75"
                       aria-label={t("denverMeetup.combinedBrainLink")}
                     >
                       <img src="/images/combined_brain.png" alt="COMBINEDBrain" className="max-h-12 w-full object-contain" />
@@ -162,7 +162,7 @@ export default function DenverMiniMeetup() {
                       href={SIMONS_SEARCHLIGHT_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-20 items-center justify-center rounded-xl border bg-white p-3 transition-colors hover:border-primary/40"
+                      className="flex min-h-20 items-center justify-center p-3 transition-opacity hover:opacity-75"
                       aria-label={t("denverMeetup.simonsLink")}
                     >
                       <img src="/images/simons-searchlight-logo.png" alt="Simons Searchlight" className="max-h-12 w-full object-contain" />
