@@ -14,6 +14,8 @@ const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6
 const AES_URL = "https://aesnet.org/AES-annual-meeting";
 const COMBINEDBRAIN_URL = "https://combinedbrain.org/";
 const SIMONS_SEARCHLIGHT_URL = "https://www.simonssearchlight.org/research/what-we-study/med13/";
+const MED12_URL = "https://www.med12.org/";
+const MED13L_URL = "https://med13l.org/";
 const DIRECTIONS_URL =
   "https://www.google.com/maps/search/?api=1&query=1750+Welton+St%2C+Denver%2C+CO+80202";
 
@@ -58,8 +60,34 @@ export default function DenverMiniMeetup() {
                   {t("denverMeetup.back")}
                 </Link>
               </Button>
-              <div className="mb-5 flex flex-wrap gap-2">
-                {(["familyTag", "inPersonTag", "respiteTag"] as const).map((key) => (
+              <div className="mb-5 flex flex-wrap items-center gap-3">
+                <a
+                  href={MED12_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-opacity hover:opacity-75"
+                  aria-label={t("denverMeetup.med12Link")}
+                >
+                  <img
+                    src="/images/med12_foundation_no_bg.png"
+                    alt="The MED12 Foundation"
+                    className="h-10 w-32 object-contain"
+                  />
+                </a>
+                <a
+                  href={MED13L_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-opacity hover:opacity-75"
+                  aria-label={t("denverMeetup.med13lLink")}
+                >
+                  <img
+                    src="/images/med13l_foundation_trimmed.png"
+                    alt="The MED13L Foundation"
+                    className="h-10 w-32 object-contain"
+                  />
+                </a>
+                {(["inPersonTag", "respiteTag"] as const).map((key) => (
                   <Badge key={key} variant="secondary">{t(`denverMeetup.${key}`)}</Badge>
                 ))}
               </div>
