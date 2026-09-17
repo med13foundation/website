@@ -87,11 +87,6 @@ export default function Navigation() {
                     {t('nav.aboutPartners')}
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/#star-of-month" data-testid="link-about-star-of-month">
-                    {t('nav.eventsStarOfMonth')}
-                  </a>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
@@ -202,14 +197,6 @@ export default function Navigation() {
                     {t(`nav.${label}`)}
                   </a>
                 ))}
-                <a
-                  href="/#star-of-month"
-                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
-                  data-testid="link-mobile-about-star-of-month"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t('nav.eventsStarOfMonth')}
-                </a>
               </div>
             </div>
             <Link 
