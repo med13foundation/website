@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import med13Logo from "@assets/Med 13_1764216026949.png";
 
 const REGISTRATION_URL = "https://givebutter.com/mini-medopathies-family-meetup-denver-zfo4zv";
 const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6";
+const AES_URL = "https://aesnet.org/AES-annual-meeting";
 const DIRECTIONS_URL =
   "https://www.google.com/maps/search/?api=1&query=1750+Welton+St%2C+Denver%2C+CO+80202";
 
@@ -83,11 +85,22 @@ export default function DenverMiniMeetup() {
                 </Button>
               </div>
             </div>
-            <img
-              src="/images/denver-mini-medopathies-meetup.png"
-              alt={t("denverMeetup.flyerAlt")}
-              className="mx-auto w-full max-w-md rounded-2xl border border-primary/10 shadow-xl"
-            />
+            <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-8 rounded-3xl border border-primary/10 bg-white/70 p-8 shadow-sm sm:p-10">
+              <div className="flex items-center gap-4">
+                <img
+                  src={med13Logo}
+                  alt={t("denverMeetup.med13LogoAlt")}
+                  className="h-24 w-24 object-contain"
+                />
+                <span className="font-heading text-2xl font-bold text-primary">{t("nav.logo")}</span>
+              </div>
+              <div className="h-px w-full bg-primary/15" aria-hidden="true" />
+              <img
+                src="/images/medopathies_alliance_no_bg.png"
+                alt={t("denverMeetup.medopathiesLogoAlt")}
+                className="w-full max-w-xs object-contain"
+              />
+            </div>
           </div>
         </section>
 
@@ -138,6 +151,12 @@ export default function DenverMiniMeetup() {
                   <Users className="h-6 w-6 text-primary" />
                   <h2 className="mt-3 font-heading text-xl font-bold">{t("denverMeetup.supportTitle")}</h2>
                   <p className="mt-2 text-muted-foreground">{t("denverMeetup.supportBody")}</p>
+                  <Button variant="link" className="mt-3 h-auto p-0" asChild>
+                    <a href={AES_URL} target="_blank" rel="noopener noreferrer">
+                      {t("denverMeetup.aesLink")}
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
               </div>
 
