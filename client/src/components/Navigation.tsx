@@ -135,11 +135,6 @@ export default function Navigation() {
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a href="/#star-of-month" data-testid="link-events-star-of-month">
-                    {t('nav.eventsStarOfMonth')}
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
                   <a href="/news-and-events#press-room" data-testid="link-events-press-room">
                     {t('nav.eventsPressRoom')}
                   </a>
@@ -270,14 +265,6 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t('nav.eventsNewsletter')}
-                </a>
-                <a
-                  href="/#star-of-month"
-                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
-                  data-testid="link-mobile-events-star-of-month"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {t('nav.eventsStarOfMonth')}
                 </a>
                 <a
                   href="/news-and-events#press-room"
