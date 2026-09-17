@@ -49,7 +49,7 @@ export default function StarOfMonthCarousel() {
   }, [carouselApi]);
 
   return (
-    <section id="star-of-month" className="bg-muted px-4 py-16 sm:px-6 sm:py-24" data-testid="section-star-of-month">
+    <section id="star-of-the-month" className="bg-muted px-4 py-16 sm:px-6 sm:py-24" data-testid="section-star-of-month">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <div className="mb-3 flex justify-center">
