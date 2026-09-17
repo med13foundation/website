@@ -21,6 +21,31 @@ export default function EventsSection() {
           </p>
         </div>
 
+        <Card className="max-w-6xl mx-auto mb-8 overflow-hidden border-primary/30 bg-gradient-to-br from-primary/10 via-background to-secondary/10" data-testid="card-denver-mini-meetup">
+          <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                <Users className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <div className="mb-2 flex flex-wrap gap-2">
+                  <Badge variant="secondary">{t("denverMeetup.familyTag")}</Badge>
+                  <Badge variant="secondary">{t("denverMeetup.inPersonTag")}</Badge>
+                </div>
+                <CardTitle className="text-xl font-heading">{t("denverMeetup.title")}</CardTitle>
+                <CardDescription className="mt-2 flex items-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  <span>{t("denverMeetup.cardDate")}</span>
+                </CardDescription>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/80">{t("denverMeetup.cardBlurb")}</p>
+              </div>
+            </div>
+            <Button className="shrink-0" asChild data-testid="button-denver-meetup-details">
+              <Link href="/news-and-events/denver-mini-medopathies-meetup">{t("denverMeetup.details")}</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
         <Card className="max-w-6xl mx-auto mb-8 overflow-hidden border-secondary/50 bg-gradient-to-br from-secondary/15 via-background to-background" data-testid="card-hope-practice-event">
           <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="flex items-start gap-4">

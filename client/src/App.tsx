@@ -14,6 +14,7 @@ import NewsAndEvents from "@/pages/NewsAndEvents";
 import Roadmap from "@/pages/Roadmap";
 import GetInvolved from "@/pages/GetInvolved";
 import HopeIsAPractice from "@/pages/HopeIsAPractice";
+import DenverMiniMeetup from "@/pages/DenverMiniMeetup";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/who-we-are" component={WhoWeAre}/>
       <Route path="/news-and-events" component={NewsAndEvents}/>
       <Route path="/news-and-events/hope-is-a-practice" component={HopeIsAPractice}/>
+      <Route path="/news-and-events/denver-mini-medopathies-meetup" component={DenverMiniMeetup}/>
       <Route path="/roadmap" component={Roadmap}/>
       <Route path="/get-involved" component={GetInvolved}/>
       <Route component={NotFound} />
