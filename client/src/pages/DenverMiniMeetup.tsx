@@ -12,6 +12,8 @@ import med13Logo from "@assets/Med 13_1764216026949.png";
 const REGISTRATION_URL = "https://givebutter.com/mini-medopathies-family-meetup-denver-zfo4zv";
 const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6";
 const AES_URL = "https://aesnet.org/AES-annual-meeting";
+const COMBINEDBRAIN_URL = "https://combinedbrain.org/";
+const SIMONS_SEARCHLIGHT_URL = "https://www.simonssearchlight.org/research/what-we-study/med13/";
 const DIRECTIONS_URL =
   "https://www.google.com/maps/search/?api=1&query=1750+Welton+St%2C+Denver%2C+CO+80202";
 
@@ -146,6 +148,26 @@ export default function DenverMiniMeetup() {
                   <TestTubes className="h-6 w-6 text-primary" />
                   <h2 className="mt-3 font-heading text-xl font-bold">{t("denverMeetup.biosampleTitle")}</h2>
                   <p className="mt-2 text-muted-foreground">{t("denverMeetup.biosampleBody")}</p>
+                  <div className="mt-5 grid grid-cols-2 gap-3">
+                    <a
+                      href={COMBINEDBRAIN_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex min-h-20 items-center justify-center rounded-xl border bg-white p-3 transition-colors hover:border-primary/40"
+                      aria-label={t("denverMeetup.combinedBrainLink")}
+                    >
+                      <img src="/images/combined_brain.png" alt="COMBINEDBrain" className="max-h-12 w-full object-contain" />
+                    </a>
+                    <a
+                      href={SIMONS_SEARCHLIGHT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex min-h-20 items-center justify-center rounded-xl border bg-white p-3 transition-colors hover:border-primary/40"
+                      aria-label={t("denverMeetup.simonsLink")}
+                    >
+                      <img src="/images/simons-searchlight-logo.png" alt="Simons Searchlight" className="max-h-12 w-full object-contain" />
+                    </a>
+                  </div>
                 </div>
                 <div className="rounded-2xl border border-secondary/30 bg-secondary/10 p-5">
                   <Users className="h-6 w-6 text-primary" />
