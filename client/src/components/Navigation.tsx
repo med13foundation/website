@@ -103,10 +103,20 @@ export default function Navigation() {
                 {t('nav.events')}
                 <ChevronDown className="h-4 w-4" aria-hidden="true" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
+              <DropdownMenuContent align="start" className="w-64">
                 <DropdownMenuItem asChild>
                   <Link href="/news-and-events" data-testid="link-events-overview">
                     {t('nav.eventsOverview')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/news-and-events/hope-is-a-practice" data-testid="link-events-hope-practice">
+                    {t('nav.eventsHopePractice')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/news-and-events/denver-mini-medopathies-meetup" data-testid="link-events-denver-meetup">
+                    {t('nav.eventsDenverMeetup')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -220,6 +230,22 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {t('nav.eventsOverview')}
+                </Link>
+                <Link
+                  href="/news-and-events/hope-is-a-practice"
+                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
+                  data-testid="link-mobile-events-hope-practice"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t('nav.eventsHopePractice')}
+                </Link>
+                <Link
+                  href="/news-and-events/denver-mini-medopathies-meetup"
+                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover-elevate rounded-md"
+                  data-testid="link-mobile-events-denver-meetup"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t('nav.eventsDenverMeetup')}
                 </Link>
                 <Link
                   href="/gala"
