@@ -7,7 +7,6 @@ import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import med13Logo from "@assets/Med 13_1764216026949.png";
 
 const REGISTRATION_URL = "https://givebutter.com/mini-medopathies-family-meetup-denver-zfo4zv";
 const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6";
@@ -61,32 +60,6 @@ export default function DenverMiniMeetup() {
                 </Link>
               </Button>
               <div className="mb-5 flex flex-wrap items-center gap-3">
-                <a
-                  href={MED12_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-75"
-                  aria-label={t("denverMeetup.med12Link")}
-                >
-                  <img
-                    src="/images/med12_foundation_no_bg.png"
-                    alt="The MED12 Foundation"
-                    className="h-10 w-32 object-contain"
-                  />
-                </a>
-                <a
-                  href={MED13L_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-75"
-                  aria-label={t("denverMeetup.med13lLink")}
-                >
-                  <img
-                    src="/images/med13l_foundation_trimmed.png"
-                    alt="The MED13L Foundation"
-                    className="h-10 w-32 object-contain"
-                  />
-                </a>
                 {(["inPersonTag", "respiteTag"] as const).map((key) => (
                   <Badge key={key} variant="secondary">{t(`denverMeetup.${key}`)}</Badge>
                 ))}
@@ -116,20 +89,39 @@ export default function DenverMiniMeetup() {
               </div>
             </div>
             <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-8 p-8 sm:p-10">
-              <div className="flex items-center gap-4">
-                <img
-                  src={med13Logo}
-                  alt={t("denverMeetup.med13LogoAlt")}
-                  className="h-24 w-24 object-contain"
-                />
-                <span className="font-heading text-2xl font-bold text-primary">{t("nav.logo")}</span>
-              </div>
-              <div className="h-px w-full bg-primary/15" aria-hidden="true" />
               <img
                 src="/images/medopathies_alliance_no_bg.png"
                 alt={t("denverMeetup.medopathiesLogoAlt")}
                 className="w-full max-w-xs object-contain"
               />
+              <div className="flex w-full items-center justify-center gap-6">
+                <a
+                  href={MED12_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 transition-opacity hover:opacity-75"
+                  aria-label={t("denverMeetup.med12Link")}
+                >
+                  <img
+                    src="/images/med12_foundation_no_bg.png"
+                    alt="The MED12 Foundation"
+                    className="mx-auto h-14 w-full object-contain"
+                  />
+                </a>
+                <a
+                  href={MED13L_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 transition-opacity hover:opacity-75"
+                  aria-label={t("denverMeetup.med13lLink")}
+                >
+                  <img
+                    src="/images/med13l_foundation_trimmed.png"
+                    alt="The MED13L Foundation"
+                    className="mx-auto h-14 w-full object-contain"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </section>
