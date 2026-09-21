@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
 import { ExternalLink, Star } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
-  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -32,21 +30,6 @@ const SHARE_YOUR_STORY_URL =
 
 export default function StarOfMonthCarousel() {
   const { t } = useTranslation();
-  const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-
-  useEffect(() => {
-    if (!carouselApi) return;
-
-    const rotation = window.setInterval(() => {
-      if (carouselApi.canScrollNext()) {
-        carouselApi.scrollNext();
-      } else {
-        carouselApi.scrollTo(0);
-      }
-    }, 8000);
-
-    return () => window.clearInterval(rotation);
-  }, [carouselApi]);
 
   return (
     <section id="star-of-the-month" className="bg-muted px-4 py-16 sm:px-6 sm:py-24" data-testid="section-star-of-month">
@@ -68,7 +51,6 @@ export default function StarOfMonthCarousel() {
         </div>
 
         <Carousel
-          setApi={setCarouselApi}
           opts={{ loop: true }}
           className="px-8 sm:px-12"
           aria-label={t("events.starCarouselLabel")}
