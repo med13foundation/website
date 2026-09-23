@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { AuctionDonorRecognition, SponsorRecognition } from "@/components/GalaRecognition";
 import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "gala@med13.org";
@@ -219,6 +220,74 @@ export default function Gala() {
         </div>
       </section>
 
+      {/* Registration and recognition stay close to the top of the page. */}
+      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-tickets">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary" data-testid="text-gala-tickets-title">
+              {t("gala.ticketsTitle")}
+            </h2>
+          </div>
+          <Card data-testid="card-gala-tickets">
+            <CardContent className="pt-8 pb-8 text-center">
+              <p className="text-lg font-heading font-bold text-foreground mb-1">{t("gala.ticketsGeneral")}</p>
+              <p className="text-5xl font-heading font-bold text-primary mb-1" data-testid="text-gala-ticket-price">
+                {t("gala.ticketsPrice")}
+              </p>
+              <p className="text-sm text-muted-foreground mb-6">{t("gala.ticketsPerPerson")}</p>
+              <div className="flex justify-center mb-6">
+                <Button asChild data-testid="button-gala-tickets-rsvp">
+                  <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
+                    {t("gala.rsvp")}
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground" data-testid="text-gala-attire">
+                <span className="font-semibold text-foreground">{t("gala.ticketsAttireLabel")}</span>{" "}
+                {t("gala.ticketsAttire")}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <SponsorRecognition />
+      <AuctionDonorRecognition />
+
+      {/* Auction preview */}
+      <section id="auction" className="py-16 sm:py-24" data-testid="section-gala-auction">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold tracking-widest uppercase text-secondary mb-3">{t("gala.auctionEyebrow")}</p>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary" data-testid="text-gala-auction-title">
+              {t("gala.auctionTitle")}
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {auctionItems.map((a, i) => (
+              <Card key={i} data-testid={`card-gala-auction-${i + 1}`}>
+                <CardContent className="pt-6">
+                  <div className="w-11 h-11 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+                    <a.icon className="w-5 h-5 text-secondary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-foreground mb-2">{a.title}</h3>
+                  <p className="text-sm text-muted-foreground">{a.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button size="lg" asChild data-testid="button-gala-auction">
+              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
+                <Gavel className="mr-2 h-4 w-4" />
+                {t("gala.auctionButton")}
+              </a>
+            </Button>
+            <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
+          </div>
+        </div>
+      </section>
+
       {/* The Evening */}
       <section className="py-16 sm:py-24" data-testid="section-gala-evening">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -333,71 +402,6 @@ export default function Gala() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Auction */}
-      <section id="auction" className="py-16 sm:py-24" data-testid="section-gala-auction">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold tracking-widest uppercase text-secondary mb-3">{t("gala.auctionEyebrow")}</p>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary" data-testid="text-gala-auction-title">
-              {t("gala.auctionTitle")}
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {auctionItems.map((a, i) => (
-              <Card key={i} data-testid={`card-gala-auction-${i + 1}`}>
-                <CardContent className="pt-6">
-                  <div className="w-11 h-11 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
-                    <a.icon className="w-5 h-5 text-secondary" />
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground mb-2">{a.title}</h3>
-                  <p className="text-sm text-muted-foreground">{a.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button size="lg" asChild data-testid="button-gala-auction">
-              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
-                <Gavel className="mr-2 h-4 w-4" />
-                {t("gala.auctionButton")}
-              </a>
-            </Button>
-            <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Tickets */}
-      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-tickets">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary" data-testid="text-gala-tickets-title">
-              {t("gala.ticketsTitle")}
-            </h2>
-          </div>
-          <Card data-testid="card-gala-tickets">
-            <CardContent className="pt-8 pb-8 text-center">
-              <p className="text-lg font-heading font-bold text-foreground mb-1">{t("gala.ticketsGeneral")}</p>
-              <p className="text-5xl font-heading font-bold text-primary mb-1" data-testid="text-gala-ticket-price">
-                {t("gala.ticketsPrice")}
-              </p>
-              <p className="text-sm text-muted-foreground mb-6">{t("gala.ticketsPerPerson")}</p>
-              <div className="flex justify-center mb-6">
-                <Button asChild data-testid="button-gala-tickets-rsvp">
-                  <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
-                    {t("gala.rsvp")}
-                  </a>
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground" data-testid="text-gala-attire">
-                <span className="font-semibold text-foreground">{t("gala.ticketsAttireLabel")}</span>{" "}
-                {t("gala.ticketsAttire")}
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -550,6 +554,9 @@ export default function Gala() {
           </p>
           <p className="text-sm text-muted-foreground" data-testid="text-gala-questions">
             {t("gala.footerQuestions")}
+          </p>
+          <p className="text-sm">
+            <Link href="/champions" className="font-semibold text-primary underline underline-offset-4">{t("recognition.seeAll")}</Link>
           </p>
           <p className="text-xs text-muted-foreground" data-testid="text-gala-fiscal">
             {t("gala.footerFiscal")}

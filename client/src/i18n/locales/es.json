@@ -495,6 +495,21 @@
     "en": "English",
     "es": "Español"
   },
+  "recognition": {
+    "sponsorsTitle": "Gracias a nuestros patrocinadores",
+    "sponsorsIntro": "Su apoyo cubre los costos de esta velada, para que cada donación hecha aquí se destine directamente a la investigación.",
+    "donorsTitle": "Donantes de la subasta y en especie",
+    "donorsIntro": "Cada experiencia, botella y entrada de nuestra subasta fue donada. Agradezcan a estos vecinos y colaboradores.",
+    "seeAll": "Conoce a todos los colaboradores de nuestra comunidad.",
+    "championsTitle": "Campeones de la comunidad",
+    "championsIntro": "Gracias a las empresas y colaboradores que apoyan a la comunidad MED13. El reconocimiento se actualiza trimestralmente.",
+    "current": "Campeones actuales",
+    "past": "Campeones anteriores",
+    "inKind": "Donante en especie",
+    "noCurrent": "No hay campeones actuales en la lista.",
+    "noPast": "Todavía no hay campeones anteriores.",
+    "backGala": "Volver a la gala"
+  },
   "gala": {
     "eyebrow": "Fundación MED13 · Primera Gala Anual",
     "title": "Una Noche por Respuestas",

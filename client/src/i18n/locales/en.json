@@ -495,6 +495,21 @@
     "en": "English",
     "es": "Español"
   },
+  "recognition": {
+    "sponsorsTitle": "Thank You to Our Sponsors",
+    "sponsorsIntro": "Their support underwrites this evening, so every gift made in the room goes directly to research.",
+    "donorsTitle": "Auction & In-Kind Donors",
+    "donorsIntro": "Every experience, bottle, and ticket in our auction was donated. Please thank these neighbors and partners.",
+    "seeAll": "See all of our community supporters.",
+    "championsTitle": "Community Champions",
+    "championsIntro": "Thank you to the businesses and partners supporting the MED13 community. Recognition is updated quarterly.",
+    "current": "Current Champions",
+    "past": "Past Champions",
+    "inKind": "In-Kind Donor",
+    "noCurrent": "There are no current champions listed.",
+    "noPast": "There are no past champions yet.",
+    "backGala": "Back to the gala"
+  },
   "gala": {
     "eyebrow": "MED13 Foundation · First Annual Gala",
     "title": "An Evening for Answers",
