@@ -1,0 +1,74 @@
+# Design Brief: Sponsor + Auction Donor Recognition on med13.org
+**For: website designer | From: Amy Krystosik | Date: Sept 22, 2026 | Needed live: Sept 25**
+**Companion policy: Sponsor_Recognition_Policy_Spec.md (board-approved rules; this brief implements them)**
+
+## What we are building (3 pieces)
+
+1. A "Thank You to Our Sponsors" section on med13.org/gala
+2. A new "Community Champions" page (quarterly rotating recognition)
+3. An "Auction & In-Kind Donors" list on the gala page, below sponsors
+
+Nothing on the homepage. Homepage placement is reserved for $25,000+ sponsors and none exist yet. Please do not add sponsor logos anywhere except the placements in this brief.
+
+## Piece 1: Gala page sponsor section
+
+Placement: on med13.org/gala, directly below the ticket/registration call to action and above the auction preview. It should be visible without being the hero.
+
+Section heading: **Thank You to Our Sponsors**
+Subheading: *Their support underwrites this evening, so every gift made in the room goes directly to research.*
+
+Two rows:
+
+**Row 1, $2,500 tier, logos at 220px width, alphabetical:**
+- Baylor Genetics, caption "Catalyst Sponsor", link to baylorgenetics.com
+- NeuCyte, caption "Gala Film Sponsor", link to neucyte.com
+
+**Row 2, smaller tiers:**
+- EditCo at 165px, caption "Gala Supporter", link to editco.bio
+- Pequeños Talkers at 120px, caption "Community Sponsor", link to their site
+
+Rules that matter:
+- Captions under logos, small caps or subdued style. The caption IS the tier; do not add stars, rankings, or "gold/silver" language.
+- Logos link out with rel="sponsored" and open in a new tab.
+- Alt text: "[Company name], [tier name] of the MED13 Foundation gala."
+- No sponsor taglines, product descriptions, or slogans on the site. Name, logo, tier caption, link. (IRS acknowledgment rules; longer sponsor blurbs run in the printed program only.)
+- Logo hygiene: never stretch, recolor, or crop. Baylor and NeuCyte files have white backgrounds; place all four on a white/neutral section background so they sit evenly. If the page section is dark, ask Amy for reversed files rather than boxing them.
+- Build the row grid to take a fifth logo without redesign. Late sponsors may land this week.
+
+## Piece 2: Community Champions page
+
+New page at med13.org/champions (or /supporters), linked from the gala page footer line: "See all of our community supporters."
+
+Purpose: rotating recognition for corporate sponsors and business donors under $25,000. Entries stay up for 3 months from gift date (rounded up to quarter end), then move to an archive list at the bottom of the same page under "Past Champions."
+
+Layout: simple card or list, one line each: name (linked), tier or "In-Kind Donor", month recognized. No logos required at launch; names are fine. Design it so adding an entry is a 2-minute content edit, not a design task; Iza will maintain it.
+
+Seed content at launch (Q4 2026, expires Dec 31): Baylor Genetics, NeuCyte, EditCo, Pequeños Talkers, plus the auction donor list from Piece 3.
+
+## Piece 3: Auction & In-Kind Donors list
+
+Placement: gala page, below the sponsor section or beside the auction preview.
+
+Heading: **Auction & In-Kind Donors**
+Intro line: *Every experience, bottle, and ticket in our auction was donated. Please thank these neighbors and partners.*
+
+Alphabetical, names only, linked where the business has a site:
+Broadway San Jose · California Academy of Sciences (with Shannon Bennett) · Delicato Family Wines · House Family Vineyards · J. Lohr Vineyards & Wines · Novak & Mason Cellars · Parable Wines · Portola Vineyards (Len Lehmann) · Sekoya Lounge & Kitchen · TheatreWorks Silicon Valley · Thomas Fogarty Winery · The Walt Disney Family Museum, San Francisco · [Cal Ave businesses: final list from Iza's in-kind log by Sept 24] · [Sea Ranch donors: pending their OK to be named]
+
+Two wording constraints, non-negotiable:
+- The Walt Disney Family Museum must appear with "San Francisco" and never as "Disney" alone (the museum is not affiliated with Disney Enterprises).
+- J. Lohr appears with its logo in the printed program per their signage requirement; on the web page, name + link is sufficient.
+
+## Deadlines and delivery
+
+- Sept 24: Amy/Iza deliver final Cal Ave list and any missing logo files
+- Sept 25: all three pieces live (same day the full auction catalog publishes and the RSVP blast goes out; the blast links to the gala page, so sponsors must be visible before it sends)
+- Oct 12 week: post-event, swap gala-page hero to a thank-you banner; Champions page keeps running
+
+## Assets provided (in the shared design folder)
+- editco logo (transparent PNG)
+- baylor genetics logo (white background PNG; Catalyst Sponsor)
+- pequenos talkers logo (square, white background)
+- neucyte logo (white background, small file; ask Amy if a higher-res version is needed before enlarging)
+
+Questions to Amy: amy@med13.org. Anything ambiguous, default to the policy doc; anything the policy doesn't cover, ask rather than improvise, sponsor recognition is contractual.
