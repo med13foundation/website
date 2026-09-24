@@ -10,13 +10,12 @@ import pequenosLogo from "@assets/0_123_1_1790123936779.jpeg";
 // expires with quarterEndFromGiftDate("YYYY-MM-DD"). Do not add unapproved names.
 // The seed cohort is explicitly approved through December 31, 2026 in the design brief.
 export const sponsors = [
-  { name: "Baylor Genetics", tier: "Catalyst Sponsor", url: "https://baylorgenetics.com/", logo: baylorLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "Baylor Genetics", tier: "Catalyst Sponsor", url: "https://www.baylorgenetics.com/", logo: baylorLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
   { name: "NeuCyte", tier: "Gala Film Sponsor", url: "https://neucyte.com/", logo: neucyteLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
-  { name: "EditCo", tier: "Partner Sponsor", url: "https://editco.bio/", logo: editcoLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "EditCo", tier: "Partner Sponsor", url: "https://www.editco.bio/", logo: editcoLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
   { name: "Monarch Initiative", tier: "Partner Sponsor", url: "https://monarchinitiative.org/", logo: monarchLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
-  { name: "Opus 132", tier: "Partner Sponsor", url: "https://opus132.org/", logo: opusLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
-  // Website pending confirmation; never infer a sponsor's official link.
-  { name: "Pequeños Talkers", tier: "Community Sponsor", url: "", logo: pequenosLogo, width: 120, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "Opus 132", tier: "Partner Sponsor", url: "https://www.opus132.org/", logo: opusLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "Pequeños Talkers", tier: "Community Sponsor", url: "https://www.instagram.com/pequenos_talkers/", logo: pequenosLogo, width: 120, recognized: "2026-09", expires: "2026-12-31" },
 ] as const;
 
 export const auctionDonors = [
