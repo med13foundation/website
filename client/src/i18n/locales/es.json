@@ -529,6 +529,8 @@
   "recognition": {
     "sponsorsTitle": "Gracias a nuestros patrocinadores",
     "sponsorsIntro": "Su apoyo cubre los costos de esta velada, para que cada donación hecha aquí se destine directamente a la investigación.",
+    "partnerSponsors": "Patrocinadores colaboradores",
+    "communitySponsor": "Patrocinador comunitario",
     "donorsTitle": "Donantes de la subasta y en especie",
     "donorsIntro": "Cada experiencia, botella y entrada de nuestra subasta fue donada. Agradezcan a estos vecinos y colaboradores.",
     "seeAll": "Conoce a todos los colaboradores de nuestra comunidad.",

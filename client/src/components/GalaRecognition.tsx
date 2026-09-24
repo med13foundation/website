@@ -4,6 +4,28 @@ import { auctionDonors, recognitionToday, sponsors } from "@/data/galaRecognitio
 
 export function SponsorRecognition() {
   const { t } = useTranslation();
+  const namedSponsors = sponsors.filter((sponsor) => sponsor.tier !== "Partner Sponsor" && sponsor.tier !== "Community Sponsor");
+  const partnerSponsors = sponsors.filter((sponsor) => sponsor.tier === "Partner Sponsor");
+  const communitySponsors = sponsors.filter((sponsor) => sponsor.tier === "Community Sponsor");
+
+  const sponsorLogo = (sponsor: (typeof sponsors)[number], showCaption: boolean) => {
+    const logo = (
+      <img
+        src={sponsor.logo}
+        alt={`${sponsor.name}, ${sponsor.tier} of the MED13 Foundation gala.`}
+        className="mx-auto h-32 max-w-full object-contain"
+        style={{ width: sponsor.width }}
+      />
+    );
+    return (
+      <div key={sponsor.name} className="flex min-w-[150px] flex-col items-center text-center" style={{ width: sponsor.width }}>
+        {sponsor.url ? (
+          <a href={sponsor.url} target="_blank" rel="sponsored noopener noreferrer" aria-label={sponsor.name}>{logo}</a>
+        ) : logo}
+        {showCaption && <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">{sponsor.tier}</p>}
+      </div>
+    );
+  };
 
   return (
     <section id="sponsors" className="scroll-mt-24 border-y border-border bg-white py-14 sm:py-20" data-testid="section-gala-recognition">
@@ -12,23 +34,25 @@ export function SponsorRecognition() {
           <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("recognition.sponsorsTitle")}</h2>
           <p className="mt-4 text-lg text-muted-foreground">{t("recognition.sponsorsIntro")}</p>
         </div>
-        <div className="space-y-10">
-          {[sponsors.slice(0, 2), sponsors.slice(2)].map((row, index) => (
-            <div key={index} className="flex flex-wrap items-center justify-center gap-x-10 gap-y-10 sm:gap-x-16">
-              {row.map((sponsor) => {
-                const logo = <img src={sponsor.logo} alt={`${sponsor.name}, ${sponsor.tier} of the MED13 Foundation gala.`} className="mx-auto h-32 max-w-full object-contain" style={{ width: sponsor.width }} />;
-                return (
-                  <div key={sponsor.name} className="flex min-w-[150px] flex-col items-center text-center" style={{ width: sponsor.width }}>
-                    {sponsor.url ? (
-                      <a href={sponsor.url} target="_blank" rel="sponsored noopener noreferrer" aria-label={sponsor.name}>{logo}</a>
-                    ) : logo}
-                    <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">{sponsor.tier}</p>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-10 sm:gap-x-16">
+          {namedSponsors.map((sponsor) => sponsorLogo(sponsor, true))}
         </div>
+        {partnerSponsors.length > 0 && (
+          <div className="mt-12 text-center">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">{t("recognition.partnerSponsors")}</h3>
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16">
+              {partnerSponsors.map((sponsor) => sponsorLogo(sponsor, false))}
+            </div>
+          </div>
+        )}
+        {communitySponsors.length > 0 && (
+          <div className="mt-10 border-t border-border/60 pt-8 text-center">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">{t("recognition.communitySponsor")}</h3>
+            <div className="flex flex-wrap items-center justify-center gap-6">
+              {communitySponsors.map((sponsor) => sponsorLogo(sponsor, false))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
