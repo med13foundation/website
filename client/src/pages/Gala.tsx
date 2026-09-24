@@ -26,6 +26,7 @@ import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "gala@med13.org";
 const AUCTION_URL = "https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup/auction";
+const AUCTION_ITEM_EMAIL = "mailto:gala@med13.org?subject=MED13%20gala%20auction%20item%20donation";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -277,13 +278,19 @@ export default function Gala() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button size="lg" asChild data-testid="button-gala-auction">
-              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
-                <Gavel className="mr-2 h-4 w-4" />
-                {t("gala.auctionButton")}
-              </a>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button size="lg" asChild data-testid="button-gala-auction">
+                <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
+                  <Gavel className="mr-2 h-4 w-4" />
+                  {t("gala.auctionButton")}
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild data-testid="button-gala-donate-auction-item">
+                <a href={AUCTION_ITEM_EMAIL}>{t("gala.donateAuctionItem")}</a>
+              </Button>
+            </div>
             <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{t("gala.donateAuctionItemNote")}</p>
           </div>
         </div>
       </section>
