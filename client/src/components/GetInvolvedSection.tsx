@@ -1,9 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FlaskConical, Users2, HandHeart, Heart } from "lucide-react";
+import { FlaskConical, Users2, HandHeart, Heart, Plane, ArrowRight } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
 import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
+import { Link } from "wouter";
 
 export default function GetInvolvedSection({ donationHref = "#donate" }: { donationHref?: string }) {
   const { t } = useTranslation();
@@ -125,6 +126,20 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
               </Card>
             );
           })}
+        </div>
+        <div className="mt-8 flex flex-col gap-5 rounded-xl border border-primary/15 bg-card/95 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
+              <Plane className="h-5 w-5" aria-hidden="true" />
+            </div>
+            <div>
+              <h3 className="font-heading text-xl font-bold text-primary">{t("getInvolved.otherWaysTitle")}</h3>
+              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{t("getInvolved.otherWaysDesc")}</p>
+            </div>
+          </div>
+          <Button variant="outline" className="shrink-0 self-start sm:self-auto" asChild>
+            <Link href="/ways-to-give">{t("getInvolved.otherWaysAction")} <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" /></Link>
+          </Button>
         </div>
       </div>
     </section>

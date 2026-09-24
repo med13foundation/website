@@ -14,6 +14,7 @@ import WhoWeAre from "@/pages/WhoWeAre";
 import NewsAndEvents from "@/pages/NewsAndEvents";
 import Roadmap from "@/pages/Roadmap";
 import GetInvolved from "@/pages/GetInvolved";
+import WaysToGive from "@/pages/WaysToGive";
 import HopeIsAPractice from "@/pages/HopeIsAPractice";
 import DenverMiniMeetup from "@/pages/DenverMiniMeetup";
 import NotFound from "@/pages/not-found";
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/news-and-events/denver-mini-medopathies-meetup" component={DenverMiniMeetup}/>
       <Route path="/roadmap" component={Roadmap}/>
       <Route path="/get-involved" component={GetInvolved}/>
+      <Route path="/ways-to-give" component={WaysToGive}/>
       <Route component={NotFound} />
     </Switch>
   );

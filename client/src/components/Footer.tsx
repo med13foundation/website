@@ -64,6 +64,11 @@ export default function Footer() {
                   {t('footer.volunteer')}
                 </a>
               </li>
+              <li>
+                <a href="/ways-to-give" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-ways-to-give">
+                  {t('footer.otherWaysToGive')}
+                </a>
+              </li>
             </ul>
           </div>
 
