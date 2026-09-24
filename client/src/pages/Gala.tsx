@@ -14,9 +14,8 @@ import {
   Sparkles,
   ArrowLeft,
   Wine,
-  Tent,
+  House,
   Ship,
-  UtensilsCrossed,
   Video,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -70,9 +69,9 @@ export default function Gala() {
 
   const auctionItems = [
     { icon: Wine, title: t("gala.auction1Title"), desc: t("gala.auction1Desc") },
-    { icon: Tent, title: t("gala.auction2Title"), desc: t("gala.auction2Desc") },
+    { icon: House, title: t("gala.auction2Title"), desc: t("gala.auction2Desc") },
     { icon: Ship, title: t("gala.auction3Title"), desc: t("gala.auction3Desc") },
-    { icon: UtensilsCrossed, title: t("gala.auction4Title"), desc: t("gala.auction4Desc") },
+    { icon: Microscope, title: t("gala.auction4Title"), desc: t("gala.auction4Desc") },
   ];
 
   const sponsors = [1, 2, 3, 4, 5, 6].map((i) => ({

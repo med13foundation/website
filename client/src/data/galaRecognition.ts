@@ -1,6 +1,7 @@
 import baylorLogo from "@assets/0_full-logo-primary-stacked@3x_1790123959815.png";
 import neucyteLogo from "@assets/0_neucyte_1790123888395.png";
 import editcoLogo from "@assets/0_EditCo_LogoFull_Blue_1790123869341.png";
+import monarchLogo from "@assets/image_1790279001271.png";
 import pequenosLogo from "@assets/0_123_1_1790123936779.jpeg";
 
 // Recognition is content-managed here: add a dated entry to either list to update both pages.
@@ -11,6 +12,7 @@ export const sponsors = [
   { name: "Baylor Genetics", tier: "Catalyst Sponsor", url: "https://baylorgenetics.com/", logo: baylorLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
   { name: "NeuCyte", tier: "Gala Film Sponsor", url: "https://neucyte.com/", logo: neucyteLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
   { name: "EditCo", tier: "Gala Supporter", url: "https://editco.bio/", logo: editcoLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "Monarch Initiative", tier: "Partner Sponsor", url: "https://monarchinitiative.org/", logo: monarchLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
   // Website pending confirmation; never infer a sponsor's official link.
   { name: "Pequeños Talkers", tier: "Community Sponsor", url: "", logo: pequenosLogo, width: 120, recognized: "2026-09", expires: "2026-12-31" },
 ] as const;
