@@ -133,9 +133,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground"
+                aria-label="MED13 Foundation on Facebook"
                 data-testid="link-footer-facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.linkedin.com/company/med13-foundation/"
@@ -145,7 +146,7 @@ export default function Footer() {
                 aria-label="MED13 Foundation on LinkedIn"
                 data-testid="link-footer-linkedin"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
 
