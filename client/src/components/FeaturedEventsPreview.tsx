@@ -48,13 +48,13 @@ export default function FeaturedEventsPreview() {
                 <Video className="h-5 w-5 text-[#bfe9d2]" />
                 {t("symposium.title")}
               </CardTitle>
-              <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground/75">
+              <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground">
                 <Calendar className="h-4 w-4" />
                 {t("symposium.date")} · {t("symposium.format")}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-sm leading-relaxed text-primary-foreground/85">{t("symposium.eventCardDesc")}</p>
+              <p className="text-sm leading-relaxed text-primary-foreground">{t("symposium.eventCardDesc")}</p>
               <Button variant="secondary" className="mt-6" asChild data-testid="button-featured-symposium">
                 <Link href="/symposium">{t("symposium.eventCardButton")}</Link>
               </Button>

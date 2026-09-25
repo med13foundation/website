@@ -32,15 +32,20 @@
 
   --sidebar-border: 0 0% 90%;
 
-  --sidebar-primary: 176 31% 55%;
+  --primary-decorative: 176 31% 55%;
+  --secondary-decorative: 12 100% 81%;
+  --primary-on-tint: 174.8276 37.1795% 30.5882%;
+  --secondary-on-tint: 12.0930 63.5468% 39.8039%;
+
+  --sidebar-primary: 175.4545 35.1064% 36.8627%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 12 100% 81%;
+  --sidebar-accent: var(--secondary-decorative);
 
   --sidebar-accent-foreground: 0 0% 18%;
 
-  --sidebar-ring: 176 31% 55%;
+  --sidebar-ring: 175.4545 35.1064% 36.8627%;
 
   --popover: 0 0% 100%;
 
@@ -48,13 +53,13 @@
 
   --popover-border: 0 0% 86%;
 
-  --primary: 176 31% 55%;
+  --primary: 175.4545 35.1064% 36.8627%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 12 100% 81%;
+  --secondary: 13.6552 60.6695% 46.8627%;
 
-  --secondary-foreground: 0 0% 18%;
+  --secondary-foreground: 0 0% 100%;
 
   --muted: 0 0% 96%;
 
@@ -69,9 +74,9 @@
   --destructive-foreground: 0 0% 100%;
 
   --input: 0 0% 72%;
-  --ring: 176 31% 55%;
-  --chart-1: 176 31% 55%;
-  --chart-2: 12 100% 81%;
+  --ring: 175.4545 35.1064% 36.8627%;
+  --chart-1: var(--primary-decorative);
+  --chart-2: var(--secondary-decorative);
   --chart-3: 43 100% 70%;
   --chart-4: 143 58% 38%;
   --chart-5: 28 78% 52%;
@@ -151,11 +156,16 @@
 
   --sidebar-border: 215 18% 20%;
 
+  --primary-decorative: 176 31% 60%;
+  --secondary-decorative: 12 100% 75%;
+  --primary-on-tint: 176 31% 60%;
+  --secondary-on-tint: 12 100% 75%;
+
   --sidebar-primary: 176 31% 60%;
 
-  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-primary-foreground: 0 0% 10%;
 
-  --sidebar-accent: 12 100% 75%;
+  --sidebar-accent: var(--secondary-decorative);
 
   --sidebar-accent-foreground: 0 0% 18%;
 
@@ -169,7 +179,7 @@
 
   --primary: 176 31% 60%;
 
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: 0 0% 10%;
 
   --secondary: 12 100% 75%;
 
@@ -189,8 +199,8 @@
 
   --input: 215 25% 35%;
   --ring: 176 31% 60%;
-  --chart-1: 176 31% 60%;
-  --chart-2: 12 100% 75%;
+  --chart-1: var(--primary-decorative);
+  --chart-2: var(--secondary-decorative);
   --chart-3: 43 100% 75%;
   --chart-4: 143 62% 58%;
   --chart-5: 28 88% 65%;
@@ -245,6 +255,16 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+}
+
+/* The requested brand colors meet AA on white. Use deeper ink on the site's
+   off-white and tinted surfaces without darkening buttons or decorative fills. */
+.bg-background .text-primary {
+  color: hsl(var(--primary-on-tint));
+}
+
+.bg-background .text-secondary {
+  color: hsl(var(--secondary-on-tint));
 }
 
 .tiptap {

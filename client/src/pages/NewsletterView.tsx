@@ -96,18 +96,18 @@ export default function NewsletterView() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBackground})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-decorative/90 via-primary-decorative/85 to-secondary-decorative/90" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Badge
             variant="outline"
-            className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white"
+            className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-[#173d3b]"
             data-testid="badge-newsletter-label"
           >
             <Calendar className="w-3 h-3 mr-1" />
             {formattedDate}
           </Badge>
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#173d3b] mb-4"
             data-testid="text-newsletter-view-title"
           >
             {newsletter.title}
@@ -116,7 +116,7 @@ export default function NewsletterView() {
             <Link href="/">
               <Button
                 variant="outline"
-                className="bg-white/10 backdrop-blur-sm border-white/40 text-white"
+                className="bg-white/10 backdrop-blur-sm border-white/40 text-[#173d3b] hover:bg-white/20 hover:text-[#173d3b]"
                 data-testid="button-newsletter-back-home"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
@@ -125,7 +125,7 @@ export default function NewsletterView() {
             </Link>
             <Button
               variant="outline"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-[#173d3b] hover:bg-white/20 hover:text-[#173d3b]"
               onClick={handleShare}
               data-testid="button-newsletter-share"
             >

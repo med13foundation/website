@@ -2,3 +2,4 @@
 - [Classy embed lifecycle](classy-embed-lifecycle.md) — Treat the Classy mount node as disposable; keep persistent layout and test hooks on a stable wrapper.
 - [Travel giving](travel-giving.md) — Coordinate miles, points, and travel-designated cash before transfer; never imply a general donation is earmarked for travel.
 - [Video compatibility](video-compatibility.md) — Keep WebM and MP4 fallbacks; native captions alone do not hide subtitles already embedded in video frames.
+- [Contrast on tinted surfaces](contrast-on-tints.md) — Keep tinted backgrounds and original hero gradients; use deeper ink and separate decorative hues for accessible text.

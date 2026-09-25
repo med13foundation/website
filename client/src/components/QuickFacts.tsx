@@ -85,13 +85,13 @@ export default function QuickFacts() {
             </div>
           </div>
           <div data-testid="associated-conditions-pills">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-secondary-foreground">{t('quickFacts.associatedConditions')}</p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">{t('quickFacts.associatedConditions')}</p>
             <div className="flex flex-wrap gap-2">
               {associatedConditions.map((conditionKey, index) => (
                 <Badge
                   key={conditionKey}
                   variant="outline"
-                  className="rounded-full border-secondary/60 bg-secondary/30 px-3 py-1.5 text-sm font-medium text-secondary-foreground"
+                  className="rounded-full border-secondary-decorative/60 bg-secondary-decorative/30 px-3 py-1.5 text-sm font-medium text-foreground"
                   data-testid={`pill-associated-condition-${index}`}
                 >
                   {t(conditionKey)}

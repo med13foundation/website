@@ -63,7 +63,7 @@ const PRESET_COLORS = [
   "#DC2626", "#EA580C", "#D97706", "#CA8A04",
   "#16A34A", "#059669", "#0D9488", "#0891B2",
   "#2563EB", "#4F46E5", "#7C3AED", "#9333EA",
-  "#DB2777", "#E11D48", "#68B0AB", "#4A7C59",
+  "#DB2777", "#E11D48", "#3d7f7a", "#4A7C59",
 ];
 
 const HIGHLIGHT_COLORS = [
@@ -346,7 +346,7 @@ export default function RichTextEditor({ content, onChange, placeholder }: RichT
     if (!text) return;
     const url = window.prompt("Button link URL", "https://");
     if (!url) return;
-    const buttonHtml = `<p style="text-align: center; margin: 24px 0;"><a href="${url}" style="display: inline-block; padding: 12px 32px; background-color: #68B0AB; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">${text}</a></p>`;
+    const buttonHtml = `<p style="text-align: center; margin: 24px 0;"><a href="${url}" style="display: inline-block; padding: 12px 32px; background-color: #3d7f7a; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">${text}</a></p>`;
     editor.chain().focus().insertContent(buttonHtml).run();
   }, [editor]);
 

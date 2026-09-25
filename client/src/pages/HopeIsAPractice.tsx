@@ -35,7 +35,7 @@ export default function HopeIsAPractice() {
         <section className="relative overflow-hidden bg-primary px-4 py-16 text-primary-foreground sm:py-24">
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/25 blur-3xl" />
           <div className="relative mx-auto max-w-5xl">
-            <Button variant="ghost" className="mb-8 px-0 text-primary-foreground/80 hover:bg-transparent hover:text-white" asChild>
+            <Button variant="ghost" className="mb-8 px-0 text-primary-foreground hover:bg-transparent hover:text-primary-foreground" asChild>
               <Link href="/news-and-events">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 {t("hopePractice.back")}
@@ -43,19 +43,19 @@ export default function HopeIsAPractice() {
             </Button>
             <div className="mb-5 flex flex-wrap gap-2">
               {(["communityTag", "bayAreaTag", "freeTag"] as const).map((key) => (
-                <Badge key={key} variant="secondary" className="bg-white/15 text-white hover:bg-white/20">
+                <Badge key={key} variant="secondary" className="bg-black/10 text-primary-foreground hover:bg-black/15">
                   {t(`hopePractice.${key}`)}
                 </Badge>
               ))}
             </div>
-            <p className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/75">
+            <p className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground">
               <Sparkles className="h-4 w-4" />
               {t("hopePractice.eyebrow")}
             </p>
             <h1 className="max-w-4xl font-heading text-4xl font-bold leading-tight sm:text-6xl">
               {t("hopePractice.title")}
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-primary-foreground/85 sm:text-xl">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-primary-foreground sm:text-xl">
               {t("hopePractice.intro")}
             </p>
           </div>

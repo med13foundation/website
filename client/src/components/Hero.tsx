@@ -17,15 +17,15 @@ export default function Hero() {
         style={{ backgroundImage: `url(${heroBackground})` }}
       />
       
-      {/* Dark Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
+      {/* Keep the original decorative gradient colors. */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-decorative/90 via-primary-decorative/85 to-secondary-decorative/90" />
       
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <Link
             href="/gala"
-            className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-[#173d3b] backdrop-blur-sm transition-colors hover:bg-white/20"
             data-testid="link-top-gala-invitation"
           >
             <Sparkles className="h-4 w-4 shrink-0 text-[#bfe9d2]" aria-hidden="true" />
@@ -35,10 +35,10 @@ export default function Hero() {
             </span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 min-h-[2.5em]" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-[#173d3b] mb-6 min-h-[2.5em]" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="text-lg sm:text-xl text-[#173d3b] mb-8 leading-relaxed" data-testid="text-hero-subtitle">
             {t('hero.subtitle')}
           </p>
 
@@ -56,7 +56,7 @@ export default function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-[#173d3b] hover:bg-white/20"
               asChild
               data-testid="button-learn-story"
             >
@@ -65,7 +65,7 @@ export default function Hero() {
             <Button 
               variant="outline" 
               size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-[#173d3b] hover:bg-white/20"
               asChild
               data-testid="button-support-mission"
             >
@@ -74,7 +74,7 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
+              className="bg-white/10 backdrop-blur-sm border-white/40 text-[#173d3b] hover:bg-white/20"
               asChild
               data-testid="button-get-involved"
             >
@@ -83,11 +83,11 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-families">
+            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-[#173d3b]" data-testid="badge-families">
               <Users className="w-4 h-4 mr-2" />
               {t('hero.familiesWorldwide')}
             </Badge>
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-research">
+            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-[#173d3b]" data-testid="badge-research">
               <Beaker className="w-4 h-4 mr-2" />
               {t('hero.foundationBuilding')}
             </Badge>
