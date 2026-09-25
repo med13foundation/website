@@ -12,7 +12,7 @@ export function SponsorRecognition() {
     const logo = (
       <img
         src={sponsor.logo}
-        alt={`${sponsor.name}, ${sponsor.tier} of the MED13 Foundation gala.`}
+        alt={sponsor.name}
         className="mx-auto h-32 max-w-full object-contain"
         style={{ width: sponsor.width }}
       />

@@ -26,6 +26,8 @@ import logoUrl from "@assets/gala_disco_logo.png";
 const RSVP_EMAIL = "gala@med13.org";
 const AUCTION_URL = "https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup/auction";
 const AUCTION_ITEM_EMAIL = "mailto:gala@med13.org?subject=MED13%20gala%20auction%20item%20donation";
+// Restore this auction heading on October 10, 2026, and update the translated heading too.
+const OCTOBER_10_AUCTION_HEADING = "TONIGHT'S LIVE AUCTION";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -223,9 +225,6 @@ export default function Gala() {
           <p className="text-sm text-[#4a4a4a] mt-1" data-testid="text-gala-livestream-note">
             {t("gala.livestreamNote")}
           </p>
-          <p className="text-sm font-semibold text-[#1d5f66] mt-2" data-testid="text-gala-auction-opening">
-            {t("gala.auctionOpening")}
-          </p>
         </div>
       </section>
 
@@ -266,7 +265,6 @@ export default function Gala() {
                 <a href={AUCTION_ITEM_EMAIL}>{t("gala.donateAuctionItem")}</a>
               </Button>
             </div>
-            <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
             <p className="mt-2 text-sm text-muted-foreground">{t("gala.donateAuctionItemNote")}</p>
           </div>
         </div>
@@ -353,9 +351,9 @@ export default function Gala() {
             {t("gala.symposiumDesc")}
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-4">
-            <p className="text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
-              {t("gala.symposiumRegistrationComingSoon")}
-            </p>
+            <Link href="/symposium" className="text-sm font-semibold text-primary underline underline-offset-4" data-testid="link-gala-symposium-registration">
+              {t("gala.symposiumRegistrationLink")}
+            </Link>
             <Button variant="outline" size="sm" asChild data-testid="button-gala-symposium-details">
               <Link href="/symposium">
                 {t("gala.symposiumDetailsButton")} <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
