@@ -315,7 +315,7 @@ export default function Gala() {
       <section className="bg-primary py-12 sm:py-16" data-testid="section-gala-trial-readiness">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <p className="text-sm font-semibold tracking-widest uppercase text-primary-foreground mb-3">
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary-foreground/75 mb-3">
               {t("gala.readinessEyebrow")}
             </p>
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-primary-foreground" data-testid="text-gala-trial-readiness-title">
@@ -326,10 +326,10 @@ export default function Gala() {
             {readinessStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-primary-foreground/20 bg-black/10 px-4 py-5 text-center"
+                className="rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-5 text-center"
               >
                 <p className="text-4xl font-heading font-bold text-[#FFD9C7]">{stat.value}</p>
-                <p className="mt-2 text-sm leading-snug text-primary-foreground">{stat.label}</p>
+                <p className="mt-2 text-sm leading-snug text-primary-foreground/90">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -408,10 +408,10 @@ export default function Gala() {
               >
                 <CardContent className="pt-6 flex items-start justify-between gap-4 flex-wrap">
                   <div className="min-w-0 flex-1">
-                    <p className={`text-xs font-semibold tracking-widest uppercase mb-2 ${s.featured ? "text-primary-foreground" : "text-secondary"}`}>
+                    <p className={`text-xs font-semibold tracking-widest uppercase mb-2 ${s.featured ? "text-primary-foreground/80" : "text-secondary"}`}>
                       {s.title}
                     </p>
-                    <p className={`text-sm ${s.featured ? "text-primary-foreground" : "text-muted-foreground"}`}>{s.desc}</p>
+                    <p className={`text-sm ${s.featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}>{s.desc}</p>
                   </div>
                   <p className={`text-2xl font-heading font-bold shrink-0 ${s.featured ? "text-primary-foreground" : "text-primary"}`}>
                     {s.amount}
@@ -486,11 +486,11 @@ export default function Gala() {
             <Card className="bg-primary text-primary-foreground" data-testid="card-gala-fund-4">
               <CardContent className="pt-6 flex items-center justify-between gap-4 flex-wrap">
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs font-semibold tracking-widest uppercase text-primary-foreground mb-1">
+                  <p className="text-xs font-semibold tracking-widest uppercase text-primary-foreground/80 mb-1">
                     {t("gala.funds4Label")}
                   </p>
                   <p className="font-heading font-bold mb-1">{t("gala.funds4Title")}</p>
-                  <p className="text-sm text-primary-foreground">{t("gala.funds4Desc")}</p>
+                  <p className="text-sm text-primary-foreground/90">{t("gala.funds4Desc")}</p>
                 </div>
                 <p className="text-2xl font-heading font-bold shrink-0">{t("gala.funds4Amount")}</p>
               </CardContent>

@@ -220,7 +220,7 @@ export default function DenverMiniMeetup() {
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
                 <h2 className="font-heading text-2xl font-bold">{t("denverMeetup.ticketsTitle")}</h2>
-                <p className="mt-2 text-primary-foreground">{t("denverMeetup.ticketsBody")}</p>
+                <p className="mt-2 text-primary-foreground/80">{t("denverMeetup.ticketsBody")}</p>
                 <Button variant="secondary" className="mt-5" asChild>
                   <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">{t("denverMeetup.register")}<ExternalLink className="ml-2 h-4 w-4" /></a>
                 </Button>

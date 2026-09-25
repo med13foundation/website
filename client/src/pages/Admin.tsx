@@ -340,17 +340,17 @@ function NewsletterPreview({ newsletter, onClose }: { newsletter: Newsletter; on
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${heroBackground})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-decorative/90 via-primary-decorative/85 to-secondary-decorative/90" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Badge
               variant="outline"
-              className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-[#173d3b]"
+              className="mb-4 bg-white/10 backdrop-blur-sm border-white/20 text-white"
             >
               <Calendar className="w-3 h-3 mr-1" />
               {formattedDate}
             </Badge>
             <h1
-              className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-[#173d3b] mb-4"
+              className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white mb-4"
               data-testid="text-preview-title"
             >
               {newsletter.title}

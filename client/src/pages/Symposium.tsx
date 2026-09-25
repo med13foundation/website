@@ -209,7 +209,7 @@ export default function Symposium() {
       <p className="font-semibold tabular-nums text-secondary">{session.time}</p>
       <div>
         {session.type && (
-          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">{session.type}</p>
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary/65">{session.type}</p>
         )}
         <h3 className="font-heading text-lg font-bold text-foreground">{session.title}</h3>
         <p className="mt-2 leading-relaxed text-muted-foreground">{session.description}</p>
@@ -272,21 +272,21 @@ export default function Symposium() {
                   <div className="flex items-start gap-3 rounded-xl bg-primary px-4 py-4 text-primary-foreground">
                     <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-[#bfe9d2]" />
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground">{t("symposium.dateLabel")}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">{t("symposium.dateLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.date")}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 rounded-xl bg-secondary/10 px-4 py-4 text-foreground">
                     <Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">{t("symposium.timeLabel")}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.timeLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.time")}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 rounded-xl bg-[#f7e7ef] px-4 py-4 text-foreground">
                     <Globe2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c65f9e]" />
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary">{t("symposium.formatLabel")}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.formatLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.format")}</p>
                     </div>
                   </div>
@@ -395,29 +395,29 @@ export default function Symposium() {
         <section className="bg-primary py-16 text-primary-foreground sm:py-24" data-testid="section-symposium-access">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground">{t("symposium.accessEyebrow")}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#bfe9d2]">{t("symposium.accessEyebrow")}</p>
               <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl" data-testid="text-symposium-access-title">
                 {t("symposium.accessTitle")}
               </h2>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              <div className="rounded-xl border border-white/15 bg-black/10 p-6">
+              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
                 <BookOpenText className="mb-5 h-6 w-6 text-[#bfe9d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.openTitle")}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground">{t("symposium.openBody")}</p>
+                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.openBody")}</p>
               </div>
-              <div className="rounded-xl border border-white/15 bg-black/10 p-6">
+              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
                 <LockKeyhole className="mb-5 h-6 w-6 text-[#f4b5d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.familyTitle")}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground">{t("symposium.familyBody")}</p>
+                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.familyBody")}</p>
               </div>
-              <div className="rounded-xl border border-white/15 bg-black/10 p-6">
+              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
                 <Users className="mb-5 h-6 w-6 text-[#bfe9d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.privacyTitle")}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground">{t("symposium.privacyBody")}</p>
+                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.privacyBody")}</p>
               </div>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/15 pt-6 text-sm text-primary-foreground">
+            <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/15 pt-6 text-sm text-primary-foreground/80">
               <Video className="h-4 w-4 text-[#bfe9d2]" />
               <span>{t("symposium.recordingNote")}</span>
             </div>

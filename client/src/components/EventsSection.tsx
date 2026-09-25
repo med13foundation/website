@@ -102,11 +102,11 @@ export default function EventsSection() {
               </div>
               <div>
                 <CardTitle className="text-xl font-heading text-primary-foreground">{t('symposium.title')}</CardTitle>
-                <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground">
+                <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground/75">
                   <Calendar className="h-4 w-4" />
                   <span>{t('symposium.date')} · {t('symposium.format')}</span>
                 </CardDescription>
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground">{t('symposium.eventCardDesc')}</p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-primary-foreground/85">{t('symposium.eventCardDesc')}</p>
               </div>
             </div>
             <Button variant="secondary" className="shrink-0" asChild data-testid="button-symposium-details">
@@ -334,7 +334,7 @@ export default function EventsSection() {
             <Star className="h-32 w-32 fill-primary-foreground text-primary-foreground" />
           </div>
           <div className="relative max-w-3xl">
-            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground">
+            <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/80">
               <Star className="h-4 w-4 fill-primary-foreground text-primary-foreground" aria-hidden="true" />
               {t('events.constellationEyebrow')}
             </div>
@@ -353,8 +353,8 @@ export default function EventsSection() {
                 {t('events.shareYourStory')} <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <p className="mt-5 text-base leading-relaxed text-primary-foreground">{t('events.constellationIntro')}</p>
-            <p className="mt-4 text-base leading-relaxed text-primary-foreground">{t('events.constellationMetaphor')}</p>
+            <p className="mt-5 text-base leading-relaxed text-primary-foreground/85">{t('events.constellationIntro')}</p>
+            <p className="mt-4 text-base leading-relaxed text-primary-foreground/85">{t('events.constellationMetaphor')}</p>
             <p className="mt-5 font-medium leading-relaxed text-primary-foreground">{t('events.constellationDignity')}</p>
           </div>
         </div>
