@@ -197,6 +197,12 @@ export default function Symposium() {
       bio: t("symposium.speaker11Bio"),
       image: "/images/symposium/zexuan-li.webp",
     },
+    {
+      name: t("symposium.speaker12Name"),
+      affiliation: t("symposium.speaker12Affiliation"),
+      bio: t("symposium.speaker12Bio"),
+      image: "/images/symposium/julie-mcmurry.webp",
+    },
   ];
 
   const renderSession = (session: Session, index: number) => (
