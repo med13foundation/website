@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, ArrowRight, BookOpenText, CalendarDays, Clock3, Globe2, LockKeyhole, PlayCircle, Users, Video } from "lucide-react";
+import { ArrowRight, BookOpenText, CalendarDays, Clock3, Globe2, LockKeyhole, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -254,6 +253,13 @@ export default function Symposium() {
                       {t("symposium.registrationStatus")}
                     </a>
                   </Button>
+                  <a
+                    href="/symposium.ics"
+                    className="self-center text-sm font-medium text-primary underline underline-offset-4"
+                    data-testid="link-symposium-calendar"
+                  >
+                    {t("symposium.addToCalendar")}
+                  </a>
                 </div>
                 <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-start">
                   <Button size="lg" variant="outline" asChild data-testid="button-symposium-program">
@@ -420,26 +426,6 @@ export default function Symposium() {
             <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/15 pt-6 text-sm text-primary-foreground/80">
               <Video className="h-4 w-4 text-[#bfe9d2]" />
               <span>{t("symposium.recordingNote")}</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 sm:py-20" data-testid="section-symposium-closing">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <PlayCircle className="mx-auto h-8 w-8 text-secondary" />
-            <h2 className="mt-4 font-heading text-3xl font-bold text-primary sm:text-4xl" data-testid="text-symposium-closing-title">
-              {t("symposium.closingTitle")}
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("symposium.closingBody")}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button variant="outline" asChild data-testid="button-symposium-back-gala">
-                <Link href="/gala">
-                  <ArrowLeft className="mr-2 h-4 w-4" /> {t("symposium.backGala")}
-                </Link>
-              </Button>
-              <Button asChild data-testid="button-symposium-home">
-                <Link href="/">{t("symposium.backHome")}</Link>
-              </Button>
             </div>
           </div>
         </section>
