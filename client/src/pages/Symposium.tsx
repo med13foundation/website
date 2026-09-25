@@ -110,6 +110,13 @@ export default function Symposium() {
       speakers: t("symposium.session6Speakers"),
     },
     {
+      time: t("symposium.session9Time"),
+      type: t("symposium.afternoonKeynoteLabel"),
+      title: t("symposium.session9Title"),
+      description: t("symposium.session9Description"),
+      speakers: t("symposium.session9Speakers"),
+    },
+    {
       time: t("symposium.session7Time"),
       type: t("symposium.familyPanelLabel"),
       title: t("symposium.session7Title"),
@@ -183,6 +190,13 @@ export default function Symposium() {
       role: t("symposium.speaker9Role"),
       bio: t("symposium.speaker9Bio"),
       image: "/images/symposium/pj-brooks.webp",
+    },
+    {
+      name: t("symposium.speaker13Name"),
+      affiliation: t("symposium.speaker13Affiliation"),
+      role: t("symposium.speaker13Role"),
+      bio: t("symposium.speaker13Bio"),
+      image: "/images/symposium/mimi-lee.webp",
     },
     {
       name: t("symposium.speaker10Name"),
