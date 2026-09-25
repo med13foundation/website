@@ -10,7 +10,7 @@ type Session = {
   time: string;
   type?: string;
   title: string;
-  description: string;
+  description?: string;
   speakers?: string;
 };
 
@@ -111,10 +111,13 @@ export default function Symposium() {
     },
     {
       time: t("symposium.session9Time"),
-      type: t("symposium.afternoonKeynoteLabel"),
       title: t("symposium.session9Title"),
       description: t("symposium.session9Description"),
       speakers: t("symposium.session9Speakers"),
+    },
+    {
+      time: t("symposium.session10Time"),
+      title: t("symposium.session10Title"),
     },
     {
       time: t("symposium.session7Time"),
@@ -194,7 +197,6 @@ export default function Symposium() {
     {
       name: t("symposium.speaker13Name"),
       affiliation: t("symposium.speaker13Affiliation"),
-      role: t("symposium.speaker13Role"),
       bio: t("symposium.speaker13Bio"),
       image: "/images/symposium/mimi-lee.webp",
     },
@@ -231,7 +233,7 @@ export default function Symposium() {
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary/65">{session.type}</p>
         )}
         <h3 className="font-heading text-lg font-bold text-foreground">{session.title}</h3>
-        <p className="mt-2 leading-relaxed text-muted-foreground">{session.description}</p>
+        {session.description && <p className="mt-2 leading-relaxed text-muted-foreground">{session.description}</p>}
         {session.speakers && <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">{session.speakers}</p>}
       </div>
     </div>
