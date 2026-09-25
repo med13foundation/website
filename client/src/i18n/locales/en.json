@@ -44,23 +44,26 @@
       "viewAllEvents": "View all news and events",
       "upcomingEventLabel": "Upcoming event",
     "getInvolvedEyebrow": "Make a difference",
-    "getInvolvedSubtitle": "Choose a way to help move research and family support forward."
+    "getInvolvedSubtitle": "Choose a way to help move research and family support forward.",
+    "proofActiveFamilies": "active families",
+    "proofCountries": "countries",
+    "proofSimonsSearchlight": "families in Simons Searchlight",
+    "proofNaturalHistory": "families enrolled in the natural history study and biorepository",
+    "proofStemCellLines": "iPSC stem-cell lines reprogrammed",
+    "boardInterestAction": "Express board interest",
+    "volunteerPreviewDesc": "Every talent makes a difference. Volunteers help with grant writing, event planning, translation, data, communications and mentoring newly diagnosed families."
   },
   "hero": {
     "title": "A world where every individual with MED13 syndrome reaches their full potential",
     "subtitle": "The MED13 Foundation unites families, researchers, and clinicians to accelerate scientific discovery, fund research toward treatments, and support families through their diagnostic journey.",
-    "joinResearch": "Join Research Cohort",
-    "learnStory": "Learn Our Story",
-    "supportMission": "Support Our Mission",
-    "getInvolved": "Get Involved",
-    "familiesWorldwide": "200+ Affected Cases Worldwide",
-    "foundationBuilding": "Year 1-2: Foundation Building"
+    "joinResearch": "Join the Research Cohort",
+    "learnStory": "Our story"
   },
   "about": {
     "title": "Who We Are",
     "subtitle": "Building a foundation for discovery, treatment, and hope",
     "ourStory": "Our Story",
-    "storyContent1": "The MED13 Foundation was established by families directly affected by MED13 syndrome, one of the rarest neurodevelopmental disorders with just over 200 identified cases worldwide. Following the first comprehensive characterization of MED13 syndrome in 2018, our community recognized the urgent need for organized advocacy and research infrastructure.",
+    "storyContent1": "The MED13 Foundation was established by families directly affected by MED13 syndrome, one of the rarest neurodevelopmental disorders with just over 200 people identified worldwide. Following the first comprehensive characterization of MED13 syndrome in 2018, our community recognized the urgent need for organized advocacy and research infrastructure.",
     "storyContent2": "As parents navigating this ultra-rare diagnosis, we understand the isolation, uncertainty, and determination that defines this journey. We've witnessed our children's struggles with speech, learning, and development – but also their incredible resilience and unique personalities that shine through every challenge.",
     "ourCommunity": "Our Community",
     "communityItem1": "200+ cases worldwide connected through shared experience",
@@ -462,7 +465,7 @@
   "quickFacts": {
     "title": "Quick Facts About MED13 Syndrome",
     "subtitle": "Understanding the condition at a glance",
-    "affected": "Affected cases worldwide",
+    "affected": "people diagnosed worldwide",
     "affectedValue": "200+",
     "inheritance": "Inheritance",
     "inheritanceValue": "De novo (92%)",

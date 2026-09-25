@@ -44,23 +44,26 @@
       "viewAllEvents": "Ver todas las noticias y eventos",
       "upcomingEventLabel": "Próximo evento",
     "getInvolvedEyebrow": "Marca la diferencia",
-    "getInvolvedSubtitle": "Elige una forma de impulsar la investigación y el apoyo a las familias."
+    "getInvolvedSubtitle": "Elige una forma de impulsar la investigación y el apoyo a las familias.",
+    "proofActiveFamilies": "familias activas",
+    "proofCountries": "países",
+    "proofSimonsSearchlight": "familias en Simons Searchlight",
+    "proofNaturalHistory": "familias inscritas en el estudio de historia natural y biorepositorio",
+    "proofStemCellLines": "líneas de células madre iPSC reprogramadas",
+    "boardInterestAction": "Expresar interés en la junta directiva",
+    "volunteerPreviewDesc": "Cada talento marca la diferencia. Los voluntarios ayudan con la redacción de subvenciones, la planificación de eventos, la traducción, los datos, las comunicaciones y el acompañamiento de familias recién diagnosticadas."
   },
   "hero": {
     "title": "Un mundo donde cada individuo con síndrome MED13 alcance su máximo potencial",
     "subtitle": "La Fundación MED13 une a familias, investigadores y médicos para acelerar el descubrimiento científico, financiar investigación hacia tratamientos, y apoyar a las familias en su camino diagnóstico.",
     "joinResearch": "Únete a la Cohorte de Investigación",
-    "learnStory": "Conoce Nuestra Historia",
-    "supportMission": "Apoya Nuestra Misión",
-    "getInvolved": "Participa",
-    "familiesWorldwide": "Más de 200 casos afectados en todo el mundo",
-    "foundationBuilding": "Año 1-2: Construcción de Bases"
+    "learnStory": "Nuestra historia"
   },
   "about": {
     "title": "Quiénes Somos",
     "subtitle": "Construyendo una base para el descubrimiento, el tratamiento y la esperanza",
     "ourStory": "Nuestra Historia",
-    "storyContent1": "La Fundación MED13 fue establecida por familias directamente afectadas por el síndrome MED13, uno de los trastornos del neurodesarrollo más raros con poco más de 200 casos identificados en todo el mundo. Tras la primera caracterización integral del síndrome MED13 en 2018, nuestra comunidad reconoció la necesidad urgente de una infraestructura organizada de defensa e investigación.",
+    "storyContent1": "La Fundación MED13 fue establecida por familias directamente afectadas por el síndrome MED13, uno de los trastornos del neurodesarrollo más raros con poco más de 200 personas identificadas en todo el mundo. Tras la primera caracterización integral del síndrome MED13 en 2018, nuestra comunidad reconoció la necesidad urgente de una infraestructura organizada de defensa e investigación.",
     "storyContent2": "Como padres navegando este diagnóstico ultra-raro, entendemos el aislamiento, la incertidumbre y la determinación que define este camino. Hemos sido testigos de las dificultades de nuestros hijos con el habla, el aprendizaje y el desarrollo, pero también de su increíble resiliencia y personalidades únicas que brillan a través de cada desafío.",
     "ourCommunity": "Nuestra Comunidad",
     "communityItem1": "Más de 200 casos en todo el mundo conectados a través de experiencias compartidas",
@@ -462,7 +465,7 @@
   "quickFacts": {
     "title": "Datos Rápidos sobre el Síndrome MED13",
     "subtitle": "Entendiendo la condición de un vistazo",
-    "affected": "Casos afectados en el mundo",
+    "affected": "personas diagnosticadas en todo el mundo",
     "affectedValue": "200+",
     "inheritance": "Herencia",
     "inheritanceValue": "De novo (92%)",

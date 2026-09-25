@@ -72,7 +72,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
           {pathways.map((pathway, index) => {
             const Icon = pathway.icon;
             return (
-              <Card key={index} className="flex flex-col bg-card/95 backdrop-blur-sm" data-testid={`card-${pathway.testId}`}>
+              <Card key={index} id={pathway.testId === "research" ? "research-cohort" : undefined} className="flex flex-col bg-card/95 backdrop-blur-sm scroll-mt-24" data-testid={`card-${pathway.testId}`}>
                 <CardHeader className="pb-4">
                   <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="w-8 h-8 text-primary" />

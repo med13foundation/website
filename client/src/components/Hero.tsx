@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { CLASSY_DONATION_URL, RESEARCH_COHORT_FORM_URL } from "@/lib/links";
-import { Badge } from "@/components/ui/badge";
-import { Users, Beaker, Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import heroBackground from "@assets/generated_images/Family_unity_hope_background_8e3f922d.webp";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
+import { proofItems } from "@/content/proof";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -42,56 +41,36 @@ export default function Hero() {
             {t('hero.subtitle')}
           </p>
 
-          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4">
             <Button 
               size="lg"
               className="bg-white text-primary hover:bg-white/90 border-white"
               asChild
               data-testid="button-join-research"
             >
-              <a href={RESEARCH_COHORT_FORM_URL} target="_blank" rel="noopener noreferrer">
+              <Link href="/get-involved#research-cohort">
                 {t('hero.joinResearch')}
-              </a>
+              </Link>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
-              asChild
-              data-testid="button-learn-story"
+            <Link
+              href="/who-we-are"
+              className="text-sm font-semibold text-white underline underline-offset-4 hover:text-white/80"
+              data-testid="link-our-story"
             >
-              <a href="#about">{t('hero.learnStory')}</a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
-              asChild
-              data-testid="button-support-mission"
-            >
-              <a href={CLASSY_DONATION_URL}>{t('hero.supportMission')}</a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/10 backdrop-blur-sm border-white/40 text-white hover:bg-white/20"
-              asChild
-              data-testid="button-get-involved"
-            >
-              <a href="/get-involved">{t('hero.getInvolved')}</a>
-            </Button>
+              {t('hero.learnStory')}
+            </Link>
           </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-families">
-              <Users className="w-4 h-4 mr-2" />
-              {t('hero.familiesWorldwide')}
-            </Badge>
-            <Badge variant="outline" className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm border-white/20 text-white" data-testid="badge-research">
-              <Beaker className="w-4 h-4 mr-2" />
-              {t('hero.foundationBuilding')}
-            </Badge>
-          </div>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-5" data-testid="hero-proof-band">
+          {proofItems.map((item, index) => (
+            <div
+              key={item.labelKey}
+              className={`rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-white backdrop-blur-sm ${index === proofItems.length - 1 ? "col-span-2 lg:col-span-1" : ""}`}
+            >
+              <p className="font-heading text-2xl font-bold">{item.value}</p>
+              <p className="mt-1 text-sm leading-snug text-white/90">{t(item.labelKey)}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
