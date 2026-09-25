@@ -28,6 +28,9 @@
   "home": {
     "missionEyebrow": "Our mission",
     "missionButton": "Meet the people behind the work",
+    "syndromeVideoTitle": "What is MED13 syndrome?",
+    "syndromeVideoDescription": "Watch this introduction from the MED13 Foundation.",
+    "syndromeVideoFallback": "Download the MED13 syndrome video",
     "featuredEventsEyebrow": "Stay connected",
     "featuredEventsSubtitle": "Meet us at an upcoming gathering or explore the latest opportunities to connect.",
       "viewAllEvents": "View all news and events",

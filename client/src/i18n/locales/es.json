@@ -28,6 +28,9 @@
   "home": {
     "missionEyebrow": "Nuestra misión",
     "missionButton": "Conoce a las personas detrás del trabajo",
+    "syndromeVideoTitle": "¿Qué es el síndrome MED13?",
+    "syndromeVideoDescription": "Mira esta introducción de la Fundación MED13.",
+    "syndromeVideoFallback": "Descargar el video sobre el síndrome MED13",
     "featuredEventsEyebrow": "Mantente conectado",
     "featuredEventsSubtitle": "Únete a nosotros en un próximo encuentro o descubre nuevas formas de conectarte.",
       "viewAllEvents": "Ver todas las noticias y eventos",
