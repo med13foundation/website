@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const REGISTRATION_URL = "https://givebutter.com/mini-medopathies-family-meetup-denver-zfo4zv";
+const RARE_RECEPTION_URL = "https://fundraise.givesmart.com/e/9aSuZA?vid=1sokr3";
 const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6";
 const AES_URL = "https://aesnet.org/AES-annual-meeting";
 const COMBINEDBRAIN_URL = "https://combinedbrain.org/";
@@ -145,6 +146,26 @@ export default function DenverMiniMeetup() {
                   </div>
                   <Button variant="outline" className="w-full" asChild>
                     <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">{t("denverMeetup.directions")}<ExternalLink className="ml-2 h-4 w-4" /></a>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/15" data-testid="card-denver-rare-reception">
+                <CardContent className="p-6">
+                  <h2 className="font-heading text-xl font-bold">{t("denverMeetup.receptionTitle")}</h2>
+                  <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+                    <CalendarDays className="h-4 w-4 shrink-0 text-primary" />
+                    {t("denverMeetup.receptionDate")}
+                  </p>
+                  <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+                    <MapPin className="h-4 w-4 shrink-0 text-primary" />
+                    {t("denverMeetup.receptionVenue")}
+                  </p>
+                  <Button variant="outline" className="mt-5 w-full" asChild>
+                    <a href={RARE_RECEPTION_URL} target="_blank" rel="noopener noreferrer" data-testid="link-denver-rare-reception">
+                      {t("denverMeetup.receptionLink")}
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
