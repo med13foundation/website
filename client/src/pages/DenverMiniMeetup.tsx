@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users, Video } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -37,13 +37,17 @@ export default function DenverMiniMeetup() {
   }, [t]);
 
   const agenda = [
-    ["agenda1Time", "agenda1Title", "agenda1Body"],
-    ["agenda2Time", "agenda2Title", "agenda2Body"],
+    ["agenda1Time", "agenda1Title", null],
+    ["agenda2Time", "agenda2Title", null],
     ["agenda3Time", "agenda3Title", "agenda3Body"],
-    ["agenda4Time", "agenda4Title", "agenda4Body"],
+    ["agenda4Time", "agenda4Title", null],
     ["agenda5Time", "agenda5Title", "agenda5Body"],
-    ["agenda6Time", "agenda6Title", "agenda6Body"],
-    ["agenda7Time", "agenda7Title", "agenda7Body"],
+    ["agenda6Time", "agenda6Title", null],
+    ["agenda7Time", "agenda7Title", null],
+    ["agenda8Time", "agenda8Title", null],
+    ["agenda9Time", "agenda9Title", null],
+    ["agenda10Time", "agenda10Title", null],
+    ["agenda11Time", "agenda11Title", "agenda11Body"],
   ] as const;
 
   return (
@@ -61,7 +65,7 @@ export default function DenverMiniMeetup() {
                 </Link>
               </Button>
               <div className="mb-5 flex flex-wrap items-center gap-3">
-                {(["inPersonTag", "respiteTag"] as const).map((key) => (
+                {(["inPersonTag", "respiteTag", "virtualTag"] as const).map((key) => (
                   <Badge key={key} variant="secondary">{t(`denverMeetup.${key}`)}</Badge>
                 ))}
               </div>
@@ -244,11 +248,22 @@ export default function DenverMiniMeetup() {
                       <p className="font-semibold text-secondary">{t(`denverMeetup.${time}`)}</p>
                       <div>
                         <h3 className="font-heading font-bold">{t(`denverMeetup.${title}`)}</h3>
-                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(`denverMeetup.${body}`)}</p>
+                        {body && <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(`denverMeetup.${body}`)}</p>}
                       </div>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
+                <Video className="h-6 w-6 text-primary" />
+                <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
+                <p className="mt-2 text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
+                <Button variant="outline" className="mt-5" asChild>
+                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+                    {t("denverMeetup.virtualButton")}<ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
