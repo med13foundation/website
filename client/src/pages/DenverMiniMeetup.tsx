@@ -152,15 +152,27 @@ export default function DenverMiniMeetup() {
 
               <Card className="border-primary/15" data-testid="card-denver-rare-reception">
                 <CardContent className="p-6">
-                  <h2 className="font-heading text-xl font-bold">{t("denverMeetup.receptionTitle")}</h2>
-                  <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-secondary">{t("denverMeetup.receptionDetailsLabel")}</p>
+                  <h2 className="mt-2 font-heading text-xl font-bold">{t("denverMeetup.receptionTitle")}</h2>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-wider text-primary">{t("denverMeetup.receptionWhenWhere")}</h3>
+                  <div className="mt-3 flex items-start gap-2 text-sm">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <div>
+                      <p className="font-semibold">{t("denverMeetup.receptionVenue")}</p>
+                      <p className="mt-1 text-muted-foreground">{t("denverMeetup.receptionAddress")}</p>
+                    </div>
+                  </div>
+                  <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDays className="h-4 w-4 shrink-0 text-primary" />
                     {t("denverMeetup.receptionDate")}
                   </p>
-                  <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 shrink-0 text-primary" />
-                    {t("denverMeetup.receptionVenue")}
-                  </p>
+                  <h3 className="mt-6 border-t pt-5 text-xs font-semibold uppercase tracking-wider text-primary">{t("denverMeetup.receptionWhatToKnow")}</h3>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                    {(["receptionAdmission", "receptionWelcome", "receptionAttire", "receptionRefreshments"] as const).map((key) => (
+                      <li key={key}>{t(`denverMeetup.${key}`)}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground">{t("denverMeetup.receptionDescription")}</p>
                   <Button variant="outline" className="mt-5 w-full" asChild>
                     <a href={RARE_RECEPTION_URL} target="_blank" rel="noopener noreferrer" data-testid="link-denver-rare-reception">
                       {t("denverMeetup.receptionLink")}
