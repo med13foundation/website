@@ -2,4 +2,4 @@
 - [Classy embed lifecycle](classy-embed-lifecycle.md) — Treat the Classy mount node as disposable; keep persistent layout and test hooks on a stable wrapper.
 - [Travel giving](travel-giving.md) — Coordinate miles, points, and travel-designated cash before transfer; never imply a general donation is earmarked for travel.
 - [Video compatibility](video-compatibility.md) — Keep WebM and MP4 fallbacks; native captions alone do not hide subtitles already embedded in video frames.
-- [Denver virtual attendance](denver-virtual-attendance.md) — Link to the stated livestream, not virtual registration, until a virtual ticket or registration path is confirmed.
+- [Denver virtual attendance](denver-virtual-attendance.md) — Follow the event organizer’s registration wording while avoiding claims of a dedicated virtual ticket.
