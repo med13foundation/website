@@ -259,6 +259,23 @@ export default function EventsSection() {
             </CardContent>
           </Card>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <Card className="md:col-span-2" data-testid="card-media-article-stanford">
+              <CardHeader>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticleStanfordTitle')}</CardTitle>
+                <CardDescription>{t('events.mediaArticleStanfordDesc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-stanford">
+                  <a
+                    href="https://healthier.stanfordchildrens.org/en/a-rare-genetic-diagnosis-gives-arturos-family-answers-and-hope/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
             <Card data-testid="card-media-article-1">
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{t('events.mediaArticle1Title')}</CardTitle>
