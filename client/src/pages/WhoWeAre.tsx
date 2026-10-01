@@ -137,20 +137,21 @@ const clinicians: Member[] = [
 interface Partner {
   name: string;
   logo?: string;
+  url?: string;
   darkBg?: boolean;
   tall?: boolean;
   wide?: boolean;
 }
 
 const partners: Partner[] = [
-  { name: "COMBINEDBrain", logo: "/images/combined_brain.png" },
-  { name: "Rare Village Foundation", logo: "/images/rare_village.png" },
-  { name: "CureNDD", logo: "/images/curendd.png" },
+  { name: "COMBINEDBrain", logo: "/images/combined_brain.png", url: "https://combinedbrain.org/" },
+  { name: "Rare Village Foundation", logo: "/images/rare_village.png", url: "https://rarevillage.org/" },
+  { name: "CureNDD", logo: "/images/curendd-community-partner.png", url: "https://www.curendd.org/", wide: true },
 
-  { name: "MED12 Foundation", logo: "/images/med12_foundation_no_bg.png" },
-  { name: "MED13L Foundation", logo: "/images/med13l_foundation_trimmed.png" },
+  { name: "MED12 Foundation", logo: "/images/med12_foundation_no_bg.png", url: "https://www.med12.org/" },
+  { name: "MED13L Foundation", logo: "/images/med13l_foundation_trimmed.png", url: "https://med13l.org/" },
   { name: "MEDopathies Alliance", logo: "/images/medopathies_alliance_no_bg.png", wide: true },
-  { name: "REN", logo: "/images/ren_logo.avif" },
+  { name: "REN", logo: "/images/ren_logo.avif", url: "https://www.rareepilepsynetwork.org/" },
 ];
 
 function initials(name: string) {
@@ -477,11 +478,15 @@ export default function WhoWeAre() {
           </h2>
           <p className="text-muted-foreground mb-8">{t("whoWeAre.partnersSubtitle")}</p>
           <div className="flex flex-wrap justify-center items-center gap-4">
-            {partners.map((p) => (
-              p.logo ? (
-                <span
+            {partners.map((p) => {
+              const PartnerContainer = p.url ? "a" : "span";
+              return p.logo ? (
+                <PartnerContainer
                   key={p.name}
-                  className="flex items-center justify-center px-6 py-4 h-24"
+                  href={p.url}
+                  target={p.url ? "_blank" : undefined}
+                  rel={p.url ? "noopener noreferrer" : undefined}
+                  className={`flex items-center justify-center px-6 py-4 h-24${p.url ? " rounded-lg transition-opacity hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" : ""}`}
                   data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
                 >
                   <img
@@ -495,7 +500,7 @@ export default function WhoWeAre() {
                           : "h-full w-auto max-w-[160px]"
                     }`}
                   />
-                </span>
+                </PartnerContainer>
               ) : (
                 <span
                   key={p.name}
@@ -504,8 +509,8 @@ export default function WhoWeAre() {
                 >
                   {p.name}
                 </span>
-              )
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

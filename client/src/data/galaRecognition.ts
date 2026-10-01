@@ -16,6 +16,7 @@ export const sponsors = [
   { name: "Monarch Initiative", tier: "Partner Sponsor", url: "https://monarchinitiative.org/", logo: monarchLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
   { name: "Opus 132", tier: "Partner Sponsor", url: "https://www.opus132.org/", logo: opusLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
   { name: "Pequeños Talkers", tier: "Community Sponsor", url: "https://www.instagram.com/pequenos_talkers/", logo: pequenosLogo, width: 120, recognized: "2026-09", expires: "2026-12-31" },
+  { name: "CureNDD", tier: "Community Sponsor", url: "https://www.curendd.org/", logo: "/images/curendd-community-partner.png", width: 280, recognized: "2026-10", expires: "2026-12-31" },
 ] as const;
 
 export const auctionDonors = [
