@@ -322,6 +322,18 @@ export default function Symposium() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.formatLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.format")}</p>
+                      <p className="mt-2 text-sm leading-relaxed" data-testid="text-symposium-live-translation">
+                        {t("symposium.liveTranslation")}{" "}
+                        <a
+                          href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060844"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                          data-testid="link-symposium-live-translation"
+                        >
+                          {t("symposium.liveTranslationLink")}
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>
