@@ -156,6 +156,12 @@ export default function Symposium() {
       image: "/images/symposium/carla-marini.webp",
     },
     {
+      name: t("symposium.speaker14Name"),
+      affiliation: t("symposium.speaker14Affiliation"),
+      bio: t("symposium.speaker14Bio"),
+      image: "/images/symposium/maya-chopra.jpeg",
+    },
+    {
       name: t("symposium.speaker4Name"),
       affiliation: t("symposium.speaker4Affiliation"),
       bio: t("symposium.speaker4Bio"),
