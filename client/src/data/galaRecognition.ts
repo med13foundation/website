@@ -11,7 +11,7 @@ import pequenosLogo from "@assets/0_123_1_1790123936779.jpeg";
 // The seed cohort is explicitly approved through December 31, 2026 in the design brief.
 export const sponsors = [
   { name: "Baylor Genetics", tier: "Catalyst Sponsor", url: "https://www.baylorgenetics.com/", logo: baylorLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
-  { name: "Proton Effect", tier: "Catalyst Sponsor", url: "", logo: "/images/proton-effect.png", width: 220, recognized: "2026-10", expires: "2026-12-31" },
+  { name: "Proton Effect", tier: "Catalyst Sponsor", url: "https://protoneffect.com/", logo: "/images/proton-effect.png", width: 220, recognized: "2026-10", expires: "2026-12-31" },
   { name: "NeuCyte", tier: "Gala Film Sponsor", url: "https://neucyte.com/", logo: neucyteLogo, width: 220, recognized: "2026-09", expires: "2026-12-31" },
   { name: "EditCo", tier: "Partner Sponsor", url: "https://www.editco.bio/", logo: editcoLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
   { name: "Monarch Initiative", tier: "Partner Sponsor", url: "https://monarchinitiative.org/", logo: monarchLogo, width: 165, recognized: "2026-09", expires: "2026-12-31" },
