@@ -4,3 +4,4 @@
 - [Video compatibility](video-compatibility.md) — Keep WebM and MP4 fallbacks; native captions alone do not hide subtitles already embedded in video frames.
 - [Denver virtual attendance](denver-virtual-attendance.md) — Follow the event organizer’s registration wording while avoiding claims of a dedicated virtual ticket.
 - [Symposium language access](symposium-language-access.md) — Organizer confirmed live translation via Zoom for the October 2026 symposium; avoid unsupported language claims.
+- [Media image sourcing](media-image-sourcing.md) — SPARK article pages can block fetching while official image assets remain accessible; use subject-specific searches.
