@@ -259,6 +259,40 @@ export default function EventsSection() {
             </CardContent>
           </Card>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <Card className="overflow-hidden md:col-span-2" data-testid="card-media-article-cpn">
+              <a
+                href="https://courageousparentsnetwork.org/blog/the-weight-of-a-decision/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticleCpnTitle')}
+              >
+                <img
+                  src="/images/news/the-weight-of-a-decision.jpg"
+                  alt={t('events.mediaArticleCpnImageAlt')}
+                  width={1024}
+                  height={681}
+                  loading="lazy"
+                  className="aspect-[3/2] w-full object-cover"
+                />
+              </a>
+              <CardHeader>
+                <p className="text-sm font-semibold text-primary">Courageous Parents Network</p>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticleCpnTitle')}</CardTitle>
+                <CardDescription>{t('events.mediaArticleCpnDesc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-cpn">
+                  <a
+                    href="https://courageousparentsnetwork.org/blog/the-weight-of-a-decision/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
             <Card className="md:col-span-2" data-testid="card-media-article-stanford">
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{t('events.mediaArticleStanfordTitle')}</CardTitle>
