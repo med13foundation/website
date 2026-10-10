@@ -327,7 +327,23 @@ export default function EventsSection() {
                 </Button>
               </CardContent>
             </Card>
-            <Card data-testid="card-media-article-2">
+            <Card className="overflow-hidden" data-testid="card-media-article-2">
+              <a
+                href="https://medium.com/@cindybadon/what-a-genetic-diagnosis-can-mean-for-a-child-on-the-spectrum-89ef08a11091"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticle2Title')}
+              >
+                <img
+                  src="/images/news/genetic-diagnosis-spectrum.jpg"
+                  alt={t('events.mediaArticle2ImageAlt')}
+                  width={1000}
+                  height={1000}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </a>
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{t('events.mediaArticle2Title')}</CardTitle>
                 <CardDescription>{t('events.mediaArticle2Desc')}</CardDescription>
