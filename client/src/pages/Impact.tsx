@@ -75,7 +75,7 @@ export default function Impact() {
     ["surveys", t("impact.metricSurveys"), t("impact.metricSurveysNote"), t("impact.metricSurveysNext")],
     ["eeg", t("impact.metricEeg"), t("impact.metricEegNote"), t("impact.metricEegNext")],
     ["cells", t("impact.metricCells"), t("impact.metricCellsNote"), t("impact.metricCellsNext")],
-    ["grants", t("impact.metricGrants"), t("impact.metricGrantsNote"), t("impact.metricGrantsNext")],
+    ["grants", t("impact.metricGrants"), t("impact.metricGrantsNote"), ""],
     ["research", t("impact.metricResearch"), t("impact.metricResearchNote"), t("impact.metricResearchNext")],
   ];
   const metricSources: Record<string, number[]> = {
@@ -131,12 +131,9 @@ export default function Impact() {
                   )}
                 <article key={id} className="rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
                   <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t(`impact.metricLabels.${id}`)}</h4>
-                  {id === "families" && (
-                    <p className="mb-3 inline-block rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-900">{t("impact.populationSourceNeeded")}</p>
-                  )}
                   <p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{value}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}<ImpactCitation numbers={metricSources[id]} /></p>
-                  <p className="mt-3 border-t border-border pt-3 text-xs font-medium leading-relaxed text-foreground/75">{next}</p>
+                  {next && <p className="mt-3 border-t border-border pt-3 text-xs font-medium leading-relaxed text-foreground/75">{next}</p>}
                 </article>
                 </Fragment>
               ))}
