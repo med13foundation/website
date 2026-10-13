@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,7 +12,7 @@ import Champions from "@/pages/Champions";
 import Symposium from "@/pages/Symposium";
 import WhoWeAre from "@/pages/WhoWeAre";
 import NewsAndEvents from "@/pages/NewsAndEvents";
-import Roadmap from "@/pages/Roadmap";
+import Impact from "@/pages/Impact";
 import GetInvolved from "@/pages/GetInvolved";
 import WaysToGive from "@/pages/WaysToGive";
 import HopeIsAPractice from "@/pages/HopeIsAPractice";
@@ -33,7 +33,8 @@ function Router() {
       <Route path="/news-and-events" component={NewsAndEvents}/>
       <Route path="/news-and-events/hope-is-a-practice" component={HopeIsAPractice}/>
       <Route path="/news-and-events/denver-mini-medopathies-meetup" component={DenverMiniMeetup}/>
-      <Route path="/roadmap" component={Roadmap}/>
+      <Route path="/impact" component={Impact}/>
+      <Route path="/roadmap"><Redirect to="/impact" /></Route>
       <Route path="/get-involved" component={GetInvolved}/>
       <Route path="/ways-to-give" component={WaysToGive}/>
       <Route component={NotFound} />

@@ -92,8 +92,8 @@ export default function Navigation() {
             <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </Link>
-            <Link href="/roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
-              {t('nav.roadmap')}
+            <Link href="/impact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-impact">
+              {t('nav.impact')}
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -210,12 +210,12 @@ export default function Navigation() {
               {t('nav.getInvolved')}
             </Link>
             <Link 
-              href="/roadmap" 
+              href="/impact"
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
-              data-testid="link-mobile-roadmap"
+              data-testid="link-mobile-impact"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t('nav.roadmap')}
+              {t('nav.impact')}
             </Link>
             <div className="px-3 py-2" data-testid="mobile-events-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.events')}</p>

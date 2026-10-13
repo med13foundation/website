@@ -25,8 +25,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
-                  {t('footer.researchRoadmap')}
+                <a href="/impact" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-impact">
+                  {t('footer.impactProgress')}
                 </a>
               </li>
             </ul>
