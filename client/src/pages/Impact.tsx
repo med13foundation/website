@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 import { ArrowDown, ArrowRight, Check, Circle, Clock3, ExternalLink, Mail, Microscope, Users, Wallet } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ImpactSources, { ImpactCitation } from "@/components/impact/ImpactSources";
 import { RESEARCH_COHORT_FORM_URL, CLASSY_DONATION_URL } from "@/lib/links";
 
-type Milestone = { title: string; detail: string; status: "done" | "inProgress" | "next" | "notStarted"; tag?: string };
+type Milestone = { title: string; detail: string; status: "done" | "inProgress" | "next" | "notStarted"; tag?: string; sources?: number[] };
 type Stage = { id: string; title: string; years: string; count: string; milestones: Milestone[] };
 
 export default function Impact() {
@@ -30,17 +31,16 @@ export default function Impact() {
 
   const stages: Stage[] = [
     { id: "stage-1", title: t("impact.stage1Title"), years: t("impact.stage1Years"), count: t("impact.stage1Count"), milestones: [
-      { title: t("impact.m1Title"), detail: t("impact.m1Detail"), status: "done" },
+      { title: t("impact.m1Title"), detail: t("impact.m1Detail"), status: "done", sources: [1, 6] },
       { title: t("impact.m2Title"), detail: t("impact.m2Detail"), status: "done" },
       { title: t("impact.m3Title"), detail: t("impact.m3Detail"), status: "done" },
       { title: t("impact.m4Title"), detail: t("impact.m4Detail"), status: "inProgress" },
     ]},
     { id: "stage-2", title: t("impact.stage2Title"), years: t("impact.stage2Years"), count: t("impact.stage2Count"), milestones: [
-      { title: t("impact.m5Title"), detail: t("impact.m5Detail"), status: "done" },
+      { title: t("impact.m5Title"), detail: t("impact.m5Detail"), status: "done", sources: [7] },
       { title: t("impact.m6Title"), detail: t("impact.m6Detail"), status: "done" },
       { title: t("impact.m7Title"), detail: t("impact.m7Detail"), status: "inProgress" },
       { title: t("impact.m8Title"), detail: t("impact.m8Detail"), status: "inProgress", tag: t("impact.newMilestone") },
-      { title: t("impact.m9Title"), detail: t("impact.m9Detail"), status: "inProgress", tag: t("impact.newMilestone") },
       { title: t("impact.m10Title"), detail: t("impact.m10Detail"), status: "next" },
     ]},
     { id: "stage-3", title: t("impact.stage3Title"), years: t("impact.stage3Years"), count: t("impact.stage3Count"), milestones: [
@@ -52,7 +52,7 @@ export default function Impact() {
     ]},
     { id: "stage-4", title: t("impact.stage4Title"), years: t("impact.stage4Years"), count: t("impact.stage4Count"), milestones: [
       { title: t("impact.m16Title"), detail: t("impact.m16Detail"), status: "inProgress" },
-      { title: t("impact.m17Title"), detail: t("impact.m17Detail"), status: "next" },
+      { title: t("impact.m17Title"), detail: t("impact.m17Detail"), status: "inProgress" },
       { title: t("impact.m18Title"), detail: t("impact.m18Detail"), status: "notStarted" },
       { title: t("impact.m19Title"), detail: t("impact.m19Detail"), status: "notStarted" },
     ]},
@@ -78,6 +78,10 @@ export default function Impact() {
     ["grants", t("impact.metricGrants"), t("impact.metricGrantsNote"), t("impact.metricGrantsNext")],
     ["research", t("impact.metricResearch"), t("impact.metricResearchNote"), t("impact.metricResearchNext")],
   ];
+  const metricSources: Record<string, number[]> = {
+    families: [1, 2], biobank: [1], surveys: [1], eeg: [1],
+    cells: [7], grants: [8], research: [7],
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -88,7 +92,8 @@ export default function Impact() {
           <div className="relative mx-auto max-w-7xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#b56855]">{t("impact.eyebrow")}</p>
             <h1 className="max-w-4xl font-heading text-4xl font-bold leading-[1.08] text-primary sm:text-6xl">{t("impact.title")}</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80 sm:text-xl">{t("impact.intro")}</p>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80 sm:text-xl">{t("impact.intro")}<ImpactCitation numbers={[4]} /></p>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-foreground/80">{t("impact.studyContext")}</p>
             <p className="mt-5 max-w-3xl border-l-2 border-primary/50 pl-4 text-base leading-relaxed text-muted-foreground">{t("impact.denominatorPromise")}</p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-primary">
               <span>{t("impact.snapshot")}</span><span>{t("impact.staffNote")}</span>
@@ -101,9 +106,9 @@ export default function Impact() {
 
         <nav aria-label={t("impact.sectionNavLabel")} className="border-b border-border bg-background">
           <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 py-3 text-sm font-semibold sm:px-6 lg:px-8">
-            {["numbers", "fit", "roadmap", "next-steps", "take-part", "definitions"].map((id, index) => (
+            {["numbers", "fit", "roadmap", "next-steps", "take-part", "definitions", "sources"].map((id, index) => (
               <a key={id} href={`#${id}`} className="shrink-0 rounded-full px-3 py-2 text-primary hover:bg-[#e9f5f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
-                {t(`impact.anchor${index + 1}`)}
+                {t(id === "sources" ? "impact.sourcesTitle" : `impact.anchor${index + 1}`)}
               </a>
             ))}
           </div>
@@ -126,8 +131,11 @@ export default function Impact() {
                   )}
                 <article key={id} className="rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
                   <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t(`impact.metricLabels.${id}`)}</h4>
+                  {id === "families" && (
+                    <p className="mb-3 inline-block rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-900">{t("impact.populationSourceNeeded")}</p>
+                  )}
                   <p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{value}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}<ImpactCitation numbers={metricSources[id]} /></p>
                   <p className="mt-3 border-t border-border pt-3 text-xs font-medium leading-relaxed text-foreground/75">{next}</p>
                 </article>
                 </Fragment>
@@ -136,7 +144,7 @@ export default function Impact() {
                 <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t("impact.fundraisingTitle")}</h4>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div><p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t("impact.fundraisingFigure")}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}</p></div>
+                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}<ImpactCitation numbers={[7]} /></p></div>
                   <span className="shrink-0 rounded-full border border-[#c77c65] bg-white/70 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#874b3b]">{t("impact.awaitingConfirmation")}</span>
                 </div>
                 <p className="mt-3 border-t border-[#e9c6b8] pt-3 text-xs leading-relaxed text-muted-foreground">{t("impact.fundraisingNext")}</p>
@@ -154,7 +162,7 @@ export default function Impact() {
               <p className="mt-4 leading-relaxed text-muted-foreground">{t("impact.fitIntro")}</p>
               <div className="mt-6 rounded-lg border-l-4 border-secondary bg-white/70 p-5">
                 <h3 className="font-heading text-lg font-bold text-primary">{t("impact.whyFourTitle")}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t("impact.whyFourBody")}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t("impact.whyFourBody")}<ImpactCitation numbers={[4, 5]} /></p>
               </div>
             </div>
             <ol className="space-y-3">
@@ -202,7 +210,7 @@ export default function Impact() {
                             <h4 className="font-semibold text-foreground">{milestone.title}</h4>
                             {milestone.tag && <span className="rounded bg-[#fff0e9] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#9b5947]">{milestone.tag}</span>}
                           </div>
-                          <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground">{milestone.detail}</p>
+                          <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground">{milestone.detail}{milestone.sources && <ImpactCitation numbers={milestone.sources} />}</p>
                         </div>
                         <span className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold ${statusStyles[milestone.status]}`}><StatusIcon status={milestone.status} />{t(`impact.status.${milestone.status}`)}</span>
                       </li>
@@ -218,7 +226,7 @@ export default function Impact() {
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#b56855]">{t("impact.nextEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.nextTitle")}</h2></div>
             <ol className="mt-8 grid gap-4 md:grid-cols-2">
-              {[1, 2, 3, 4, 5, 6].map((n) => <li key={n} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+              {[1, 3, 4, 5, 6].map((n) => <li key={n} className="flex gap-4 rounded-xl border border-border bg-card p-5">
                 <span className="mt-0.5 font-mono text-sm font-bold text-[#b56855]">{t(`impact.step${n}When`)}</span>
                 <p className="text-sm leading-relaxed text-foreground/85">{t(`impact.step${n}Body`)}</p>
               </li>)}
@@ -241,7 +249,12 @@ export default function Impact() {
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#b56855]">{t("impact.aboutEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.aboutTitle")}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("impact.aboutIntro")}</p></div>
             <div className="space-y-4">
-              {[1, 2, 3, 4, 5].map((n) => <p key={n} className="border-b border-border pb-4 text-sm leading-relaxed text-foreground/80">{t(`impact.definition${n}`)}</p>)}
+              {["definition1", "definition2", "definitionGeneticIncidence", "definition3", "definition4", "definition5"].map((key) => (
+                <p key={key} className="border-b border-border pb-4 text-sm leading-relaxed text-foreground/80">
+                  {t(`impact.${key}`)}
+                  {key === "definitionGeneticIncidence" && <ImpactCitation numbers={[3]} />}
+                </p>
+              ))}
               <div className="rounded-xl border border-[#e5c6b8] bg-white/75 p-5">
                 <p className="font-semibold text-primary">{t("impact.fiscalTitle")}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t("impact.fiscalBody")}</p>
@@ -249,6 +262,7 @@ export default function Impact() {
             </div>
           </div>
         </section>
+        <ImpactSources />
       </main>
       <Footer />
     </div>
