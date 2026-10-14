@@ -46,7 +46,8 @@
       "upcomingEventLabel": "Próximo evento",
     "getInvolvedEyebrow": "Marca la diferencia",
     "getInvolvedSubtitle": "Elige una forma de impulsar la investigación y el apoyo a las familias.",
-    "proofKnownFamiliesContext": "Familias inscritas / conocidas en todo el mundo. El recuento mundial subestima considerablemente la prevalencia.",
+    "proofFootnotesTitle": "Notas sobre las cifras",
+    "proofKnownFamiliesContext": "Familias inscritas / unas 200 familias conocidas en todo el mundo. El recuento mundial subestima considerablemente la prevalencia.",
     "proofModelsContext": "Clases de variantes con un modelo de enfermedad en desarrollo.",
     "proofActiveFamilies": "familias activas",
     "proofCountries": "países",
@@ -161,7 +162,7 @@
       "research": "Inversión en investigación"
     },
     "numbersIntro": "Las definiciones aparecen en Acerca de estas cifras, al final de la página.",
-    "metricFamilies": "9 / ≈200",
+    "metricFamilies": "9 / 200",
     "metricFamiliesNote": "Familias inscritas, de aproximadamente 200 familias conocidas en todo el mundo. Las familias inscritas abarcan seis países en cuatro continentes. El recuento mundial subestima considerablemente la prevalencia.",
     "metricFamiliesNext": "Siguiente: inscribir a más familias. Se hace seguimiento de cada participante a lo largo del tiempo.",
     "metricBiobank": "9 / 9",

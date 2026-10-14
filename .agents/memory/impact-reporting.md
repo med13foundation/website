@@ -19,7 +19,7 @@ The organizer clarified that the worldwide estimate represents approximately 200
 
 **Why:** Families, diagnosed individuals, and population prevalence are different units. The source combines incomplete known-family records rather than measuring prevalence.
 
-**How to apply:** Label enrollment comparisons as families and the worldwide denominator as approximate. Attribute the estimate to the combined sources, and keep its underestimation caveat visible.
+**How to apply:** Label enrollment comparisons as families and describe the worldwide denominator as an estimate in explanatory copy, not with an approximation symbol in the displayed figure. Attribute the estimate to the combined sources, and keep its underestimation caveat visible.
 
 Anthropic support is in-kind computing credits, not cash. The organizer requested incorporating it into total year-one support and research investment rather than showing a separate grant card.
 
@@ -38,6 +38,12 @@ The homepage dashboard is a summary of the Impact and Progress topline metrics, 
 **Why:** The organizer requested matching figures between the homepage dashboard and the Impact page.
 
 **How to apply:** Keep values, labels, and important qualifications aligned across both pages, including approximate family counts, models in progress, unaudited figures, and fundraising confirmation warnings.
+
+Keep homepage metric cards limited to figures, labels, and footnote markers; place definitions and qualifications in footnotes below the dashboard.
+
+**Why:** The organizer requested footnotes rather than explanatory paragraphs inside the homepage metric cards.
+
+**How to apply:** Preserve the definitions outside the clickable dashboard without removing important study or financial context.
 
 Research descriptions must allow disease models derived from patients or created through engineering. MED13's patient-governed longitudinal study and biorepository complement Simons Searchlight, which began collecting MED13 data before the foundation existed.
 

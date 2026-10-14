@@ -7,6 +7,8 @@ import { proofItems } from "@/content/proof";
 
 export default function Hero() {
   const { t } = useTranslation();
+  const metricFootnotes = proofItems.filter((item) => item.noteKey);
+  const footnoteId = (valueKey: string) => `home-impact-note-${valueKey.split(".").at(-1)}`;
 
   return (
     <section className="relative py-20 sm:py-28 overflow-hidden">
@@ -72,19 +74,36 @@ export default function Hero() {
                 key={item.labelKey}
                 className="min-w-0 rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-white backdrop-blur-sm transition-colors group-hover:bg-white/20"
                 data-testid={`hero-metric-${item.valueKey.split(".").at(-1)}`}
+                role="group"
+                aria-label={t(item.labelKey)}
+                aria-describedby={item.noteKey ? footnoteId(item.valueKey) : undefined}
               >
                 <p className="font-heading text-2xl font-bold">{t(item.valueKey)}</p>
-                <p className="mt-1 text-sm leading-snug text-white/90">{t(item.labelKey)}</p>
-                {item.noteKey && <p className="mt-2 text-xs leading-relaxed text-white/90">{t(item.noteKey)}</p>}
+                <p className="mt-1 text-sm leading-snug text-white/90">
+                  {t(item.labelKey)}
+                  {item.noteKey && (
+                    <sup className="ml-1 text-[10px]" aria-hidden="true">{metricFootnotes.findIndex((note) => note.valueKey === item.valueKey) + 1}</sup>
+                  )}
+                </p>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs leading-relaxed text-white/90">{t("impact.numberDefinitionNote")}</p>
           <span className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white underline underline-offset-4">
             {t("nav.impact")}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </span>
         </Link>
+        <aside className="mt-6 border-t border-white/20 pt-4 text-xs leading-relaxed text-white/90" aria-labelledby="home-impact-footnotes-title" data-testid="home-impact-footnotes">
+          <h2 id="home-impact-footnotes-title" className="mb-2 font-semibold text-white">{t("home.proofFootnotesTitle")}</h2>
+          <ol className="list-decimal space-y-1.5 pl-4">
+            {metricFootnotes.map((item) => (
+              <li key={item.valueKey} id={footnoteId(item.valueKey)}>
+                {t(item.noteKey!)}
+              </li>
+            ))}
+          </ol>
+          <p className="mt-3">{t("impact.numberDefinitionNote")}</p>
+        </aside>
       </div>
     </section>
   );

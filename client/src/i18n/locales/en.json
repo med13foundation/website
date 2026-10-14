@@ -46,7 +46,8 @@
       "upcomingEventLabel": "Upcoming event",
     "getInvolvedEyebrow": "Make a difference",
     "getInvolvedSubtitle": "Choose a way to help move research and family support forward.",
-    "proofKnownFamiliesContext": "Enrolled / known families worldwide. The worldwide count substantially underestimates prevalence.",
+    "proofFootnotesTitle": "Metric notes",
+    "proofKnownFamiliesContext": "Enrolled families / an estimated 200 known families worldwide. The worldwide count substantially underestimates prevalence.",
     "proofModelsContext": "Variant classes with a disease model in progress.",
     "proofActiveFamilies": "active families",
     "proofCountries": "countries",
@@ -161,7 +162,7 @@
       "grants": "Grant funding",
       "research": "Research investment"
     },
-    "metricFamilies": "9 / ≈200",
+    "metricFamilies": "9 / 200",
     "metricFamiliesNote": "Families enrolled, out of approximately 200 known families worldwide. Our enrolled families span six countries on four continents. The worldwide count substantially underestimates prevalence.",
     "metricFamiliesNext": "Next: enroll more families. Each participant is followed over time.",
     "metricBiobank": "9 / 9",
