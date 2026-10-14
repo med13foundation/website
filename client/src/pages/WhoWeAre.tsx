@@ -308,7 +308,7 @@ export default function WhoWeAre() {
             <p className="text-xl font-highlight italic text-[#1d5f66] mb-3">
               "{t("whoWeAre.storyQuote")}"
             </p>
-            <footer className="text-sm text-muted-foreground">— {t("whoWeAre.storyQuoteAuthor")}</footer>
+            <footer className="text-sm text-muted-foreground">{t("whoWeAre.storyQuoteAuthor")}</footer>
           </blockquote>
         </div>
       </section>

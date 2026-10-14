@@ -102,7 +102,6 @@ export default function Hero() {
               </li>
             ))}
           </ol>
-          <p className="mt-3">{t("impact.numberDefinitionNote")}</p>
         </aside>
       </div>
     </section>

@@ -43,7 +43,7 @@ Keep homepage metric cards limited to figures, labels, and footnote markers; pla
 
 **Why:** The organizer requested footnotes rather than explanatory paragraphs inside the homepage metric cards.
 
-**How to apply:** Preserve the definitions outside the clickable dashboard without removing important study or financial context.
+**How to apply:** Preserve the definitions outside the clickable dashboard without removing important study or financial context. Do not append a redundant aggregate paragraph repeating those footnotes.
 
 Research descriptions must allow disease models derived from patients or created through engineering. MED13's patient-governed longitudinal study and biorepository complement Simons Searchlight, which began collecting MED13 data before the foundation existed.
 
