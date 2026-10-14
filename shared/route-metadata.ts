@@ -51,6 +51,13 @@ export const routeMetadata: RouteMetadata[] = [
     sitemap: true,
   },
   {
+    path: "/what-is-med13-syndrome",
+    title: "What is MED13 syndrome? | MED13 Foundation",
+    description:
+      "MED13 syndrome is a rare genetic neurodevelopmental condition associated with changes in the MED13 gene. Features vary from person to person.",
+    sitemap: true,
+  },
+  {
     path: "/champions",
     title: "Community Champions | MED13 Foundation",
     description:
@@ -78,15 +85,32 @@ export const routeMetadata: RouteMetadata[] = [
     sitemap: true,
   },
   {
-    path: "/roadmap",
-    title: "Roadmap to Treatment | MED13 Foundation",
-    description: "Following the proven path from foundation to clinical trials",
+    path: "/impact",
+    title: "Impact and Progress | MED13 Foundation",
+    description:
+      "A candid, denominator-aware account of MED13 Foundation's first year of research infrastructure, family participation, funding, and milestones.",
     sitemap: true,
+  },
+  {
+    // Legacy URL: client redirects to /impact
+    path: "/roadmap",
+    title: "Impact and Progress | MED13 Foundation",
+    description:
+      "A candid, denominator-aware account of MED13 Foundation's first year of research infrastructure, family participation, funding, and milestones.",
+    sitemap: false,
+    noindex: true,
   },
   {
     path: "/get-involved",
     title: "Get Involved | MED13 Foundation",
     description: "Four ways to make an impact in the MED13 community",
+    sitemap: true,
+  },
+  {
+    path: "/ways-to-give",
+    title: "Other Ways to Give | MED13 Foundation",
+    description:
+      "Help MED13 families travel to the 2027 Pan-Mediator Family Convening with airline miles, hotel points, or a coordinated gift.",
     sitemap: true,
   },
   {
