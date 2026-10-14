@@ -50,3 +50,9 @@ Research descriptions must allow disease models derived from patients or created
 **Why:** The organizer's revised copy intentionally broadens the modeling approach and clarifies the study's role rather than presenting it as a replacement for existing research.
 
 **How to apply:** Do not narrow future messaging to patient-derived stem cell lines only or infer matched controls, isogenic designs, or a Simons data-sharing agreement without new organizer confirmation.
+
+When incorporating a donor report, use it for newly supplied financial distinctions and funding needs without silently replacing newer explicit organizer confirmations with the report's older figures or terminology.
+
+**Why:** The October 2026 donor PDF introduces committed versus deployed disease-model capital, but still uses diagnosed-person wording, survey counts and milestone totals superseded by the organizer's website clarifications.
+
+**How to apply:** Separate pledged model funding from grants actually paid. A paid grant is not a completed model. Keep unpaid commitments out of cash spending and keep in-kind computing credits distinct from deployed cash; shared grant and credit figures must not be added together twice.

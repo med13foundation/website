@@ -34,7 +34,7 @@ export default function ImpactSources() {
       <div className="mx-auto max-w-7xl">
         <h2 id="impact-sources-title" className="font-heading text-2xl font-bold text-primary">{t("impact.sourcesTitle")}</h2>
         <ol className="mt-5 max-w-4xl list-decimal space-y-4 pl-6 text-sm leading-relaxed text-foreground/80">
-          {Array.from({ length: 8 }, (_, index) => index + 1).map((number) => (
+          {Array.from({ length: 9 }, (_, index) => index + 1).map((number) => (
             <li key={number} id={`source-${number}`} className="scroll-mt-24">
               {t(`impact.sources.${number}`)}
               {sourceLinks[number] && (
