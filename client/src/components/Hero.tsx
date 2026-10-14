@@ -23,14 +23,14 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <Link
-            href="/gala"
+            href="/news-and-events/denver-mini-medopathies-meetup"
             className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-white backdrop-blur-sm transition-colors hover:bg-white/20"
-            data-testid="link-top-gala-invitation"
+            data-testid="link-top-denver-invitation"
           >
             <Sparkles className="h-4 w-4 shrink-0 text-[#bfe9d2]" aria-hidden="true" />
             <span className="min-w-0">
               <span className="font-semibold">{t('home.upcomingEventLabel')}:</span>{' '}
-              <span>{t('gala.eventCardTitle')} · {t('gala.eventCardDate')}</span>
+               <span>{t('nav.eventsDenverMeetup')} · {t('denverMeetup.cardDate')}</span>
             </span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
