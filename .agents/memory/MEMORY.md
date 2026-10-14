@@ -1,2 +1,9 @@
 - [Gala content alignment](gala-content-alignment.md) — Keep public Gala details synchronized with the approved outreach materials; never publish a registration CTA without its final destination.
 - [Classy embed lifecycle](classy-embed-lifecycle.md) — Treat the Classy mount node as disposable; keep persistent layout and test hooks on a stable wrapper.
+- [Travel giving](travel-giving.md) — Coordinate miles, points, and travel-designated cash before transfer; never imply a general donation is earmarked for travel.
+- [Video compatibility](video-compatibility.md) — Keep WebM and MP4 fallbacks; native captions alone do not hide subtitles already embedded in video frames.
+- [Denver virtual attendance](denver-virtual-attendance.md) — Follow the event organizer’s registration wording while avoiding claims of a dedicated virtual ticket.
+- [Symposium language access](symposium-language-access.md) — Organizer confirmed live translation via Zoom for the October 2026 symposium; avoid unsupported language claims.
+- [Media image sourcing](media-image-sourcing.md) — SPARK article pages can block fetching while official image assets remain accessible; use subject-specific searches.
+- [Impact reporting](impact-reporting.md) — Preserve denominators, source dates, and unaudited labels; report small cohorts as counts and keep unconfirmed fundraising flagged.
+- [Website copy](website-copy.md) — Public website copy uses commas, colons, or sentence breaks instead of em dashes.

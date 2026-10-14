@@ -43,6 +43,11 @@ export default function Navigation() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-64">
                 <DropdownMenuItem asChild>
+                  <Link href="/what-is-med13-syndrome" data-testid="link-about-med13-syndrome">
+                    {t("nav.med13Syndrome")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link href="/who-we-are" data-testid="link-about-overview">
                     {t('nav.aboutOverview')}
                   </Link>
@@ -92,8 +97,8 @@ export default function Navigation() {
             <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </Link>
-            <Link href="/roadmap" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-roadmap">
-              {t('nav.roadmap')}
+            <Link href="/impact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-impact">
+              {t('nav.impact')}
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -163,9 +168,11 @@ export default function Navigation() {
           <button
             className="md:hidden p-2 hover-elevate rounded-md"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
             data-testid="button-mobile-menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -173,6 +180,14 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
+            <Link
+              href="/what-is-med13-syndrome"
+              className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover-elevate"
+              data-testid="link-mobile-med13-syndrome"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.med13Syndrome")}
+            </Link>
             <div className="px-3 py-2" data-testid="mobile-about-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.about')}</p>
               <div className="border-l border-border ml-1 pl-3 space-y-1">
@@ -208,12 +223,12 @@ export default function Navigation() {
               {t('nav.getInvolved')}
             </Link>
             <Link 
-              href="/roadmap" 
+              href="/impact"
               className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md" 
-              data-testid="link-mobile-roadmap"
+              data-testid="link-mobile-impact"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t('nav.roadmap')}
+              {t('nav.impact')}
             </Link>
             <div className="px-3 py-2" data-testid="mobile-events-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.events')}</p>

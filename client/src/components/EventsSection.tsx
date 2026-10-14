@@ -259,7 +259,90 @@ export default function EventsSection() {
             </CardContent>
           </Card>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <Card data-testid="card-media-article-1">
+            <Card className="overflow-hidden md:col-span-2" data-testid="card-media-article-cpn">
+              <a
+                href="https://courageousparentsnetwork.org/blog/the-weight-of-a-decision/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticleCpnTitle')}
+              >
+                <img
+                  src="/images/news/the-weight-of-a-decision.jpg"
+                  alt={t('events.mediaArticleCpnImageAlt')}
+                  width={1024}
+                  height={681}
+                  loading="lazy"
+                  className="aspect-[3/2] w-full object-cover"
+                />
+              </a>
+              <CardHeader>
+                <p className="text-sm font-semibold text-primary">Courageous Parents Network</p>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticleCpnTitle')}</CardTitle>
+                <CardDescription>{t('events.mediaArticleCpnDesc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-cpn">
+                  <a
+                    href="https://courageousparentsnetwork.org/blog/the-weight-of-a-decision/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden md:col-span-2" data-testid="card-media-article-stanford">
+              <a
+                href="https://healthier.stanfordchildrens.org/en/a-rare-genetic-diagnosis-gives-arturos-family-answers-and-hope/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticleStanfordTitle')}
+              >
+                <img
+                  src="/images/news/stanford-arturo.jpg"
+                  alt={t('events.mediaArticleStanfordImageAlt')}
+                  width={1200}
+                  height={675}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover"
+                />
+              </a>
+              <CardHeader>
+                <CardTitle className="font-heading text-xl">{t('events.mediaArticleStanfordTitle')}</CardTitle>
+                <CardDescription>{t('events.mediaArticleStanfordDesc')}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="outline" asChild data-testid="button-media-article-stanford">
+                  <a
+                    href="https://healthier.stanfordchildrens.org/en/a-rare-genetic-diagnosis-gives-arturos-family-answers-and-hope/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('events.readArticle')} <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden" data-testid="card-media-article-1">
+              <a
+                href="https://sparkforautism.org/discover_article/family-discovers-cause-of-sons-autism-and-a-path-forward/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticle1Title')}
+              >
+                <img
+                  src="/images/news/spark-badon-family.jpg"
+                  alt={t('events.mediaArticle1ImageAlt')}
+                  width={888}
+                  height={469}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </a>
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{t('events.mediaArticle1Title')}</CardTitle>
                 <CardDescription>{t('events.mediaArticle1Desc')}</CardDescription>
@@ -276,7 +359,23 @@ export default function EventsSection() {
                 </Button>
               </CardContent>
             </Card>
-            <Card data-testid="card-media-article-2">
+            <Card className="overflow-hidden" data-testid="card-media-article-2">
+              <a
+                href="https://medium.com/@cindybadon/what-a-genetic-diagnosis-can-mean-for-a-child-on-the-spectrum-89ef08a11091"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                aria-label={t('events.mediaArticle2Title')}
+              >
+                <img
+                  src="/images/news/genetic-diagnosis-spectrum.jpg"
+                  alt={t('events.mediaArticle2ImageAlt')}
+                  width={1000}
+                  height={1000}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </a>
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{t('events.mediaArticle2Title')}</CardTitle>
                 <CardDescription>{t('events.mediaArticle2Desc')}</CardDescription>
