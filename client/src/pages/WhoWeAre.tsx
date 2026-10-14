@@ -287,7 +287,7 @@ export default function WhoWeAre() {
           <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-who-title">
             {t("whoWeAre.heroTitle")}
           </h1>
-          <p className="text-lg text-[#E67E5C] font-medium mb-6" data-testid="text-who-subtitle">
+          <p className="text-lg text-primary font-medium mb-6" data-testid="text-who-subtitle">
             {t("whoWeAre.heroSubtitle")}
           </p>
           <p className="text-base text-foreground/80" data-testid="text-who-intro">

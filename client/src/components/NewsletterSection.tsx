@@ -85,7 +85,7 @@ export default function NewsletterSection() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="flex-1 bg-primary-foreground text-foreground"
+            className="flex-1 bg-white text-foreground"
             data-testid="input-newsletter-email"
           />
           <Button 

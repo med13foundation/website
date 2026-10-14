@@ -32,7 +32,7 @@ export default function Med13Syndrome() {
           />
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-16">
             <div className="max-w-4xl">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#a55d4c]">
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#a25947]">
                 {t("syndromePage.eyebrow")}
               </p>
               <h1 className="max-w-4xl font-heading text-4xl font-bold leading-[1.08] text-primary sm:text-6xl">

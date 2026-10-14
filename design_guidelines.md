@@ -24,8 +24,9 @@ The palette evokes optimism, empathy, and clarity - balancing medical trust with
 **Color Usage:**
 - Avoid harsh medical blues or greys
 - Use gentle gradients like teal → coral to suggest collaboration between science and love
-- Primary buttons and CTAs use the warm teal
-- Secondary highlights use coral-peach for emotional warmth
+- Primary buttons and CTAs use the warm teal as the fill, with night-sky navy `#0B1530` text (white on teal fails contrast)
+- Secondary highlights use coral-peach for emotional warmth, as a fill or accent, never as text
+- Text that would be teal or coral uses navy instead: `text-primary` and `text-secondary` already render navy
 - Accent yellow for hope and optimism touches
 
 ## Typography - "Readable, Modern, Gentle"

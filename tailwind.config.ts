@@ -5,6 +5,17 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      textColor: {
+        primary: {
+          DEFAULT: "hsl(var(--primary-text) / <alpha-value>)",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary-text) / <alpha-value>)",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive-text) / <alpha-value>)",
+        },
+      },
       borderRadius: {
         lg: ".5625rem", /* 9px */
         md: ".375rem", /* 6px */

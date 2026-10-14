@@ -306,7 +306,7 @@ export default function Symposium() {
                   <div className="flex items-start gap-3 rounded-xl bg-primary px-4 py-4 text-primary-foreground">
                     <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-[#bfe9d2]" />
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/70">{t("symposium.dateLabel")}</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground">{t("symposium.dateLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.date")}</p>
                     </div>
                   </div>
@@ -441,7 +441,7 @@ export default function Symposium() {
         <section className="bg-primary py-16 text-primary-foreground sm:py-24" data-testid="section-symposium-access">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#bfe9d2]">{t("symposium.accessEyebrow")}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground">{t("symposium.accessEyebrow")}</p>
               <h2 className="mt-3 font-heading text-3xl font-bold sm:text-4xl" data-testid="text-symposium-access-title">
                 {t("symposium.accessTitle")}
               </h2>
