@@ -107,6 +107,7 @@ function ColorPickerPopover({
             <button
               key={c}
               className="w-7 h-7 rounded-md border border-border transition-transform"
+              aria-label={`${label} ${c}`}
               style={{
                 backgroundColor: c,
                 outline: currentColor === c ? "2px solid hsl(var(--primary))" : "none",

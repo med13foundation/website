@@ -25,8 +25,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/roadmap" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-roadmap">
-                  {t('footer.researchRoadmap')}
+                <a href="/impact" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-impact">
+                  {t('footer.impactProgress')}
+                </a>
+              </li>
+              <li>
+                <a href="/what-is-med13-syndrome" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-med13-syndrome">
+                  {t("nav.med13Syndrome")}
                 </a>
               </li>
             </ul>
@@ -62,6 +67,11 @@ export default function Footer() {
                   data-testid="link-footer-volunteer"
                 >
                   {t('footer.volunteer')}
+                </a>
+              </li>
+              <li>
+                <a href="/ways-to-give" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-ways-to-give">
+                  {t('footer.otherWaysToGive')}
                 </a>
               </li>
             </ul>
@@ -128,9 +138,10 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground"
+                aria-label="MED13 Foundation on Facebook"
                 data-testid="link-footer-facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
                 href="https://www.linkedin.com/company/med13-foundation/"
@@ -140,7 +151,7 @@ export default function Footer() {
                 aria-label="MED13 Foundation on LinkedIn"
                 data-testid="link-footer-linkedin"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
 

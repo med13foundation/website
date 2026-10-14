@@ -14,9 +14,8 @@ import {
   Sparkles,
   ArrowLeft,
   Wine,
-  Tent,
+  House,
   Ship,
-  UtensilsCrossed,
   Video,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -26,6 +25,9 @@ import logoUrl from "@assets/gala_disco_logo.png";
 
 const RSVP_EMAIL = "gala@med13.org";
 const AUCTION_URL = "https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup/auction";
+const AUCTION_ITEM_EMAIL = "mailto:gala@med13.org?subject=MED13%20gala%20auction%20item%20donation";
+// Restore this auction heading on October 10, 2026, and update the translated heading too.
+const OCTOBER_10_AUCTION_HEADING = "TONIGHT'S LIVE AUCTION";
 
 function SparkleAccent({ className }: { className?: string }) {
   return <Sparkles className={`absolute pointer-events-none ${className || ""}`} aria-hidden="true" />;
@@ -69,9 +71,9 @@ export default function Gala() {
 
   const auctionItems = [
     { icon: Wine, title: t("gala.auction1Title"), desc: t("gala.auction1Desc") },
-    { icon: Tent, title: t("gala.auction2Title"), desc: t("gala.auction2Desc") },
+    { icon: House, title: t("gala.auction2Title"), desc: t("gala.auction2Desc") },
     { icon: Ship, title: t("gala.auction3Title"), desc: t("gala.auction3Desc") },
-    { icon: UtensilsCrossed, title: t("gala.auction4Title"), desc: t("gala.auction4Desc") },
+    { icon: Microscope, title: t("gala.auction4Title"), desc: t("gala.auction4Desc") },
   ];
 
   const sponsors = [1, 2, 3, 4, 5, 6].map((i) => ({
@@ -106,7 +108,7 @@ export default function Gala() {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-28" data-testid="section-gala-hero">
+      <section className="relative overflow-hidden py-14 sm:py-16" data-testid="section-gala-hero">
         <div className="absolute inset-0 bg-gradient-to-b from-[#68B0AB] via-[#b8d8d3] to-[#FFD9C7]" />
         <SparkleAccent className="w-8 h-8 text-[#2D7A89]/60 top-10 left-[8%]" />
         <SparkleAccent className="w-6 h-6 text-[#E67E5C]/60 top-24 right-[10%]" />
@@ -114,21 +116,21 @@ export default function Gala() {
         <SparkleAccent className="w-7 h-7 text-[#2D7A89]/50 bottom-10 right-[18%]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <img src={logoUrl} alt="MED13 Foundation Logo" className="h-32 w-auto mx-auto mb-6 drop-shadow-sm" data-testid="img-gala-logo" />
+          <img src={logoUrl} alt="MED13 Foundation Logo" className="h-24 w-auto mx-auto mb-5 drop-shadow-sm" data-testid="img-gala-logo" />
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#E67E5C] mb-4" data-testid="text-gala-eyebrow">
             {t("gala.eyebrow")}
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-gala-title">
             {t("gala.title")}
           </h1>
-          <p className="text-lg sm:text-xl italic text-[#d96a45] font-medium mb-8" data-testid="text-gala-tagline">
+          <p className="text-lg sm:text-xl italic text-[#d96a45] font-medium mb-6" data-testid="text-gala-tagline">
             {t("gala.tagline")}
           </p>
-          <p className="text-base sm:text-lg text-[#3a3a3a] max-w-2xl mx-auto mb-10" data-testid="text-gala-invite">
+          <p className="text-base sm:text-lg text-[#3a3a3a] max-w-2xl mx-auto mb-8" data-testid="text-gala-invite">
             {t("gala.invite")}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-8">
             <div className="text-center">
               <p className="text-xs font-semibold tracking-widest uppercase text-[#1d5f66] flex items-center justify-center gap-1 mb-1">
                 <Calendar className="w-3.5 h-3.5" /> {t("gala.dateLabel")}
@@ -177,6 +179,15 @@ export default function Gala() {
               variant="outline"
               className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
               asChild
+              data-testid="button-gala-donate-auction-item-hero"
+            >
+              <a href={AUCTION_ITEM_EMAIL}>{t("gala.donateAuctionItem")}</a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              asChild
               data-testid="button-gala-livestream"
             >
               <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
@@ -209,45 +220,11 @@ export default function Gala() {
             </Button>
           </div>
           <p className="text-sm text-[#4a4a4a] mt-4" data-testid="text-gala-rsvp-note">
-            {t("gala.rsvpNote")}
+            {t("gala.rsvpNote")} · {t("gala.ticketsAttireLabel")} {t("gala.ticketsAttire")}
           </p>
           <p className="text-sm text-[#4a4a4a] mt-1" data-testid="text-gala-livestream-note">
             {t("gala.livestreamNote")}
           </p>
-          <p className="text-sm font-semibold text-[#1d5f66] mt-2" data-testid="text-gala-auction-opening">
-            {t("gala.auctionOpening")}
-          </p>
-        </div>
-      </section>
-
-      {/* Registration and recognition stay close to the top of the page. */}
-      <section className="py-16 sm:py-24 bg-muted" data-testid="section-gala-tickets">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary" data-testid="text-gala-tickets-title">
-              {t("gala.ticketsTitle")}
-            </h2>
-          </div>
-          <Card data-testid="card-gala-tickets">
-            <CardContent className="pt-8 pb-8 text-center">
-              <p className="text-lg font-heading font-bold text-foreground mb-1">{t("gala.ticketsGeneral")}</p>
-              <p className="text-5xl font-heading font-bold text-primary mb-1" data-testid="text-gala-ticket-price">
-                {t("gala.ticketsPrice")}
-              </p>
-              <p className="text-sm text-muted-foreground mb-6">{t("gala.ticketsPerPerson")}</p>
-              <div className="flex justify-center mb-6">
-                <Button asChild data-testid="button-gala-tickets-rsvp">
-                  <a href="https://givebutter.com/c/med13-gala-an-evening-for-answers-utpaup?gba_donor_ref=MH2MOtNFWTZCCdVB" target="_blank" rel="noopener noreferrer">
-                    {t("gala.rsvp")}
-                  </a>
-                </Button>
-              </div>
-              <p className="text-sm text-muted-foreground" data-testid="text-gala-attire">
-                <span className="font-semibold text-foreground">{t("gala.ticketsAttireLabel")}</span>{" "}
-                {t("gala.ticketsAttire")}
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
@@ -277,13 +254,18 @@ export default function Gala() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button size="lg" asChild data-testid="button-gala-auction">
-              <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
-                <Gavel className="mr-2 h-4 w-4" />
-                {t("gala.auctionButton")}
-              </a>
-            </Button>
-            <p className="mt-3 text-sm font-medium text-muted-foreground">{t("gala.auctionOpening")}</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button size="lg" asChild data-testid="button-gala-auction">
+                <a href={AUCTION_URL} target="_blank" rel="noopener noreferrer">
+                  <Gavel className="mr-2 h-4 w-4" />
+                  {t("gala.auctionButton")}
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild data-testid="button-gala-donate-auction-item">
+                <a href={AUCTION_ITEM_EMAIL}>{t("gala.donateAuctionItem")}</a>
+              </Button>
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground">{t("gala.donateAuctionItemNote")}</p>
           </div>
         </div>
       </section>
@@ -369,9 +351,9 @@ export default function Gala() {
             {t("gala.symposiumDesc")}
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-4">
-            <p className="text-sm font-semibold text-primary" data-testid="text-gala-symposium-registration-status">
-              {t("gala.symposiumRegistrationComingSoon")}
-            </p>
+            <Link href="/symposium" className="text-sm font-semibold text-primary underline underline-offset-4" data-testid="link-gala-symposium-registration">
+              {t("gala.symposiumRegistrationLink")}
+            </Link>
             <Button variant="outline" size="sm" asChild data-testid="button-gala-symposium-details">
               <Link href="/symposium">
                 {t("gala.symposiumDetailsButton")} <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />

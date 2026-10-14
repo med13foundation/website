@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import MissionSummary from "@/components/MissionSummary";
-import QuickFacts from "@/components/QuickFacts";
+import SyndromeVideo from "@/components/SyndromeVideo";
 import FeaturedEventsPreview from "@/components/FeaturedEventsPreview";
 import StarOfMonthCarousel from "@/components/StarOfMonthCarousel";
 import GetInvolvedPreview from "@/components/GetInvolvedPreview";
@@ -36,8 +36,8 @@ export default function Home() {
       <Navigation />
       <Hero />
       <MissionSummary />
+      <SyndromeVideo />
       <StarOfMonthCarousel />
-      <QuickFacts />
       <FeaturedEventsPreview />
       <GetInvolvedPreview />
       <ClassyDonation />

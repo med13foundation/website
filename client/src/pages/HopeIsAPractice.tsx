@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=Unitarian+Universalist+Church+of+Palo+Alto%2C+505+E+Charleston+Rd%2C+Palo+Alto%2C+CA+94306";
+const LIVESTREAM_URL = "https://www.uucpa.org/services/sunday-september-27-2026/";
 
 export default function HopeIsAPractice() {
   const { t } = useTranslation();
@@ -114,7 +115,13 @@ export default function HopeIsAPractice() {
                   <Video className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
                     <h2 className="font-heading text-xl font-bold">{t("hopePractice.onlineTitle")}</h2>
-                    <p className="mt-2 text-muted-foreground">{t("hopePractice.onlinePending")}</p>
+                    <p className="mt-2 text-muted-foreground">{t("hopePractice.onlineDescription")}</p>
+                    <Button className="mt-4" asChild>
+                      <a href={LIVESTREAM_URL} target="_blank" rel="noopener noreferrer" data-testid="link-hope-practice-livestream">
+                        {t("hopePractice.onlineButton")}
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </div>
