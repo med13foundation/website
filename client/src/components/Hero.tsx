@@ -66,17 +66,23 @@ export default function Hero() {
           className="group mt-10 block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           data-testid="link-hero-impact"
         >
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-5" data-testid="hero-proof-band">
-          {proofItems.map((item, index) => (
-            <div
-              key={item.labelKey}
-              className={`rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-white backdrop-blur-sm transition-colors group-hover:bg-white/20 ${index === proofItems.length - 1 ? "col-span-2 lg:col-span-1" : ""}`}
-            >
-              <p className="font-heading text-2xl font-bold">{item.value}</p>
-              <p className="mt-1 text-sm leading-snug text-white/90">{t(item.labelKey)}</p>
-            </div>
-          ))}
-        </div>
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" data-testid="hero-proof-band">
+            {proofItems.map((item) => (
+              <div
+                key={item.labelKey}
+                className="min-w-0 rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-white backdrop-blur-sm transition-colors group-hover:bg-white/20"
+                data-testid={`hero-metric-${item.valueKey.split(".").at(-1)}`}
+              >
+                <p className="font-heading text-2xl font-bold">{t(item.valueKey)}</p>
+                <p className="mt-1 text-sm leading-snug text-white/90">{t(item.labelKey)}</p>
+                {item.noteKey && <p className="mt-2 text-xs leading-relaxed text-white/90">{t(item.noteKey)}</p>}
+                {item.warningKey && (
+                  <p className="mt-3 inline-block rounded-full border border-white/60 px-2 py-1 text-xs font-semibold text-white">{t(item.warningKey)}</p>
+                )}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-xs leading-relaxed text-white/90">{t("impact.numberDefinitionNote")}</p>
           <span className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white underline underline-offset-4">
             {t("nav.impact")}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

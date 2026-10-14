@@ -27,6 +27,12 @@ Report the grants metric as cumulative grant funding, not a ratio of decided or 
 
 **How to apply:** Keep that card focused on the total funding amount. Do not restore application-count explanations or infer that all grant funding is cash received.
 
+The homepage dashboard is a summary of the Impact and Progress topline metrics, not a separate set of community-size statistics.
+
+**Why:** The organizer requested matching figures between the homepage dashboard and the Impact page.
+
+**How to apply:** Keep values, labels, and important qualifications aligned across both pages, including approximate family counts, models in progress, unaudited figures, and fundraising confirmation warnings.
+
 Research descriptions must allow disease models derived from patients or created through engineering. MED13's patient-governed longitudinal study and biorepository complement Simons Searchlight, which began collecting MED13 data before the foundation existed.
 
 **Why:** The organizer's revised copy intentionally broadens the modeling approach and clarifies the study's role rather than presenting it as a replacement for existing research.
