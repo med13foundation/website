@@ -3,7 +3,7 @@ name: Impact reporting
 description: Reporting constraints supplied in the approved Impact and Progress mockup.
 ---
 
-For Impact and Progress reporting, always retain denominators and snapshot dates. Report groups under 20 as counts, not percentages; distinguish the study data-cut date from financial reporting dates and keep unaudited financial figures labeled.
+For Impact and Progress reporting, retain denominators and snapshot dates. Generally report groups under 20 as counts; the organizer explicitly approved a rounded percentage for natural history survey progress, with its underlying participant count shown. Distinguish the study data-cut date from cash expense reporting dates and keep unaudited cash figures labeled.
 
 **Why:** The user-provided mockup deliberately gives families, researchers and funders the same contextualized picture without overstating small-cohort evidence or financial certainty.
 
@@ -21,11 +21,17 @@ The organizer clarified that the worldwide estimate represents approximately 200
 
 **How to apply:** Label enrollment comparisons as families and the worldwide denominator as approximate. Attribute the estimate to the combined sources, and keep its underestimation caveat visible.
 
-Report the grants metric as cumulative grant funding, not a ratio of decided or funded applications.
+Anthropic support is in-kind computing credits, not cash. The organizer requested incorporating it into total year-one support and research investment rather than showing a separate grant card.
 
-**Why:** The organizer explicitly requested funding so far instead of application counts or review details.
+**Why:** The organizer clarified the nature of the grant and confirmed the combined fundraising amount and goal. Earlier messaging as grant funding alone could be mistaken for cash.
 
-**How to apply:** Keep that card focused on the total funding amount. Do not restore application-count explanations or infer that all grant funding is cash received.
+**How to apply:** Identify credits as in-kind resources in both support and investment totals, not cash spending or necessarily consumed credits. The investment total overlaps fundraising support; do not add them together or count the credits twice within either total. Keep historical cash expense dates separate from organizer-confirmed support.
+
+Natural history survey progress means the share of enrolled participants with at least one scored survey, not the share who completed every required survey.
+
+**Why:** The organizer approved this definition and a rounded percentage after clarification.
+
+**How to apply:** Show the underlying participant numerator and denominator alongside the percentage; do not imply full study-survey completion.
 
 The homepage dashboard is a summary of the Impact and Progress topline metrics, not a separate set of community-size statistics.
 

@@ -73,14 +73,12 @@ export default function Impact() {
     ["families", t("impact.metricFamilies"), t("impact.metricFamiliesNote"), t("impact.metricFamiliesNext")],
     ["biobank", t("impact.metricBiobank"), t("impact.metricBiobankNote"), t("impact.metricBiobankNext")],
     ["surveys", t("impact.metricSurveys"), t("impact.metricSurveysNote"), t("impact.metricSurveysNext")],
-    ["eeg", t("impact.metricEeg"), t("impact.metricEegNote"), t("impact.metricEegNext")],
     ["cells", t("impact.metricCells"), t("impact.metricCellsNote"), t("impact.metricCellsNext")],
-    ["grants", t("impact.metricGrants"), t("impact.metricGrantsNote"), ""],
     ["research", t("impact.metricResearch"), t("impact.metricResearchNote"), t("impact.metricResearchNext")],
   ];
   const metricSources: Record<string, number[]> = {
-    families: [1, 2], biobank: [1], surveys: [1], eeg: [1],
-    cells: [7], grants: [8], research: [7],
+    families: [1, 2], biobank: [1], surveys: [1],
+    cells: [7], research: [7, 8],
   };
 
   return (
@@ -121,7 +119,7 @@ export default function Impact() {
               <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.numbersTitle")}</h2>
               <p className="mt-3 text-muted-foreground">{t("impact.numbersIntro")}</p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
               {metrics.map(([id, value, note, next]) => (
                 <Fragment key={id}>
                   {(id === "families" || id === "cells") && (
@@ -141,8 +139,7 @@ export default function Impact() {
                 <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t("impact.fundraisingTitle")}</h4>
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div><p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t("impact.fundraisingFigure")}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}<ImpactCitation numbers={[7]} /></p></div>
-                  <span className="shrink-0 rounded-full border border-[#c77c65] bg-white/70 px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#874b3b]">{t("impact.awaitingConfirmation")}</span>
+                    <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}<ImpactCitation numbers={[8]} /></p></div>
                 </div>
                 <p className="mt-3 border-t border-[#e9c6b8] pt-3 text-xs leading-relaxed text-muted-foreground">{t("impact.fundraisingNext")}</p>
               </article>

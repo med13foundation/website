@@ -66,7 +66,7 @@ export default function Hero() {
           className="group mt-10 block rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           data-testid="link-hero-impact"
         >
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" data-testid="hero-proof-band">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-3" data-testid="hero-proof-band">
             {proofItems.map((item) => (
               <div
                 key={item.labelKey}
@@ -76,9 +76,6 @@ export default function Hero() {
                 <p className="font-heading text-2xl font-bold">{t(item.valueKey)}</p>
                 <p className="mt-1 text-sm leading-snug text-white/90">{t(item.labelKey)}</p>
                 {item.noteKey && <p className="mt-2 text-xs leading-relaxed text-white/90">{t(item.noteKey)}</p>}
-                {item.warningKey && (
-                  <p className="mt-3 inline-block rounded-full border border-white/60 px-2 py-1 text-xs font-semibold text-white">{t(item.warningKey)}</p>
-                )}
               </div>
             ))}
           </div>
