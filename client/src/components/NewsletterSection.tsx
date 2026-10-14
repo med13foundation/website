@@ -1,5 +1,5 @@
 /**
- * Developer Note — Google Sheets Email Subscription Integration
+ * Developer Note: Google Sheets Email Subscription Integration
  * 
  * This component connects the website's email subscription form to a Google Sheet
  * via our backend server (to avoid CORS issues).

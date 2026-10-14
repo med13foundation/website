@@ -207,8 +207,8 @@ function SubscribersTab() {
                 </div>
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <Button size="icon" variant="ghost" data-testid={`button-delete-subscriber-${sub.id}`}>
-                      <Trash2 className="w-4 h-4 text-destructive" />
+                    <Button size="icon" variant="ghost" aria-label={`Remove subscriber ${sub.email}`} data-testid={`button-delete-subscriber-${sub.id}`}>
+                      <Trash2 className="w-4 h-4 text-destructive" aria-hidden="true" />
                     </Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent>
@@ -702,9 +702,9 @@ export default function Admin() {
       <header className="border-b bg-card sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
           <div className="flex items-center gap-3">
-            <Link href="/">
-              <Button variant="ghost" size="icon" data-testid="button-back-home">
-                <ArrowLeft className="w-4 h-4" />
+            <Link href="/" aria-label="Back to home">
+              <Button variant="ghost" size="icon" aria-label="Back to home" data-testid="button-back-home">
+                <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               </Button>
             </Link>
             <h1 className="text-lg font-heading font-bold" data-testid="text-admin-dashboard-title">

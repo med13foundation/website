@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, ArrowRight, BookOpenText, CalendarDays, Clock3, Globe2, LockKeyhole, PlayCircle, Users, Video } from "lucide-react";
+import { ArrowRight, BookOpenText, CalendarDays, Clock3, Globe2, LockKeyhole, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -11,7 +10,7 @@ type Session = {
   time: string;
   type?: string;
   title: string;
-  description: string;
+  description?: string;
   speakers?: string;
 };
 
@@ -111,6 +110,16 @@ export default function Symposium() {
       speakers: t("symposium.session6Speakers"),
     },
     {
+      time: t("symposium.session9Time"),
+      title: t("symposium.session9Title"),
+      description: t("symposium.session9Description"),
+      speakers: t("symposium.session9Speakers"),
+    },
+    {
+      time: t("symposium.session10Time"),
+      title: t("symposium.session10Title"),
+    },
+    {
       time: t("symposium.session7Time"),
       type: t("symposium.familyPanelLabel"),
       title: t("symposium.session7Title"),
@@ -145,6 +154,12 @@ export default function Symposium() {
       affiliation: t("symposium.speaker3Affiliation"),
       bio: t("symposium.speaker3Bio"),
       image: "/images/symposium/carla-marini.webp",
+    },
+    {
+      name: t("symposium.speaker14Name"),
+      affiliation: t("symposium.speaker14Affiliation"),
+      bio: t("symposium.speaker14Bio"),
+      image: "/images/symposium/maya-chopra.jpeg",
     },
     {
       name: t("symposium.speaker4Name"),
@@ -186,6 +201,12 @@ export default function Symposium() {
       image: "/images/symposium/pj-brooks.webp",
     },
     {
+      name: t("symposium.speaker13Name"),
+      affiliation: t("symposium.speaker13Affiliation"),
+      bio: t("symposium.speaker13Bio"),
+      image: "/images/symposium/mimi-lee.webp",
+    },
+    {
       name: t("symposium.speaker10Name"),
       affiliation: t("symposium.speaker10Affiliation"),
       role: t("symposium.speaker10Role"),
@@ -197,6 +218,12 @@ export default function Symposium() {
       affiliation: t("symposium.speaker11Affiliation"),
       bio: t("symposium.speaker11Bio"),
       image: "/images/symposium/zexuan-li.webp",
+    },
+    {
+      name: t("symposium.speaker12Name"),
+      affiliation: t("symposium.speaker12Affiliation"),
+      bio: t("symposium.speaker12Bio"),
+      image: "/images/symposium/julie-mcmurry.webp",
     },
   ];
 
@@ -212,7 +239,7 @@ export default function Symposium() {
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary/65">{session.type}</p>
         )}
         <h3 className="font-heading text-lg font-bold text-foreground">{session.title}</h3>
-        <p className="mt-2 leading-relaxed text-muted-foreground">{session.description}</p>
+        {session.description && <p className="mt-2 leading-relaxed text-muted-foreground">{session.description}</p>}
         {session.speakers && <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">{session.speakers}</p>}
       </div>
     </div>
@@ -254,6 +281,13 @@ export default function Symposium() {
                       {t("symposium.registrationStatus")}
                     </a>
                   </Button>
+                  <a
+                    href="/symposium.ics"
+                    className="self-center text-sm font-medium text-primary underline underline-offset-4"
+                    data-testid="link-symposium-calendar"
+                  >
+                    {t("symposium.addToCalendar")}
+                  </a>
                 </div>
                 <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-start">
                   <Button size="lg" variant="outline" asChild data-testid="button-symposium-program">
@@ -288,6 +322,18 @@ export default function Symposium() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.formatLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.format")}</p>
+                      <p className="mt-2 text-sm leading-relaxed" data-testid="text-symposium-live-translation">
+                        {t("symposium.liveTranslation")}{" "}
+                        <a
+                          href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060844"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                          data-testid="link-symposium-live-translation"
+                        >
+                          {t("symposium.liveTranslationLink")}
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -420,26 +466,6 @@ export default function Symposium() {
             <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/15 pt-6 text-sm text-primary-foreground/80">
               <Video className="h-4 w-4 text-[#bfe9d2]" />
               <span>{t("symposium.recordingNote")}</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 sm:py-20" data-testid="section-symposium-closing">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <PlayCircle className="mx-auto h-8 w-8 text-secondary" />
-            <h2 className="mt-4 font-heading text-3xl font-bold text-primary sm:text-4xl" data-testid="text-symposium-closing-title">
-              {t("symposium.closingTitle")}
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("symposium.closingBody")}</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Button variant="outline" asChild data-testid="button-symposium-back-gala">
-                <Link href="/gala">
-                  <ArrowLeft className="mr-2 h-4 w-4" /> {t("symposium.backGala")}
-                </Link>
-              </Button>
-              <Button asChild data-testid="button-symposium-home">
-                <Link href="/">{t("symposium.backHome")}</Link>
-              </Button>
             </div>
           </div>
         </section>

@@ -14,3 +14,9 @@ For sponsor and auction acknowledgments, the board-approved recognition policy s
 **Why:** Public recognition is contractual, and naming or linking the wrong donor can violate the agreed credit line or permissions.
 
 **How to apply:** Confirm exact names, levels, destinations, dates, and consent against the policy and Amy/Iza's approved materials before changing either the gala or Champions recognition.
+
+The organizer confirmed on October 3, 2026 that dessert opens at the start of the Gala's dessert, dancing, and photobooth segment.
+
+**Why:** Dessert is timed to this segment rather than available throughout the evening.
+
+**How to apply:** Preserve dessert in the segment description and do not describe it as opening earlier in attendee-facing materials.

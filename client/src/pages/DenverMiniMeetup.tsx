@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users, Video } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const REGISTRATION_URL = "https://givebutter.com/mini-medopathies-family-meetup-denver-zfo4zv";
+const RARE_RECEPTION_URL = "https://fundraise.givesmart.com/e/9aSuZA?vid=1sokr3";
 const HOTEL_URL = "https://www.hyatt.com/events/en-US/group-booking/DENRD/G-SLC6";
 const AES_URL = "https://aesnet.org/AES-annual-meeting";
 const COMBINEDBRAIN_URL = "https://combinedbrain.org/";
@@ -36,13 +37,17 @@ export default function DenverMiniMeetup() {
   }, [t]);
 
   const agenda = [
-    ["agenda1Time", "agenda1Title", "agenda1Body"],
-    ["agenda2Time", "agenda2Title", "agenda2Body"],
+    ["agenda1Time", "agenda1Title", null],
+    ["agenda2Time", "agenda2Title", null],
     ["agenda3Time", "agenda3Title", "agenda3Body"],
-    ["agenda4Time", "agenda4Title", "agenda4Body"],
+    ["agenda4Time", "agenda4Title", null],
     ["agenda5Time", "agenda5Title", "agenda5Body"],
-    ["agenda6Time", "agenda6Title", "agenda6Body"],
-    ["agenda7Time", "agenda7Title", "agenda7Body"],
+    ["agenda6Time", "agenda6Title", null],
+    ["agenda7Time", "agenda7Title", null],
+    ["agenda8Time", "agenda8Title", null],
+    ["agenda9Time", "agenda9Title", null],
+    ["agenda10Time", "agenda10Title", null],
+    ["agenda11Time", "agenda11Title", "agenda11Body"],
   ] as const;
 
   return (
@@ -60,7 +65,7 @@ export default function DenverMiniMeetup() {
                 </Link>
               </Button>
               <div className="mb-5 flex flex-wrap items-center gap-3">
-                {(["inPersonTag", "respiteTag"] as const).map((key) => (
+                {(["inPersonTag", "respiteTag", "virtualTag"] as const).map((key) => (
                   <Badge key={key} variant="secondary">{t(`denverMeetup.${key}`)}</Badge>
                 ))}
               </div>
@@ -149,6 +154,38 @@ export default function DenverMiniMeetup() {
                 </CardContent>
               </Card>
 
+              <Card className="border-primary/15" data-testid="card-denver-rare-reception">
+                <CardContent className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-secondary">{t("denverMeetup.receptionDetailsLabel")}</p>
+                  <h2 className="mt-2 font-heading text-xl font-bold">{t("denverMeetup.receptionTitle")}</h2>
+                  <h3 className="mt-5 text-xs font-semibold uppercase tracking-wider text-primary">{t("denverMeetup.receptionWhenWhere")}</h3>
+                  <div className="mt-3 flex items-start gap-2 text-sm">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    <div>
+                      <p className="font-semibold">{t("denverMeetup.receptionVenue")}</p>
+                      <p className="mt-1 text-muted-foreground">{t("denverMeetup.receptionAddress")}</p>
+                    </div>
+                  </div>
+                  <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
+                    <CalendarDays className="h-4 w-4 shrink-0 text-primary" />
+                    {t("denverMeetup.receptionDate")}
+                  </p>
+                  <h3 className="mt-6 border-t pt-5 text-xs font-semibold uppercase tracking-wider text-primary">{t("denverMeetup.receptionWhatToKnow")}</h3>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+                    {(["receptionAdmission", "receptionWelcome", "receptionAttire", "receptionRefreshments"] as const).map((key) => (
+                      <li key={key}>{t(`denverMeetup.${key}`)}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-sm leading-relaxed text-foreground">{t("denverMeetup.receptionDescription")}</p>
+                  <Button variant="outline" className="mt-5 w-full" asChild>
+                    <a href={RARE_RECEPTION_URL} target="_blank" rel="noopener noreferrer" data-testid="link-denver-rare-reception">
+                      {t("denverMeetup.receptionLink")}
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
               <Card className="border-secondary/30 bg-secondary/10">
                 <CardContent className="p-6">
                   <Hotel className="h-6 w-6 text-primary" />
@@ -211,11 +248,22 @@ export default function DenverMiniMeetup() {
                       <p className="font-semibold text-secondary">{t(`denverMeetup.${time}`)}</p>
                       <div>
                         <h3 className="font-heading font-bold">{t(`denverMeetup.${title}`)}</h3>
-                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(`denverMeetup.${body}`)}</p>
+                        {body && <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t(`denverMeetup.${body}`)}</p>}
                       </div>
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
+                <Video className="h-6 w-6 text-primary" />
+                <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
+                <p className="mt-2 text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
+                <Button variant="outline" className="mt-5" asChild>
+                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+                    {t("denverMeetup.virtualButton")}<ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
 
               <div className="rounded-2xl bg-primary p-6 text-primary-foreground">

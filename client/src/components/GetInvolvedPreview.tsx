@@ -2,14 +2,14 @@ import { FlaskConical, HandHeart, Users2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
+import { VOLUNTEER_FORM_URL } from "@/lib/links";
 
-const boardContactEmail = "mailto:research@med13.org";
+const boardContactEmail = "mailto:research@med13.org?subject=Board%20interest";
 
 const pathways = [
-  { icon: FlaskConical, titleKey: "getInvolved.researchTitle", descKey: "getInvolved.researchDesc", testId: "research", formUrl: RESEARCH_COHORT_FORM_URL },
-  { icon: Users2, titleKey: "getInvolved.boardTitle", descKey: "getInvolved.boardDesc", testId: "board", formUrl: boardContactEmail },
-  { icon: HandHeart, titleKey: "getInvolved.volunteerTitle", descKey: "getInvolved.volunteerDesc", testId: "volunteer", formUrl: VOLUNTEER_FORM_URL },
+  { icon: FlaskConical, titleKey: "getInvolved.researchTitle", descKey: "getInvolved.researchDesc", actionKey: "getInvolved.joinCohortAction", testId: "research", href: "/get-involved#research-cohort", external: false },
+  { icon: Users2, titleKey: "getInvolved.boardTitle", descKey: "getInvolved.boardDesc", actionKey: "home.boardInterestAction", testId: "board", href: boardContactEmail, external: false },
+  { icon: HandHeart, titleKey: "getInvolved.volunteerTitle", descKey: "home.volunteerPreviewDesc", actionKey: "getInvolved.contactUs", testId: "volunteer", href: VOLUNTEER_FORM_URL, external: true },
 ];
 
 export default function GetInvolvedPreview() {
@@ -39,14 +39,13 @@ export default function GetInvolvedPreview() {
                   <CardTitle className="font-heading text-xl">{t(pathway.titleKey)}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="line-clamp-3 text-sm leading-relaxed">{t(pathway.descKey)}</CardDescription>
+                  <CardDescription className={`${pathway.testId === "volunteer" ? "" : "line-clamp-3 "}text-sm leading-relaxed`}>{t(pathway.descKey)}</CardDescription>
                   <Button variant="outline" className="mt-5 w-full" asChild data-testid={`button-preview-${pathway.testId}`}>
                     <a
-                      href={pathway.formUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={pathway.href}
+                      {...(pathway.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     >
-                      {t("getInvolved.contactUs")}
+                      {t(pathway.actionKey)}
                     </a>
                   </Button>
                 </CardContent>

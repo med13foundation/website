@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Sparkles, Video } from "lucide-react";
+import { Calendar, MapPin, Users } from "lucide-react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
@@ -18,45 +18,27 @@ export default function FeaturedEventsPreview() {
           <p className="mt-4 text-lg text-muted-foreground">{t("home.featuredEventsSubtitle")}</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Card data-testid="card-featured-gala">
+        <div className="mx-auto max-w-4xl">
+          <Card data-testid="card-featured-denver">
             <CardHeader>
               <CardTitle className="flex flex-wrap items-center gap-2 font-heading text-xl">
-                <Sparkles className="h-5 w-5 text-primary" />
-                {t("gala.eventCardTitle")}
+                <Users className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                {t("nav.eventsDenverMeetup")}
               </CardTitle>
               <CardDescription className="mt-2 flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                {t("gala.eventCardDate")}
+                <Calendar className="h-4 w-4 shrink-0" aria-hidden="true" />
+                {t("denverMeetup.cardDate")}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="mb-4 flex items-start gap-2 text-sm">
-                <MapPin className="mt-0.5 h-4 w-4 text-muted-foreground" />
-                <span>{t("gala.location")}, {t("gala.address")}</span>
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+                <span>{t("denverMeetup.venue")}, {t("denverMeetup.address")}</span>
               </div>
-              <p className="text-sm leading-relaxed text-foreground">{t("gala.eventCardDesc")}</p>
-              <Button className="mt-6" asChild data-testid="button-featured-gala">
-                <Link href="/gala">{t("gala.eventCardButton")}</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="border-primary/20 bg-primary text-primary-foreground" data-testid="card-featured-symposium">
-            <CardHeader>
-              <CardTitle className="flex flex-wrap items-center gap-2 font-heading text-xl text-primary-foreground">
-                <Video className="h-5 w-5 text-[#bfe9d2]" />
-                {t("symposium.title")}
-              </CardTitle>
-              <CardDescription className="mt-2 flex items-center gap-2 text-primary-foreground/75">
-                <Calendar className="h-4 w-4" />
-                {t("symposium.date")} · {t("symposium.format")}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm leading-relaxed text-primary-foreground/85">{t("symposium.eventCardDesc")}</p>
-              <Button variant="secondary" className="mt-6" asChild data-testid="button-featured-symposium">
-                <Link href="/symposium">{t("symposium.eventCardButton")}</Link>
+              <p className="text-sm leading-relaxed text-foreground">{t("denverMeetup.cardBlurb")}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
+              <Button className="mt-6" asChild data-testid="button-featured-denver">
+                <Link href="/news-and-events/denver-mini-medopathies-meetup">{t("denverMeetup.details")}</Link>
               </Button>
             </CardContent>
           </Card>
