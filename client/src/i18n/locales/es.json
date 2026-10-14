@@ -1,5 +1,6 @@
 {
   "nav": {
+    "med13Syndrome": "¿Qué es el síndrome MED13?",
     "logo": "Fundación MED13",
     "about": "Quiénes Somos",
     "aboutOverview": "Resumen de Quiénes Somos",
@@ -26,10 +27,17 @@
     "contact": "Contacto",
     "donate": "Donar"
   },
+  "syndromePage": {
+    "eyebrow": "Comprender MED13",
+    "intro": "El síndrome MED13 es una condición genética rara del neurodesarrollo asociada con cambios en el gen MED13. Puede afectar el desarrollo, el habla y el lenguaje, el aprendizaje y otros aspectos de la salud. Las características varían de una persona a otra.",
+    "populationNote": "La estimación de 200 familias conocidas en todo el mundo combina datos de GeneDx, Simons Searchlight, la plataforma Matrix de COMBINEDBrain y el registro de la Fundación MED13, con esfuerzos por eliminar duplicados. Este recuento subestima considerablemente la prevalencia.",
+    "disclaimer": "Las características clínicas y las cifras de frecuencia ofrecen un panorama general, no una predicción para una persona concreta. La experiencia de cada persona puede ser distinta. Esta información educativa no sustituye el consejo de su profesional clínico."
+  },
   "home": {
     "missionEyebrow": "Nuestra misión",
     "missionButton": "Conoce a las personas detrás del trabajo",
     "syndromeVideoTitle": "¿Qué es el síndrome MED13?",
+    "syndromeVideoLearnMore": "Explorar los datos del síndrome MED13",
     "syndromeVideoDescription": "Mira esta introducción de la Fundación MED13.",
     "syndromeVideoFallback": "Descargar el video sobre el síndrome MED13",
     "syndromeVideoAudio": "Audio: inglés",
@@ -708,8 +716,8 @@
   "quickFacts": {
     "title": "Datos Rápidos sobre el Síndrome MED13",
     "subtitle": "Entendiendo la condición de un vistazo",
-    "affected": "personas diagnosticadas en todo el mundo",
-    "affectedValue": "200+",
+    "affected": "familias conocidas en todo el mundo (estimación)",
+    "affectedValue": "200",
     "inheritance": "Herencia",
     "inheritanceValue": "De novo (92%)",
     "speech": "Trastornos del habla",

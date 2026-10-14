@@ -43,6 +43,11 @@ export default function Navigation() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-64">
                 <DropdownMenuItem asChild>
+                  <Link href="/what-is-med13-syndrome" data-testid="link-about-med13-syndrome">
+                    {t("nav.med13Syndrome")}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link href="/who-we-are" data-testid="link-about-overview">
                     {t('nav.aboutOverview')}
                   </Link>
@@ -175,6 +180,14 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
+            <Link
+              href="/what-is-med13-syndrome"
+              className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover-elevate"
+              data-testid="link-mobile-med13-syndrome"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.med13Syndrome")}
+            </Link>
             <div className="px-3 py-2" data-testid="mobile-about-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.about')}</p>
               <div className="border-l border-border ml-1 pl-3 space-y-1">

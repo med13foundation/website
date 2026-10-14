@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Serve from public instead of Vite's /@fs asset path so mobile browsers
 // receive a stable same-origin MP4 URL with byte-range support.
@@ -145,6 +148,14 @@ export default function SyndromeVideo() {
           <p className="mt-2">{t("home.syndromeVideoVisualsFeatures")}</p>
           <p className="mt-2">{t("home.syndromeVideoVisualsClosing")}</p>
         </details>
+        <div className="mt-6 text-center">
+          <Button asChild data-testid="link-syndrome-video-facts">
+            <Link href="/what-is-med13-syndrome">
+              {t("home.syndromeVideoLearnMore")}
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
