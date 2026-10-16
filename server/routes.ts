@@ -1,5 +1,6 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
+import { timingSafeEqual } from "crypto";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema, insertSymposiumRegistrationSchema } from "@shared/schema";
 import { sendNewsletterEmail, sendNewsletterBatch, sendTestEmail } from "./email";
@@ -9,15 +10,31 @@ import { buildLlmsTxt, buildSitemapXml, SITE_URL } from "@shared/route-metadata"
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
 
-const ADMIN_PASSWORD = "admins";
+const ADMIN_PASSWORD = process.env.NEWSLETTER_BACKEND;
+
+if (!ADMIN_PASSWORD) {
+  console.warn("NEWSLETTER_BACKEND is not set. Admin login is disabled.");
+}
+
+function matchesAdminPassword(candidate: unknown): boolean {
+  if (!ADMIN_PASSWORD || typeof candidate !== "string") {
+    return false;
+  }
+  const expected = Buffer.from(ADMIN_PASSWORD);
+  const actual = Buffer.from(candidate);
+  return expected.length === actual.length && timingSafeEqual(expected, actual);
+}
 
 function requireAdminAuth(req: Request, res: Response, next: NextFunction) {
+  if (!ADMIN_PASSWORD) {
+    return res.status(503).json({ error: "Admin login is not configured" });
+  }
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ error: "Authentication required" });
   }
   const token = authHeader.slice(7);
-  if (token !== ADMIN_PASSWORD) {
+  if (!matchesAdminPassword(token)) {
     return res.status(403).json({ error: "Invalid credentials" });
   }
   next();
@@ -99,8 +116,11 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
 
   // Admin: Auth check
   app.post("/api/admin/login", (req, res) => {
+    if (!ADMIN_PASSWORD) {
+      return res.status(503).json({ error: "Admin login is not configured" });
+    }
     const { password } = req.body;
-    if (password === ADMIN_PASSWORD) {
+    if (matchesAdminPassword(password)) {
       res.json({ success: true, token: ADMIN_PASSWORD });
     } else {
       res.status(403).json({ error: "Invalid password" });
