@@ -152,8 +152,8 @@ Communicate clarity and care at first glance with humanistic, approachable type.
   - About: Our Story, Our Community, Impact and Progress, What Is MED13 Syndrome
   - Get Involved: Research Cohort, board, volunteering, other ways to give
   - Resources: partners as text links (COMBINEDBrain, Simons Searchlight), Events, Gala, Symposium
-  - Contact: the research email and social links, each icon with an accessible name
-- Bottom row: copyright and the fiscal-sponsor note (Rare Village, a 501(c)(3), with EIN)
+  - Contact: the research email
+- Bottom row: social icons (each with an accessible name), copyright, and the fiscal-sponsor note (Rare Village, a 501(c)(3), with EIN)
 
 ## Accessibility Requirements
 
