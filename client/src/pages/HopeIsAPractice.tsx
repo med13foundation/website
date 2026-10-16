@@ -32,7 +32,7 @@ export default function HopeIsAPractice() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden bg-primary px-4 py-16 text-primary-foreground sm:py-24">
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/25 blur-3xl" />
           <div className="relative mx-auto max-w-5xl">

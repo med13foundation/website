@@ -79,8 +79,13 @@ export default function NewsletterSection() {
         </p>
         
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <label htmlFor="newsletter-email" className="sr-only">
+            {t('newsletter.emailLabel')}
+          </label>
           <Input
+            id="newsletter-email"
             type="email"
+            autoComplete="email"
             placeholder={t('newsletter.placeholder')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}

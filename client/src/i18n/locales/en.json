@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
   "nav": {
     "med13Syndrome": "What is MED13 syndrome?",
     "logo": "MED13 Foundation",
@@ -748,6 +751,7 @@
   "newsletter": {
     "title": "Stay Informed",
     "subtitle": "Subscribe to our bi-annual newsletter for research progress, family stories, and community events",
+    "emailLabel": "Email address",
     "placeholder": "Enter your email",
     "subscribe": "Subscribe",
     "subscribing": "Subscribing...",

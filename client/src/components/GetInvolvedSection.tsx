@@ -60,9 +60,9 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-get-involved-title">
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-get-involved-title">
             {t('getInvolved.title')}
-          </h2>
+          </h1>
           <p className="text-lg text-muted-foreground">
             {t('getInvolved.subtitle')}
           </p>
@@ -133,7 +133,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
               <Plane className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
-              <h3 className="font-heading text-xl font-bold text-primary">{t("getInvolved.otherWaysTitle")}</h3>
+              <h2 className="font-heading text-xl font-bold text-primary">{t("getInvolved.otherWaysTitle")}</h2>
               <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{t("getInvolved.otherWaysDesc")}</p>
             </div>
           </div>

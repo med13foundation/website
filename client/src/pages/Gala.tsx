@@ -107,6 +107,7 @@ export default function Gala() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      <main id="main" tabIndex={-1} className="focus:outline-none">
       {/* Hero */}
       <section className="relative overflow-hidden py-14 sm:py-16" data-testid="section-gala-hero">
         <div className="absolute inset-0 bg-gradient-to-b from-[#68B0AB] via-[#b8d8d3] to-[#FFD9C7]" />
@@ -553,6 +554,7 @@ export default function Gala() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>
