@@ -18,7 +18,7 @@ export default function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 rounded-lg">
             <img 
@@ -27,15 +27,15 @@ export default function Navigation() {
               className="h-12 w-12" 
               data-testid="logo-image"
             />
-            <span className="hidden sm:inline text-lg font-heading font-bold text-primary" data-testid="logo-text">
+            <span className="hidden sm:inline whitespace-nowrap text-lg font-heading font-bold text-primary" data-testid="logo-text">
               {t('nav.logo')}
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-6">
             <DropdownMenu>
               <DropdownMenuTrigger
-                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
                 data-testid="button-about-menu"
               >
                 {t('nav.about')}
@@ -94,15 +94,15 @@ export default function Navigation() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
+            <Link href="/get-involved" className="whitespace-nowrap text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </Link>
-            <Link href="/impact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-impact">
+            <Link href="/impact" className="whitespace-nowrap text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-impact">
               {t('nav.impact')}
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger
-                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
                 data-testid="button-events-menu"
               >
                 {t('nav.events')}
@@ -151,7 +151,7 @@ export default function Navigation() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <a href="/#contact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
+            <a href="/#contact" className="whitespace-nowrap text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-contact">
               {t('nav.contact')}
             </a>
             <LanguageSwitcher />
@@ -166,7 +166,7 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden p-2 hover-elevate rounded-md"
+            className="xl:hidden p-2 hover-elevate rounded-md"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -178,7 +178,7 @@ export default function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="xl:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link
               href="/what-is-med13-syndrome"

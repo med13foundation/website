@@ -94,6 +94,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Key Principles:**
 - Maximum section width: 1100-1200px for optimal readability
+- The top navigation bar is the exception: it spans up to 1280px (`max-w-7xl`) so the full menu fits on one line. Nav labels never wrap; below 1280px wide the menu collapses into the hamburger
 - Generous padding: 80-100px between sections (py-16 to py-24)
 - Use asymmetric grid sections where appropriate (alternating photo/text)
 - Soft dividers: Faint gradient lines or curved section breaks
