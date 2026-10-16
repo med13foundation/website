@@ -177,7 +177,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary bg-white/70 text-primary hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-donate-auction-item-hero"
             >
@@ -186,7 +186,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary bg-white/70 text-primary hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-livestream"
             >
@@ -198,7 +198,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary bg-white/70 text-primary hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-sponsor"
             >
