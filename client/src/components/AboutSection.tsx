@@ -7,7 +7,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center mb-8">
             <div className="mb-6 relative">

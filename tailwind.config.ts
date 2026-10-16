@@ -17,7 +17,7 @@ export default {
         },
       },
       borderRadius: {
-        lg: ".5625rem", /* 9px */
+        lg: ".5rem", /* 8px */
         md: ".375rem", /* 6px */
         sm: ".1875rem", /* 3px */
       },

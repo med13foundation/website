@@ -38,15 +38,17 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 **Font Families:**
 - **Headings**: Nunito Sans - Rounded, humanistic, family-friendly, easy to read for all ages
 - **Body**: Inter - Professional yet friendly, excellent legibility
-- **Highlights/Quotes**: Playfair Display - Elegant, adds emotional warmth
+- **Highlights/Quotes**: Nunito Sans (italic or semibold) or Inter. No third display family; Playfair Display is no longer loaded
 
 **Type Scale:**
-- Hero Headline: Nunito Sans 48-60px, font-weight 700-800
+- Hero Headline: Nunito Sans 36-40px on phones, 48-60px from tablet up, font-weight 700-800
 - Section Heading: Nunito Sans 32-40px, font-weight 600-700
 - Subsection: Nunito Sans 20-24px, font-weight 600
 - Body Large: Inter 18-20px, font-weight 400, line-height 1.7
 - Body Standard: Inter 16px, font-weight 400, line-height 1.7
-- Captions: Inter 14px, font-weight 400
+- Captions and body copy: Inter 14px minimum, font-weight 400
+- Badges, tags and small labels: 12px minimum (`text-xs`), never running text
+- Stats and figures: tabular figures (`tabular-nums`) in the heading or body family; no monospace
 
 **Line Height:** 1.6-1.8 for comfort and accessibility
 
@@ -60,7 +62,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 - Visual metaphor: Subtle scientific elements (DNA strands, molecular patterns) suggest research without being clinical
 - Call-to-action buttons:
   - Primary: White background with navy text - high contrast, approachable
-  - Secondary: Semi-transparent with navy text and backdrop blur - modern, elegant
+  - Secondary: Underlined navy text link beside the primary button - quieter, so the primary stays the clear first step
 
 **Layout:**
 - Full-width hero with thematic background image
@@ -92,6 +94,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Key Principles:**
 - Maximum section width: 1100-1200px for optimal readability
+- The top navigation bar is the exception: it spans up to 1280px (`max-w-7xl`) so the full menu fits on one line. Nav labels never wrap; below 1280px wide the menu collapses into the hamburger
 - Generous padding: 80-100px between sections (py-16 to py-24)
 - Use asymmetric grid sections where appropriate (alternating photo/text)
 - Soft dividers: Faint gradient lines or curved section breaks
@@ -99,7 +102,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Cards & Components:**
 - Clean white cards with subtle elevation
-- 6-8px border radius for gentle, approachable feel
+- 6-8px border radius for gentle, approachable feel (`rounded-lg`, 8px). Pills, avatars, photos, video frames and small icon chips keep their own shape
 - Semi-transparent cards (bg-card/95) with backdrop blur over background images
 - Icon + Title + Description pattern
 - Hover: Subtle elevation increase using hover-elevate utility
@@ -110,9 +113,8 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Interaction Patterns:**
 - Button hover: Gentle lift + slight color warmth (handled by built-in utilities)
-- Section reveal: Fade-in + upward motion on scroll (0.3-0.4s ease)
 - Smooth scroll behavior for anchor navigation
-- Background parallax on hero for subtle depth
+- Motion stays subtle: hover feedback only; no scroll-triggered reveals or parallax
 
 **DO:**
 ✅ Subtle, meaningful animations
@@ -138,7 +140,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 ### Get Involved Section
 - Background: Community/connection themed image with light overlay (92-95% opacity)
 - Cards: Semi-transparent (bg-card/95) with backdrop blur
-- Layout: 3-column grid (desktop) → single column (mobile)
+- Layout: 3-4 column grid on desktop, matching the number of pathways (four today) → single column on mobile
 - Each pathway card: Icon, title, description, CTA button
 
 ### Research Roadmap
@@ -147,11 +149,12 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 - Clean, easy-to-scan layout
 
 ### Footer
-- Two-column layout:
-  - Left: "Join the Family" message + newsletter signup
-  - Right: Partner logos (COMBINEDBrain, Rare Village) - grayscale with color on hover
-- Trust indicators: 501(c)(3) status, fiscal sponsor info
-- Social links with appropriate icons
+- Four link columns on desktop, stacking to one column on phones:
+  - About: Our Story, Our Community, Impact and Progress, What Is MED13 Syndrome
+  - Get Involved: Research Cohort, board, volunteering, other ways to give
+  - Resources: partners as text links (COMBINEDBrain, Simons Searchlight), Events, Gala, Symposium
+  - Contact: the research email
+- Bottom row: social icons (each with an accessible name), copyright, and the fiscal-sponsor note (Rare Village, a 501(c)(3), with EIN)
 
 ## Accessibility Requirements
 

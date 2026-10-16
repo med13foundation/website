@@ -201,7 +201,7 @@ export default function DenverMiniMeetup() {
 
             <div className="space-y-10">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-primary/15 bg-primary/5 p-5">
+                <div className="rounded-lg border border-primary/15 bg-primary/5 p-5">
                   <TestTubes className="h-6 w-6 text-primary" />
                   <h2 className="mt-3 font-heading text-xl font-bold">{t("denverMeetup.biosampleTitle")}</h2>
                   <p className="mt-2 text-muted-foreground">{t("denverMeetup.biosampleBody")}</p>
@@ -226,7 +226,7 @@ export default function DenverMiniMeetup() {
                     </a>
                   </div>
                 </div>
-                <div className="rounded-2xl border border-secondary/30 bg-secondary/10 p-5">
+                <div className="rounded-lg border border-secondary/30 bg-secondary/10 p-5">
                   <Users className="h-6 w-6 text-primary" />
                   <h2 className="mt-3 font-heading text-xl font-bold">{t("denverMeetup.supportTitle")}</h2>
                   <p className="mt-2 text-muted-foreground">{t("denverMeetup.supportBody")}</p>
@@ -242,7 +242,7 @@ export default function DenverMiniMeetup() {
               <div>
                 <h2 className="font-heading text-3xl font-bold text-primary">{t("denverMeetup.agendaTitle")}</h2>
                 <p className="mt-2 text-muted-foreground">{t("denverMeetup.agendaNote")}</p>
-                <div className="mt-6 divide-y rounded-2xl border bg-card px-5">
+                <div className="mt-6 divide-y rounded-lg border bg-card px-5">
                   {agenda.map(([time, title, body]) => (
                     <div key={time} className="grid gap-2 py-5 sm:grid-cols-[7rem_1fr]">
                       <p className="font-semibold text-secondary">{t(`denverMeetup.${time}`)}</p>
@@ -255,7 +255,7 @@ export default function DenverMiniMeetup() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
+              <div className="rounded-lg border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
                 <Video className="h-6 w-6 text-primary" />
                 <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
                 <p className="mt-2 text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
@@ -266,7 +266,7 @@ export default function DenverMiniMeetup() {
                 </Button>
               </div>
 
-              <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
+              <div className="rounded-lg bg-primary p-6 text-primary-foreground">
                 <h2 className="font-heading text-2xl font-bold">{t("denverMeetup.ticketsTitle")}</h2>
                 <p className="mt-2 text-primary-foreground/80">{t("denverMeetup.ticketsBody")}</p>
                 <Button variant="secondary" className="mt-5" asChild>

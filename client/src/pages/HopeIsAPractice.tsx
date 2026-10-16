@@ -103,14 +103,14 @@ export default function HopeIsAPractice() {
                 <h2 className="mb-4 font-heading text-2xl font-bold">{t("hopePractice.whatToKnow")}</h2>
                 <ul className="grid gap-3 sm:grid-cols-2">
                   {(["welcome", "notFundraiser", "children", "recorded"] as const).map((key) => (
-                    <li key={key} className="rounded-xl border border-primary/10 bg-muted/50 p-4 leading-relaxed">
+                    <li key={key} className="rounded-lg border border-primary/10 bg-muted/50 p-4 leading-relaxed">
                       {t(`hopePractice.${key}`)}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-secondary/40 bg-secondary/10 p-6">
+              <div className="rounded-lg border border-secondary/40 bg-secondary/10 p-6">
                 <div className="flex items-start gap-3">
                   <Video className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
