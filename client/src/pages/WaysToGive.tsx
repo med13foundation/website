@@ -34,7 +34,7 @@ export default function WaysToGive() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <section className="relative overflow-hidden bg-[#e9f5f3] px-4 py-16 sm:py-24">
+        <section className="relative overflow-hidden bg-primary/10 px-4 py-16 sm:py-24">
           <div className="absolute -right-24 -top-20 h-80 w-80 rounded-full bg-secondary/15 blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto max-w-6xl">
             <Link href="/get-involved" className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:underline">
@@ -72,7 +72,7 @@ export default function WaysToGive() {
           </div>
         </section>
 
-        <section className="bg-[#f2f7f6] px-4 py-14 sm:py-20">
+        <section className="bg-primary/5 px-4 py-14 sm:py-20">
           <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">{t("waysToGive.coordinateTitle")}</h2>
