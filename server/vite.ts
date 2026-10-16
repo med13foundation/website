@@ -5,6 +5,7 @@ import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
+import { injectRouteHead, sendInjectedIndex } from "./inject-head";
 
 const viteLogger = createLogger();
 
@@ -59,7 +60,8 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const injected = injectRouteHead(page, url);
+      res.status(200).set({ "Content-Type": "text/html" }).end(injected);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -76,10 +78,12 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Hashed Vite assets: long-lived immutable cache. index.html: always revalidate.
-  // Other dist/public files (favicon, unhashed images): short public max-age (1h).
+  // index:false so "/" hits the injected SPA fallback instead of raw index.html.
+  // Hashed Vite assets: long-lived immutable cache. Other dist/public files
+  // (favicon, unhashed images): short public max-age (1h).
   app.use(
     express.static(distPath, {
+      index: false,
       setHeaders(res, filePath) {
         const rel = path.relative(distPath, filePath);
         if (rel === "index.html") {
@@ -96,9 +100,11 @@ export function serveStatic(app: Express) {
     }),
   );
 
-  // SPA fallback — same document as index.html, must not be cached long-term
-  app.use("*", (_req, res) => {
+  // SPA fallback with per-route head tags — must not be cached long-term.
+  // index.html only changes on deploy, so read it once at startup.
+  const indexTemplate = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+  app.use("*", (req, res) => {
     res.setHeader("Cache-Control", "no-cache");
-    res.sendFile(path.resolve(distPath, "index.html"));
+    sendInjectedIndex(indexTemplate, req, res);
   });
 }
