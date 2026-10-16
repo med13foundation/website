@@ -28,6 +28,7 @@ The palette evokes optimism, empathy, and clarity - balancing medical trust with
 - Secondary highlights use coral-peach for emotional warmth, as a fill or accent, never as text
 - Text that would be teal or coral uses navy instead: in light mode, `text-primary` and `text-secondary` render navy
 - Text colors come from tokens, never hex: navy `--primary-text` / `--secondary-text` (`text-primary`, `text-secondary`), warm brown `--warm-text` `#A25947` for small accent labels (`text-warm`, also `bg-warm` with white text), rust `--destructive-text` for errors (`text-destructive`), and `--muted-foreground` (40% grey) for secondary text
+- Stronger coral `--coral-strong` `#E67E5C` (`bg-coral-strong`, `border-coral-strong`) is the fill for high-emphasis calls to action such as the gala RSVP and the featured-star icon: navy text on it (6.45:1), never white, never as text
 - Dark-mode tokens exist but aren't audited for contrast; the site doesn't use dark mode
 - Accent yellow for hope and optimism touches
 
