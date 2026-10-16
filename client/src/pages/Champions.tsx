@@ -40,7 +40,7 @@ export default function Champions() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <section className="bg-[#edf7f5] px-4 py-16 sm:py-24">
+        <section className="bg-primary/10 px-4 py-16 sm:py-24">
           <div className="mx-auto max-w-4xl">
             <Link href="/gala" className="mb-8 inline-block text-sm font-semibold text-primary underline underline-offset-4">{t("recognition.backGala")}</Link>
             <h1 className="font-heading text-4xl font-bold text-primary sm:text-5xl">{t("recognition.championsTitle")}</h1>

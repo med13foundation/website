@@ -36,7 +36,7 @@ export default function StarOfMonthCarousel() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 text-center">
           <div className="mb-3 flex justify-center">
-            <Star className="h-6 w-6 fill-[#E67E5C] text-[#E67E5C]" aria-hidden="true" />
+            <Star className="h-6 w-6 fill-coral-strong text-coral-strong" aria-hidden="true" />
           </div>
           <h2 className="mb-2 font-heading text-2xl font-bold text-foreground sm:text-3xl" data-testid="text-star-of-month-title">
             {t("events.starOfMonthTitle")}

@@ -23,6 +23,7 @@ export default {
       },
       colors: {
         warm: "hsl(var(--warm-text) / <alpha-value>)",
+        "coral-strong": "hsl(var(--coral-strong) / <alpha-value>)",
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

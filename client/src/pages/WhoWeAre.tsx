@@ -170,7 +170,7 @@ function MemberCard({ member }: { member: Member }) {
   return (
     <Card className="overflow-hidden" data-testid={`card-member-${member.id}`}>
       {/* Photo */}
-      <div className="w-full h-44 bg-[#68B0AB]/10 overflow-hidden">
+      <div className="w-full h-44 bg-primary/10 overflow-hidden">
         {member.photo ? (
           <img
             src={member.photo}
@@ -179,7 +179,7 @@ function MemberCard({ member }: { member: Member }) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <span className="text-4xl font-heading font-bold text-[#1d5f66]/40">
+            <span className="text-4xl font-heading font-bold text-primary/60">
               {initials(member.name)}
             </span>
           </div>
@@ -191,7 +191,7 @@ function MemberCard({ member }: { member: Member }) {
           <h3 className="font-heading font-bold text-foreground leading-snug" data-testid={`text-member-name-${member.id}`}>
             {member.name}
           </h3>
-          <p className="text-sm text-[#2D7A89] font-medium mt-0.5" data-testid={`text-member-role-${member.id}`}>
+          <p className="text-sm text-primary font-medium mt-0.5" data-testid={`text-member-role-${member.id}`}>
             {t(member.roleKey)}
           </p>
         </div>
@@ -282,9 +282,9 @@ export default function WhoWeAre() {
 
       {/* Hero */}
         <section id="who-overview" className="scroll-mt-16 relative overflow-hidden py-20 sm:py-24" data-testid="section-who-hero">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#68B0AB] via-[#b8d8d3] to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/50 to-background" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-who-title">
+          <h1 className="text-4xl sm:text-5xl font-heading font-bold text-primary mb-4" data-testid="text-who-title">
             {t("whoWeAre.heroTitle")}
           </h1>
           <p className="text-lg text-primary font-medium mb-6" data-testid="text-who-subtitle">
@@ -304,8 +304,8 @@ export default function WhoWeAre() {
           </h2>
           <p className="text-muted-foreground mb-4">{t("whoWeAre.storyContent1")}</p>
           <p className="text-muted-foreground mb-8">{t("whoWeAre.storyContent2")}</p>
-          <blockquote className="text-center px-6 py-8 rounded-md bg-[#68B0AB]/10">
-            <p className="text-xl font-highlight italic text-[#1d5f66] mb-3">
+          <blockquote className="text-center px-6 py-8 rounded-md bg-primary/10">
+            <p className="text-xl font-highlight italic text-primary mb-3">
               "{t("whoWeAre.storyQuote")}"
             </p>
             <footer className="text-sm text-muted-foreground">{t("whoWeAre.storyQuoteAuthor")}</footer>
@@ -318,7 +318,7 @@ export default function WhoWeAre() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
-              <Users className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+              <Users className="h-8 w-8 text-primary" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
               {t("whoWeAre.boardTitle")}
@@ -338,7 +338,7 @@ export default function WhoWeAre() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
-              <Handshake className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+              <Handshake className="h-8 w-8 text-primary" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
               {t("whoWeAre.staffTitle")}
@@ -358,7 +358,7 @@ export default function WhoWeAre() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
-              <Microscope className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+              <Microscope className="h-8 w-8 text-primary" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
               {t("whoWeAre.sabTitle")}
@@ -378,7 +378,7 @@ export default function WhoWeAre() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
-              <Stethoscope className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+              <Stethoscope className="h-8 w-8 text-primary" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
               {t("whoWeAre.cabTitle")}
@@ -410,11 +410,11 @@ export default function WhoWeAre() {
       </section>
 
       {/* Funders */}
-      <section id="funders" className="scroll-mt-16 py-16 bg-[#f4f8f5]" data-testid="section-who-funders">
+      <section id="funders" className="scroll-mt-16 py-16 bg-primary/5" data-testid="section-who-funders">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-3">
-              <Award className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+              <Award className="h-8 w-8 text-primary" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
               {t("whoWeAre.fundersTitle")}
@@ -428,7 +428,7 @@ export default function WhoWeAre() {
                 href="https://www.anthropic.com/news/rare-disease-research-grants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-48 items-center justify-center bg-[#f7f6f2] p-8 transition-colors hover:bg-[#efede7]"
+                className="flex min-h-48 items-center justify-center bg-muted p-8 transition-colors hover:bg-muted/70"
                 aria-label={t("whoWeAre.anthropicLinkLabel")}
                 data-testid="link-funder-anthropic-logo"
               >
@@ -471,7 +471,7 @@ export default function WhoWeAre() {
       <section id="partners" className="scroll-mt-16 py-16 bg-muted/40" data-testid="section-who-partners">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-center mb-3">
-            <Handshake className="h-8 w-8 text-[#2D7A89]" aria-hidden="true" />
+            <Handshake className="h-8 w-8 text-primary" aria-hidden="true" />
           </div>
           <h2 className="text-3xl font-heading font-bold text-foreground mb-2">
             {t("whoWeAre.partnersTitle")}
@@ -504,7 +504,7 @@ export default function WhoWeAre() {
               ) : (
                 <span
                   key={p.name}
-                  className="flex items-center justify-center px-5 py-3 rounded-lg h-16 bg-[#68B0AB]/10 text-sm font-medium text-[#1d5f66]"
+                  className="flex items-center justify-center px-5 py-3 rounded-lg h-16 bg-primary/10 text-sm font-medium text-primary"
                   data-testid={`text-partner-${p.name.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`}
                 >
                   {p.name}

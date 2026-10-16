@@ -98,7 +98,7 @@ export default function EventsSection() {
           <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="flex items-start gap-4">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10">
-                <Video className="h-5 w-5 text-[#bfe9d2]" />
+                <Video className="h-5 w-5 text-primary-foreground" />
               </div>
               <div>
                 <CardTitle className="text-xl font-heading text-primary-foreground">{t('symposium.title')}</CardTitle>
@@ -234,7 +234,7 @@ export default function EventsSection() {
         <div id="press-room" className="mt-16 max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-3">
-              <Play className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
+              <Play className="h-6 w-6 text-primary" aria-hidden="true" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
               {t('events.mediaTitle')}
@@ -399,7 +399,7 @@ export default function EventsSection() {
         <div id="stories-and-essays" className="mt-16 max-w-4xl mx-auto" data-testid="section-stories-and-essays">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-3">
-              <BookOpen className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
+              <BookOpen className="h-6 w-6 text-primary" aria-hidden="true" />
             </div>
             <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-stories-and-essays-title">
               {t('events.storiesAndEssaysTitle')}

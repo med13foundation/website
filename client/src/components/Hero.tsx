@@ -29,7 +29,7 @@ export default function Hero() {
             className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-primary-foreground backdrop-blur-sm transition-colors hover:bg-white/20"
             data-testid="link-top-denver-invitation"
           >
-            <Sparkles className="h-4 w-4 shrink-0 text-[#bfe9d2]" aria-hidden="true" />
+            <Sparkles className="h-4 w-4 shrink-0 text-primary-foreground" aria-hidden="true" />
             <span className="min-w-0">
               <span className="font-semibold">{t('home.upcomingEventLabel')}:</span>{' '}
                <span>{t('nav.eventsDenverMeetup')} · {t('denverMeetup.cardDate')}</span>

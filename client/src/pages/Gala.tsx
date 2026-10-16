@@ -109,53 +109,53 @@ export default function Gala() {
 
       {/* Hero */}
       <section className="relative overflow-hidden py-14 sm:py-16" data-testid="section-gala-hero">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#68B0AB] via-[#b8d8d3] to-[#FFD9C7]" />
-        <SparkleAccent className="w-8 h-8 text-[#2D7A89]/60 top-10 left-[8%]" />
-        <SparkleAccent className="w-6 h-6 text-[#E67E5C]/60 top-24 right-[10%]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/50 to-secondary/60" />
+        <SparkleAccent className="w-8 h-8 text-primary/60 top-10 left-[8%]" />
+        <SparkleAccent className="w-6 h-6 text-coral-strong/60 top-24 right-[10%]" />
         <SparkleAccent className="w-5 h-5 text-white/70 bottom-16 left-[15%]" />
-        <SparkleAccent className="w-7 h-7 text-[#2D7A89]/50 bottom-10 right-[18%]" />
+        <SparkleAccent className="w-7 h-7 text-primary/50 bottom-10 right-[18%]" />
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img src={logoUrl} alt="MED13 Foundation Logo" className="h-24 w-auto mx-auto mb-5 drop-shadow-sm" data-testid="img-gala-logo" />
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4" data-testid="text-gala-eyebrow">
             {t("gala.eyebrow")}
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-gala-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary mb-4" data-testid="text-gala-title">
             {t("gala.title")}
           </h1>
           <p className="text-lg sm:text-xl italic text-primary font-medium mb-6" data-testid="text-gala-tagline">
             {t("gala.tagline")}
           </p>
-          <p className="text-base sm:text-lg text-[#3a3a3a] max-w-2xl mx-auto mb-8" data-testid="text-gala-invite">
+          <p className="text-base sm:text-lg text-foreground max-w-2xl mx-auto mb-8" data-testid="text-gala-invite">
             {t("gala.invite")}
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-8">
             <div className="text-center">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#1d5f66] flex items-center justify-center gap-1 mb-1">
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary flex items-center justify-center gap-1 mb-1">
                 <Calendar className="w-3.5 h-3.5" /> {t("gala.dateLabel")}
               </p>
-              <p className="text-lg font-semibold text-[#2a2a2a]" data-testid="text-gala-date">{t("gala.date")}</p>
+              <p className="text-lg font-semibold text-foreground" data-testid="text-gala-date">{t("gala.date")}</p>
             </div>
             <div className="text-center">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#1d5f66] flex items-center justify-center gap-1 mb-1">
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary flex items-center justify-center gap-1 mb-1">
                 <Clock className="w-3.5 h-3.5" /> {t("gala.timeLabel")}
               </p>
-              <p className="text-lg font-semibold text-[#2a2a2a]" data-testid="text-gala-time">{t("gala.time")}</p>
+              <p className="text-lg font-semibold text-foreground" data-testid="text-gala-time">{t("gala.time")}</p>
             </div>
             <div className="text-center">
-              <p className="text-xs font-semibold tracking-widest uppercase text-[#1d5f66] flex items-center justify-center gap-1 mb-1">
+              <p className="text-xs font-semibold tracking-widest uppercase text-primary flex items-center justify-center gap-1 mb-1">
                 <MapPin className="w-3.5 h-3.5" /> {t("gala.locationLabel")}
               </p>
-              <p className="text-lg font-semibold text-[#2a2a2a]" data-testid="text-gala-location">{t("gala.location")}</p>
-              <p className="text-sm text-[#4a4a4a]" data-testid="text-gala-address">{t("gala.address")}</p>
+              <p className="text-lg font-semibold text-foreground" data-testid="text-gala-location">{t("gala.location")}</p>
+              <p className="text-sm text-foreground" data-testid="text-gala-address">{t("gala.address")}</p>
             </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3">
             <Button
               size="lg"
-              className="bg-[#1d5f66] text-white hover:bg-[#174f55]"
+              className="bg-primary text-primary-foreground"
               asChild
               data-testid="button-gala-auction-hero"
             >
@@ -166,7 +166,7 @@ export default function Gala() {
             </Button>
             <Button
               size="lg"
-              className="bg-[#E67E5C] border-[#d96a45] text-primary-foreground"
+              className="bg-coral-strong border-coral-strong text-primary"
               asChild
               data-testid="button-gala-rsvp"
             >
@@ -177,7 +177,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-donate-auction-item-hero"
             >
@@ -186,7 +186,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-livestream"
             >
@@ -198,7 +198,7 @@ export default function Gala() {
             <Button
               size="lg"
               variant="outline"
-              className="border-[#1d5f66] bg-white/70 text-[#1d5f66] hover:bg-white"
+              className="border-primary-foreground bg-white/70 text-primary hover:bg-white"
               asChild
               data-testid="button-gala-sponsor"
             >
@@ -219,10 +219,10 @@ export default function Gala() {
               </a>
             </Button>
           </div>
-          <p className="text-sm text-[#4a4a4a] mt-4" data-testid="text-gala-rsvp-note">
+          <p className="text-sm text-foreground mt-4" data-testid="text-gala-rsvp-note">
             {t("gala.rsvpNote")} · {t("gala.ticketsAttireLabel")} {t("gala.ticketsAttire")}
           </p>
-          <p className="text-sm text-[#4a4a4a] mt-1" data-testid="text-gala-livestream-note">
+          <p className="text-sm text-foreground mt-1" data-testid="text-gala-livestream-note">
             {t("gala.livestreamNote")}
           </p>
         </div>
@@ -343,7 +343,7 @@ export default function Gala() {
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-primary mb-2" data-testid="text-gala-symposium-title">
             {t("gala.symposiumTitle")}
           </h2>
-          <p className="text-base font-semibold text-[#2a2a2a] mb-4 flex items-center gap-2" data-testid="text-gala-symposium-date">
+          <p className="text-base font-semibold text-foreground mb-4 flex items-center gap-2" data-testid="text-gala-symposium-date">
             <Calendar className="w-4 h-4 text-primary shrink-0" />
             {t("gala.symposiumDate")}
           </p>

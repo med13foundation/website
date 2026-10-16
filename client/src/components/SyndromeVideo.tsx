@@ -87,7 +87,7 @@ export default function SyndromeVideo() {
   };
 
   return (
-    <section className="bg-[#f2f7f6] px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="syndrome-video-title" data-testid="section-syndrome-video">
+    <section className="bg-primary/5 px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="syndrome-video-title" data-testid="section-syndrome-video">
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 text-center">
           <h2 id="syndrome-video-title" className="font-heading text-3xl font-bold text-primary sm:text-4xl">
@@ -113,7 +113,7 @@ export default function SyndromeVideo() {
           </video>
           {captionLanguage === "es" && captionText && !isFullscreen && (
             <div
-              className="pointer-events-none absolute inset-x-[5%] bottom-[5%] flex min-h-[19%] items-center justify-center bg-[#071c1e] px-2 py-1 text-center text-xs leading-snug text-white sm:px-5 sm:text-lg"
+              className="pointer-events-none absolute inset-x-[5%] bottom-[5%] flex min-h-[19%] items-center justify-center bg-primary-foreground px-2 py-1 text-center text-xs leading-snug text-white sm:px-5 sm:text-lg"
               aria-live="polite"
               data-testid="syndrome-spanish-captions"
             >

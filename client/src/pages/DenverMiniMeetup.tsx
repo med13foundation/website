@@ -54,7 +54,7 @@ export default function DenverMiniMeetup() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main>
-        <section className="relative overflow-hidden bg-[#edf7f5] px-4 py-14 sm:py-20">
+        <section className="relative overflow-hidden bg-primary/10 px-4 py-14 sm:py-20">
           <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
