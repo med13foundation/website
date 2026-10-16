@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/90" />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <Link
             href="/news-and-events/denver-mini-medopathies-meetup"
@@ -82,7 +82,7 @@ export default function Hero() {
                 <p className="mt-1 text-sm leading-snug text-primary-foreground/90">
                   {t(item.labelKey)}
                   {item.noteKey && (
-                    <sup className="ml-1 text-[10px]" aria-hidden="true">{metricFootnotes.findIndex((note) => note.valueKey === item.valueKey) + 1}</sup>
+                    <sup className="ml-1 text-xs" aria-hidden="true">{metricFootnotes.findIndex((note) => note.valueKey === item.valueKey) + 1}</sup>
                   )}
                 </p>
               </div>

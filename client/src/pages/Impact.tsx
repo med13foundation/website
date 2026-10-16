@@ -87,7 +87,7 @@ export default function Impact() {
       <main>
         <section className="relative overflow-hidden bg-[#e9f5f3] px-4 pb-14 pt-14 sm:pb-20 sm:pt-20">
           <div className="pointer-events-none absolute -right-24 -top-20 h-80 w-80 rounded-full bg-[#edab98]/25 blur-3xl" aria-hidden="true" />
-          <div className="relative mx-auto max-w-7xl">
+          <div className="relative mx-auto max-w-6xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-warm">{t("impact.eyebrow")}</p>
             <h1 className="max-w-4xl font-heading text-4xl font-bold leading-[1.08] text-primary sm:text-6xl">{t("impact.title")}</h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/80 sm:text-xl">{t("impact.intro")}<ImpactCitation numbers={[4]} /></p>
@@ -103,7 +103,7 @@ export default function Impact() {
         </section>
 
         <nav aria-label={t("impact.sectionNavLabel")} className="border-b border-border bg-background">
-          <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-4 py-3 text-sm font-semibold sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 text-sm font-semibold sm:px-6 lg:px-8">
             {["numbers", "fit", "roadmap", "next-steps", "take-part", "definitions", "sources"].map((id, index) => (
               <a key={id} href={`#${id}`} className="shrink-0 rounded-full px-3 py-2 text-primary hover:bg-[#e9f5f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
                 {t(id === "sources" ? "impact.sourcesTitle" : `impact.anchor${index + 1}`)}
@@ -113,7 +113,7 @@ export default function Impact() {
         </nav>
 
         <section id="numbers" className="scroll-mt-24 px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-6xl">
             <div className="mb-9 max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.numbersEyebrow")}</p>
               <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.numbersTitle")}</h2>
@@ -127,9 +127,9 @@ export default function Impact() {
                       {t(id === "families" ? "impact.familiesDataTitle" : "impact.researchFundingTitle")}
                     </h3>
                   )}
-                <article key={id} className="rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6">
+                <article key={id} className="rounded-lg border border-border bg-card p-5 shadow-sm sm:p-6">
                   <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t(`impact.metricLabels.${id}`)}</h4>
-                  <p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{value}</p>
+                  <p className="tabular-nums text-3xl font-bold tracking-tight text-primary sm:text-4xl">{value}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}<ImpactCitation numbers={metricSources[id]} /></p>
                   {id === "cells" && (
                     <div className="mt-4 rounded-lg bg-primary/5 p-3 text-sm leading-relaxed">
@@ -141,10 +141,10 @@ export default function Impact() {
                 </article>
                 </Fragment>
               ))}
-              <article className="rounded-xl border border-[#e9c6b8] bg-[#fff7f2] p-5 shadow-sm sm:p-6">
+              <article className="rounded-lg border border-[#e9c6b8] bg-[#fff7f2] p-5 shadow-sm sm:p-6">
                 <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t("impact.fundraisingTitle")}</h4>
                 <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div><p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t("impact.fundraisingFigure")}</p>
+                  <div><p className="tabular-nums text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t("impact.fundraisingFigure")}</p>
                     <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}<ImpactCitation numbers={[8]} /></p></div>
                 </div>
                 <p className="mt-3 border-t border-[#e9c6b8] pt-3 text-xs leading-relaxed text-muted-foreground">{t("impact.fundraisingNext")}</p>
@@ -155,7 +155,7 @@ export default function Impact() {
         </section>
 
         <section id="fit" className="scroll-mt-24 bg-[#f2f7f6] px-4 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.fitEyebrow")}</p>
               <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.fitTitle")}</h2>
@@ -167,7 +167,7 @@ export default function Impact() {
             </div>
             <ol className="space-y-3">
               {[1, 2, 3, 4, 5].map((n) => (
-                <li key={n} className="flex gap-4 rounded-xl border border-border bg-card p-4 sm:p-5">
+                <li key={n} className="flex gap-4 rounded-lg border border-border bg-card p-4 sm:p-5">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">{n}</span>
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center justify-between gap-2">
@@ -183,7 +183,7 @@ export default function Impact() {
         </section>
 
         <section id="roadmap" className="scroll-mt-24 px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.roadmapEyebrow")}</p>
               <h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.roadmapTitle")}</h2>
@@ -194,10 +194,10 @@ export default function Impact() {
             </div>
             <div className="mt-9 space-y-6">
               {stages.map((stage, i) => (
-                <section key={stage.id} id={stage.id} className="scroll-mt-24 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                <section key={stage.id} id={stage.id} className="scroll-mt-24 overflow-hidden rounded-lg border border-border bg-card shadow-sm">
                   <header className="flex flex-col gap-4 border-b border-border bg-[#f7faf9] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
                     <div className="flex items-start gap-4">
-                      <span className="font-mono text-3xl font-bold text-secondary sm:text-4xl">0{i + 1}</span>
+                      <span className="tabular-nums text-3xl font-bold text-secondary sm:text-4xl">0{i + 1}</span>
                       <div><h3 className="font-heading text-xl font-bold text-primary sm:text-2xl">{stage.title}</h3><p className="mt-1 text-sm text-muted-foreground">{stage.years}</p></div>
                     </div>
                     <span className="w-fit rounded-full bg-[#e9f5f3] px-4 py-2 text-sm font-semibold text-primary">{stage.count}</span>
@@ -208,7 +208,7 @@ export default function Impact() {
                         <div>
                           <div className="flex flex-wrap items-center gap-2">
                             <h4 className="font-semibold text-foreground">{milestone.title}</h4>
-                            {milestone.tag && <span className="rounded bg-[#fff0e9] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#9b5947]">{milestone.tag}</span>}
+                            {milestone.tag && <span className="rounded bg-[#fff0e9] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-[#9b5947]">{milestone.tag}</span>}
                           </div>
                           <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground">{milestone.detail}{milestone.sources && <ImpactCitation numbers={milestone.sources} />}</p>
                         </div>
@@ -223,11 +223,11 @@ export default function Impact() {
         </section>
 
         <section id="next-steps" className="scroll-mt-24 bg-[#f2f7f6] px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.nextEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.nextTitle")}</h2></div>
             <ol className="mt-8 grid gap-4 md:grid-cols-2">
-              {[1, 3, 4, 5, 6].map((n) => <li key={n} className="flex gap-4 rounded-xl border border-border bg-card p-5">
-                <span className="mt-0.5 font-mono text-sm font-bold text-warm">{t(`impact.step${n}When`)}</span>
+              {[1, 3, 4, 5, 6].map((n) => <li key={n} className="flex gap-4 rounded-lg border border-border bg-card p-5">
+                <span className="mt-0.5 tabular-nums text-sm font-bold text-warm">{t(`impact.step${n}When`)}</span>
                 <p className="text-sm leading-relaxed text-foreground/85">{t(`impact.step${n}Body`)}</p>
               </li>)}
             </ol>
@@ -235,18 +235,18 @@ export default function Impact() {
         </section>
 
         <section id="take-part" className="scroll-mt-24 px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-6xl">
             <div className="mb-9 max-w-3xl"><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.moveEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.moveTitle")}</h2></div>
             <div className="grid gap-5 lg:grid-cols-3">
-              <article className="flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-7"><Users className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.familiesTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.familiesBody")}</p><a href={RESEARCH_COHORT_FORM_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{t("impact.joinStudy")} <ExternalLink className="h-4 w-4" aria-hidden="true" /></a></article>
-              <article className="flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-7"><Microscope className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.researchersTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.researchersBody")}</p><a href="mailto:research@med13.org" className="mt-6 inline-flex w-fit items-center gap-2 rounded-md border border-primary px-4 py-2.5 text-sm font-semibold text-primary hover:bg-[#e9f5f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{t("impact.contactUs")} <Mail className="h-4 w-4" aria-hidden="true" /></a></article>
-              <article className="flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-7"><Wallet className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.donorsTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.donorsBody")}</p><a href={CLASSY_DONATION_URL} className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-warm px-4 py-2.5 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm">{t("impact.donate")} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></article>
+              <article className="flex flex-col rounded-lg border border-border bg-card p-6 sm:p-7"><Users className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.familiesTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.familiesBody")}</p><a href={RESEARCH_COHORT_FORM_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{t("impact.joinStudy")} <ExternalLink className="h-4 w-4" aria-hidden="true" /></a></article>
+              <article className="flex flex-col rounded-lg border border-border bg-card p-6 sm:p-7"><Microscope className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.researchersTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.researchersBody")}</p><a href="mailto:research@med13.org" className="mt-6 inline-flex w-fit items-center gap-2 rounded-md border border-primary px-4 py-2.5 text-sm font-semibold text-primary hover:bg-[#e9f5f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{t("impact.contactUs")} <Mail className="h-4 w-4" aria-hidden="true" /></a></article>
+              <article className="flex flex-col rounded-lg border border-border bg-card p-6 sm:p-7"><Wallet className="h-7 w-7 text-primary" aria-hidden="true" /><h3 className="mt-4 font-heading text-xl font-bold text-primary">{t("impact.donorsTitle")}</h3><p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{t("impact.donorsBody")}</p><a href={CLASSY_DONATION_URL} className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-warm px-4 py-2.5 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm">{t("impact.donate")} <ArrowRight className="h-4 w-4" aria-hidden="true" /></a></article>
             </div>
           </div>
         </section>
 
         <section id="definitions" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("impact.aboutEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.aboutTitle")}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("impact.aboutIntro")}</p></div>
             <div className="space-y-4">
               {["definition1", "definition2", "definitionGeneticIncidence", "definition3", "definitionCapital", "definition4", "definition5"].map((key) => (
@@ -256,7 +256,7 @@ export default function Impact() {
                   {key === "definitionCapital" && <ImpactCitation numbers={[7, 9]} />}
                 </p>
               ))}
-              <div className="rounded-xl border border-[#e5c6b8] bg-white/75 p-5">
+              <div className="rounded-lg border border-[#e5c6b8] bg-white/75 p-5">
                 <p className="font-semibold text-primary">{t("impact.fiscalTitle")}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t("impact.fiscalBody")}</p>
               </div>

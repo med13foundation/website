@@ -30,7 +30,7 @@ export default function Med13Syndrome() {
             className="pointer-events-none absolute -bottom-36 left-[8%] -z-10 h-72 w-72 rounded-full bg-[#a9d6ce]/40 blur-3xl"
             aria-hidden="true"
           />
-          <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-16">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-16">
             <div className="max-w-4xl">
               <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-warm">
                 {t("syndromePage.eyebrow")}
@@ -56,7 +56,7 @@ export default function Med13Syndrome() {
         <QuickFacts />
 
         <aside className="px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
-          <div className="mx-auto max-w-4xl rounded-2xl border border-[#c7ded9] bg-[#f2f8f6] px-6 py-6 sm:px-8 sm:py-7">
+          <div className="mx-auto max-w-4xl rounded-lg border border-[#c7ded9] bg-[#f2f8f6] px-6 py-6 sm:px-8 sm:py-7">
             <p className="mb-4 text-sm leading-relaxed text-foreground/75 sm:text-base">
               {t("syndromePage.populationNote")}
             </p>

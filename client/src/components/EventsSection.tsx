@@ -11,7 +11,7 @@ export default function EventsSection() {
 
   return (
     <section id="events" className="py-16 sm:py-24 bg-muted">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-events-title">
             {t('events.title')}
@@ -242,7 +242,7 @@ export default function EventsSection() {
             <p className="text-muted-foreground">{t('events.mediaSubtitle')}</p>
           </div>
           <Card data-testid="card-featured-video">
-            <CardContent className="p-0 overflow-hidden rounded-xl">
+            <CardContent className="p-0 overflow-hidden rounded-lg">
               <div className="aspect-video w-full">
                 <iframe
                   src="https://www.youtube.com/embed/m50_661nci0"
@@ -428,7 +428,7 @@ export default function EventsSection() {
         </div>
 
         {/* The Constellation campaign theme */}
-        <div className="relative mt-16 overflow-hidden rounded-2xl border border-primary/20 bg-primary px-6 py-10 text-primary-foreground shadow-sm sm:px-10 sm:py-12" data-testid="section-constellation-theme">
+        <div className="relative mt-16 overflow-hidden rounded-lg border border-primary/20 bg-primary px-6 py-10 text-primary-foreground shadow-sm sm:px-10 sm:py-12" data-testid="section-constellation-theme">
           <div className="pointer-events-none absolute -right-8 -top-8 opacity-10" aria-hidden="true">
             <Star className="h-32 w-32 fill-white text-white" />
           </div>

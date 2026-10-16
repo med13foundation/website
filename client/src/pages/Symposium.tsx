@@ -301,23 +301,23 @@ export default function Symposium() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur sm:p-8">
+              <div className="rounded-lg border border-primary/10 bg-white/80 p-5 shadow-sm backdrop-blur sm:p-8">
                 <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-                  <div className="flex items-start gap-3 rounded-xl bg-primary px-4 py-4 text-primary-foreground">
+                  <div className="flex items-start gap-3 rounded-lg bg-primary px-4 py-4 text-primary-foreground">
                     <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-[#bfe9d2]" />
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground">{t("symposium.dateLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.date")}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 rounded-xl bg-secondary/10 px-4 py-4 text-foreground">
+                  <div className="flex items-start gap-3 rounded-lg bg-secondary/10 px-4 py-4 text-foreground">
                     <Clock3 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.timeLabel")}</p>
                       <p className="mt-1 font-semibold">{t("symposium.time")}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 rounded-xl bg-[#f7e7ef] px-4 py-4 text-foreground">
+                  <div className="flex items-start gap-3 rounded-lg bg-[#f7e7ef] px-4 py-4 text-foreground">
                     <Globe2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c65f9e]" />
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">{t("symposium.formatLabel")}</p>
@@ -447,17 +447,17 @@ export default function Symposium() {
               </h2>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
+              <div className="rounded-lg border border-white/15 bg-white/10 p-6">
                 <BookOpenText className="mb-5 h-6 w-6 text-[#bfe9d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.openTitle")}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.openBody")}</p>
               </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
+              <div className="rounded-lg border border-white/15 bg-white/10 p-6">
                 <LockKeyhole className="mb-5 h-6 w-6 text-[#f4b5d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.familyTitle")}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.familyBody")}</p>
               </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 p-6">
+              <div className="rounded-lg border border-white/15 bg-white/10 p-6">
                 <Users className="mb-5 h-6 w-6 text-[#bfe9d2]" />
                 <h3 className="font-heading text-lg font-bold">{t("symposium.privacyTitle")}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/80">{t("symposium.privacyBody")}</p>

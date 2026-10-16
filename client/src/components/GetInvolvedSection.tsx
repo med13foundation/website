@@ -58,7 +58,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
       <div className="absolute inset-0 bg-gradient-to-br from-accent/95 via-background/92 to-muted/95" />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-get-involved-title">
             {t('getInvolved.title')}
@@ -127,7 +127,7 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
             );
           })}
         </div>
-        <div className="mt-8 flex flex-col gap-5 rounded-xl border border-primary/15 bg-card/95 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-8">
+        <div className="mt-8 flex flex-col gap-5 rounded-lg border border-primary/15 bg-card/95 p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div className="flex items-start gap-4">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
               <Plane className="h-5 w-5" aria-hidden="true" />

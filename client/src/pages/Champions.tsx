@@ -22,7 +22,7 @@ export default function Champions() {
     return new Intl.DateTimeFormat(i18n.language === "es" ? "es" : "en", { month: "long", year: "numeric" }).format(new Date(year, number - 1, 1));
   };
   const list = (items: typeof entries) => (
-    <ul className="divide-y divide-border rounded-xl border border-border bg-white px-5 sm:px-8">
+    <ul className="divide-y divide-border rounded-lg border border-border bg-white px-5 sm:px-8">
       {items.map((entry) => (
         <li key={entry.name} className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-1 py-4">
           <span className="font-medium text-primary">
