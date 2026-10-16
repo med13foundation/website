@@ -6,8 +6,8 @@
 export const SITE_URL = "https://med13.org";
 export const SITE_NAME = "MED13 Foundation";
 
-/** Public landscape asset closest to ~1200×630 (1920×790). Replace with a dedicated OG image when available. */
-export const DEFAULT_OG_IMAGE_PATH = "/images/combined_brain.png";
+/** 1200×630 share image: full foundation logo on white, rendered from the foundation's logo SVG. */
+export const DEFAULT_OG_IMAGE_PATH = "/images/og-med13.png";
 
 export type RouteMetadata = {
   path: string;
