@@ -1,24 +1,40 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
+import { timingSafeEqual } from "crypto";
 import { storage } from "./storage";
 import { insertNewsletterSubscriberSchema, insertNewsletterSchema, insertSymposiumRegistrationSchema } from "@shared/schema";
 import { sendNewsletterEmail, sendNewsletterBatch, sendTestEmail } from "./email";
 import { syncSubscribersFromSheet } from "./googleSheets";
+import { buildLlmsTxt, buildSitemapXml, SITE_URL } from "@shared/route-metadata";
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbzI-YqFimBUMSKaSerTOYlhabtzygy7P2ZvtICm9elO221HFAR-dM8B7Bn9sVCDbW81/exec";
 
-const SITE_URL = "https://med13.org";
+const ADMIN_PASSWORD = process.env.NEWSLETTER_BACKEND;
 
-const ADMIN_PASSWORD = "admins";
+if (!ADMIN_PASSWORD) {
+  console.warn("NEWSLETTER_BACKEND is not set. Admin login is disabled.");
+}
+
+function matchesAdminPassword(candidate: unknown): boolean {
+  if (!ADMIN_PASSWORD || typeof candidate !== "string") {
+    return false;
+  }
+  const expected = Buffer.from(ADMIN_PASSWORD);
+  const actual = Buffer.from(candidate);
+  return expected.length === actual.length && timingSafeEqual(expected, actual);
+}
 
 function requireAdminAuth(req: Request, res: Response, next: NextFunction) {
+  if (!ADMIN_PASSWORD) {
+    return res.status(503).json({ error: "Admin login is not configured" });
+  }
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ error: "Authentication required" });
   }
   const token = authHeader.slice(7);
-  if (token !== ADMIN_PASSWORD) {
+  if (!matchesAdminPassword(token)) {
     return res.status(403).json({ error: "Invalid credentials" });
   }
   next();
@@ -26,29 +42,13 @@ function requireAdminAuth(req: Request, res: Response, next: NextFunction) {
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/sitemap.xml", (_req, res) => {
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${SITE_URL}/</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/gala</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/who-we-are</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>`;
     res.header("Content-Type", "application/xml");
-    res.send(sitemap);
+    res.send(buildSitemapXml());
+  });
+
+  app.get("/llms.txt", (_req, res) => {
+    res.header("Content-Type", "text/plain; charset=utf-8");
+    res.send(buildLlmsTxt());
   });
 
   app.get("/robots.txt", (_req, res) => {
@@ -116,8 +116,11 @@ Sitemap: ${SITE_URL}/sitemap.xml`;
 
   // Admin: Auth check
   app.post("/api/admin/login", (req, res) => {
+    if (!ADMIN_PASSWORD) {
+      return res.status(503).json({ error: "Admin login is not configured" });
+    }
     const { password } = req.body;
-    if (password === ADMIN_PASSWORD) {
+    if (matchesAdminPassword(password)) {
       res.json({ success: true, token: ADMIN_PASSWORD });
     } else {
       res.status(403).json({ error: "Invalid password" });

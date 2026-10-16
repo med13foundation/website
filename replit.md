@@ -46,7 +46,7 @@ Preferred communication style: Simple, everyday language.
 - Database is app-scoped (Helium) and not accessible from external systems
 
 **Admin Dashboard (`/admin`):**
-- Password-protected admin panel (test password: `admins`)
+- Password-protected admin panel. The password is the `NEWSLETTER_BACKEND` Replit Secret; never write it in code or in this file
 - Simple Bearer token auth via `Authorization` header
 - Login page at `/admin` with session-based token storage
 - Two tabs: Subscribers and Newsletters

@@ -5,6 +5,7 @@ import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
+import { injectRouteHead, sendInjectedIndex } from "./inject-head";
 
 const viteLogger = createLogger();
 
@@ -59,7 +60,8 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const injected = injectRouteHead(page, url);
+      res.status(200).set({ "Content-Type": "text/html" }).end(injected);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -76,10 +78,33 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  // index:false so "/" hits the injected SPA fallback instead of raw index.html.
+  // Hashed Vite assets: long-lived immutable cache. Other dist/public files
+  // (favicon, unhashed images): short public max-age (1h).
+  app.use(
+    express.static(distPath, {
+      index: false,
+      setHeaders(res, filePath) {
+        const rel = path.relative(distPath, filePath);
+        if (rel === "index.html") {
+          res.setHeader("Cache-Control", "no-cache");
+        } else if (rel.split(path.sep)[0] === "assets") {
+          res.setHeader(
+            "Cache-Control",
+            "public, max-age=31536000, immutable",
+          );
+        } else {
+          res.setHeader("Cache-Control", "public, max-age=3600");
+        }
+      },
+    }),
+  );
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // SPA fallback with per-route head tags — must not be cached long-term.
+  // index.html only changes on deploy, so read it once at startup.
+  const indexTemplate = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+  app.use("*", (req, res) => {
+    res.setHeader("Cache-Control", "no-cache");
+    sendInjectedIndex(indexTemplate, req, res);
   });
 }
