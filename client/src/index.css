@@ -60,6 +60,8 @@
 
   --destructive-text: 15 74% 43%;
 
+  --warm-text: 12 39% 46%;
+
   --secondary-foreground: 0 0% 18%;
 
   --muted: 0 0% 96%;
@@ -185,6 +187,8 @@
   --secondary-text: 12 100% 75%;
 
   --destructive-text: 15 74% 63%;
+
+  --warm-text: 12 39% 46%;
 
 
   --secondary-foreground: 0 0% 18%;
@@ -318,7 +322,7 @@
 }
 
 .tiptap a {
-  color: hsl(var(--primary));
+  color: hsl(var(--primary-text));
   text-decoration: underline;
   cursor: pointer;
 }
@@ -402,7 +406,7 @@
 }
 
 .newsletter-content a {
-  color: hsl(var(--primary));
+  color: hsl(var(--primary-text));
   text-decoration: underline;
   text-underline-offset: 2px;
 }

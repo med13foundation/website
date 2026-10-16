@@ -324,7 +324,7 @@ export default function Gala() {
             {readinessStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-5 text-center"
+                className="rounded-lg border border-white/20 bg-white/10 px-4 py-5 text-center"
               >
                 <p className="text-4xl font-heading font-bold text-primary-foreground">{stat.value}</p>
                 <p className="mt-2 text-sm leading-snug text-primary-foreground/90">{stat.label}</p>

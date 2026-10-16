@@ -22,6 +22,7 @@ export default {
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        warm: "hsl(var(--warm-text) / <alpha-value>)",
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

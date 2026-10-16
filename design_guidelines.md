@@ -26,7 +26,9 @@ The palette evokes optimism, empathy, and clarity - balancing medical trust with
 - Use gentle gradients like teal → coral to suggest collaboration between science and love
 - Primary buttons and CTAs use the warm teal as the fill, with night-sky navy `#0B1530` text (white on teal fails contrast)
 - Secondary highlights use coral-peach for emotional warmth, as a fill or accent, never as text
-- Text that would be teal or coral uses navy instead: `text-primary` and `text-secondary` already render navy
+- Text that would be teal or coral uses navy instead: in light mode, `text-primary` and `text-secondary` render navy
+- Text colors come from tokens, never hex: navy `--primary-text` / `--secondary-text` (`text-primary`, `text-secondary`), warm brown `--warm-text` `#A25947` for small accent labels (`text-warm`, also `bg-warm` with white text), rust `--destructive-text` for errors (`text-destructive`), and `--muted-foreground` (40% grey) for secondary text
+- Dark-mode tokens exist but aren't audited for contrast; the site doesn't use dark mode
 - Accent yellow for hope and optimism touches
 
 ## Typography - "Readable, Modern, Gentle"
@@ -53,12 +55,12 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 **Goal:** Make the mission statement *felt* before it's read.
 
 **Design Approach:**
-- Background: Medical research/DNA imagery with dark overlay (85-90% opacity) for excellent text contrast
-- Text: White text over the darkened background ensures readability
+- Background: Medical research/DNA imagery under a teal-to-coral gradient overlay (85-90% opacity)
+- Text: Navy text over the light gradient ensures readability (white fails contrast here)
 - Visual metaphor: Subtle scientific elements (DNA strands, molecular patterns) suggest research without being clinical
 - Call-to-action buttons:
-  - Primary: White background with teal text - high contrast, approachable
-  - Secondary: Semi-transparent with white text and backdrop blur - modern, elegant
+  - Primary: White background with navy text - high contrast, approachable
+  - Secondary: Semi-transparent with navy text and backdrop blur - modern, elegant
 
 **Layout:**
 - Full-width hero with thematic background image
@@ -72,7 +74,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Approach:**
 - Use thematically relevant background images:
-  - **Hero section**: Medical research/DNA theme with dark overlay for text contrast
+  - **Hero section**: Medical research/DNA theme with the teal-to-coral overlay and navy text
   - **Get Involved section**: Community/connection theme with light overlay for warmth
 - When possible, include authentic family photos (diverse, natural lighting, candid moments)
 - Research context in soft focus to avoid sterility
