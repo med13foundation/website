@@ -36,7 +36,7 @@ export default function HopeIsAPractice() {
         <section className="relative overflow-hidden bg-primary px-4 py-16 text-primary-foreground sm:py-24">
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-secondary/25 blur-3xl" />
           <div className="relative mx-auto max-w-5xl">
-            <Button variant="ghost" className="mb-8 px-0 text-primary-foreground/80 hover:bg-transparent hover:text-white" asChild>
+            <Button variant="ghost" className="mb-8 px-0 text-primary-foreground/80 hover:bg-transparent hover:text-primary-foreground" asChild>
               <Link href="/news-and-events">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 {t("hopePractice.back")}
@@ -44,7 +44,7 @@ export default function HopeIsAPractice() {
             </Button>
             <div className="mb-5 flex flex-wrap gap-2">
               {(["communityTag", "bayAreaTag", "freeTag"] as const).map((key) => (
-                <Badge key={key} variant="secondary" className="bg-white/15 text-white hover:bg-white/20">
+                <Badge key={key} variant="secondary" className="bg-white/15 text-primary-foreground hover:bg-white/20">
                   {t(`hopePractice.${key}`)}
                 </Badge>
               ))}

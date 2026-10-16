@@ -430,11 +430,11 @@ export default function EventsSection() {
         {/* The Constellation campaign theme */}
         <div className="relative mt-16 overflow-hidden rounded-2xl border border-primary/20 bg-primary px-6 py-10 text-primary-foreground shadow-sm sm:px-10 sm:py-12" data-testid="section-constellation-theme">
           <div className="pointer-events-none absolute -right-8 -top-8 opacity-10" aria-hidden="true">
-            <Star className="h-32 w-32 fill-primary-foreground text-primary-foreground" />
+            <Star className="h-32 w-32 fill-white text-white" />
           </div>
           <div className="relative max-w-3xl">
             <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground/80">
-              <Star className="h-4 w-4 fill-primary-foreground text-primary-foreground" aria-hidden="true" />
+              <Star className="h-4 w-4 fill-white text-white" aria-hidden="true" />
               {t('events.constellationEyebrow')}
             </div>
             <h3 className="mt-3 font-heading text-3xl font-bold text-primary-foreground sm:text-4xl" data-testid="text-constellation-title">

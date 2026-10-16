@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="max-w-3xl mx-auto text-center">
           <Link
             href="/news-and-events/denver-mini-medopathies-meetup"
-            className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            className="group mb-8 inline-flex max-w-full items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-left text-sm text-primary-foreground backdrop-blur-sm transition-colors hover:bg-white/20"
             data-testid="link-top-denver-invitation"
           >
             <Sparkles className="h-4 w-4 shrink-0 text-[#bfe9d2]" aria-hidden="true" />
@@ -36,10 +36,10 @@ export default function Hero() {
             </span>
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 min-h-[2.5em]" data-testid="text-hero-title">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 min-h-[2.5em]" data-testid="text-hero-title">
             {t('hero.title')}
           </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
+          <p className="text-lg sm:text-xl text-primary-foreground/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
             {t('hero.subtitle')}
           </p>
 
@@ -56,7 +56,7 @@ export default function Hero() {
             </Button>
             <Link
               href="/who-we-are"
-              className="text-sm font-semibold text-white underline underline-offset-4 hover:text-white/80"
+              className="text-sm font-semibold text-primary-foreground underline underline-offset-4 hover:text-primary-foreground/80"
               data-testid="link-our-story"
             >
               {t('hero.learnStory')}
@@ -72,14 +72,14 @@ export default function Hero() {
             {proofItems.map((item) => (
               <div
                 key={item.labelKey}
-                className="min-w-0 rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-white backdrop-blur-sm transition-colors group-hover:bg-white/20"
+                className="min-w-0 rounded-lg border border-white/20 bg-white/10 px-4 py-4 text-center text-primary-foreground backdrop-blur-sm transition-colors group-hover:bg-white/20"
                 data-testid={`hero-metric-${item.valueKey.split(".").at(-1)}`}
                 role="group"
                 aria-label={t(item.labelKey)}
                 aria-describedby={item.noteKey ? footnoteId(item.valueKey) : undefined}
               >
                 <p className="font-heading text-2xl font-bold">{t(item.valueKey)}</p>
-                <p className="mt-1 text-sm leading-snug text-white/90">
+                <p className="mt-1 text-sm leading-snug text-primary-foreground/90">
                   {t(item.labelKey)}
                   {item.noteKey && (
                     <sup className="ml-1 text-[10px]" aria-hidden="true">{metricFootnotes.findIndex((note) => note.valueKey === item.valueKey) + 1}</sup>
@@ -88,13 +88,13 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <span className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-white underline underline-offset-4">
+          <span className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-primary-foreground underline underline-offset-4">
             {t("nav.impact")}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </span>
         </Link>
-        <aside className="mt-6 border-t border-white/20 pt-4 text-xs leading-relaxed text-white/90" aria-labelledby="home-impact-footnotes-title" data-testid="home-impact-footnotes">
-          <h2 id="home-impact-footnotes-title" className="mb-2 font-semibold text-white">{t("home.proofFootnotesTitle")}</h2>
+        <aside className="mt-6 border-t border-white/20 pt-4 text-xs leading-relaxed text-primary-foreground/90" aria-labelledby="home-impact-footnotes-title" data-testid="home-impact-footnotes">
+          <h2 id="home-impact-footnotes-title" className="mb-2 font-semibold text-primary-foreground">{t("home.proofFootnotesTitle")}</h2>
           <ol className="list-decimal space-y-1.5 pl-4">
             {metricFootnotes.map((item) => (
               <li key={item.valueKey} id={footnoteId(item.valueKey)}>

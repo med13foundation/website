@@ -5,12 +5,24 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      textColor: {
+        primary: {
+          DEFAULT: "hsl(var(--primary-text) / <alpha-value>)",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary-text) / <alpha-value>)",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive-text) / <alpha-value>)",
+        },
+      },
       borderRadius: {
         lg: ".5625rem", /* 9px */
         md: ".375rem", /* 6px */
         sm: ".1875rem", /* 3px */
       },
       colors: {
+        warm: "hsl(var(--warm-text) / <alpha-value>)",
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",

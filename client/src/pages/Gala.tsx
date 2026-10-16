@@ -117,13 +117,13 @@ export default function Gala() {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img src={logoUrl} alt="MED13 Foundation Logo" className="h-24 w-auto mx-auto mb-5 drop-shadow-sm" data-testid="img-gala-logo" />
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#E67E5C] mb-4" data-testid="text-gala-eyebrow">
+          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-4" data-testid="text-gala-eyebrow">
             {t("gala.eyebrow")}
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-[#1d5f66] mb-4" data-testid="text-gala-title">
             {t("gala.title")}
           </h1>
-          <p className="text-lg sm:text-xl italic text-[#d96a45] font-medium mb-6" data-testid="text-gala-tagline">
+          <p className="text-lg sm:text-xl italic text-primary font-medium mb-6" data-testid="text-gala-tagline">
             {t("gala.tagline")}
           </p>
           <p className="text-base sm:text-lg text-[#3a3a3a] max-w-2xl mx-auto mb-8" data-testid="text-gala-invite">
@@ -166,7 +166,7 @@ export default function Gala() {
             </Button>
             <Button
               size="lg"
-              className="bg-[#E67E5C] border-[#d96a45] text-white"
+              className="bg-[#E67E5C] border-[#d96a45] text-primary-foreground"
               asChild
               data-testid="button-gala-rsvp"
             >
@@ -324,9 +324,9 @@ export default function Gala() {
             {readinessStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-5 text-center"
+                className="rounded-lg border border-white/20 bg-white/10 px-4 py-5 text-center"
               >
-                <p className="text-4xl font-heading font-bold text-[#FFD9C7]">{stat.value}</p>
+                <p className="text-4xl font-heading font-bold text-primary-foreground">{stat.value}</p>
                 <p className="mt-2 text-sm leading-snug text-primary-foreground/90">{stat.label}</p>
               </div>
             ))}
