@@ -53,7 +53,7 @@ export default function DenverMiniMeetup() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden bg-[#edf7f5] px-4 py-14 sm:py-20">
           <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-secondary/20 blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
@@ -132,7 +132,7 @@ export default function DenverMiniMeetup() {
         </section>
 
         <section className="px-4 py-12 sm:py-16">
-          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="space-y-6">
               <Card className="border-primary/15">
                 <CardContent className="space-y-6 p-6">

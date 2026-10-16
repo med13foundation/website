@@ -75,19 +75,22 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background flex items-center justify-center p-4 focus:outline-none">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="mx-auto mb-2 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
             <Lock className="w-6 h-6 text-primary" />
           </div>
-          <CardTitle className="font-heading text-xl" data-testid="text-admin-title">Admin Access</CardTitle>
+          <h1 className="font-heading text-xl font-semibold leading-none tracking-tight" data-testid="text-admin-title">Admin Access</h1>
           <p className="text-sm text-muted-foreground">Enter your admin password to continue</p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
+            <label htmlFor="admin-password" className="sr-only">Password</label>
             <Input
+              id="admin-password"
               type="password"
+              autoComplete="current-password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +103,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
           </form>
         </CardContent>
       </Card>
-    </div>
+    </main>
   );
 }
 
@@ -286,7 +289,9 @@ function NewsletterEditor({
         </h2>
       </div>
 
+      <label htmlFor="newsletter-title" className="sr-only">Newsletter title</label>
       <Input
+        id="newsletter-title"
         placeholder="Newsletter title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -591,8 +596,11 @@ function NewslettersTab() {
                           Send a preview of "{nl.title}" to test how it looks in an inbox.
                         </AlertDialogDescription>
                       </AlertDialogHeader>
+                      <label htmlFor="test-email-address" className="sr-only">Send test to email address</label>
                       <Input
+                        id="test-email-address"
                         type="email"
+                        autoComplete="email"
                         placeholder="your@email.com"
                         value={testEmailTarget}
                         onChange={(e) => setTestEmailTarget(e.target.value)}
@@ -722,7 +730,7 @@ export default function Admin() {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 py-6">
+      <main id="main" tabIndex={-1} className="max-w-4xl mx-auto px-4 py-6 focus:outline-none">
         <Tabs defaultValue="subscribers">
           <TabsList className="mb-6" data-testid="tabs-admin">
             <TabsTrigger value="subscribers" data-testid="tab-subscribers">

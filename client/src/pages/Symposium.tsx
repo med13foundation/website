@@ -249,7 +249,7 @@ export default function Symposium() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden border-b border-border bg-[#f4f8f5] py-16 sm:py-24" data-testid="section-symposium-hero">
           <div className="absolute -left-24 top-12 h-72 w-72 rounded-full bg-[#d9f0e7] blur-3xl" aria-hidden="true" />
           <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-[#f7dce8] blur-3xl" aria-hidden="true" />

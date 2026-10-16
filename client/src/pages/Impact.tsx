@@ -84,7 +84,7 @@ export default function Impact() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden bg-[#e9f5f3] px-4 pb-14 pt-14 sm:pb-20 sm:pt-20">
           <div className="pointer-events-none absolute -right-24 -top-20 h-80 w-80 rounded-full bg-[#edab98]/25 blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto max-w-7xl">

@@ -33,7 +33,7 @@ export default function WaysToGive() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden bg-[#e9f5f3] px-4 py-16 sm:py-24">
           <div className="absolute -right-24 -top-20 h-80 w-80 rounded-full bg-secondary/15 blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto max-w-6xl">
@@ -79,7 +79,7 @@ export default function WaysToGive() {
               <p className="mt-3 text-muted-foreground">{t("waysToGive.coordinateBody")}</p>
               <p className="mt-3 text-sm text-muted-foreground">{t("waysToGive.transferNote")}</p>
             </div>
-            <Button asChild size="lg" className="shrink-0 self-start">
+            <Button asChild size="lg" className="h-auto max-w-full shrink-0 self-start whitespace-normal py-2 text-left">
               <a href={TRAVEL_CONTACT}>
                 <Mail className="mr-2 h-4 w-4" aria-hidden="true" /> {t("waysToGive.contactButton")}
               </a>
