@@ -137,25 +137,24 @@ export const routeMetadata: RouteMetadata[] = [
   },
 ];
 
-function normalizePath(rawPath: string): string {
+/** Strips query and hash, and a trailing slash on anything but "/". */
+export function normalizePath(rawPath: string): string {
   const pathOnly = rawPath.split("?")[0].split("#")[0] || "/";
   if (pathOnly.length > 1 && pathOnly.endsWith("/")) {
     return pathOnly.slice(0, -1);
   }
-  return pathOnly || "/";
+  return pathOnly;
 }
 
 export function getDefaultRouteMetadata(): RouteMetadata {
   return routeMetadata[0];
 }
 
-export function resolveRouteMetadata(rawPath: string): RouteMetadata {
+/** Returns undefined for paths that aren't a known page, so callers can treat them as not found. */
+export function resolveRouteMetadata(rawPath: string): RouteMetadata | undefined {
   const path = normalizePath(rawPath);
   const exact = routeMetadata.find((route) => !route.match && route.path === path);
-  if (exact) return exact;
-  const patterned = routeMetadata.find((route) => route.match?.test(path));
-  if (patterned) return patterned;
-  return getDefaultRouteMetadata();
+  return exact ?? routeMetadata.find((route) => route.match?.test(path));
 }
 
 export function getSitemapRoutes(): RouteMetadata[] {
@@ -250,7 +249,7 @@ export function buildEventJsonLd(rawPath: string): Record<string, unknown> | nul
 }
 
 export function buildLlmsTxt(): string {
-  const home = resolveRouteMetadata("/");
+  const home = getDefaultRouteMetadata();
   const lines = [
     `# ${SITE_NAME}`,
     "",

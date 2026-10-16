@@ -100,9 +100,11 @@ export function serveStatic(app: Express) {
     }),
   );
 
-  // SPA fallback with per-route head tags — must not be cached long-term
+  // SPA fallback with per-route head tags — must not be cached long-term.
+  // index.html only changes on deploy, so read it once at startup.
+  const indexTemplate = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
   app.use("*", (req, res) => {
     res.setHeader("Cache-Control", "no-cache");
-    sendInjectedIndex(distPath, req, res);
+    sendInjectedIndex(indexTemplate, req, res);
   });
 }
