@@ -138,7 +138,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 - Section reveal: Fade-in + upward motion on scroll (0.3-0.4s ease). Content is still visible if JavaScript fails or the reveal never fires
 - Smooth scroll behavior for anchor navigation
 - Background parallax on hero for subtle depth
-- Respect `prefers-reduced-motion: reduce`: turn off parallax, scroll reveals, lift effects and smooth scrolling, and show content in place *(2.3.3 is AAA, but people with vestibular conditions are who this rule protects)*
+- Respect `prefers-reduced-motion: reduce`: turn off parallax, scroll reveals, lift effects and smooth scrolling, and show content in place *(2.3.3 is AAA, but people with vestibular conditions are who this rule protects; also supports 2.2.2)*
 - Anything that moves, blinks or scrolls on its own for more than 5 seconds has a pause control *(2.2.2)*
 - Nothing flashes more than three times a second *(2.3.1)*
 - Any drag interaction (sliders, carousels, reordering) also works with a single tap or click *(2.5.7)*
@@ -157,7 +157,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Themes:**
 - 🧬 Research → DNA strand in navy on a teal chip, or teal when it's decorative and labelled by text
-- 👨‍👩‍👧 Family → Coral heart + people silhouettes
+- 👨‍👩‍👧 Family → Navy heart + people silhouettes on a coral chip, or a coral heart when it's decorative and labelled by text
 - 🤝 Collaboration → Interlocking circles
 - 💡 Discovery → Navy bulb on a sunlight-yellow chip (yellow alone is 1.44:1 on white)
 - 📊 Data → Chart/graph in navy, or teal when it's decorative and labelled by text
@@ -194,7 +194,8 @@ Icon-only buttons (social links, close, menu) have an accessible name *(4.1.2)*
 - Form labels explicitly associated. Required fields say "required" in the label, not only with an asterisk or colour *(1.3.1, 3.3.2)*
 - Errors show in rust `text-destructive` (5.14:1 on white) with an icon and a message that says how to fix them, are linked to the field with `aria-describedby`, and are announced (`role="alert"` or a focused summary). Never show an error with a red border alone *(3.3.1, 3.3.3, 1.4.1, 4.1.3)*
 - Don't make people retype what they already entered in the same flow *(3.3.7)*
-- No CAPTCHA puzzles on the newsletter or contact forms; use a honeypot instead. Sign-in pages allow paste and password managers *(3.3.8)*
+- No CAPTCHA puzzles or memory tests on the newsletter or contact forms; use a honeypot or another accessible alternative
+- Sign-in pages allow paste and password managers *(3.3.8)*
 - Success messages ("Thanks for subscribing") are announced to screen readers *(4.1.3)*
 - Skip to content link, visible on focus *(2.4.1)*
 - Language: `<html lang="en">` or `lang="es"` matches the page, and any phrase in the other language is wrapped in `lang` *(3.1.1, 3.1.2)*
