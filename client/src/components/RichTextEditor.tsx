@@ -346,7 +346,7 @@ export default function RichTextEditor({ content, onChange, placeholder }: RichT
     if (!text) return;
     const url = window.prompt("Button link URL", "https://");
     if (!url) return;
-    const buttonHtml = `<p style="text-align: center; margin: 24px 0;"><a href="${url}" style="display: inline-block; padding: 12px 32px; background-color: #68B0AB; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">${text}</a></p>`;
+    const buttonHtml = `<p style="text-align: center; margin: 24px 0;"><a href="${url}" style="display: inline-block; padding: 12px 32px; background-color: #68B0AB; color: #0B1530; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">${text}</a></p>`;
     editor.chain().focus().insertContent(buttonHtml).run();
   }, [editor]);
 

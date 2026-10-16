@@ -64,7 +64,7 @@ export function AuctionDonorRecognition() {
   if (recognitionToday() > "2027-03-31") return null;
 
   return (
-    <section className="bg-[#f5f8f7] py-12 sm:py-16" data-testid="section-gala-auction-donors">
+    <section className="bg-muted py-12 sm:py-16" data-testid="section-gala-auction-donors">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">{t("recognition.donorsTitle")}</h2>
         <p className="mt-3 text-muted-foreground">{t("recognition.donorsIntro")}</p>

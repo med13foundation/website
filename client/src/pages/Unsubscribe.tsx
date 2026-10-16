@@ -39,7 +39,7 @@ export default function Unsubscribe() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="max-w-md w-full">
           <CardContent className="py-12 text-center">
-            <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+            <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
             <h1 className="text-xl font-heading font-bold mb-2" data-testid="text-unsubscribe-success">
               {t("unsubscribe.successTitle")}
             </h1>
