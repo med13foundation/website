@@ -10,7 +10,7 @@ const sourceLinks: Record<number, { url: string; label: string }> = {
 export function ImpactCitation({ numbers }: { numbers: number[] }) {
   const { t } = useTranslation();
   return (
-    <sup className="ml-1 text-xs font-semibold text-[#2f6b67]">
+    <sup className="ml-1 text-xs font-semibold text-primary">
       {numbers.map((number, index) => (
         <Fragment key={number}>
           {index > 0 && ", "}
@@ -30,7 +30,7 @@ export function ImpactCitation({ numbers }: { numbers: number[] }) {
 export default function ImpactSources() {
   const { t } = useTranslation();
   return (
-    <section id="sources" aria-labelledby="impact-sources-title" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-12">
+    <section id="sources" aria-labelledby="impact-sources-title" className="scroll-mt-24 border-t border-border bg-muted px-4 py-12">
       <div className="mx-auto max-w-7xl">
         <h2 id="impact-sources-title" className="font-heading text-2xl font-bold text-primary">{t("impact.sourcesTitle")}</h2>
         <ol className="mt-5 max-w-4xl list-decimal space-y-4 pl-6 text-sm leading-relaxed text-foreground/80">
@@ -39,7 +39,7 @@ export default function ImpactSources() {
               {t(`impact.sources.${number}`)}
               {sourceLinks[number] && (
                 <>{" "}
-                  <a href={sourceLinks[number].url} target="_blank" rel="noopener noreferrer" className="break-words text-[#2f6b67] underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                  <a href={sourceLinks[number].url} target="_blank" rel="noopener noreferrer" className="break-words text-primary underline underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
                     {sourceLinks[number].label}
                   </a>
                 </>
