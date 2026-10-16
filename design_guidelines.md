@@ -101,7 +101,7 @@ Communicate clarity and care at first glance with humanistic, approachable type.
 
 **Cards & Components:**
 - Clean white cards with subtle elevation
-- 6-8px border radius for gentle, approachable feel
+- 6-8px border radius for gentle, approachable feel (`rounded-lg`, 8px). Pills, avatars, photos, video frames and small icon chips keep their own shape
 - Semi-transparent cards (bg-card/95) with backdrop blur over background images
 - Icon + Title + Description pattern
 - Hover: Subtle elevation increase using hover-elevate utility
