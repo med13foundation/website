@@ -10,10 +10,10 @@ export default function RoadmapSection() {
     {
       yearKey: "roadmap.phase1Year",
       titleKey: "roadmap.phase1Title",
-      status: "in-progress",
-      rowClass: "border-l-[#63A8A4] bg-[#63A8A4]/10",
-      accentClass: "text-[#63A8A4]",
-      bulletClass: "text-[#63A8A4]",
+      status: "active",
+      rowClass: "border-l-primary bg-primary/10",
+      accentClass: "text-primary",
+      bulletClass: "text-primary",
       itemKeys: [
         "roadmap.phase1Item1",
         "roadmap.phase1Item2",
@@ -25,9 +25,9 @@ export default function RoadmapSection() {
       yearKey: "roadmap.phase2Year",
       titleKey: "roadmap.phase2Title",
       status: "upcoming",
-      rowClass: "border-l-[#EDAB98] bg-[#EDAB98]/15",
-      accentClass: "text-[#EDAB98]",
-      bulletClass: "text-[#EDAB98]",
+      rowClass: "border-l-secondary bg-secondary/20",
+      accentClass: "text-secondary",
+      bulletClass: "text-secondary",
       itemKeys: [
         "roadmap.phase2Item1",
         "roadmap.phase2Item2",
@@ -38,10 +38,10 @@ export default function RoadmapSection() {
     {
       yearKey: "roadmap.phase3Year",
       titleKey: "roadmap.phase3Title",
-      status: "upcoming",
-      rowClass: "border-l-[#63A8A4] bg-[#63A8A4]/10",
-      accentClass: "text-[#63A8A4]",
-      bulletClass: "text-[#63A8A4]",
+      status: "future",
+      rowClass: "border-l-border bg-muted",
+      accentClass: "text-muted-foreground",
+      bulletClass: "text-muted-foreground",
       itemKeys: [
         "roadmap.phase3Item1",
         "roadmap.phase3Item2",
@@ -52,10 +52,10 @@ export default function RoadmapSection() {
     {
       yearKey: "roadmap.phase4Year",
       titleKey: "roadmap.phase4Title",
-      status: "upcoming",
-      rowClass: "border-l-[#EDAB98] bg-[#EDAB98]/15",
-      accentClass: "text-[#EDAB98]",
-      bulletClass: "text-[#EDAB98]",
+      status: "future",
+      rowClass: "border-l-border bg-muted",
+      accentClass: "text-muted-foreground",
+      bulletClass: "text-muted-foreground",
       itemKeys: [
         "roadmap.phase4Item1",
         "roadmap.phase4Item2",
@@ -66,10 +66,10 @@ export default function RoadmapSection() {
     {
       yearKey: "roadmap.phase5Year",
       titleKey: "roadmap.phase5Title",
-      status: "upcoming",
-      rowClass: "border-l-[#63A8A4] bg-[#63A8A4]/10",
-      accentClass: "text-[#63A8A4]",
-      bulletClass: "text-[#63A8A4]",
+      status: "future",
+      rowClass: "border-l-border bg-muted",
+      accentClass: "text-muted-foreground",
+      bulletClass: "text-muted-foreground",
       itemKeys: [
         "roadmap.phase5Item1",
         "roadmap.phase5Item2",
@@ -100,7 +100,7 @@ export default function RoadmapSection() {
               <CardHeader>
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div className="flex items-center gap-3">
-                    {phase.status === "in-progress" ? (
+                    {phase.status === "active" ? (
                       <CheckCircle2 className={`w-6 h-6 ${phase.accentClass}`} />
                     ) : (
                       <Circle className={`w-6 h-6 ${phase.accentClass}`} />
@@ -110,9 +110,19 @@ export default function RoadmapSection() {
                       <p className="text-sm text-muted-foreground mt-1">{t(phase.yearKey)}</p>
                     </div>
                   </div>
-                  {phase.status === "in-progress" && (
-                    <Badge variant="secondary" data-testid="badge-in-progress">
+                  {phase.status === "active" && (
+                    <Badge variant="default" data-testid="badge-in-progress">
                       {t('roadmap.inProgress')}
+                    </Badge>
+                  )}
+                  {phase.status === "upcoming" && (
+                    <Badge variant="secondary" data-testid="badge-upcoming">
+                      {t('roadmap.upcoming')}
+                    </Badge>
+                  )}
+                  {phase.status === "future" && (
+                    <Badge variant="outline" className="text-muted-foreground" data-testid="badge-future">
+                      {t('roadmap.future')}
                     </Badge>
                   )}
                 </div>
