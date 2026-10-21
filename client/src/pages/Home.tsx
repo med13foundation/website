@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import MissionSummary from "@/components/MissionSummary";
 import SyndromeVideo from "@/components/SyndromeVideo";
+import ConstellationFilm from "@/components/ConstellationFilm";
+import SymposiumPlaylist from "@/components/SymposiumPlaylist";
 import FeaturedEventsPreview from "@/components/FeaturedEventsPreview";
 import StarOfMonthCarousel from "@/components/StarOfMonthCarousel";
 import GetInvolvedPreview from "@/components/GetInvolvedPreview";
@@ -37,6 +39,8 @@ export default function Home() {
       <Hero />
       <MissionSummary />
       <SyndromeVideo />
+      <ConstellationFilm />
+      <SymposiumPlaylist />
       <StarOfMonthCarousel />
       <FeaturedEventsPreview />
       <GetInvolvedPreview />
