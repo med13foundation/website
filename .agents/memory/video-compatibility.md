@@ -14,3 +14,9 @@ When localizing a video with English text burned into its frames, do not add a s
 **Why:** Moving native Spanish cues to the bottom still left a line of the burned-in English visible beneath them. Making the inline overlay fully opaque covered the original text, while the hidden text track kept cue timing and seeking in sync.
 
 **How to apply:** If the video, captions, or player changes, inspect a frame with long two-line captions at desktop and mobile sizes. Check that Spanish covers the embedded English, Off removes the overlay, and fullscreen still has a readable native subtitle track.
+
+For the symposium playlist, use a linked official preview image and a direct YouTube playlist link rather than an embedded playlist player.
+
+**Why:** The playlist page and artwork were publicly accessible, but both standard and privacy-enhanced YouTube playlist embeds displayed “This video is unavailable” in the site preview. The direct playlist link avoids presenting a broken player.
+
+**How to apply:** If revisiting playlist playback, confirm it actually renders in the site preview before replacing the linked preview. Do not assume a successful HTTP response for the embed means the recordings will play.

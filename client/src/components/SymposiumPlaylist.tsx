@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Play } from "lucide-react";
 
-const playlistUrl = "https://www.youtube.com/playlist?list=PLXgylYmVXWF8";
+export const SYMPOSIUM_PLAYLIST_URL = "https://www.youtube.com/playlist?list=PLXgylYmVXWF8";
 
 export default function SymposiumPlaylist() {
   const { t } = useTranslation();
@@ -29,24 +29,30 @@ export default function SymposiumPlaylist() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-xl bg-black shadow-lg">
-          <div className="aspect-video w-full">
-            <iframe
-              src="https://www.youtube.com/embed/videoseries?list=PLXgylYmVXWF8&rel=0"
-              title={t("home.symposiumPlaylistTitle")}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              loading="lazy"
-              className="h-full w-full"
-              data-testid="video-symposium-playlist"
-            />
-          </div>
-        </div>
+        <a
+          href={SYMPOSIUM_PLAYLIST_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative mx-auto block aspect-video max-w-3xl overflow-hidden rounded-xl bg-primary shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          aria-label={t("home.symposiumPlaylistOpen")}
+          data-testid="link-symposium-playlist-preview"
+        >
+          <img
+            src="/medopathies-symposium-playlist.jpg"
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/25">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform group-hover:scale-110">
+              <Play className="ml-1 h-7 w-7 fill-current" aria-hidden="true" />
+            </span>
+          </span>
+        </a>
 
         <div className="mt-5 text-center">
           <a
-            href={playlistUrl}
+            href={SYMPOSIUM_PLAYLIST_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md border border-primary px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
