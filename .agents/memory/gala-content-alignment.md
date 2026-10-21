@@ -20,3 +20,9 @@ The organizer confirmed on October 3, 2026 that dessert opens at the start of th
 **Why:** Dessert is timed to this segment rather than available throughout the evening.
 
 **How to apply:** Preserve dessert in the segment description and do not describe it as opening earlier in attendee-facing materials.
+
+The organizer confirmed that the 2026 gala raised $123,660 against a $100,000 goal, funding the cell-line cohort.
+
+**Why:** This is the gala's event-specific result, distinct from the foundation's previously confirmed year-one support total, which also includes in-kind computing credits.
+
+**How to apply:** Lead the gala recap with the confirmed event total and purpose. Do not silently replace the separate year-one Impact metrics or infer a new cohort size, cash deployment total, or number of completed cell lines.
