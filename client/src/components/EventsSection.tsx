@@ -55,7 +55,7 @@ export default function EventsSection() {
               <div>
                 <div className="mb-2 flex flex-wrap gap-2">
                   <Badge variant="secondary">{t("hopePractice.communityTag")}</Badge>
-                  <Badge variant="secondary">{t("hopePractice.freeTag")}</Badge>
+                  <Badge variant="secondary">{t("hopePractice.pastEventTag")}</Badge>
                 </div>
                 <CardTitle className="text-xl font-heading">{t("hopePractice.title")}</CardTitle>
                 <CardDescription className="mt-2 flex items-center gap-2">
