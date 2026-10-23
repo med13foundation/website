@@ -21,8 +21,8 @@ The organizer confirmed on October 3, 2026 that dessert opens at the start of th
 
 **How to apply:** Preserve dessert in the segment description and do not describe it as opening earlier in attendee-facing materials.
 
-The organizer confirmed that the 2026 gala raised $123,660 against a $100,000 goal, funding the cell-line cohort.
+The organizer clarified on October 23, 2026 that the $123,660 shown on the gala recap is the total raised for the year against a $100,000 goal, supporting the cell-line cohort. It is not gala-only proceeds or research spending to date.
 
-**Why:** This is the gala's event-specific result, distinct from the foundation's previously confirmed year-one support total, which also includes in-kind computing credits.
+**Why:** Earlier recap wording incorrectly attributed the entire total to the gala. The organizer corrected its scope to annual fundraising; the treatment of in-kind credits within this revised total was not clarified.
 
-**How to apply:** Lead the gala recap with the confirmed event total and purpose. Do not silently replace the separate year-one Impact metrics or infer a new cohort size, cash deployment total, or number of completed cell lines.
+**How to apply:** Use annual rather than gala-only attribution for this figure. Do not infer spending, completed cell lines, or cohort size from money raised. Confirm how the annual figure treats in-kind credits before reconciling it with the previously approved combined cash-and-credit support figures on Impact and Progress.

@@ -19,47 +19,20 @@ import SymposiumPlaylist from "@/components/SymposiumPlaylist";
 import { AuctionDonorRecognition, SponsorRecognition } from "@/components/GalaRecognition";
 import logoUrl from "@assets/gala_disco_logo.png";
 
-const photoGallery = [
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-pdjkgX9/0/KfZRsDqdwSMNStFvFMBNqZVn9fX69vvNVRMbTm98W/S/MED13_1stGala_CCassell-8388-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-pdjkgX9",
-    altKey: "photo1Alt",
-  },
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-WmLLXnW/0/Mj9kz5QMmp67zgrScMwNHT7rrtHG3TH8ZnPQXwJPD/S/MED13_1stGala_CCassell-8405-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-WmLLXnW",
-    altKey: "photo2Alt",
-  },
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-ptSjP6J/0/LZRjdjVNJb7BcLBVJcKGHDLnHMN6hZThTwzPvmzwR/S/MED13_1stGala_CCassell-8426-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-ptSjP6J",
-    altKey: "photo3Alt",
-  },
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-3ThFGsC/0/K949HZfPNMLTxZ62tXkRdGJJVbNxCJgbfK3Q8Fhmn/S/MED13_1stGala_CCassell-8467-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-3ThFGsC",
-    altKey: "photo4Alt",
-  },
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-pmxNbqv/0/K7jdpGkqwstz8wLbLfztczFzdxcDpbmmRhRKTwFMJ/S/MED13_1stGala_CCassell-8498-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-pmxNbqv",
-    altKey: "photo5Alt",
-  },
-  {
-    image: "https://photos.smugmug.com/2026/10Oct26PaloAltoMED13/i-VgJpTjx/0/Lqp8jH9pn54HSTb6G9mvS6DrD2hc9RqnVjS863ZMb/S/MED13_1stGala_CCassell-8523-S.jpg",
-    href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13/i-VgJpTjx",
-    altKey: "photo6Alt",
-  },
-];
-
 const albums = [
   {
     name: "Pro Bono Photo",
     noteKey: "albumProBonoNote",
     href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13",
     credit: "Chris Cassell/ProBonoPhoto.org",
-    image: photoGallery[0].image,
+    image: "/images/gala-ccassell-8942.webp",
     altKey: "albumProBonoAlt",
+    previews: [
+      { image: "/images/gala-ccassell-8942.webp", altKey: "selectedPhotoChildAlt" },
+      { image: "/images/gala-ccassell-8837.webp", altKey: "selectedPhotoEmbraceAlt" },
+      { image: "/images/gala-ccassell-8753.webp", altKey: "selectedPhotoWaveAlt" },
+      { image: "/images/gala-ccassell-8683.webp", altKey: "selectedPhotoPaddleAlt" },
+    ],
   },
   {
     name: "AJM Photography",
@@ -184,45 +157,39 @@ export default function Gala() {
                 {t("galaRecap.allPhotos")} <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {photoGallery.map((photo, index) => (
-                <a
-                  key={photo.href}
-                  href={photo.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-2xl bg-[#d1ddd6] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#235b5e]"
-                  aria-label={`${t("galaRecap.openPhoto")} ${index + 1}: ${t(`galaRecap.${photo.altKey}`)}`}
-                >
-                  <img
-                    src={photo.image}
-                    alt={t(`galaRecap.${photo.altKey}`)}
-                    loading="lazy"
-                    className="aspect-[1.5/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                  />
-                  <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-[#172d2c]/85 to-transparent px-4 pb-4 pt-12 text-white">
-                    <span className="text-xs font-medium">{t("galaRecap.photoCredit")}: Chris Cassell/ProBonoPhoto.org</span>
-                    <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  </span>
-                </a>
-              ))}
-            </div>
-            <div className="mt-7 grid gap-4 md:grid-cols-3">
+            <div className="mt-7 grid gap-4 md:grid-cols-2">
               {albums.map((album) => (
                 <a
                   key={album.name}
                   href={album.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-4 rounded-2xl border border-[#cbd9d0] bg-[#f8faf6] p-3 transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#235b5e]"
+                  className={`group flex gap-4 rounded-2xl border border-[#cbd9d0] bg-[#f8faf6] p-4 transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#235b5e] ${album.previews ? "flex-col md:col-span-2 lg:flex-row lg:items-center" : "items-center"}`}
                 >
-                  <img src={album.image} alt={t(`galaRecap.${album.altKey}`)} loading="lazy" className="h-16 w-20 shrink-0 rounded-xl object-cover" />
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-semibold text-[#235b5e]">{album.name}</span>
-                    <span className="mt-1 block text-xs text-[#62716b]">{t(`galaRecap.${album.noteKey}`)}</span>
-                    <span className="mt-1 block text-[11px] text-[#62716b]">{t("galaRecap.photoCredit")}: {album.credit}</span>
+                  <span className={`flex min-w-0 items-center gap-4 ${album.previews ? "w-full lg:w-64 lg:shrink-0" : "w-full"}`}>
+                    {!album.previews && (
+                      <img src={album.image} alt={t(`galaRecap.${album.altKey}`)} loading="lazy" className="h-16 w-20 shrink-0 rounded-xl object-cover" />
+                    )}
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-semibold text-[#235b5e]">{album.name}</span>
+                      <span className="mt-1 block text-xs text-[#62716b]">{t(`galaRecap.${album.noteKey}`)}</span>
+                      <span className="mt-1 block text-[11px] text-[#62716b]">{t("galaRecap.photoCredit")}: {album.credit}</span>
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-[#b56855]" aria-hidden="true" />
                   </span>
-                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#b56855]" aria-hidden="true" />
+                  {album.previews && (
+                    <span className="grid w-full flex-1 grid-cols-2 gap-2 sm:grid-cols-4" data-testid="gala-pro-bono-selected-photos">
+                      {album.previews.map((photo) => (
+                        <img
+                          key={photo.image}
+                          src={photo.image}
+                          alt={t(`galaRecap.${photo.altKey}`)}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full rounded-xl object-cover object-top"
+                        />
+                      ))}
+                    </span>
+                  )}
                 </a>
               ))}
             </div>
