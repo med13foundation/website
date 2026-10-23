@@ -218,7 +218,7 @@ export default function Gala() {
               <h2 id="gala-video-title" className="font-heading text-3xl font-bold text-[#235b5e] sm:text-4xl">{t("galaRecap.filmTitle")}</h2>
               <p className="mt-3 leading-relaxed text-[#52615d]">{t("galaRecap.filmIntro")}</p>
             </div>
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-5">
               <article className="rounded-3xl bg-[#245c5e] p-6 text-[#f5f3eb] sm:p-8">
                 <div className="flex items-center justify-between">
                   <Film className="h-7 w-7 text-[#efb89d]" aria-hidden="true" />
@@ -228,20 +228,6 @@ export default function Gala() {
                 <p className="mt-2 leading-relaxed text-white/80">{t("galaRecap.galaFilmBody")}</p>
                 <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#f0c1a8]">
                   <Play className="h-4 w-4" aria-hidden="true" /> {t("galaRecap.videoPending")}
-                </div>
-              </article>
-              <article className="rounded-3xl border border-[#d9e2dc] bg-white p-6 sm:p-8">
-                <div className="flex items-center justify-between">
-                  <Play className="h-7 w-7 text-[#b56855]" aria-hidden="true" />
-                  <span className="rounded-full bg-[#f4e8df] px-3 py-1 text-xs font-semibold text-[#915540]">{t("galaRecap.comingSoon")}</span>
-                </div>
-                <h3 className="mt-7 font-heading text-2xl font-bold text-[#235b5e]">{t("galaRecap.mimiTitle")}</h3>
-                <p className="mt-2 leading-relaxed text-[#52615d]">{t("galaRecap.mimiBody")}</p>
-                <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#8b624f]"><Play className="h-4 w-4" aria-hidden="true" />{t("galaRecap.videoPending")}</span>
-                  <a href="https://opus132.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-semibold text-[#235b5e] underline underline-offset-4">
-                    opus132.org <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                  </a>
                 </div>
               </article>
             </div>
