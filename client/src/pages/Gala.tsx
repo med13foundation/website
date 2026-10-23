@@ -21,6 +21,7 @@ import logoUrl from "@assets/gala_disco_logo.png";
 
 const albums = [
   {
+    id: "pro-bono",
     name: "Pro Bono Photo",
     noteKey: "albumProBonoNote",
     href: "https://www.probonophoto.org/2026/10Oct26PaloAltoMED13",
@@ -35,14 +36,22 @@ const albums = [
     ],
   },
   {
+    id: "ajm",
     name: "AJM Photography",
     noteKey: "albumAjmNote",
     href: "https://ajmphotography628.pixieset.com/med13gala/",
     credit: "AJM Photography",
-    image: "https://images.pixieset.com/932724421/166a46d5701a9f00e778333be082f019-xlarge.jpg",
+    image: "/images/gala-ajm-77.webp",
     altKey: "albumAjmAlt",
+    previews: [
+      { image: "/images/gala-ajm-77.webp", altKey: "ajmPhotoDisplayAlt" },
+      { image: "/images/gala-ajm-81.webp", altKey: "ajmPhotoGuestsAlt" },
+      { image: "/images/gala-ajm-72.webp", altKey: "ajmPhotoPropsAlt" },
+      { image: "/images/gala-ajm-84.webp", altKey: "ajmPhotoEmbraceAlt" },
+    ],
   },
   {
+    id: "photobooth",
     name: "Photobooth",
     noteKey: "albumBoothNote",
     href: "https://boothpics.com/KYIN",
@@ -178,7 +187,7 @@ export default function Gala() {
                     <ArrowUpRight className="h-4 w-4 shrink-0 text-[#b56855]" aria-hidden="true" />
                   </span>
                   {album.previews && (
-                    <span className="grid w-full flex-1 grid-cols-2 gap-2 sm:grid-cols-4" data-testid="gala-pro-bono-selected-photos">
+                    <span className="grid w-full flex-1 grid-cols-2 gap-2 sm:grid-cols-4" data-testid={`gala-${album.id}-selected-photos`}>
                       {album.previews.map((photo) => (
                         <img
                           key={photo.image}
