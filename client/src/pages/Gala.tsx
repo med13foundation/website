@@ -117,19 +117,30 @@ export default function Gala() {
                 </div>
               </div>
             </div>
-            <figure className="relative mx-auto w-full max-w-xl lg:ml-auto">
-              <div className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border border-[#b7d1c9]" />
-              <img
-                src="/images/gala-2026-hero.webp"
-                alt={t("galaRecap.heroPhotoAlt")}
-                className="relative aspect-[4/3] w-full rounded-[2rem] object-cover object-top shadow-xl shadow-[#315a5120]"
-                fetchPriority="high"
-              />
-              <figcaption className="relative mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-[#526c68]">
-                <span>{t("galaRecap.heroCaption")}</span>
-                <span>Allyson Moore</span>
-              </figcaption>
-            </figure>
+            <div className="relative mx-auto w-full max-w-xl lg:ml-auto" aria-labelledby="gala-video-title">
+              <div className="mb-6">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#b56855]">{t("galaRecap.filmEyebrow")}</p>
+                <h2 id="gala-video-title" className="font-heading text-2xl font-bold text-[#235b5e] sm:text-3xl">{t("galaRecap.filmTitle")}</h2>
+                <p className="mt-3 leading-relaxed text-[#52615d]">{t("galaRecap.filmIntro")}</p>
+              </div>
+              <div className="overflow-hidden rounded-3xl bg-black shadow-xl shadow-[#315a5120]">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/SwgQzQXQ7dw?rel=0"
+                  title={t("galaRecap.galaFilmTitle")}
+                  className="aspect-video w-full border-0"
+                  loading="eager"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+                <p className="text-sm leading-relaxed text-[#52615d]">{t("galaRecap.galaFilmBody")}</p>
+                <a href="https://youtu.be/SwgQzQXQ7dw" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded text-sm font-semibold text-[#235b5e] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#235b5e]">
+                  {t("galaRecap.watchOnYouTube")} <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -205,33 +216,6 @@ export default function Gala() {
                   )}
                 </a>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#fbfaf5] py-16 sm:py-24" aria-labelledby="gala-video-title">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-9 max-w-2xl">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#b56855]">{t("galaRecap.filmEyebrow")}</p>
-              <h2 id="gala-video-title" className="font-heading text-3xl font-bold text-[#235b5e] sm:text-4xl">{t("galaRecap.filmTitle")}</h2>
-              <p className="mt-3 leading-relaxed text-[#52615d]">{t("galaRecap.filmIntro")}</p>
-            </div>
-            <div className="overflow-hidden rounded-3xl bg-black shadow-lg">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/SwgQzQXQ7dw?rel=0"
-                title={t("galaRecap.galaFilmTitle")}
-                className="aspect-video w-full border-0"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-            <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-              <p className="max-w-2xl text-sm leading-relaxed text-[#52615d]">{t("galaRecap.galaFilmBody")}</p>
-              <a href="https://youtu.be/SwgQzQXQ7dw" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded text-sm font-semibold text-[#235b5e] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#235b5e]">
-                {t("galaRecap.watchOnYouTube")} <ExternalLink className="h-4 w-4" aria-hidden="true" />
-              </a>
             </div>
           </div>
         </section>

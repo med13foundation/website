@@ -10,11 +10,28 @@ import { RESEARCH_COHORT_FORM_URL, CLASSY_DONATION_URL } from "@/lib/links";
 export default function Impact() {
   const { t } = useTranslation();
   useEffect(() => {
-    const frame = requestAnimationFrame(() => {
+    let frame = 0;
+    const revealHashDestination = () => {
       const section = document.getElementById(window.location.hash.slice(1));
-      section?.scrollIntoView({ behavior: "instant", block: "start" });
-    });
-    return () => cancelAnimationFrame(frame);
+      if (!section) return;
+      let disclosure = section.closest("details");
+      while (disclosure) {
+        disclosure.open = true;
+        disclosure = disclosure.parentElement?.closest("details") ?? null;
+      }
+      if (section.id === "definitions" || section.id === "sources") {
+        const content = section.querySelector("details");
+        if (content) content.open = true;
+      }
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => section.scrollIntoView({ behavior: "instant", block: "start" }));
+    };
+    revealHashDestination();
+    window.addEventListener("hashchange", revealHashDestination);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", revealHashDestination);
+    };
   }, []);
   useEffect(() => {
     document.title = t("impact.metaTitle");
@@ -228,9 +245,14 @@ export default function Impact() {
           </div>
         </section>
 
-        <section id="definitions" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-            <div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#b56855]">{t("impact.aboutEyebrow")}</p><h2 className="font-heading text-3xl font-bold text-primary sm:text-4xl">{t("impact.aboutTitle")}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("impact.aboutIntro")}</p></div>
+        <section id="definitions" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-6">
+          <details className="group mx-auto max-w-7xl rounded-xl border border-border bg-card">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+              <h2 className="font-heading text-2xl font-bold text-primary">{t("impact.aboutTitle")}</h2>
+              <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
+            </summary>
+          <div className="grid gap-10 border-t border-border p-5 lg:grid-cols-[0.7fr_1.3fr]">
+            <div><p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#b56855]">{t("impact.aboutEyebrow")}</p><p className="text-sm leading-relaxed text-muted-foreground">{t("impact.aboutIntro")}</p></div>
             <div className="space-y-4">
               {["definition1", "definition2", "definitionGeneticIncidence", "definition3", "definitionCapital", "definition4", "definition5"].map((key) => (
                 <p key={key} className="border-b border-border pb-4 text-sm leading-relaxed text-foreground/80">
@@ -245,6 +267,7 @@ export default function Impact() {
               </div>
             </div>
           </div>
+          </details>
         </section>
         <ImpactSources />
       </main>
