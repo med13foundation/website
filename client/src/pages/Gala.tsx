@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import {
-  ArrowDown,
+  ArrowRight,
   ArrowLeft,
   ArrowUpRight,
   CalendarDays,
@@ -117,9 +117,9 @@ export default function Gala() {
                 {t("galaRecap.title")}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#435957] sm:text-xl">{t("galaRecap.intro")}</p>
-              <a href="#recap-progress" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#235b5e] underline decoration-[#d59b83] underline-offset-4 hover:text-[#b56855]">
-                {t("galaRecap.explore")} <ArrowDown className="h-4 w-4" aria-hidden="true" />
-              </a>
+              <Link href="/impact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#235b5e] underline decoration-[#d59b83] underline-offset-4 hover:text-[#b56855]">
+                {t("galaRecap.explore")} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
               <div className="mt-12 grid max-w-lg grid-cols-2 items-end gap-4 border-t border-[#bdcfc7] pt-6">
                 <div>
                   <p className="font-heading text-3xl font-bold tracking-tight text-[#235b5e] sm:text-5xl">$123,660</p>
@@ -134,14 +134,14 @@ export default function Gala() {
             <figure className="relative mx-auto w-full max-w-xl lg:ml-auto">
               <div className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border border-[#b7d1c9]" />
               <img
-                src={photoGallery[3].image}
-                alt={t(`galaRecap.${photoGallery[3].altKey}`)}
-                className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-xl shadow-[#315a5120]"
+                src="/images/gala-2026-hero.webp"
+                alt={t("galaRecap.heroPhotoAlt")}
+                className="relative aspect-[4/3] w-full rounded-[2rem] object-cover object-top shadow-xl shadow-[#315a5120]"
                 fetchPriority="high"
               />
               <figcaption className="relative mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-[#526c68]">
                 <span>{t("galaRecap.heroCaption")}</span>
-                <span>Chris Cassell/ProBonoPhoto.org</span>
+                <span>Allyson Moore</span>
               </figcaption>
             </figure>
           </div>
