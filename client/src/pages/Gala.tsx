@@ -8,10 +8,8 @@ import {
   CalendarDays,
   Camera,
   ExternalLink,
-  Film,
   FlaskConical,
   HeartHandshake,
-  Play,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -218,18 +216,22 @@ export default function Gala() {
               <h2 id="gala-video-title" className="font-heading text-3xl font-bold text-[#235b5e] sm:text-4xl">{t("galaRecap.filmTitle")}</h2>
               <p className="mt-3 leading-relaxed text-[#52615d]">{t("galaRecap.filmIntro")}</p>
             </div>
-            <div className="grid gap-5">
-              <article className="rounded-3xl bg-[#245c5e] p-6 text-[#f5f3eb] sm:p-8">
-                <div className="flex items-center justify-between">
-                  <Film className="h-7 w-7 text-[#efb89d]" aria-hidden="true" />
-                  <span className="rounded-full border border-white/25 px-3 py-1 text-xs font-semibold">{t("galaRecap.comingSoon")}</span>
-                </div>
-                <h3 className="mt-7 font-heading text-2xl font-bold">{t("galaRecap.galaFilmTitle")}</h3>
-                <p className="mt-2 leading-relaxed text-white/80">{t("galaRecap.galaFilmBody")}</p>
-                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#f0c1a8]">
-                  <Play className="h-4 w-4" aria-hidden="true" /> {t("galaRecap.videoPending")}
-                </div>
-              </article>
+            <div className="overflow-hidden rounded-3xl bg-black shadow-lg">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/SwgQzQXQ7dw?rel=0"
+                title={t("galaRecap.galaFilmTitle")}
+                className="aspect-video w-full border-0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+              <p className="max-w-2xl text-sm leading-relaxed text-[#52615d]">{t("galaRecap.galaFilmBody")}</p>
+              <a href="https://youtu.be/SwgQzQXQ7dw" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded text-sm font-semibold text-[#235b5e] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#235b5e]">
+                {t("galaRecap.watchOnYouTube")} <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </section>
