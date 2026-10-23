@@ -52,12 +52,18 @@ const albums = [
   },
   {
     id: "photobooth",
-    name: "Photobooth",
+    name: "Twin Flames Photobooth",
     noteKey: "albumBoothNote",
     href: "https://boothpics.com/KYIN",
-    credit: "Photobooth",
-    image: "https://d2dsm5y8gyd937.cloudfront.net/e77bab8c-7342-5be5-9f69-f54930aad422/CAPTURE/9d27c78e-b5e4-49c4-876d-ac0b7c133352/MKRGBOLVP3M9XT1X.thumb.jpeg",
+    credit: "Twin Flames Photobooth",
+    image: "/images/gala-photobooth-guests.webp",
     altKey: "albumBoothAlt",
+    previews: [
+      { image: "/images/gala-photobooth-guests.webp", altKey: "boothPhotoGuestsAlt" },
+      { image: "/images/gala-photobooth-hats.webp", altKey: "boothPhotoHatsAlt" },
+      { image: "/images/gala-photobooth-group.webp", altKey: "boothPhotoGroupAlt" },
+      { image: "/images/gala-photobooth-friends.webp", altKey: "boothPhotoFriendsAlt" },
+    ],
   },
 ];
 
@@ -194,7 +200,7 @@ export default function Gala() {
                           src={photo.image}
                           alt={t(`galaRecap.${photo.altKey}`)}
                           loading="lazy"
-                          className="aspect-[4/3] w-full rounded-xl object-cover object-top"
+                          className={`w-full rounded-xl ${album.id === "photobooth" ? "aspect-[1/3] max-h-80 bg-white object-contain" : "aspect-[4/3] object-cover object-top"}`}
                         />
                       ))}
                     </span>
