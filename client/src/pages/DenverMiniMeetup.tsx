@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users, Video } from "lucide-react";
+import { ArrowLeft, CalendarDays, ChevronDown, Clock3, ExternalLink, Hotel, MapPin, TestTubes, Users, Video } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -27,6 +27,10 @@ export default function DenverMiniMeetup() {
     const metaDescription = document.querySelector('meta[name="description"]');
     const previousDescription = metaDescription?.getAttribute("content") ?? null;
     metaDescription?.setAttribute("content", t("denverMeetup.metaDescription"));
+    const sectionId = window.location.hash.slice(1);
+    if (sectionId === "agenda" || sectionId === "speakers") {
+      window.requestAnimationFrame(() => document.getElementById(sectionId)?.scrollIntoView({ block: "start", behavior: "instant" }));
+    }
 
     return () => {
       document.title = "MED13 Foundation";
@@ -37,18 +41,18 @@ export default function DenverMiniMeetup() {
   }, [t]);
 
   const agenda = [
-    ["agenda1Time", "agenda1Title", null],
-    ["agenda2Time", "agenda2Title", null],
+    ["agenda1Time", "agenda1Title", "agenda1Body"],
+    ["agenda2Time", "agenda2Title", "agenda2Body"],
     ["agenda3Time", "agenda3Title", "agenda3Body"],
-    ["agenda4Time", "agenda4Title", null],
+    ["agenda4Time", "agenda4Title", "agenda4Body"],
     ["agenda5Time", "agenda5Title", "agenda5Body"],
-    ["agenda6Time", "agenda6Title", null],
-    ["agenda7Time", "agenda7Title", null],
+    ["agenda6Time", "agenda6Title", "agenda6Body"],
+    ["agenda7Time", "agenda7Title", "agenda7Body"],
     ["agenda8Time", "agenda8Title", null],
-    ["agenda9Time", "agenda9Title", null],
-    ["agenda10Time", "agenda10Title", null],
-    ["agenda11Time", "agenda11Title", "agenda11Body"],
+    ["agenda9Time", "agenda9Title", "agenda9Body"],
+    ["agenda10Time", "agenda10Title", "agenda10Body"],
   ] as const;
+  const speakers = ["maria", "nicolo", "katie", "kelly", "amy", "ricardo", "vanessa", "lindsay", "sarah"] as const;
 
   return (
     <div className="min-h-screen bg-background">
@@ -90,6 +94,9 @@ export default function DenverMiniMeetup() {
                     {t("denverMeetup.bookHotel")}
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <a href="#agenda">{t("denverMeetup.viewAgenda")}</a>
                 </Button>
               </div>
             </div>
@@ -230,7 +237,7 @@ export default function DenverMiniMeetup() {
                   <Users className="h-6 w-6 text-primary" />
                   <h2 className="mt-3 font-heading text-xl font-bold">{t("denverMeetup.supportTitle")}</h2>
                   <p className="mt-2 text-muted-foreground">{t("denverMeetup.supportBody")}</p>
-                  <Button variant="link" className="mt-3 h-auto p-0" asChild>
+                  <Button variant="ghost" className="mt-3 h-auto p-0 underline underline-offset-4" asChild>
                     <a href={AES_URL} target="_blank" rel="noopener noreferrer">
                       {t("denverMeetup.aesLink")}
                       <ExternalLink className="ml-2 h-4 w-4" />
@@ -239,12 +246,12 @@ export default function DenverMiniMeetup() {
                 </div>
               </div>
 
-              <div>
+              <div id="agenda" className="scroll-mt-24" data-testid="section-denver-agenda">
                 <h2 className="font-heading text-3xl font-bold text-primary">{t("denverMeetup.agendaTitle")}</h2>
                 <p className="mt-2 text-muted-foreground">{t("denverMeetup.agendaNote")}</p>
                 <div className="mt-6 divide-y rounded-2xl border bg-card px-5">
                   {agenda.map(([time, title, body]) => (
-                    <div key={time} className="grid gap-2 py-5 sm:grid-cols-[7rem_1fr]">
+                    <div key={time} className="grid gap-2 py-5 sm:grid-cols-[8rem_1fr]">
                       <p className="font-semibold text-secondary">{t(`denverMeetup.${time}`)}</p>
                       <div>
                         <h3 className="font-heading font-bold">{t(`denverMeetup.${title}`)}</h3>
@@ -254,6 +261,25 @@ export default function DenverMiniMeetup() {
                   ))}
                 </div>
               </div>
+
+              <section id="speakers" className="scroll-mt-24" aria-labelledby="denver-speakers-title" data-testid="section-denver-speakers">
+                <h2 id="denver-speakers-title" className="font-heading text-3xl font-bold text-primary">{t("denverMeetup.speakersTitle")}</h2>
+                <p className="mt-2 text-muted-foreground">{t("denverMeetup.speakersNote")}</p>
+                <div className="mt-6 divide-y rounded-2xl border bg-card px-5">
+                  {speakers.map((speaker) => (
+                    <details key={speaker} className="group py-4" data-testid={`denver-speaker-${speaker}`}>
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+                        <span>
+                          <span className="block font-heading font-bold text-primary">{t(`denverMeetup.speakers.${speaker}.name`)}</span>
+                          <span className="mt-1 block text-sm text-muted-foreground">{t(`denverMeetup.speakers.${speaker}.role`)}</span>
+                        </span>
+                        <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
+                      </summary>
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t(`denverMeetup.speakers.${speaker}.bio`)}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
 
               <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
                 <Video className="h-6 w-6 text-primary" />
