@@ -1,6 +1,7 @@
 {
   "nav": {
     "med13Syndrome": "What is MED13 syndrome?",
+    "science": "Science",
     "logo": "MED13 Foundation",
     "about": "Who We Are",
     "aboutOverview": "Who We Are Overview",
@@ -32,6 +33,14 @@
     "intro": "MED13 syndrome is a rare genetic neurodevelopmental condition associated with changes in the MED13 gene. It can affect development, speech and language, learning, and other aspects of health. Features vary from person to person.",
     "populationNote": "The estimate of 200 known families worldwide combines GeneDx snapshots, Simons Searchlight, the COMBINEDBrain Matrix platform, and the MED13 Foundation registry, with efforts to deduplicate. This count substantially underestimates prevalence.",
     "disclaimer": "Clinical features and frequency figures provide a general overview, not a prediction for any individual. Every person's experience can differ. This educational information does not replace advice from your clinician."
+  },
+  "sciencePage": {
+    "metaTitle": "Science | MED13 Foundation",
+    "metaDescription": "Understand MED13 syndrome and explore the scientific community working to learn more.",
+    "eyebrow": "Science, made understandable",
+    "sectionNavLabel": "Science page sections",
+    "factsLink": "MED13 at a glance",
+    "recordingsLink": "Symposium recordings"
   },
   "home": {
     "missionEyebrow": "Our mission",
@@ -776,6 +785,7 @@
     "subtitle": "Your donation directly funds research toward treatments for MED13 syndrome. Every contribution brings hope to families worldwide."
   },
   "footer": {
+    "science": "Science",
     "about": "About",
     "ourStory": "Our Story",
     "ourCommunity": "Our Community",

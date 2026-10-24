@@ -11,7 +11,7 @@ import Gala from "@/pages/Gala";
 import Champions from "@/pages/Champions";
 import Symposium from "@/pages/Symposium";
 import WhoWeAre from "@/pages/WhoWeAre";
-import Med13Syndrome from "@/pages/Med13Syndrome";
+import Science from "@/pages/Science";
 import NewsAndEvents from "@/pages/NewsAndEvents";
 import Impact from "@/pages/Impact";
 import GetInvolved from "@/pages/GetInvolved";
@@ -31,7 +31,8 @@ function Router() {
       <Route path="/champions" component={Champions}/>
       <Route path="/symposium" component={Symposium}/>
       <Route path="/who-we-are" component={WhoWeAre}/>
-      <Route path="/what-is-med13-syndrome" component={Med13Syndrome}/>
+      <Route path="/science" component={Science}/>
+      <Route path="/what-is-med13-syndrome"><Redirect to="/science#what-is-med13-syndrome" /></Route>
       <Route path="/news-and-events" component={NewsAndEvents}/>
       <Route path="/news-and-events/hope-is-a-practice" component={HopeIsAPractice}/>
       <Route path="/news-and-events/denver-mini-medopathies-meetup" component={DenverMiniMeetup}/>

@@ -32,7 +32,7 @@ export default function Navigation() {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger
                 className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
@@ -42,11 +42,6 @@ export default function Navigation() {
                 <ChevronDown className="h-4 w-4" aria-hidden="true" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-64">
-                <DropdownMenuItem asChild>
-                  <Link href="/what-is-med13-syndrome" data-testid="link-about-med13-syndrome">
-                    {t("nav.med13Syndrome")}
-                  </Link>
-                </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/who-we-are" data-testid="link-about-overview">
                     {t('nav.aboutOverview')}
@@ -94,6 +89,9 @@ export default function Navigation() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link href="/science" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-science">
+              {t("nav.science")}
+            </Link>
             <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
               {t('nav.getInvolved')}
             </Link>
@@ -166,7 +164,7 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden p-2 hover-elevate rounded-md"
+            className="xl:hidden p-2 hover-elevate rounded-md"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -178,15 +176,15 @@ export default function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="xl:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link
-              href="/what-is-med13-syndrome"
+              href="/science"
               className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover-elevate"
-              data-testid="link-mobile-med13-syndrome"
+              data-testid="link-mobile-science"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {t("nav.med13Syndrome")}
+              {t("nav.science")}
             </Link>
             <div className="px-3 py-2" data-testid="mobile-about-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.about')}</p>

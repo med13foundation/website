@@ -1,6 +1,7 @@
 {
   "nav": {
     "med13Syndrome": "¿Qué es el síndrome MED13?",
+    "science": "Ciencia",
     "logo": "Fundación MED13",
     "about": "Quiénes Somos",
     "aboutOverview": "Resumen de Quiénes Somos",
@@ -32,6 +33,14 @@
     "intro": "El síndrome MED13 es una condición genética rara del neurodesarrollo asociada con cambios en el gen MED13. Puede afectar el desarrollo, el habla y el lenguaje, el aprendizaje y otros aspectos de la salud. Las características varían de una persona a otra.",
     "populationNote": "La estimación de 200 familias conocidas en todo el mundo combina datos de GeneDx, Simons Searchlight, la plataforma Matrix de COMBINEDBrain y el registro de la Fundación MED13, con esfuerzos por eliminar duplicados. Este recuento subestima considerablemente la prevalencia.",
     "disclaimer": "Las características clínicas y las cifras de frecuencia ofrecen un panorama general, no una predicción para una persona concreta. La experiencia de cada persona puede ser distinta. Esta información educativa no sustituye el consejo de su profesional clínico."
+  },
+  "sciencePage": {
+    "metaTitle": "Ciencia | Fundación MED13",
+    "metaDescription": "Comprende el síndrome MED13 y conoce a la comunidad científica que trabaja para aprender más.",
+    "eyebrow": "Ciencia en palabras claras",
+    "sectionNavLabel": "Secciones de la página de ciencia",
+    "factsLink": "MED13 en resumen",
+    "recordingsLink": "Grabaciones del simposio"
   },
   "home": {
     "missionEyebrow": "Nuestra misión",
@@ -776,6 +785,7 @@
     "subtitle": "Tu donación financia directamente la investigación hacia tratamientos para el síndrome MED13. Cada contribución trae esperanza a familias en todo el mundo."
   },
   "footer": {
+    "science": "Ciencia",
     "about": "Acerca de",
     "ourStory": "Nuestra Historia",
     "ourCommunity": "Nuestra Comunidad",

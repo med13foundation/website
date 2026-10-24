@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -150,10 +149,10 @@ export default function SyndromeVideo() {
         </details>
         <div className="mt-6 text-center">
           <Button asChild data-testid="link-syndrome-video-facts">
-            <Link href="/what-is-med13-syndrome">
+            <a href="/science#med13-facts">
               {t("home.syndromeVideoLearnMore")}
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

@@ -30,7 +30,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/what-is-med13-syndrome" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-med13-syndrome">
+                <a href="/science" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-science">
+                  {t("footer.science")}
+                </a>
+              </li>
+              <li>
+                <a href="/science#what-is-med13-syndrome" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-med13-syndrome">
                   {t("nav.med13Syndrome")}
                 </a>
               </li>
