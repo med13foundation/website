@@ -99,6 +99,23 @@ export default function DenverMiniMeetup() {
                   <a href="#agenda">{t("denverMeetup.viewAgenda")}</a>
                 </Button>
               </div>
+              <div className="mt-6 rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
+                <Video className="h-6 w-6 text-primary" />
+                <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
+                <p className="mt-2 text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
+                <Button variant="outline" className="mt-5" asChild>
+                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
+                    {t("denverMeetup.virtualButton")}<ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="mt-6 rounded-2xl bg-primary p-6 text-primary-foreground" data-testid="card-denver-in-person-tickets">
+                <h2 className="font-heading text-2xl font-bold">{t("denverMeetup.ticketsTitle")}</h2>
+                <p className="mt-2 text-primary-foreground/80">{t("denverMeetup.ticketsBody")}</p>
+                <Button variant="secondary" className="mt-5" asChild>
+                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">{t("denverMeetup.register")}<ExternalLink className="ml-2 h-4 w-4" /></a>
+                </Button>
+              </div>
             </div>
             <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center gap-8 p-8 sm:p-10">
               <img
@@ -281,24 +298,6 @@ export default function DenverMiniMeetup() {
                 </div>
               </section>
 
-              <div className="rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
-                <Video className="h-6 w-6 text-primary" />
-                <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
-                <p className="mt-2 text-muted-foreground">{t("denverMeetup.virtualBody")}</p>
-                <Button variant="outline" className="mt-5" asChild>
-                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
-                    {t("denverMeetup.virtualButton")}<ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-
-              <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
-                <h2 className="font-heading text-2xl font-bold">{t("denverMeetup.ticketsTitle")}</h2>
-                <p className="mt-2 text-primary-foreground/80">{t("denverMeetup.ticketsBody")}</p>
-                <Button variant="secondary" className="mt-5" asChild>
-                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">{t("denverMeetup.register")}<ExternalLink className="ml-2 h-4 w-4" /></a>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
