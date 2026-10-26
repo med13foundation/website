@@ -3,8 +3,8 @@ name: Family research participation
 description: Distinguish the MED13 census connection form from study enrollment and biosample donation.
 ---
 
-Present the census, natural history study and biorepository as separate participation options. The census destination is the MED13 Community Connection Form, which gathers contact details and areas of interest. Submitting it is not research enrollment or research consent. Natural history participation starts with requesting Matrix access and following the study team's consent process. Biorepository donation means biological samples, not money, with collection coordinated through COMBINEDBrain and patient advocacy groups.
+Present the census, natural history study and biorepository as separate participation options. The census destination is the MED13 Community Connection Form, which gathers contact details and areas of interest. Submitting it is not research enrollment or research consent. Natural history participation starts with requesting Matrix access and following the study team's consent process. Biorepository donation means biological samples, not money. Direct families to the MED13 Foundation research team to schedule a collection, rather than sending them to coordinate directly with the partner.
 
-**Why:** The organizer requested all three options for families, and the linked census form collects community connection interests rather than study consent. Combining these pathways can incorrectly imply that contacting the foundation enrolls someone in research.
+**Why:** The organizer requested all three options for families, and the linked census form collects community connection interests rather than study consent. Combining these pathways can incorrectly imply that contacting the foundation enrolls someone in research. The organizer specifically instructed that collection scheduling go through the foundation's research contact.
 
 **How to apply:** Keep census and enrolled-study counts distinct, label destinations clearly, and do not promise automatic enrollment, eligibility or sample collection arrangements.

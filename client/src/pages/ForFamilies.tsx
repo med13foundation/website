@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { ArrowDown, ArrowUpRight, BookOpen, FlaskConical, HeartHandshake, UsersRound } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -138,7 +138,13 @@ export default function ForFamilies() {
                         <p className="mt-4 text-base leading-relaxed text-foreground/85 sm:text-lg">{t(item.introKey)}</p>
                         <div className="mt-5 flex items-start gap-3 border-l-2 border-[#bd7968] pl-4">
                           <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-[#a55d4c]" aria-hidden="true" />
-                          <p className="text-sm leading-relaxed text-foreground/75 sm:text-base">{t(item.detailKey)}</p>
+                          <p className="text-sm leading-relaxed text-foreground/75 sm:text-base">
+                            <Trans
+                              t={t}
+                              i18nKey={item.detailKey}
+                              components={{ contact: <a href="mailto:research@med13.org" className="font-semibold text-primary underline underline-offset-4" /> }}
+                            />
+                          </p>
                         </div>
                       </div>
                       <div className="flex flex-col items-start gap-3 lg:pt-1">

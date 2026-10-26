@@ -66,10 +66,10 @@
     "studyAction": "Solicitar acceso al estudio",
     "sampleTitle": "Donación de muestras para el biorepositorio",
     "sampleIntro": "Las familias pueden explorar la donación de muestras biológicas para investigación conforme a un protocolo aprobado por un IRB. Se trata de donar una muestra biológica, no de hacer una donación económica.",
-    "sampleDetail": "Revisen las indicaciones de COMBINEDBrain según el rol de cada participante y luego coordinen las posibles opciones de recolección con su grupo de defensa de pacientes o con COMBINEDBrain. Las opciones pueden depender de la coordinación y de las circunstancias individuales. Consulten con el equipo del estudio el consentimiento electrónico y la información sobre datos clínicos en Matrix.",
+    "sampleDetail": "Para programar una recolección de muestras biológicas, escribe a <contact>research@med13.org</contact>.",
     "sampleAction": "Explorar la donación de muestras",
     "reassuranceTitle": "Cada familia puede decidir a su propio ritmo",
-    "reassuranceBody": "Todas las opciones son voluntarias. No es necesario completar una antes de considerar otra. Si tienen preguntas sobre la participación en el estudio, la elegibilidad, el consentimiento o la recolección de muestras, contacten al equipo del estudio a través de la plataforma asociada. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
+    "reassuranceBody": "Todas las opciones son voluntarias. No es necesario completar una antes de considerar otra. Si tienen preguntas sobre la participación en el estudio, la elegibilidad o el consentimiento, contacten al equipo del estudio a través de la plataforma asociada. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
   },
   "home": {
     "missionEyebrow": "Nuestra misión",
