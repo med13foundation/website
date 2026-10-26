@@ -82,23 +82,6 @@ export default function DenverMiniMeetup() {
               <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/75 sm:text-xl">
                 {t("denverMeetup.intro")}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button size="lg" asChild>
-                  <a href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
-                    {t("denverMeetup.register")}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href={HOTEL_URL} target="_blank" rel="noopener noreferrer">
-                    {t("denverMeetup.bookHotel")}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <a href="#agenda">{t("denverMeetup.viewAgenda")}</a>
-                </Button>
-              </div>
               <div className="mt-6 rounded-2xl border border-primary/15 bg-primary/5 p-6" data-testid="card-denver-virtual-option">
                 <Video className="h-6 w-6 text-primary" />
                 <h2 className="mt-3 font-heading text-2xl font-bold text-primary">{t("denverMeetup.virtualTitle")}</h2>
