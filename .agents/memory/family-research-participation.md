@@ -7,7 +7,7 @@ Distinguish census connection from research participation, but do not describe t
 
 **Why:** The organizer clarified that biorepository collection requires natural history study registration and consent. Earlier wording incorrectly described all three opportunities as independent. The census form collects community connection interests rather than study consent, so contacting the foundation does not itself enroll someone in research. The organizer also specified that collection scheduling go through the foundation's research contact.
 
-**How to apply:** Keep census and enrolled-study counts distinct, label destinations clearly, and do not promise automatic enrollment, eligibility or sample collection arrangements.
+**How to apply:** Keep census and enrolled-study counts distinct, label destinations clearly, and do not promise automatic enrollment, eligibility or sample collection arrangements. Direct participation, eligibility, and consent questions to the foundation research team, not the partner platform, as requested by the organizer.
 
 Families registering for COMBINEDBrain Matrix must select **MED13** as their partner patient advocacy group (PAG).
 

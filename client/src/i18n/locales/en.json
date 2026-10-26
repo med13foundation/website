@@ -69,7 +69,7 @@
     "sampleDetail": "Before a biosample collection, you must register for the natural history study in Matrix and provide consent. When registering, select <strong>MED13</strong> as your partner patient advocacy group (PAG). To schedule a collection, email <contact>research@med13.org</contact>.",
     "sampleAction": "Explore sample donation",
     "reassuranceTitle": "Your family can decide at its own pace",
-    "reassuranceBody": "Participation is voluntary. Biorepository collection requires registration for the natural history study and consent before samples can be collected. Completing the census form does not enroll you in the study. For questions about study participation, eligibility, or consent, contact the study team through the partner platform. Participation does not guarantee treatment or a particular outcome. This page does not collect patient details."
+    "reassuranceBody": "Participation is voluntary. Biorepository collection requires registration for the natural history study and consent before samples can be collected. Completing the census form does not enroll you in the study. For questions about study participation, eligibility, or consent, contact us at <contact>research@med13.org</contact>. Participation does not guarantee treatment or a particular outcome. This page does not collect patient details."
   },
   "home": {
     "missionEyebrow": "Our mission",

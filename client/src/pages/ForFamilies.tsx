@@ -170,7 +170,13 @@ export default function ForFamilies() {
               </div>
               <div>
                 <h2 className="font-heading text-xl font-bold text-primary sm:text-2xl">{t("reassuranceTitle")}</h2>
-                <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground/75 sm:text-base">{t("reassuranceBody")}</p>
+                <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground/75 sm:text-base">
+                  <Trans
+                    t={t}
+                    i18nKey="reassuranceBody"
+                    components={{ contact: <a href="mailto:research@med13.org" className="font-semibold text-primary underline underline-offset-4" /> }}
+                  />
+                </p>
               </div>
             </aside>
           </div>

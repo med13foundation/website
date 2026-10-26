@@ -69,7 +69,7 @@
     "sampleDetail": "Antes de la recolección de muestras biológicas, deben inscribirse en el estudio de historia natural en Matrix y dar su consentimiento. Al registrarse, seleccionen <strong>MED13</strong> como su grupo asociado de defensa de pacientes (PAG). Para programar una recolección, escriban a <contact>research@med13.org</contact>.",
     "sampleAction": "Explorar la donación de muestras",
     "reassuranceTitle": "Cada familia puede decidir a su propio ritmo",
-    "reassuranceBody": "La participación es voluntaria. Antes de recolectar muestras para el biorepositorio, se requiere la inscripción en el estudio de historia natural y el consentimiento. Completar el formulario del censo no implica la inscripción en el estudio. Si tienen preguntas sobre la participación en el estudio, la elegibilidad o el consentimiento, contacten al equipo del estudio a través de la plataforma asociada. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
+    "reassuranceBody": "La participación es voluntaria. Antes de recolectar muestras para el biorepositorio, se requiere la inscripción en el estudio de historia natural y el consentimiento. Completar el formulario del censo no implica la inscripción en el estudio. Si tienen preguntas sobre la participación en el estudio, la elegibilidad o el consentimiento, contáctennos en <contact>research@med13.org</contact>. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
   },
   "home": {
     "missionEyebrow": "Nuestra misión",
