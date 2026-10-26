@@ -14,3 +14,9 @@ Families registering for COMBINEDBrain Matrix must select **MED13** as their par
 **Why:** The organizer explicitly specified this registration instruction so families affiliate with the correct partner.
 
 **How to apply:** Include the MED13 partner PAG selection whenever explaining Matrix registration, in both English and Spanish.
+
+Report census completion, natural history enrollment, biorepository enrollment, biobanking consent, and actual sample donation as distinct measures. These groups overlap and must not be added together. Survey progress retains its approved meaning of at least one scored survey.
+
+**Why:** The organizer supplied separate family participation counts and requested explaining how participation supports conversations with scientists and funders. Biobanking consent is not evidence that a family enrolled in the biorepository or donated samples.
+
+**How to apply:** Compare each family group with the estimated known-family denominator, label the participation status precisely, and avoid implying that enrollment guarantees samples, funding, or treatment. Do not invent a data-cut date when one was not supplied.

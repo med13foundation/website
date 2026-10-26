@@ -21,6 +21,8 @@ const opportunities = [
     introKey: "communityIntro",
     detailKey: "communityDetail",
     actionKey: "communityAction",
+    families: 12,
+    whyKey: "communityWhy",
   },
   {
     id: "natural-history",
@@ -32,6 +34,8 @@ const opportunities = [
     introKey: "studyIntro",
     detailKey: "studyDetail",
     actionKey: "studyAction",
+    families: 9,
+    whyKey: "studyWhy",
   },
   {
     id: "biorepository",
@@ -43,6 +47,8 @@ const opportunities = [
     introKey: "sampleIntro",
     detailKey: "sampleDetail",
     actionKey: "sampleAction",
+    families: 3,
+    whyKey: "sampleWhy",
   },
 ] as const;
 
@@ -97,6 +103,42 @@ export default function ForFamilies() {
                   </a>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-primary/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8" aria-labelledby="participation-heading">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#a55d4c]">{t("participationEyebrow")}</p>
+            <h2 id="participation-heading" className="mt-3 font-heading text-3xl font-bold text-primary sm:text-4xl">
+              {t("participationTitle")}
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg">{t("participationIntro")}</p>
+            <div className="mt-8 grid gap-5 lg:grid-cols-3">
+              {opportunities.map((item) => (
+                <article key={item.id} className="flex flex-col rounded-2xl border border-[#c7ded9] bg-[#f2f8f6] p-6 sm:p-8">
+                  <h3 className="font-heading text-xl font-bold text-primary">{t(item.titleKey)}</h3>
+                  <p className="mt-5 text-3xl font-bold tabular-nums text-primary sm:text-4xl">
+                    {t("participatingCount", { count: item.families, total: 200 })}
+                  </p>
+                  <p className="mt-2 text-sm text-foreground/75">{t(item.id === "community" ? "censusCountLabel" : "enrolledCountLabel")}</p>
+                  <p className="mt-5 text-sm leading-relaxed text-foreground/85">{t(item.whyKey)}</p>
+                  {item.id === "natural-history" && (
+                    <p className="mt-4 rounded-xl bg-white/80 p-4 text-sm leading-relaxed text-foreground/85">
+                      <strong className="text-primary">33%</strong>{" "}{t("surveyProgress")}
+                    </p>
+                  )}
+                  <a href={`#${item.id}`} className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-primary underline underline-offset-4">
+                    {t("participateLink")}<ArrowDown className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </article>
+              ))}
+            </div>
+            <p className="mt-5 max-w-4xl text-sm leading-relaxed text-foreground/70">{t("participationNote")}</p>
+            <div className="mt-8 rounded-2xl bg-[#e9f5f3] p-6 sm:p-8">
+              <h3 className="font-heading text-2xl font-bold text-primary">{t("whyParticipateTitle")}</h3>
+              <p className="mt-3 max-w-4xl text-base leading-relaxed text-foreground/85">{t("whyParticipateBody")}</p>
+              <p className="mt-3 max-w-4xl text-sm leading-relaxed text-foreground/75">{t("whyParticipatePrivacy")}</p>
             </div>
           </div>
         </section>
