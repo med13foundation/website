@@ -8,3 +8,9 @@ Present the census, natural history study and biorepository as separate particip
 **Why:** The organizer requested all three options for families, and the linked census form collects community connection interests rather than study consent. Combining these pathways can incorrectly imply that contacting the foundation enrolls someone in research. The organizer specifically instructed that collection scheduling go through the foundation's research contact.
 
 **How to apply:** Keep census and enrolled-study counts distinct, label destinations clearly, and do not promise automatic enrollment, eligibility or sample collection arrangements.
+
+Families registering for COMBINEDBrain Matrix must select **MED13** as their partner patient advocacy group (PAG).
+
+**Why:** The organizer explicitly specified this registration instruction so families affiliate with the correct partner.
+
+**How to apply:** Include the MED13 partner PAG selection whenever explaining Matrix registration, in both English and Spanish.
