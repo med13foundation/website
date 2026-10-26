@@ -48,7 +48,7 @@ export default function Hero() {
               asChild
               data-testid="button-join-research"
             >
-              <Link href="/get-involved#research-cohort">
+              <Link href="/for-families">
                 {t('hero.joinResearch')}
               </Link>
             </Button>
