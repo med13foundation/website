@@ -50,7 +50,7 @@
     "metaDescription": "Explore optional ways for MED13 families to connect with the community, request natural history study access, or learn about biosample donation.",
     "eyebrow": "For families living with MED13",
     "title": "Choose what feels right for your family",
-    "intro": "There are different ways to connect and contribute. These are separate, voluntary opportunities, not steps in a required process. You can explore one, more than one, or none.",
+    "intro": "There are different ways to connect and contribute, from joining the census to participating in research. Participation is voluntary. Biorepository collection requires natural history study registration and consent.",
     "jumpNavLabel": "Jump to an opportunity",
     "optionsEyebrow": "Three distinct options",
     "optionsTitle": "Start wherever you are",
@@ -66,10 +66,10 @@
     "studyAction": "Request study access",
     "sampleTitle": "Biorepository sample donation",
     "sampleIntro": "Families can explore donating biospecimens for research under an IRB-approved protocol. This is a biological sample donation, not a financial gift.",
-    "sampleDetail": "To schedule a biosample collection, email <contact>research@med13.org</contact>.",
+    "sampleDetail": "Before a biosample collection, you must register for the natural history study in Matrix and provide consent. When registering, select <strong>MED13</strong> as your partner patient advocacy group (PAG). To schedule a collection, email <contact>research@med13.org</contact>.",
     "sampleAction": "Explore sample donation",
     "reassuranceTitle": "Your family can decide at its own pace",
-    "reassuranceBody": "All opportunities are optional. You do not need to complete one before considering another. For questions about study participation, eligibility, or consent, contact the study team through the partner platform. Participation does not guarantee treatment or a particular outcome. This page does not collect patient details."
+    "reassuranceBody": "Participation is voluntary. Biorepository collection requires registration for the natural history study and consent before samples can be collected. Completing the census form does not enroll you in the study. For questions about study participation, eligibility, or consent, contact the study team through the partner platform. Participation does not guarantee treatment or a particular outcome. This page does not collect patient details."
   },
   "home": {
     "missionEyebrow": "Our mission",

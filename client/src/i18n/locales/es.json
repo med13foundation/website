@@ -50,7 +50,7 @@
     "metaDescription": "Conoce opciones voluntarias para que las familias MED13 conecten con la comunidad, soliciten acceso al estudio de historia natural o exploren la donación de muestras biológicas.",
     "eyebrow": "Para familias que viven con MED13",
     "title": "Elijan lo que sea adecuado para su familia",
-    "intro": "Hay distintas formas de conectarse y contribuir. Son oportunidades voluntarias e independientes, no pasos de un proceso obligatorio. Pueden explorar una, más de una o ninguna.",
+    "intro": "Hay distintas formas de conectarse y contribuir, desde unirse al censo hasta participar en investigación. La participación es voluntaria. La recolección de muestras para el biorepositorio requiere la inscripción en el estudio de historia natural y el consentimiento.",
     "jumpNavLabel": "Ir a una oportunidad",
     "optionsEyebrow": "Tres opciones distintas",
     "optionsTitle": "Empiecen por donde estén",
@@ -66,10 +66,10 @@
     "studyAction": "Solicitar acceso al estudio",
     "sampleTitle": "Donación de muestras para el biorepositorio",
     "sampleIntro": "Las familias pueden explorar la donación de muestras biológicas para investigación conforme a un protocolo aprobado por un IRB. Se trata de donar una muestra biológica, no de hacer una donación económica.",
-    "sampleDetail": "Para programar una recolección de muestras biológicas, escribe a <contact>research@med13.org</contact>.",
+    "sampleDetail": "Antes de la recolección de muestras biológicas, deben inscribirse en el estudio de historia natural en Matrix y dar su consentimiento. Al registrarse, seleccionen <strong>MED13</strong> como su grupo asociado de defensa de pacientes (PAG). Para programar una recolección, escriban a <contact>research@med13.org</contact>.",
     "sampleAction": "Explorar la donación de muestras",
     "reassuranceTitle": "Cada familia puede decidir a su propio ritmo",
-    "reassuranceBody": "Todas las opciones son voluntarias. No es necesario completar una antes de considerar otra. Si tienen preguntas sobre la participación en el estudio, la elegibilidad o el consentimiento, contacten al equipo del estudio a través de la plataforma asociada. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
+    "reassuranceBody": "La participación es voluntaria. Antes de recolectar muestras para el biorepositorio, se requiere la inscripción en el estudio de historia natural y el consentimiento. Completar el formulario del censo no implica la inscripción en el estudio. Si tienen preguntas sobre la participación en el estudio, la elegibilidad o el consentimiento, contacten al equipo del estudio a través de la plataforma asociada. La participación no garantiza un tratamiento ni un resultado específico. Este sitio no recopila datos de pacientes."
   },
   "home": {
     "missionEyebrow": "Nuestra misión",
