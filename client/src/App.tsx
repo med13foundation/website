@@ -15,6 +15,7 @@ import Science from "@/pages/Science";
 import NewsAndEvents from "@/pages/NewsAndEvents";
 import Impact from "@/pages/Impact";
 import GetInvolved from "@/pages/GetInvolved";
+import ForFamilies from "@/pages/ForFamilies";
 import WaysToGive from "@/pages/WaysToGive";
 import HopeIsAPractice from "@/pages/HopeIsAPractice";
 import DenverMiniMeetup from "@/pages/DenverMiniMeetup";
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/impact" component={Impact}/>
       <Route path="/roadmap"><Redirect to="/impact" /></Route>
       <Route path="/get-involved" component={GetInvolved}/>
+      <Route path="/for-families" component={ForFamilies}/>
       <Route path="/ways-to-give" component={WaysToGive}/>
       <Route component={NotFound} />
     </Switch>

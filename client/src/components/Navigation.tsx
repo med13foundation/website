@@ -92,9 +92,23 @@ export default function Navigation() {
             <Link href="/science" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-science">
               {t("nav.science")}
             </Link>
-            <Link href="/get-involved" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-get-involved">
-              {t('nav.getInvolved')}
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                data-testid="button-get-involved-menu"
+              >
+                {t("nav.getInvolved")}
+                <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem asChild>
+                  <Link href="/get-involved" data-testid="link-get-involved">{t("nav.getInvolved")}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/for-families" data-testid="link-for-families">{t("forFamilies.label")}</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link href="/impact" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-impact">
               {t('nav.impact')}
             </Link>
@@ -219,6 +233,14 @@ export default function Navigation() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('nav.getInvolved')}
+            </Link>
+            <Link
+              href="/for-families"
+              className="block px-3 py-2 text-base font-medium text-foreground hover-elevate rounded-md"
+              data-testid="link-mobile-for-families"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("forFamilies.label")}
             </Link>
             <Link 
               href="/impact"

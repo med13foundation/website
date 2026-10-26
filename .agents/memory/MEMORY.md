@@ -8,3 +8,4 @@
 - [Media image sourcing](media-image-sourcing.md) — SPARK article pages can block fetching while official image assets remain accessible; use subject-specific searches.
 - [Impact reporting](impact-reporting.md) — Preserve denominators, source dates, and unaudited labels; report small cohorts as counts and keep unconfirmed fundraising flagged.
 - [Website copy](website-copy.md) — Public website copy uses commas, colons, or sentence breaks instead of em dashes.
+- [Family research participation](family-research-participation.md) — Census connection, study enrollment and biosample donation are separate options with distinct consent processes.
