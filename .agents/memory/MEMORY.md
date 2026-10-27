@@ -9,3 +9,4 @@
 - [Impact reporting](impact-reporting.md) — Preserve denominators, source dates, and unaudited labels; report small cohorts as counts and keep unconfirmed fundraising flagged.
 - [Website copy](website-copy.md) — Public website copy uses commas, colons, or sentence breaks instead of em dashes.
 - [Family research participation](family-research-participation.md) — Census is not study enrollment; biosample collection requires natural history study registration and consent.
+- [Privacy-aligned resources](privacy-resources.md) — Self-host fonts and use privacy-enhanced YouTube embeds to preserve organizer-requested privacy alignment.

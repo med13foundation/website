@@ -245,7 +245,7 @@ export default function EventsSection() {
             <CardContent className="p-0 overflow-hidden rounded-xl">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.youtube.com/embed/m50_661nci0"
+                  src="https://www.youtube-nocookie.com/embed/m50_661nci0"
                   title={t('events.mediaVideoTitle')}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
