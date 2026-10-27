@@ -20,3 +20,9 @@ Report census completion, natural history enrollment, biorepository enrollment, 
 **Why:** The organizer supplied separate family participation counts and requested explaining how participation supports conversations with scientists and funders. Biobanking consent is not evidence that a family enrolled in the biorepository or donated samples.
 
 **How to apply:** Compare each family group with the estimated known-family denominator, label the participation status precisely, and avoid implying that enrollment guarantees samples, funding, or treatment. Do not invent a data-cut date when one was not supplied.
+
+Do not imply that being counted by another organization or registered in Matrix means a family has completed the foundation census. Leave unconfirmed data-access, retention, and removal policies out of public guidance.
+
+**Why:** The organizer approved census-first messaging that distinguishes the combined worldwide estimate from foundation form completion, with unconfirmed privacy details explicitly excluded.
+
+**How to apply:** Explain the distinction in family-facing census copy and direct uncertain families to the foundation research team rather than asserting their submission status or inventing privacy procedures.

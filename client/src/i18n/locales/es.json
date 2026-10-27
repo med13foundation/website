@@ -53,8 +53,30 @@
     "intro": "Hay distintas formas de conectarse y contribuir, desde unirse al censo hasta participar en investigación. La participación es voluntaria. La recolección de muestras para el biorepositorio requiere la inscripción en el estudio de historia natural y el consentimiento.",
     "jumpNavLabel": "Ir a una oportunidad",
     "participationEyebrow": "Nuestra comunidad en cifras",
-    "participationTitle": "Cada familia ayuda a construir la evidencia",
-    "participationIntro": "Estimamos que se conocen 200 familias que viven con el síndrome MED13 en todo el mundo. Estas son las cifras de participación en cada una de estas oportunidades.",
+    "participationTitle": "Ayuden a hacer visible a la comunidad MED13",
+    "participationIntro": "Estimamos que se conocen 200 familias que viven con el síndrome MED13 en todo el mundo, pero solo 12 han completado el censo de nuestra fundación. La estimación mundial subestima considerablemente cuántas familias podrían estar afectadas.",
+    "censusInvitation": "Al compartir su información, nos ayudan a comprender dónde están las familias, qué apoyo necesitan y cómo contactarlas sobre recursos relevantes y oportunidades de investigación. En conjunto, estas cifras de la comunidad nos ayudan a explicar la necesidad de investigar MED13 a científicos y financiadores.",
+    "censusInvitationAction": "Completar el censo familiar",
+    "censusConsentNote": "Completar el censo no implica la inscripción en una investigación. Participar en el estudio de historia natural requiere una inscripción y un consentimiento por separado.",
+    "faqTitle": "Preguntas sobre el censo",
+    "faq": {
+      "counted": {
+        "question": "¿Nuestra familia ya está incluida en las cifras?",
+        "answer": "La estimación de 200 familias conocidas combina varias fuentes. Que otra organización conozca a su familia o que estén registrados en Matrix no significa necesariamente que hayan completado el censo de la Fundación MED13. Si no saben si su familia ha enviado nuestro formulario, contáctennos en <contact>research@med13.org</contact>."
+      },
+      "research": {
+        "question": "¿Completar el censo nos inscribe en una investigación?",
+        "answer": "No. El censo es nuestro Formulario de conexión comunitaria, no una inscripción ni un consentimiento para investigación. Para participar en el estudio de historia natural, soliciten acceso a Matrix, seleccionen MED13 como su grupo asociado de defensa de pacientes (PAG) y sigan el proceso de inscripción y consentimiento del estudio. La recolección de muestras para el biorepositorio también requiere la inscripción en el estudio de historia natural y el consentimiento."
+      },
+      "next": {
+        "question": "¿Qué sucede después de completar el censo?",
+        "answer": "Sus datos ayudan a la fundación a conectar a su familia con recursos relevantes, novedades de la comunidad y oportunidades de investigación, según su consentimiento para recibir comunicaciones y sus intereses. Pueden explorar la información del estudio y del biorepositorio en esta página, pero enviar el censo no los inscribe automáticamente en ninguno de los dos."
+      },
+      "help": {
+        "question": "¿Quién puede ayudarnos con el siguiente paso?",
+        "answer": "Contáctennos en <contact>research@med13.org</contact> si tienen preguntas sobre el censo, la participación en el estudio, la elegibilidad o el consentimiento. Para programar una recolección de muestras para el biorepositorio, escriban a la misma dirección. Antes de recolectar las muestras, se requiere la inscripción en el estudio de historia natural y el consentimiento."
+      }
+    },
     "participatingCount": "{{count}} de {{total}}",
     "censusCountLabel": "familias conocidas han completado el censo",
     "enrolledCountLabel": "familias conocidas están inscritas",

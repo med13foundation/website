@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { ArrowDown, ArrowUpRight, BookOpen, FlaskConical, HeartHandshake, UsersRound } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FamilyCensusFaq from "@/components/FamilyCensusFaq";
 import { Button } from "@/components/ui/button";
 import {
   BIOREPOSITORY_FAMILIES_URL,
@@ -114,6 +115,15 @@ export default function ForFamilies() {
               {t("participationTitle")}
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg">{t("participationIntro")}</p>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/80 sm:text-lg">{t("censusInvitation")}</p>
+            <div className="mt-6">
+              <Button asChild>
+                <a href={CENSUS_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  {t("censusInvitationAction")}<ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </a>
+              </Button>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-foreground/70">{t("censusConsentNote")}</p>
+            </div>
             <div className="mt-8 grid gap-5 lg:grid-cols-3">
               {opportunities.map((item) => (
                 <article key={item.id} className="flex flex-col rounded-2xl border border-[#c7ded9] bg-[#f2f8f6] p-6 sm:p-8">
@@ -221,6 +231,7 @@ export default function ForFamilies() {
                 </p>
               </div>
             </aside>
+            <FamilyCensusFaq />
           </div>
         </section>
       </main>

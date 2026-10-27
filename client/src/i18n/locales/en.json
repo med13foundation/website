@@ -53,8 +53,30 @@
     "intro": "There are different ways to connect and contribute, from joining the census to participating in research. Participation is voluntary. Biorepository collection requires natural history study registration and consent.",
     "jumpNavLabel": "Jump to an opportunity",
     "participationEyebrow": "Our community in numbers",
-    "participationTitle": "Every family helps build the evidence",
-    "participationIntro": "We estimate that 200 families living with MED13 syndrome are known worldwide. Here is how many are participating in each of these opportunities.",
+    "participationTitle": "Help make the MED13 community visible",
+    "participationIntro": "We estimate that 200 families living with MED13 syndrome are known worldwide, but only 12 have completed our foundation census. The worldwide estimate substantially undercounts how many families may be affected.",
+    "censusInvitation": "By sharing your information, you help us understand where families are, what support they need, and how to reach them about relevant resources and research opportunities. Together, these community-level numbers help us explain the need for MED13 research to scientists and funders.",
+    "censusInvitationAction": "Complete the family census",
+    "censusConsentNote": "Completing the census does not enroll you in research. Natural history study participation requires separate registration and consent.",
+    "faqTitle": "Questions about being counted",
+    "faq": {
+      "counted": {
+        "question": "Is our family already counted?",
+        "answer": "The estimate of 200 known families combines several sources. Being known through another organization or registered in Matrix does not necessarily mean you have completed the MED13 Foundation census. If you are unsure whether your family has submitted our form, contact us at <contact>research@med13.org</contact>."
+      },
+      "research": {
+        "question": "Does completing the census enroll us in research?",
+        "answer": "No. The census is our Community Connection Form, not research enrollment or research consent. To participate in the natural history study, request Matrix access, select MED13 as your partner patient advocacy group (PAG), and follow the study registration and consent process. Biorepository collection also requires natural history study registration and consent."
+      },
+      "next": {
+        "question": "What happens after we complete the census?",
+        "answer": "Your details help the foundation connect your family with relevant resources, community updates, and research opportunities, according to your communication consent and interests. You can explore the study and biorepository information on this page, but submitting the census does not automatically sign you up for either."
+      },
+      "help": {
+        "question": "Who can help us with the next step?",
+        "answer": "Contact us at <contact>research@med13.org</contact> with questions about the census, study participation, eligibility, or consent. To schedule a biorepository collection, email the same address. Natural history study registration and consent are required before samples can be collected."
+      }
+    },
     "participatingCount": "{{count}} of {{total}}",
     "censusCountLabel": "known families have completed the census",
     "enrolledCountLabel": "known families are enrolled",
