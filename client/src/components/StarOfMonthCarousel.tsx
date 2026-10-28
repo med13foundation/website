@@ -12,6 +12,12 @@ import {
 
 const monthlyStars = [
   {
+    id: "harper",
+    image: "/images/news/harper-november-2026.webp",
+    prefix: "starOfMonthNovember",
+    loves: 5,
+  },
+  {
     id: "xander",
     image: "/images/news/xander-september-2026.webp",
     prefix: "starOfMonthSeptember",
