@@ -17,6 +17,17 @@ jobs:
           node-version: "20"
           cache: npm
 
+      - name: Point Replit proxy URLs at the public npm registry
+        run: |
+          if grep -qF 'package-firewall.replit.internal' package-lock.json; then
+            sed -i -E 's#https?://package-firewall\.replit\.internal/npm/#https://registry.npmjs.org/#g' package-lock.json
+            if grep -qF 'package-firewall.replit.internal' package-lock.json; then
+              echo "::error file=package-lock.json::package-lock.json still points at Replit's internal package proxy in a form this step can't rewrite"
+              exit 1
+            fi
+            echo "::warning file=package-lock.json::Replit's internal package proxy URLs were rewritten to registry.npmjs.org for this build"
+          fi
+
       - name: Install dependencies
         run: npm ci
 
