@@ -98,12 +98,12 @@ export default function Gala() {
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:px-8">
             <div className="max-w-2xl">
               <img src={logoUrl} alt="MED13 Foundation" className="mb-7 h-16 w-auto object-contain object-left" />
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#b56855]">{t("galaRecap.eyebrow")}</p>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-warm">{t("galaRecap.eyebrow")}</p>
               <h1 className="font-heading text-5xl font-bold leading-[1.02] tracking-tight text-[#235b5e] sm:text-6xl lg:text-7xl">
                 {t("galaRecap.title")}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#435957] sm:text-xl">{t("galaRecap.intro")}</p>
-              <Link href="/impact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#235b5e] underline decoration-[#d59b83] underline-offset-4 hover:text-[#b56855]">
+              <Link href="/impact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#235b5e] underline decoration-[#d59b83] underline-offset-4 hover:text-warm">
                 {t("galaRecap.explore")} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <div className="mt-12 grid max-w-lg grid-cols-2 items-end gap-4 border-t border-[#bdcfc7] pt-6">
@@ -112,14 +112,14 @@ export default function Gala() {
                   <p className="mt-2 text-xs font-bold uppercase tracking-[0.13em] text-[#526c68]">{t("galaRecap.raisedLabel")}</p>
                 </div>
                 <div>
-                  <p className="font-heading text-3xl font-semibold tracking-tight text-[#b56855] sm:text-4xl">$100,000</p>
+                  <p className="font-heading text-3xl font-semibold tracking-tight text-warm sm:text-4xl">$100,000</p>
                   <p className="mt-2 text-xs font-bold uppercase tracking-[0.13em] text-[#526c68]">{t("galaRecap.goalLabel")}</p>
                 </div>
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-xl lg:ml-auto" aria-labelledby="gala-video-title">
               <div className="mb-6">
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#b56855]">{t("galaRecap.filmEyebrow")}</p>
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-warm">{t("galaRecap.filmEyebrow")}</p>
                 <h2 id="gala-video-title" className="font-heading text-2xl font-bold text-[#235b5e] sm:text-3xl">{t("galaRecap.filmTitle")}</h2>
                 <p className="mt-3 leading-relaxed text-[#52615d]">{t("galaRecap.filmIntro")}</p>
               </div>
@@ -147,7 +147,7 @@ export default function Gala() {
         <section id="recap-progress" className="scroll-mt-20 border-b border-[#d7e1db] bg-[#fbfaf5] py-16 sm:py-24">
           <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
             <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#b56855]">{t("galaRecap.progressEyebrow")}</p>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-warm">{t("galaRecap.progressEyebrow")}</p>
               <h2 className="font-heading text-3xl font-bold leading-tight text-[#235b5e] sm:text-4xl">{t("galaRecap.progressTitle")}</h2>
             </div>
             <div className="rounded-3xl border border-[#d9e2dc] bg-white/80 p-6 sm:p-9">
@@ -162,7 +162,7 @@ export default function Gala() {
               </div>
               <p className="mt-7 border-l-2 border-[#d59b83] pl-4 text-sm leading-relaxed text-[#6b716c]">{t("galaRecap.fundingNote")}</p>
               <div className="mt-7 flex items-start gap-3 border-t border-[#e1e7e2] pt-6">
-                <HeartHandshake className="mt-0.5 h-5 w-5 shrink-0 text-[#b56855]" aria-hidden="true" />
+                <HeartHandshake className="mt-0.5 h-5 w-5 shrink-0 text-warm" aria-hidden="true" />
                 <p className="text-sm leading-relaxed text-[#52615d]">{t("galaRecap.thanks")}</p>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function Gala() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-9 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
               <div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#b56855]">{t("galaRecap.galleryEyebrow")}</p>
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-warm">{t("galaRecap.galleryEyebrow")}</p>
                 <h2 id="gala-gallery-title" className="font-heading text-3xl font-bold text-[#235b5e] sm:text-4xl">{t("galaRecap.galleryTitle")}</h2>
                 <p className="mt-3 max-w-2xl text-[#52615d]">{t("galaRecap.galleryIntro")}</p>
               </div>
@@ -199,7 +199,7 @@ export default function Gala() {
                       <span className="mt-1 block text-xs text-[#62716b]">{t(`galaRecap.${album.noteKey}`)}</span>
                       <span className="mt-1 block text-[11px] text-[#62716b]">{t("galaRecap.photoCredit")}: {album.credit}</span>
                     </span>
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-[#b56855]" aria-hidden="true" />
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-warm" aria-hidden="true" />
                   </span>
                   {album.previews && (
                     <span className="grid w-full flex-1 grid-cols-2 gap-2 sm:grid-cols-4" data-testid={`gala-${album.id}-selected-photos`}>
@@ -223,16 +223,16 @@ export default function Gala() {
         <section className="border-y border-[#d5ded7] bg-[#f1ede2] py-12 sm:py-16">
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fffaf0] text-[#b56855]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fffaf0] text-warm">
                 <CalendarDays className="h-6 w-6" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#a45e4a]">{t("galaRecap.nextEyebrow")}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-warm">{t("galaRecap.nextEyebrow")}</p>
                 <h2 className="mt-1 font-heading text-2xl font-bold text-[#235b5e]">{t("galaRecap.nextTitle")}</h2>
                 <p className="mt-1 text-[#52615d]">{t("galaRecap.nextDate")}</p>
               </div>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-[#66716b]">{t("galaRecap.nextNote")}</p>
+            <p className="max-w-md text-sm leading-relaxed text-muted-foreground">{t("galaRecap.nextNote")}</p>
           </div>
         </section>
 
@@ -250,7 +250,7 @@ export default function Gala() {
               <span aria-hidden="true">·</span>
               {t("galaRecap.hostedBy")}
             </div>
-            <p className="text-xs leading-relaxed text-[#66716b]">{t("gala.footerFiscal")}</p>
+            <p className="text-xs leading-relaxed text-muted-foreground">{t("gala.footerFiscal")}</p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/champions" className="font-semibold text-[#235b5e] underline underline-offset-4">{t("recognition.seeAll")}</Link>
               <Link href="/" className="inline-flex items-center gap-1 font-semibold text-[#235b5e] underline underline-offset-4">

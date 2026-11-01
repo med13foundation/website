@@ -50,7 +50,7 @@ export default function Science() {
           <div className="mx-auto max-w-7xl">
             <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
               <div className="max-w-4xl">
-                <p className="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#a55d4c]">
+                <p className="mb-5 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-warm">
                   <Microscope className="h-4 w-4" aria-hidden="true" />
                   {t("sciencePage.eyebrow")}
                 </p>

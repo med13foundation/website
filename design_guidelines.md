@@ -27,7 +27,7 @@ The palette evokes optimism, empathy, and clarity - balancing medical trust with
 - Primary buttons and CTAs use the warm teal as the fill, with night-sky navy `#0B1530` text (white on teal fails contrast)
 - Secondary highlights use coral-peach for emotional warmth, as a fill or accent, never as text
 - Text that would be teal or coral uses navy instead: in light mode, `text-primary` and `text-secondary` render navy
-- Text colors come from tokens, never hex: navy `--primary-text` / `--secondary-text` (`text-primary`, `text-secondary`), warm brown `--warm-text` `#A25947` for small accent labels (`text-warm`, also `bg-warm` with white text), rust `--destructive-text` for errors (`text-destructive`), and `--muted-foreground` (40% grey) for secondary text
+- Text colors come from tokens, never hex: navy `--primary-text` / `--secondary-text` (`text-primary`, `text-secondary`), warm brown `--warm-text` `#9C5644` for small accent labels (`text-warm`, also `bg-warm` with white text), rust `--destructive-text` for errors (`text-destructive`), and `--muted-foreground` (40% grey) for secondary text
 - Dark-mode tokens exist but aren't audited for contrast; the site doesn't use dark mode
 - Accent yellow for hope and optimism touches
 
