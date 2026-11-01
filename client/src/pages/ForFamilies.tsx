@@ -77,7 +77,7 @@ export default function ForFamilies() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative isolate overflow-hidden bg-[#e9f5f3] px-4 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
           <div className="pointer-events-none absolute -right-24 -top-28 -z-10 h-80 w-80 rounded-full bg-[#edab98]/25 blur-3xl" aria-hidden="true" />
           <div className="pointer-events-none absolute -bottom-36 left-[8%] -z-10 h-80 w-80 rounded-full bg-[#a9d6ce]/45 blur-3xl" aria-hidden="true" />
