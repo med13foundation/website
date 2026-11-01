@@ -1,7 +1,11 @@
 /**
  * Single source of truth for public route SEO metadata.
  * Add every new public page here (title, description, sitemap, og image).
+ * Entries point at the page's own translation keys in the English locale file, so the
+ * server and the page show the same words; an entry with no key keeps its literal string.
  */
+
+import en from "../client/src/i18n/locales/en.json";
 
 export const SITE_URL = "https://med13.org";
 export const SITE_NAME = "MED13 Foundation";
@@ -21,45 +25,103 @@ export type RouteMetadata = {
   match?: RegExp;
 };
 
-export const routeMetadata: RouteMetadata[] = [
+type RouteMetadataDefinition = Omit<RouteMetadata, "title" | "description"> & {
+  title?: string;
+  description?: string;
+  /** Dotted path into en.json, e.g. "sciencePage.metaTitle". Wins over the literal title. */
+  titleKey?: string;
+  /** Dotted path into en.json. Wins over the literal description. */
+  descriptionKey?: string;
+  /** Append " | MED13 Foundation" to the translated title, as the page's own code does. */
+  appendSiteName?: boolean;
+};
+
+const HOME_DESCRIPTION =
+  "The MED13 Foundation unites families, researchers, and clinicians to accelerate research toward treatments and a cure for MED13 syndrome.";
+
+function lookupTranslation(key: string): string | undefined {
+  let node: unknown = en;
+  for (const part of key.split(".")) {
+    if (typeof node !== "object" || node === null) return undefined;
+    node = (node as Record<string, unknown>)[part];
+  }
+  return typeof node === "string" && node.trim() ? node : undefined;
+}
+
+function resolveText(
+  routePath: string,
+  key: string | undefined,
+  literal: string | undefined,
+  fallback: string,
+  suffix = "",
+): string {
+  if (key === undefined) return literal ?? fallback;
+  const translated = lookupTranslation(key);
+  if (translated !== undefined) return `${translated}${suffix}`;
+  console.warn(`[route-metadata] ${routePath}: "${key}" is not a non-empty string in en.json`);
+  return literal ?? fallback;
+}
+
+function resolveDefinition(definition: RouteMetadataDefinition): RouteMetadata {
+  const { titleKey, descriptionKey, appendSiteName, ...rest } = definition;
+  return {
+    ...rest,
+    title: resolveText(
+      definition.path,
+      titleKey,
+      definition.title,
+      SITE_NAME,
+      appendSiteName ? ` | ${SITE_NAME}` : "",
+    ),
+    description: resolveText(definition.path, descriptionKey, definition.description, HOME_DESCRIPTION),
+  };
+}
+
+const routeDefinitions: RouteMetadataDefinition[] = [
   {
     path: "/",
     title: "MED13 Foundation | Advancing Research for MED13 Syndrome",
-    description:
-      "The MED13 Foundation unites families, researchers, and clinicians to accelerate research toward treatments and a cure for MED13 syndrome.",
+    description: HOME_DESCRIPTION,
     sitemap: true,
   },
   {
     path: "/gala",
-    title: "An Evening for Answers - First Annual Gala | MED13 Foundation",
-    description:
-      "Join the MED13 Foundation's First Annual Gala, An Evening for Answers, on Saturday, October 10, 2026 at 7:00 PM at the UU Church of Palo Alto.",
+    titleKey: "galaRecap.metaTitle",
+    appendSiteName: true,
+    descriptionKey: "galaRecap.metaDescription",
     sitemap: true,
   },
   {
     path: "/symposium",
-    title: "MEDopathies Alliance Virtual Scientific Symposium | MED13 Foundation",
-    description:
-      "Join the MEDopathies Alliance Virtual Scientific Symposium on October 9, 2026, for a free day of research presentations, panels, and family perspectives.",
+    titleKey: "symposium.metaTitle",
+    descriptionKey: "symposium.metaDescription",
     sitemap: true,
   },
   {
     path: "/who-we-are",
     title: "Who We Are - Board & Scientific Advisors | MED13 Foundation",
     description:
-      "The MED13 Foundation is parent-led and family-driven. We are building the research tools that will enable treatments, and connecting every family who needs us.",
+      "Meet the MED13 Foundation team: our parent-led Board of Directors and world-class Scientific Advisory Board working to accelerate research for MED13 syndrome.",
     sitemap: true,
   },
   {
-    path: "/what-is-med13-syndrome",
-    title: "What is MED13 syndrome? | MED13 Foundation",
-    description:
-      "MED13 syndrome is a rare genetic neurodevelopmental condition associated with changes in the MED13 gene. Features vary from person to person.",
+    path: "/science",
+    titleKey: "sciencePage.metaTitle",
+    descriptionKey: "sciencePage.metaDescription",
     sitemap: true,
+  },
+  {
+    // Legacy URL: client redirects to /science
+    path: "/what-is-med13-syndrome",
+    titleKey: "sciencePage.metaTitle",
+    descriptionKey: "sciencePage.metaDescription",
+    sitemap: false,
+    noindex: true,
   },
   {
     path: "/champions",
-    title: "Community Champions | MED13 Foundation",
+    titleKey: "recognition.championsTitle",
+    appendSiteName: true,
     description:
       "Thank you to the businesses and partners supporting the MED13 community. Recognition is updated quarterly.",
     sitemap: true,
@@ -72,31 +134,27 @@ export const routeMetadata: RouteMetadata[] = [
   },
   {
     path: "/news-and-events/hope-is-a-practice",
-    title: "Hope Is a Practice | MED13 Foundation",
-    description:
-      "Join the MED13 community for Hope Is a Practice, a welcoming Sunday service at the Unitarian Universalist Church of Palo Alto on September 27, 2026.",
+    titleKey: "hopePractice.metaTitle",
+    descriptionKey: "hopePractice.metaDescription",
     sitemap: true,
   },
   {
     path: "/news-and-events/denver-mini-medopathies-meetup",
-    title: "Mini MEDopathies Family Meetup, Denver | MED13 Foundation",
-    description:
-      "Join MED12, MED13, and MED13L families in Denver on December 4, 2026, for an accessible, respite-supported day of connection, resources, and research.",
+    titleKey: "denverMeetup.metaTitle",
+    descriptionKey: "denverMeetup.metaDescription",
     sitemap: true,
   },
   {
     path: "/impact",
-    title: "Impact and Progress | MED13 Foundation",
-    description:
-      "A candid, denominator-aware account of MED13 Foundation's first year of research infrastructure, family participation, funding, and milestones.",
+    titleKey: "impact.metaTitle",
+    descriptionKey: "impact.metaDescription",
     sitemap: true,
   },
   {
     // Legacy URL: client redirects to /impact
     path: "/roadmap",
-    title: "Impact and Progress | MED13 Foundation",
-    description:
-      "A candid, denominator-aware account of MED13 Foundation's first year of research infrastructure, family participation, funding, and milestones.",
+    titleKey: "impact.metaTitle",
+    descriptionKey: "impact.metaDescription",
     sitemap: false,
     noindex: true,
   },
@@ -107,10 +165,16 @@ export const routeMetadata: RouteMetadata[] = [
     sitemap: true,
   },
   {
+    path: "/for-families",
+    titleKey: "forFamilies.metaTitle",
+    descriptionKey: "forFamilies.metaDescription",
+    sitemap: true,
+  },
+  {
     path: "/ways-to-give",
-    title: "Other Ways to Give | MED13 Foundation",
-    description:
-      "Help MED13 families travel to the 2027 Pan-Mediator Family Convening with airline miles, hotel points, or a coordinated gift.",
+    titleKey: "waysToGive.title",
+    appendSiteName: true,
+    descriptionKey: "waysToGive.metaDescription",
     sitemap: true,
   },
   {
@@ -136,6 +200,8 @@ export const routeMetadata: RouteMetadata[] = [
     match: /^\/newsletter\/[^/]+$/,
   },
 ];
+
+export const routeMetadata: RouteMetadata[] = routeDefinitions.map(resolveDefinition);
 
 /** Strips query and hash, and a trailing slash on anything but "/". */
 export function normalizePath(rawPath: string): string {
@@ -222,8 +288,7 @@ export function buildEventJsonLd(rawPath: string): Record<string, unknown> | nul
     "@context": "https://schema.org",
     "@type": "Event",
     name: "Mini MEDopathies Family Meetup",
-    description:
-      "Join MED12, MED13, and MED13L families in Denver on December 4, 2026, for an accessible, respite-supported day of connection, resources, and research.",
+    description: resolveRouteMetadata(path)?.description,
     startDate: "2026-12-04",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",

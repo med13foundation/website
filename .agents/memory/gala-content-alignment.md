@@ -20,3 +20,9 @@ The organizer confirmed on October 3, 2026 that dessert opens at the start of th
 **Why:** Dessert is timed to this segment rather than available throughout the evening.
 
 **How to apply:** Preserve dessert in the segment description and do not describe it as opening earlier in attendee-facing materials.
+
+The organizer clarified on October 23, 2026 that the $123,660 shown on the gala recap is the total raised for the year against a $100,000 goal, supporting the cell-line cohort. It is not gala-only proceeds or research spending to date.
+
+**Why:** Earlier recap wording incorrectly attributed the entire total to the gala. The organizer corrected its scope to annual fundraising; the treatment of in-kind credits within this revised total was not clarified.
+
+**How to apply:** Use annual rather than gala-only attribution for this figure. Do not infer spending, completed cell lines, or cohort size from money raised. Confirm how the annual figure treats in-kind credits before reconciling it with the previously approved combined cash-and-credit support figures on Impact and Progress.

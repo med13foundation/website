@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SymposiumPlaylist, { SYMPOSIUM_PLAYLIST_URL } from "@/components/SymposiumPlaylist";
 
 type Session = {
   time: string;
@@ -272,22 +273,15 @@ export default function Symposium() {
                   {t("symposium.heroIntro")}
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
-                  <Button size="lg" asChild data-testid="button-symposium-registration">
+                  <Button size="lg" asChild data-testid="button-symposium-recordings">
                     <a
-                      href="https://us02web.zoom.us/webinar/register/WN_X9wRqoaiSMm3Hwj-PZR-Xw"
+                      href={SYMPOSIUM_PLAYLIST_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {t("symposium.registrationStatus")}
+                      {t("symposium.watchRecordings")}
                     </a>
                   </Button>
-                  <a
-                    href="/symposium.ics"
-                    className="self-center text-sm font-medium text-primary underline underline-offset-4"
-                    data-testid="link-symposium-calendar"
-                  >
-                    {t("symposium.addToCalendar")}
-                  </a>
                 </div>
                 <div className="mt-3 flex flex-wrap justify-center gap-3 lg:justify-start">
                   <Button size="lg" variant="outline" asChild data-testid="button-symposium-program">
@@ -296,8 +290,8 @@ export default function Symposium() {
                     </a>
                   </Button>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground" data-testid="text-symposium-registration-note">
-                  {t("symposium.registrationNote")}
+                <p className="mt-3 text-sm text-muted-foreground" data-testid="text-symposium-recordings-note">
+                  {t("symposium.recordingsNote")}
                 </p>
               </div>
 
@@ -341,6 +335,8 @@ export default function Symposium() {
             </div>
           </div>
         </section>
+
+        <SymposiumPlaylist />
 
         <section className="py-16 sm:py-24" data-testid="section-symposium-why">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
