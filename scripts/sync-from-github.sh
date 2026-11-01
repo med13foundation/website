@@ -38,9 +38,9 @@ fi
 [ -z "$(git status --porcelain --untracked-files=no)" ] || stop "uncommitted changes, skipping. Commit them first."
 
 if command -v timeout > /dev/null 2>&1; then
-  timeout 30 git fetch --quiet origin main > /dev/null 2>&1
+  timeout 30 git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main > /dev/null 2>&1
 else
-  git fetch --quiet origin main > /dev/null 2>&1
+  git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main > /dev/null 2>&1
 fi
 [ $? -eq 0 ] || stop "couldn't reach GitHub, nothing changed"
 
