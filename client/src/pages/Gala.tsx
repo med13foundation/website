@@ -92,7 +92,7 @@ export default function Gala() {
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Navigation />
 
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative overflow-hidden bg-[#f2f5ee] pb-16 pt-10 sm:pb-24 sm:pt-16" data-testid="section-gala-hero">
           <div className="pointer-events-none absolute -right-24 -top-32 h-96 w-96 rounded-full bg-[#dcebe5] opacity-80 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:px-8">

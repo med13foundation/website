@@ -36,7 +36,7 @@ export default function Unsubscribe() {
 
   if (status === "success") {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <main id="main" tabIndex={-1} className="min-h-screen bg-background flex items-center justify-center p-4 focus:outline-none">
         <Card className="max-w-md w-full">
           <CardContent className="py-12 text-center">
             <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
@@ -54,12 +54,12 @@ export default function Unsubscribe() {
             </Link>
           </CardContent>
         </Card>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-background flex items-center justify-center p-4 focus:outline-none">
       <Card className="max-w-md w-full">
         <CardContent className="py-10 text-center">
           <MailX className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
@@ -70,8 +70,13 @@ export default function Unsubscribe() {
             {t("unsubscribe.desc")}
           </p>
           <div className="flex gap-2">
+            <label htmlFor="unsubscribe-email" className="sr-only">
+              {t("newsletter.emailLabel")}
+            </label>
             <Input
+              id="unsubscribe-email"
               type="email"
+              autoComplete="email"
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -98,6 +103,6 @@ export default function Unsubscribe() {
           </Link>
         </CardContent>
       </Card>
-    </div>
+    </main>
   );
 }

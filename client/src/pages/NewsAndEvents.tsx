@@ -55,7 +55,7 @@ export default function NewsAndEvents() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <EventsSection />
       </main>
       <Footer />

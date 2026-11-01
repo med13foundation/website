@@ -148,7 +148,7 @@ export default function SyndromeVideo() {
           <p className="mt-2">{t("home.syndromeVideoVisualsClosing")}</p>
         </details>
         <div className="mt-6 text-center">
-          <Button asChild data-testid="link-syndrome-video-facts">
+          <Button asChild className="max-w-full whitespace-normal" data-testid="link-syndrome-video-facts">
             <a href="/science#med13-facts">
               {t("home.syndromeVideoLearnMore")}
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />

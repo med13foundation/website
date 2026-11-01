@@ -34,14 +34,16 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
-      <MissionSummary />
-      <ConstellationFilm />
-      <StarOfMonthCarousel />
-      <FeaturedEventsPreview />
-      <GetInvolvedPreview />
-      <ClassyDonation />
-      <NewsletterSection />
+      <main id="main" tabIndex={-1} className="focus:outline-none">
+        <Hero />
+        <MissionSummary />
+        <ConstellationFilm />
+        <StarOfMonthCarousel />
+        <FeaturedEventsPreview />
+        <GetInvolvedPreview />
+        <ClassyDonation />
+        <NewsletterSection />
+      </main>
       <Footer />
     </div>
   );

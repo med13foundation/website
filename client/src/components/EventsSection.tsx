@@ -13,9 +13,9 @@ export default function EventsSection() {
     <section id="events" className="py-16 sm:py-24 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-events-title">
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4" data-testid="text-events-title">
             {t('events.title')}
-          </h2>
+          </h1>
           <p className="text-lg text-muted-foreground">
             {t('events.subtitle')}
           </p>
@@ -236,9 +236,9 @@ export default function EventsSection() {
             <div className="flex justify-center mb-3">
               <Play className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
               {t('events.mediaTitle')}
-            </h3>
+            </h2>
             <p className="text-muted-foreground">{t('events.mediaSubtitle')}</p>
           </div>
           <Card data-testid="card-featured-video">
@@ -253,7 +253,7 @@ export default function EventsSection() {
                 />
               </div>
               <div className="p-6">
-                <h4 className="font-heading font-bold text-foreground mb-1">{t('events.mediaVideoTitle')}</h4>
+                <h3 className="font-heading font-bold text-foreground mb-1">{t('events.mediaVideoTitle')}</h3>
                 <p className="text-sm text-muted-foreground">{t('events.mediaVideoDesc')}</p>
               </div>
             </CardContent>
@@ -401,9 +401,9 @@ export default function EventsSection() {
             <div className="flex justify-center mb-3">
               <BookOpen className="h-6 w-6 text-[#2D7A89]" aria-hidden="true" />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-stories-and-essays-title">
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-stories-and-essays-title">
               {t('events.storiesAndEssaysTitle')}
-            </h3>
+            </h2>
             <p className="text-muted-foreground">{t('events.storiesAndEssaysSubtitle')}</p>
           </div>
           <Card className="overflow-hidden border-primary/20" data-testid="card-reflection-essay">
@@ -437,9 +437,9 @@ export default function EventsSection() {
               <Star className="h-4 w-4 fill-white text-white" aria-hidden="true" />
               {t('events.constellationEyebrow')}
             </div>
-            <h3 className="mt-3 font-heading text-3xl font-bold text-primary-foreground sm:text-4xl" data-testid="text-constellation-title">
+            <h2 className="mt-3 font-heading text-3xl font-bold text-primary-foreground sm:text-4xl" data-testid="text-constellation-title">
               {t('events.constellationTitle')}
-            </h3>
+            </h2>
             <p className="mt-3 font-heading text-xl font-semibold leading-relaxed text-primary-foreground" data-testid="text-constellation-tagline">
               {t('events.constellationTagline')}
             </p>
@@ -478,9 +478,9 @@ function NewsletterArchive() {
   return (
     <div id="newsletter" className="mt-16 max-w-3xl mx-auto">
       <div className="text-center mb-8">
-        <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-newsletter-archive-title">
+        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2" data-testid="text-newsletter-archive-title">
           {t('events.newsletterArchiveTitle')}
-        </h3>
+        </h2>
         <p className="text-muted-foreground" data-testid="text-newsletter-archive-subtitle">
           {t('events.newsletterArchiveSubtitle')}
         </p>

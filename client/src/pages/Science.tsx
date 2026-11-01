@@ -39,7 +39,7 @@ export default function Science() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section
           id="what-is-med13-syndrome"
           className="relative isolate scroll-mt-24 overflow-hidden bg-[#e9f5f3] px-4 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8"
