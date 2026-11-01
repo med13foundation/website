@@ -8,6 +8,16 @@ The MED13 Foundation website is a single-page application built to support famil
 
 Preferred communication style: Simple, everyday language.
 
+## Keep Replit and GitHub in sync
+
+GitHub `main` (github.com/med13foundation/website) is the shared copy. Changes also arrive there from pull requests, so this workspace can be behind it.
+
+- Before changing anything, run `bash scripts/sync-from-github.sh`. If it exits with an error, stop, show the person its message, and don't change files until they say how to go on.
+- After each change is finished and checked, commit it yourself with a one-line message that says what changed (`git add -A`, then `git commit -m "<what changed>"`), then run `bash scripts/sync-from-github.sh --push`. Do this inside the same request. Don't wait for the checkpoint, because the checkpoint commit lands after the request ends and wouldn't be pushed. If the push fails, tell the person the message.
+- If the script says package files changed, run `npm install`. If it says the database schema changed, run `npm run db:push`.
+- Never resolve a merge conflict with GitHub by yourself, never rebase, never force-push, and never push to any branch other than `main`.
+- Never put a secret in a commit.
+
 ## Recent Changes
 
 ### April 13, 2026 - Newsletter System Upgrade
