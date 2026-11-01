@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FlaskConical, Users2, HandHeart, Heart, Plane, ArrowRight } from "lucide-react";
 import communityBackground from "@assets/generated_images/Community_connection_collaboration_background_7ad860da.webp";
 import { useTranslation } from "react-i18next";
-import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
+import { VOLUNTEER_FORM_URL } from "@/lib/links";
 import { Link } from "wouter";
 
 export default function GetInvolvedSection({ donationHref = "#donate" }: { donationHref?: string }) {
@@ -12,12 +12,12 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
   const pathways = [
     {
       icon: FlaskConical,
-      titleKey: "getInvolved.researchTitle",
-      descKey: "getInvolved.researchDesc",
-      actionKey: "getInvolved.joinCohortAction",
+      titleKey: "forFamilies.label",
+      descKey: "forFamilies.teaser",
+      actionKey: "forFamilies.exploreAction",
       testId: "research",
       email: "research@med13.org",
-      formUrl: RESEARCH_COHORT_FORM_URL
+      internalUrl: "/for-families"
     },
     {
       icon: Users2,
@@ -91,6 +91,10 @@ export default function GetInvolvedSection({ donationHref = "#donate" }: { donat
                       data-testid={`button-${pathway.testId}`}
                     >
                       <a href={donationHref}>{t(pathway.actionKey)}</a>
+                    </Button>
+                  ) : pathway.internalUrl ? (
+                    <Button variant="default" className="w-full" asChild data-testid={`button-${pathway.testId}`}>
+                      <Link href={pathway.internalUrl}>{t(pathway.actionKey)}</Link>
                     </Button>
                   ) : pathway.formUrl ? (
                     <Button

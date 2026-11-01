@@ -39,11 +39,11 @@ The homepage dashboard is a summary of the Impact and Progress topline metrics, 
 
 **How to apply:** Keep values, labels, and important qualifications aligned across both pages, including approximate family counts, models in progress, unaudited figures, and fundraising confirmation warnings.
 
-Keep homepage metric cards limited to figures, labels, and footnote markers; place definitions and qualifications in footnotes below the dashboard.
+Keep the homepage metric dashboard limited to figures, labels, and its link to Impact and Progress. Definitions and qualifications belong on Impact and Progress, not in homepage notes or footnote markers.
 
-**Why:** The organizer requested footnotes rather than explanatory paragraphs inside the homepage metric cards.
+**Why:** The organizer subsequently requested removing metric notes from the homepage and keeping those explanations on Impact and Progress.
 
-**How to apply:** Preserve the definitions outside the clickable dashboard without removing important study or financial context. Do not append a redundant aggregate paragraph repeating those footnotes.
+**How to apply:** Preserve study and financial context on Impact and Progress while keeping the homepage summary concise. Do not reintroduce homepage footnotes, orphaned note references, or a redundant explanatory paragraph.
 
 Research descriptions must allow disease models derived from patients or created through engineering. MED13's patient-governed longitudinal study and biorepository complement Simons Searchlight, which began collecting MED13 data before the foundation existed.
 

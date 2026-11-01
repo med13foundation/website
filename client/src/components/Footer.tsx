@@ -1,6 +1,6 @@
 import { Facebook, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { RESEARCH_COHORT_FORM_URL, VOLUNTEER_FORM_URL } from "@/lib/links";
+import { VOLUNTEER_FORM_URL } from "@/lib/links";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -30,7 +30,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/what-is-med13-syndrome" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-med13-syndrome">
+                <a href="/science" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-science">
+                  {t("footer.science")}
+                </a>
+              </li>
+              <li>
+                <a href="/science#what-is-med13-syndrome" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-med13-syndrome">
                   {t("nav.med13Syndrome")}
                 </a>
               </li>
@@ -43,10 +48,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
+                <a href="/for-families" className="text-sm text-muted-foreground hover:text-foreground" data-testid="link-footer-for-families">
+                  {t("forFamilies.label")}
+                </a>
+              </li>
+              <li>
                 <a
-                  href={RESEARCH_COHORT_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/for-families#natural-history"
                   className="text-sm text-muted-foreground hover:text-foreground"
                   data-testid="link-footer-research"
                 >

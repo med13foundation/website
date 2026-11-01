@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, CalendarDays, Clock3, ExternalLink, MapPin, Sparkles, Video } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock3, MapPin, Sparkles, Video } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
-const DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Unitarian+Universalist+Church+of+Palo+Alto%2C+505+E+Charleston+Rd%2C+Palo+Alto%2C+CA+94306";
-const LIVESTREAM_URL = "https://www.uucpa.org/services/sunday-september-27-2026/";
 
 export default function HopeIsAPractice() {
   const { t } = useTranslation();
@@ -43,7 +39,7 @@ export default function HopeIsAPractice() {
               </Link>
             </Button>
             <div className="mb-5 flex flex-wrap gap-2">
-              {(["communityTag", "bayAreaTag", "freeTag"] as const).map((key) => (
+              {(["pastEventTag", "communityTag", "bayAreaTag"] as const).map((key) => (
                 <Badge key={key} variant="secondary" className="bg-white/15 text-primary-foreground hover:bg-white/20">
                   {t(`hopePractice.${key}`)}
                 </Badge>
@@ -84,12 +80,6 @@ export default function HopeIsAPractice() {
                     <p className="text-sm leading-relaxed text-muted-foreground">{t("hopePractice.address")}</p>
                   </div>
                 </div>
-                <Button className="w-full" asChild>
-                  <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                    {t("hopePractice.directions")}
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
               </CardContent>
             </Card>
 
@@ -99,35 +89,18 @@ export default function HopeIsAPractice() {
                 <p>{t("hopePractice.body2")}</p>
               </div>
 
-              <div>
-                <h2 className="mb-4 font-heading text-2xl font-bold">{t("hopePractice.whatToKnow")}</h2>
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {(["welcome", "notFundraiser", "children", "recorded"] as const).map((key) => (
-                    <li key={key} className="rounded-xl border border-primary/10 bg-muted/50 p-4 leading-relaxed">
-                      {t(`hopePractice.${key}`)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="rounded-2xl border border-secondary/40 bg-secondary/10 p-6">
+              <div className="rounded-2xl border border-secondary/40 bg-secondary/10 p-6" data-testid="hope-practice-recordings-coming-soon">
                 <div className="flex items-start gap-3">
                   <Video className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
                     <h2 className="font-heading text-xl font-bold">{t("hopePractice.onlineTitle")}</h2>
                     <p className="mt-2 text-muted-foreground">{t("hopePractice.onlineDescription")}</p>
-                    <Button className="mt-4" asChild>
-                      <a href={LIVESTREAM_URL} target="_blank" rel="noopener noreferrer" data-testid="link-hope-practice-livestream">
-                        {t("hopePractice.onlineButton")}
-                        <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
                   </div>
                 </div>
               </div>
 
               <div className="border-t pt-8">
-                <p className="font-semibold">{t("hopePractice.alsoThisFall")}</p>
+                <p className="font-semibold">{t("hopePractice.relatedEvents")}</p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <Button variant="outline" asChild>
                     <Link href="/symposium">{t("hopePractice.symposiumLink")}</Link>

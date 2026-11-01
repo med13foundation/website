@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import { ChevronDown } from "lucide-react";
 
 const sourceLinks: Record<number, { url: string; label: string }> = {
   3: { url: "https://genie.broadinstitute.org/dashboard", label: "genie.broadinstitute.org/dashboard" },
@@ -16,6 +17,10 @@ export function ImpactCitation({ numbers }: { numbers: number[] }) {
           {index > 0 && ", "}
           <a
             href={`#source-${number}`}
+            onClick={() => {
+              const disclosure = document.getElementById(`source-${number}`)?.closest("details");
+              if (disclosure) disclosure.open = true;
+            }}
             aria-label={t("impact.sourceLabel", { number })}
             className="rounded-sm underline decoration-dotted underline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
@@ -30,10 +35,13 @@ export function ImpactCitation({ numbers }: { numbers: number[] }) {
 export default function ImpactSources() {
   const { t } = useTranslation();
   return (
-    <section id="sources" aria-labelledby="impact-sources-title" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-12">
-      <div className="mx-auto max-w-7xl">
-        <h2 id="impact-sources-title" className="font-heading text-2xl font-bold text-primary">{t("impact.sourcesTitle")}</h2>
-        <ol className="mt-5 max-w-4xl list-decimal space-y-4 pl-6 text-sm leading-relaxed text-foreground/80">
+    <section id="sources" aria-labelledby="impact-sources-title" className="scroll-mt-24 border-t border-border bg-[#f7f5f0] px-4 py-6">
+      <details className="group mx-auto max-w-7xl rounded-xl border border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-xl p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
+          <h2 id="impact-sources-title" className="font-heading text-2xl font-bold text-primary">{t("impact.sourcesTitle")}</h2>
+          <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
+        </summary>
+        <ol className="list-decimal space-y-4 border-t border-border p-5 pl-11 text-sm leading-relaxed text-foreground/80">
           {Array.from({ length: 9 }, (_, index) => index + 1).map((number) => (
             <li key={number} id={`source-${number}`} className="scroll-mt-24">
               {t(`impact.sources.${number}`)}
@@ -47,7 +55,7 @@ export default function ImpactSources() {
             </li>
           ))}
         </ol>
-      </div>
+      </details>
     </section>
   );
 }
