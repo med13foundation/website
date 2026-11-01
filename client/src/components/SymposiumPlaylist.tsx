@@ -15,7 +15,7 @@ export default function SymposiumPlaylist() {
     >
       <div className="mx-auto max-w-5xl">
         <div className="mb-8 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-[#b56855]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-warm">
             {t("home.symposiumPlaylistEyebrow")}
           </p>
           <h2

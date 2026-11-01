@@ -83,7 +83,7 @@ export default function ForFamilies() {
           <div className="pointer-events-none absolute -bottom-36 left-[8%] -z-10 h-80 w-80 rounded-full bg-[#a9d6ce]/45 blur-3xl" aria-hidden="true" />
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-[#a55d4c]">
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-warm">
                 {t("eyebrow")}
               </p>
               <h1 className="font-heading text-4xl font-bold leading-[1.08] text-primary sm:text-6xl">
@@ -110,7 +110,7 @@ export default function ForFamilies() {
 
         <section className="border-b border-primary/10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8" aria-labelledby="participation-heading">
           <div className="mx-auto max-w-7xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#a55d4c]">{t("participationEyebrow")}</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("participationEyebrow")}</p>
             <h2 id="participation-heading" className="mt-3 font-heading text-3xl font-bold text-primary sm:text-4xl">
               {t("participationTitle")}
             </h2>
@@ -156,7 +156,7 @@ export default function ForFamilies() {
         <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8" aria-labelledby="opportunities-heading">
           <div className="mx-auto max-w-7xl">
             <div className="mb-10 max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#a55d4c]">{t("optionsEyebrow")}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-warm">{t("optionsEyebrow")}</p>
               <h2 id="opportunities-heading" className="mt-3 font-heading text-3xl font-bold text-primary sm:text-4xl">
                 {t("optionsTitle")}
               </h2>
@@ -180,7 +180,7 @@ export default function ForFamilies() {
                   >
                     <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[6rem_minmax(0,1fr)_15rem] lg:items-start lg:gap-8 lg:p-10">
                       <div className="flex items-center gap-4 lg:block">
-                        <span className="font-mono text-sm font-semibold tracking-widest text-primary/55">{item.number}</span>
+                        <span className="font-mono text-sm font-semibold tracking-widest text-primary/70">{item.number}</span>
                         <div className="flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-background/70 text-primary lg:mt-5 lg:h-16 lg:w-16">
                           <Icon className="h-6 w-6 lg:h-7 lg:w-7" strokeWidth={1.6} aria-hidden="true" />
                         </div>
@@ -189,7 +189,7 @@ export default function ForFamilies() {
                         <h3 className="font-heading text-2xl font-bold leading-tight text-primary sm:text-3xl">{t(item.titleKey)}</h3>
                         <p className="mt-4 text-base leading-relaxed text-foreground/85 sm:text-lg">{t(item.introKey)}</p>
                         <div className="mt-5 flex items-start gap-3 border-l-2 border-[#bd7968] pl-4">
-                          <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-[#a55d4c]" aria-hidden="true" />
+                          <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-warm" aria-hidden="true" />
                           <p className="text-sm leading-relaxed text-foreground/75 sm:text-base">
                             <Trans
                               t={t}
@@ -207,7 +207,7 @@ export default function ForFamilies() {
                           </a>
                         </Button>
                         {item.id === "community" && (
-                          <p className="text-xs leading-relaxed text-foreground/65">{t("communityLinkNote")}</p>
+                          <p className="text-xs leading-relaxed text-muted-foreground">{t("communityLinkNote")}</p>
                         )}
                       </div>
                     </div>
