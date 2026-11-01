@@ -1,3 +1,4 @@
+- [GitHub sync](github-sync.md) — Run the sync script before changing anything; it pushes only published work, so never push yourself; stop and ask on conflicts, never rebase or force-push.
 - [Gala content alignment](gala-content-alignment.md) — Keep public Gala details synchronized with the approved outreach materials; never publish a registration CTA without its final destination.
 - [Classy embed lifecycle](classy-embed-lifecycle.md) — Treat the Classy mount node as disposable; keep persistent layout and test hooks on a stable wrapper.
 - [Travel giving](travel-giving.md) — Coordinate miles, points, and travel-designated cash before transfer; never imply a general donation is earmarked for travel.
