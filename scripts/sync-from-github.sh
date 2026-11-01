@@ -1,6 +1,7 @@
 #!/bin/bash
-# usage: bash scripts/sync-from-github.sh [--push | --boot]
+# usage: bash scripts/sync-from-github.sh [--boot]
 export GIT_TERMINAL_PROMPT=0
+PUBLISH_MESSAGE="Published your App"
 LOG=""
 HINTS=""
 
@@ -37,9 +38,8 @@ hint() {
 
 case "$1" in
   "") MODE=default ;;
-  --push) MODE=push ;;
   --boot) MODE=boot ;;
-  *) MODE=boot; stop "unknown option '$1', nothing done. Use no option, --push or --boot." ;;
+  *) MODE=boot; stop "unknown option '$1', nothing done. Use no option, or --boot." ;;
 esac
 
 cd "$(dirname "$0")/.." || stop "couldn't find the repo folder, skipping"
@@ -79,9 +79,7 @@ elif [ "$AHEAD" -eq 0 ]; then
   OUT=$(git merge --ff-only --quiet origin/main 2>&1) || { echo "$OUT" | sayall; stop "couldn't pull from GitHub, nothing changed"; }
   say "pulled $BEHIND commit(s) from GitHub: $(git rev-parse --short "$OLD") -> $(git rev-parse --short HEAD)"
   CHANGED=1
-elif [ "$BEHIND" -eq 0 ]; then
-  [ "$MODE" = "push" ] || say "$AHEAD commit(s) here aren't on GitHub yet"
-else
+elif [ "$BEHIND" -gt 0 ]; then
   [ "$MODE" = "boot" ] && stop "Replit and GitHub have diverged ($AHEAD here, $BEHIND on GitHub); left as is"
   if ! OUT=$(git merge --no-edit origin/main 2>&1); then
     if git rev-parse -q --verify MERGE_HEAD > /dev/null 2>&1; then
@@ -104,15 +102,20 @@ if [ "$CHANGED" -eq 1 ]; then
   [ "$MODE" = "boot" ] && [ -n "$HINTS" ] && printf '%s' "$HINTS" >> "$PENDINGFILE"
 fi
 
-if [ "$MODE" = "push" ]; then
-  [ -z "$HINTS" ] || stop "not pushed yet: run the commands above, commit anything they change, then run --push again"
-  PENDING=$(git rev-list --count origin/main..HEAD) || stop "couldn't compare with GitHub main, nothing pushed"
-  if [ "$PENDING" -gt 0 ]; then
-    OUT=$(limited 60 git push origin HEAD:main 2>&1) || { echo "$OUT" | sayall; stop "push to GitHub main failed, nothing pushed"; }
-    say "pushed $PENDING commit(s) to GitHub main"
+PUBLISHED=$(git log -1 --format=%H --grep="^$PUBLISH_MESSAGE\$" HEAD)
+if [ -z "$PUBLISHED" ] || git merge-base --is-ancestor "$PUBLISHED" origin/main; then
+  UNPUBLISHED=$(git rev-list --count origin/main..HEAD) || UNPUBLISHED=0
+  [ "$UNPUBLISHED" -gt 0 ] && say "$UNPUBLISHED commit(s) here aren't published yet; they go to GitHub after the next Publish"
+elif git merge-base --is-ancestor origin/main "$PUBLISHED"; then
+  COUNT=$(git rev-list --count "origin/main..$PUBLISHED")
+  if OUT=$(limited 30 git push origin "$PUBLISHED:refs/heads/main" 2>&1); then
+    say "pushed the last publish to GitHub main: $COUNT commit(s), up to $(git rev-parse --short "$PUBLISHED")"
   else
-    say "nothing to push"
+    echo "$OUT" | sayall
+    say "couldn't push the last publish ($(git rev-parse --short "$PUBLISHED")) to GitHub main; tell the person, then carry on"
   fi
+else
+  say "the last publish ($(git rev-parse --short "$PUBLISHED")) isn't on GitHub, and GitHub has newer work; it goes to GitHub after the next Publish"
 fi
 
 exit 0

@@ -10,13 +10,12 @@ Preferred communication style: Simple, everyday language.
 
 ## Keep Replit and GitHub in sync
 
-GitHub `main` (github.com/med13foundation/website) is the shared copy. Changes also arrive there from pull requests, so this workspace can be behind it.
+GitHub `main` (github.com/med13foundation/website) matches what's live on med13.org. Changes also arrive there from pull requests, so this workspace can be behind it. Work done here goes to GitHub only once it's published.
 
-- Before changing anything, run `bash scripts/sync-from-github.sh`. If it exits with an error, stop, show the person its message, and don't change files until they say how to go on. Two exceptions: if it says it's not on `main`, you're working in a task copy, so carry on without syncing; and if it says commits here aren't on GitHub yet, run it with `--push` first.
-- After each change is finished and checked, commit it yourself with a one-line message that says what changed (`git add -A`, then `git commit -m '<what changed>'`), then run `bash scripts/sync-from-github.sh --push`. Do this inside the same request. Don't wait for the checkpoint, because the checkpoint commit lands after the request ends and wouldn't be pushed. If the commit or the push fails, stop and show the person the message.
-- After applying a task to the main version, run `bash scripts/sync-from-github.sh --push`.
-- If the script says to run `npm install` or `npm run db:push`, run it, commit anything that changes, and run the script again. That's the one message you act on yourself.
-- Never resolve a merge conflict with GitHub by yourself, never rebase, never force-push, never push to any branch other than `main`, and never change git remotes or git config.
+- Before changing anything, run `bash scripts/sync-from-github.sh`. It pulls new work from GitHub, and it pushes the last published version to GitHub if GitHub doesn't have it yet. If it exits with an error, stop, show the person its message, and don't change files until they say how to go on. If it says it's not on `main`, you're working in a task copy, so carry on without syncing. If it says it couldn't push the last publish, tell the person and carry on.
+- If the script says to run `npm install` or `npm run db:push`, run it and then run the script again. That's the one message you act on yourself.
+- Don't push to GitHub yourself. The script pushes only what's been published, so half-finished work stays here.
+- Never resolve a merge conflict with GitHub by yourself, never rebase, never force-push, and never change git remotes or git config.
 - Never put a secret in a commit.
 
 ## Recent Changes
