@@ -1,10 +1,8 @@
 #!/bin/bash
 # usage: bash scripts/sync-from-github.sh [--push | --boot]
 export GIT_TERMINAL_PROMPT=0
-MODE=default
-[ "$1" = "--push" ] && MODE=push
-[ "$1" = "--boot" ] && MODE=boot
 LOG=""
+HINTS=""
 
 say() {
   echo "[github-sync] $1"
@@ -23,10 +21,40 @@ stop() {
   exit 1
 }
 
-cd "$(dirname "$0")/.." || exit 0
-command -v git > /dev/null 2>&1 || { say "git isn't installed, skipping"; exit 0; }
-GITDIR=$(git rev-parse --git-dir 2> /dev/null) || { say "not a git repo, skipping"; exit 0; }
+limited() {
+  if command -v timeout > /dev/null 2>&1; then
+    timeout "$@"
+  else
+    shift
+    "$@"
+  fi
+}
+
+hint() {
+  say "$1"
+  HINTS="$HINTS$1"$'\n'
+}
+
+case "$1" in
+  "") MODE=default ;;
+  --push) MODE=push ;;
+  --boot) MODE=boot ;;
+  *) MODE=boot; stop "unknown option '$1', nothing done. Use no option, --push or --boot." ;;
+esac
+
+cd "$(dirname "$0")/.." || stop "couldn't find the repo folder, skipping"
+command -v git > /dev/null 2>&1 || stop "git isn't installed, skipping"
+GITDIR=$(git rev-parse --git-dir 2> /dev/null) || stop "not a git repo, skipping"
 [ "$MODE" = "boot" ] && LOG="$GITDIR/github-sync.log"
+PENDINGFILE="$GITDIR/github-sync-pending"
+
+if [ "$MODE" != "boot" ] && [ -s "$PENDINGFILE" ]; then
+  say "a pull at boot changed these, so do them now:"
+  while IFS= read -r line; do
+    [ -n "$line" ] && hint "$line"
+  done < "$PENDINGFILE"
+  rm -f "$PENDINGFILE"
+fi
 
 BRANCH=$(git symbolic-ref --short -q HEAD)
 [ "$BRANCH" = "main" ] || stop "on '${BRANCH:-a detached HEAD}', not main, skipping"
@@ -35,17 +63,13 @@ if git rev-parse -q --verify MERGE_HEAD > /dev/null 2>&1 || [ -d "$GITDIR/rebase
   stop "a merge or rebase is in progress, skipping. Finish or abort it first."
 fi
 
-[ -z "$(git status --porcelain --untracked-files=no)" ] || stop "uncommitted changes, skipping. Commit them first."
+STATUS=$(git status --porcelain --untracked-files=no) || stop "couldn't read git status, skipping"
+[ -z "$STATUS" ] || stop "uncommitted changes, skipping. Commit them first."
 
-if command -v timeout > /dev/null 2>&1; then
-  timeout 30 git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main > /dev/null 2>&1
-else
-  git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main > /dev/null 2>&1
-fi
-[ $? -eq 0 ] || stop "couldn't reach GitHub, nothing changed"
+limited 30 git fetch --quiet origin +refs/heads/main:refs/remotes/origin/main > /dev/null 2>&1 || stop "couldn't reach GitHub, nothing changed"
 
-BEHIND=$(git rev-list --count HEAD..origin/main)
-AHEAD=$(git rev-list --count origin/main..HEAD)
+BEHIND=$(git rev-list --count HEAD..origin/main) || stop "couldn't compare with GitHub main, nothing changed"
+AHEAD=$(git rev-list --count origin/main..HEAD) || stop "couldn't compare with GitHub main, nothing changed"
 OLD=$(git rev-parse HEAD)
 CHANGED=0
 
@@ -59,9 +83,15 @@ elif [ "$BEHIND" -eq 0 ]; then
   [ "$MODE" = "push" ] || say "$AHEAD commit(s) here aren't on GitHub yet"
 else
   [ "$MODE" = "boot" ] && stop "Replit and GitHub have diverged ($AHEAD here, $BEHIND on GitHub); left as is"
-  if ! git merge --no-edit origin/main > /dev/null 2>&1; then
-    git merge --abort > /dev/null 2>&1
-    stop "merge conflict with GitHub main; merge aborted, nothing changed. Ask Amy, Álvaro or Gian before going further."
+  if ! OUT=$(git merge --no-edit origin/main 2>&1); then
+    if git rev-parse -q --verify MERGE_HEAD > /dev/null 2>&1; then
+      if git merge --abort > /dev/null 2>&1 && ! git rev-parse -q --verify MERGE_HEAD > /dev/null 2>&1; then
+        stop "merge conflict with GitHub main; merge undone, nothing changed. Ask Amy, Álvaro or Gian before going further."
+      fi
+      stop "merge conflict with GitHub main, and undoing it failed. Don't change anything; ask Amy, Álvaro or Gian."
+    fi
+    echo "$OUT" | sayall
+    stop "couldn't merge GitHub main, nothing changed"
   fi
   say "merged $BEHIND commit(s) from GitHub into Replit: $(git rev-parse --short "$OLD") -> $(git rev-parse --short HEAD)"
   CHANGED=1
@@ -69,14 +99,16 @@ fi
 
 if [ "$CHANGED" -eq 1 ]; then
   FILES=$(git diff --name-only "$OLD" HEAD)
-  echo "$FILES" | grep -qx -e "package.json" -e "package-lock.json" && say "package files changed: run npm install"
-  echo "$FILES" | grep -qx "shared/schema.ts" && say "database schema changed: run npm run db:push"
+  echo "$FILES" | grep -qx -e "package.json" -e "package-lock.json" && hint "package files changed: run npm install"
+  echo "$FILES" | grep -qx "shared/schema.ts" && hint "database schema changed: run npm run db:push"
+  [ "$MODE" = "boot" ] && [ -n "$HINTS" ] && printf '%s' "$HINTS" >> "$PENDINGFILE"
 fi
 
 if [ "$MODE" = "push" ]; then
-  PENDING=$(git rev-list --count origin/main..HEAD)
+  [ -z "$HINTS" ] || stop "not pushed yet: run the commands above, commit anything they change, then run --push again"
+  PENDING=$(git rev-list --count origin/main..HEAD) || stop "couldn't compare with GitHub main, nothing pushed"
   if [ "$PENDING" -gt 0 ]; then
-    OUT=$(git push origin HEAD:main 2>&1) || { echo "$OUT" | sayall; stop "push to GitHub main was rejected, nothing pushed"; }
+    OUT=$(limited 60 git push origin HEAD:main 2>&1) || { echo "$OUT" | sayall; stop "push to GitHub main failed, nothing pushed"; }
     say "pushed $PENDING commit(s) to GitHub main"
   else
     say "nothing to push"

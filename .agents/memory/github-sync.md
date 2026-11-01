@@ -7,4 +7,4 @@ Pull with `bash scripts/sync-from-github.sh` before changing anything. After eac
 
 **Why:** 38 commits sat unpushed in October 2026, and two pages went live without their route metadata.
 
-**How to apply:** Stop and ask on a merge conflict or a failed push. Never rebase or force-push.
+**How to apply:** Stop and ask on a merge conflict, a failed commit or a failed push. Never rebase, force-push, or change git remotes.
