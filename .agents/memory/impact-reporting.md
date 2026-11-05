@@ -15,11 +15,17 @@ Keep known-family counts separate from diagnosed-person counts and GenIE's model
 
 **How to apply:** Cite the relevant source alongside the claim and describe modeled estimates as modeled, never as a count of diagnosed people.
 
-The organizer clarified that the worldwide estimate represents approximately 200 known families, combining GeneDx snapshots, Simons Searchlight, the COMBINEDBrain Matrix platform, and the foundation registry. The foundation makes efforts to deduplicate; do not claim complete deduplication. The organizer says this number grossly underestimates prevalence and confirmed that the nine enrolled participants represent nine separate families.
+The organizer clarified that the worldwide estimate represents approximately 200 known families, combining GeneDx snapshots, Simons Searchlight, the COMBINEDBrain Matrix platform, and the foundation registry. The foundation makes efforts to deduplicate; do not claim complete deduplication. The organizer says this number grossly underestimates prevalence. The original study snapshot's nine enrolled participants represented nine separate families, but that historical equivalence must not be assumed for later cohorts.
 
 **Why:** Families, diagnosed individuals, and population prevalence are different units. The source combines incomplete known-family records rather than measuring prevalence.
 
 **How to apply:** Label enrollment comparisons as families and describe the worldwide denominator as an estimate in explanatory copy, not with an approximation symbol in the displayed figure. Attribute the estimate to the combined sources, and keep its underestimation caveat visible.
+
+An organizer-confirmed enrollment update does not automatically update survey progress, biobanking consent, biorepository enrollment, or a poster's participant count. Prefer explicit organizer-provided family totals for the requested headline over differently scoped poster figures.
+
+**Why:** An enrollment update arrived alongside a poster reporting a different participant/family cohort. These populations and snapshot dates are not interchangeable.
+
+**How to apply:** Update enrollment across the homepage, Impact and Progress, and family page together. Keep unchanged study measures tied explicitly to their existing historical snapshot rather than recalculating them against a new family denominator.
 
 Anthropic support is in-kind computing credits, not cash. The organizer requested incorporating it into total year-one support and research investment rather than showing a separate grant card.
 

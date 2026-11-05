@@ -35,7 +35,7 @@ const opportunities = [
     introKey: "studyIntro",
     detailKey: "studyDetail",
     actionKey: "studyAction",
-    families: 9,
+    families: 12,
     whyKey: "studyWhy",
   },
   {
