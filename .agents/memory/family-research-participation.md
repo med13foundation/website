@@ -15,11 +15,11 @@ Families registering for COMBINEDBrain Matrix must select **MED13** as their par
 
 **How to apply:** Include the MED13 partner PAG selection whenever explaining Matrix registration, in both English and Spanish.
 
-Report census completion, natural history enrollment, biorepository enrollment, biobanking consent, and actual sample donation as distinct measures. These groups overlap and must not be added together. Survey progress retains its approved meaning of at least one scored survey.
+Report census completion, natural history enrollment, biorepository enrollment, recorded permissions, and actual sample donation as distinct measures. These groups overlap and must not be added together. Survey progress means at least one scored instrument, not completion of all assigned surveys.
 
-**Why:** The organizer supplied separate family participation counts and requested explaining how participation supports conversations with scientists and funders. Biobanking consent is not evidence that a family enrolled in the biorepository or donated samples.
+**Why:** The organizer supplied separate family participation counts and requested explaining how participation supports conversations with scientists and funders. The updated study summary clarifies that recorded permissions cover future sample-donation contact and linking clinical data, while sample-donation questions were not presented. Those permissions are not consent to donate, biorepository enrollment, or actual samples collected.
 
-**How to apply:** Compare each family group with the estimated known-family denominator, label the participation status precisely, and avoid implying that enrollment guarantees samples, funding, or treatment. Do not invent a data-cut date when one was not supplied.
+**How to apply:** Compare each family group with the estimated known-family denominator. Use individuals for instrument progress and only people with a consent record for permissions. Label the participation status precisely, and avoid implying that enrollment guarantees samples, funding, or treatment. Do not invent a data-cut date when one was not supplied.
 
 Do not imply that being counted by another organization or registered in Matrix means a family has completed the foundation census. Leave unconfirmed data-access, retention, and removal policies out of public guidance.
 

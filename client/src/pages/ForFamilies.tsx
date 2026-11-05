@@ -135,7 +135,7 @@ export default function ForFamilies() {
                   <p className="mt-5 text-sm leading-relaxed text-foreground/85">{t(item.whyKey)}</p>
                   {item.id === "natural-history" && (
                     <p className="mt-4 rounded-xl bg-white/80 p-4 text-sm leading-relaxed text-foreground/85">
-                      <strong className="text-primary">33%</strong>{" "}{t("surveyProgress")}
+                      <strong className="text-primary">38%</strong>{" "}{t("surveyProgress")}
                     </p>
                   )}
                   <a href={`#${item.id}`} className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-primary underline underline-offset-4">
