@@ -13,6 +13,9 @@ export default function StudyFindings() {
         <h2 id="study-findings-title" className="font-heading text-3xl font-bold text-primary sm:text-4xl">
           {t("sciencePage.findingsTitle")}
         </h2>
+        <p className="mt-4 text-sm font-medium leading-relaxed text-primary">
+          {t("sciencePage.studyDataSchedule")}
+        </p>
         <p className="mt-6 max-w-4xl text-lg leading-relaxed text-foreground/85">{t("sciencePage.findingsIntro")}</p>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">

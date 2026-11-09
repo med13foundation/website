@@ -5,6 +5,12 @@ description: Reporting constraints supplied in the approved Impact and Progress 
 
 For Impact and Progress reporting, retain denominators and snapshot dates. Report groups under 20 as counts, not cohort percentages. The headline survey measure is now median completion of assigned surveys per participant, not the proportion with a scored instrument. Distinguish the study source's publication month from an actual data-cut date and from cash expense reporting dates; keep unaudited cash figures labeled.
 
+Natural history study data pulls follow a quarterly cadence. Keep study-pull dates separate from the ClinVar frozen-pull date and report only the date precision supplied by the organizer.
+
+**Why:** The organizer requested a visible study-pull date and the next quarterly pull, and supplied a month rather than an exact day.
+
+**How to apply:** Label the next pull as planned, not an automatic refresh or completed extraction. Update dates when a new pull is supplied, not merely when the calendar advances.
+
 **Why:** The user-provided mockup deliberately gives families, researchers and funders the same contextualized picture without overstating small-cohort evidence or financial certainty.
 
 **How to apply:** When updating figures, change dates only when a new source supports them. Withhold fundraising totals until financial reconciliation is supplied. Research progress and milestones must not imply a treatment guarantee or individual medical advice.
