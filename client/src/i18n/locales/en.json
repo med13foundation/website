@@ -35,6 +35,9 @@
     "disclaimer": "Clinical features and frequency figures provide a general overview, not a prediction for any individual. Every person's experience can differ. This educational information does not replace advice from your clinician."
   },
   "sciencePage": {
+    "overviewLink": "Science overview",
+    "basicsLink": "What is MED13 syndrome?",
+    "videoLink": "MED13 explainer video",
     "metaTitle": "Science | MED13 Foundation",
     "metaDescription": "Understand MED13 syndrome and explore the scientific community working to learn more.",
     "eyebrow": "Science, made understandable",

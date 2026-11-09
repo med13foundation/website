@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import logoUrl from "@assets/Med 13_1764216026949.png";
+import { scienceSections } from "@/content/science";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -89,9 +90,25 @@ export default function Navigation() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link href="/science" className="text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md" data-testid="link-science">
-              {t("nav.science")}
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                data-testid="button-science-menu"
+              >
+                {t("nav.science")}
+                <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-72">
+                <DropdownMenuItem asChild>
+                  <Link href="/science" data-testid="link-science">{t("sciencePage.overviewLink")}</Link>
+                </DropdownMenuItem>
+                {scienceSections.map(({ id, labelKey }) => (
+                  <DropdownMenuItem key={id} asChild>
+                    <a href={`/science#${id}`} data-testid={`link-science-${id}`}>{t(labelKey)}</a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger
                 className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
@@ -192,14 +209,19 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="xl:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <Link
-              href="/science"
-              className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover-elevate"
-              data-testid="link-mobile-science"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t("nav.science")}
-            </Link>
+            <div className="px-3 py-2" data-testid="mobile-science-menu">
+              <p className="mb-1 text-base font-semibold text-foreground">{t("nav.science")}</p>
+              <div className="ml-1 space-y-1 border-l border-border pl-3">
+                <Link href="/science" className="block rounded-md px-2 py-1.5 text-sm text-foreground hover-elevate" data-testid="link-mobile-science" onClick={() => setMobileMenuOpen(false)}>
+                  {t("sciencePage.overviewLink")}
+                </Link>
+                {scienceSections.map(({ id, labelKey }) => (
+                  <a key={id} href={`/science#${id}`} className="block rounded-md px-2 py-1.5 text-sm text-foreground hover-elevate" data-testid={`link-mobile-science-${id}`} onClick={() => setMobileMenuOpen(false)}>
+                    {t(labelKey)}
+                  </a>
+                ))}
+              </div>
+            </div>
             <div className="px-3 py-2" data-testid="mobile-about-menu">
               <p className="text-base font-semibold text-foreground mb-1">{t('nav.about')}</p>
               <div className="border-l border-border ml-1 pl-3 space-y-1">

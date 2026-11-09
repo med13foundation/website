@@ -7,6 +7,7 @@ import QuickFacts from "@/components/QuickFacts";
 import SyndromeVideo from "@/components/SyndromeVideo";
 import SymposiumPlaylist from "@/components/SymposiumPlaylist";
 import StudyFindings from "@/components/StudyFindings";
+import { scienceSections } from "@/content/science";
 
 export default function Science() {
   const { t } = useTranslation();
@@ -71,24 +72,12 @@ export default function Science() {
               </div>
             </div>
             <nav aria-label={t("sciencePage.sectionNavLabel")} className="mt-10 flex flex-wrap gap-3">
-              <a href="#study-findings" className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-                {t("sciencePage.findingsLink")}
-              </a>
-              <a
-                href="#med13-facts"
-                className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-                {t("sciencePage.factsLink")}
-              </a>
-              <a
-                href="#symposium-recordings"
-                className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <ArrowDown className="h-4 w-4" aria-hidden="true" />
-                {t("sciencePage.recordingsLink")}
-              </a>
+              {scienceSections.filter(({ id }) => id !== "what-is-med13-syndrome").map(({ id, labelKey }) => (
+                <a key={id} href={`#${id}`} className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-background focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                  <ArrowDown className="h-4 w-4" aria-hidden="true" />
+                  {t(labelKey)}
+                </a>
+              ))}
             </nav>
           </div>
         </section>
@@ -110,7 +99,7 @@ export default function Science() {
           </div>
         </aside>
 
-        <div className="border-y border-[#dce9e6] bg-[#fbf8f1]">
+        <div id="med13-explainer-video" className="scroll-mt-24 border-y border-[#dce9e6] bg-[#fbf8f1]">
           <SyndromeVideo />
         </div>
 
