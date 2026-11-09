@@ -83,10 +83,11 @@ export default function Impact() {
     ["surveys", t("impact.metricSurveys"), t("impact.metricSurveysNote"), t("impact.metricSurveysNext")],
     ["cells", t("impact.metricCells"), t("impact.metricCellsNote"), t("impact.metricCellsNext")],
     ["research", t("impact.metricResearch"), t("impact.metricResearchNote"), t("impact.metricResearchNext")],
+    ["systems", t("impact.metricSystems"), t("impact.metricSystemsNote"), ""],
   ];
   const metricSources: Record<string, number[]> = {
     families: [1, 2], biobank: [1], surveys: [1],
-    cells: [7], research: [7, 8],
+    cells: [7], research: [7, 8], systems: [1],
   };
 
   return (
@@ -145,6 +146,9 @@ export default function Impact() {
                   <details className="mt-3">
                   <summary aria-label={`${t("impact.metricDetails")}: ${t(`impact.metricLabels.${id}`)}`} className="w-fit cursor-pointer rounded text-sm font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">{t("impact.metricDetails")}</summary>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}<ImpactCitation numbers={metricSources[id]} /></p>
+                  {(id === "families" || id === "biobank" || id === "surveys" || id === "systems") && (
+                    <a href="/science#study-findings" className="mt-3 inline-block text-sm font-semibold text-primary underline underline-offset-4">{t("sciencePage.findingsLink")}</a>
+                  )}
                   {id === "cells" && (
                     <div className="mt-4 rounded-lg bg-primary/5 p-3 text-sm leading-relaxed">
                       <p className="font-semibold text-primary">{t("impact.modelCapitalTitle")}</p>
@@ -156,18 +160,6 @@ export default function Impact() {
                 </article>
                 </Fragment>
               ))}
-              <article className="rounded-xl border border-[#e9c6b8] bg-[#fff7f2] p-5 shadow-sm sm:p-6">
-                <h4 className="mb-3 font-heading text-base font-semibold text-foreground">{t("impact.fundraisingTitle")}</h4>
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div><p className="font-mono text-3xl font-bold tracking-tight text-primary sm:text-4xl">{t("impact.fundraisingFigure")}</p>
-                    <p className="mt-2 text-xs text-muted-foreground">{t("impact.includesCredits")}</p></div>
-                </div>
-                <details className="mt-3">
-                <summary aria-label={`${t("impact.metricDetails")}: ${t("impact.fundraisingTitle")}`} className="w-fit cursor-pointer rounded text-sm font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">{t("impact.metricDetails")}</summary>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/80">{t("impact.fundraisingContext")}<ImpactCitation numbers={[8]} /></p>
-                <p className="mt-3 border-t border-[#e9c6b8] pt-3 text-xs leading-relaxed text-muted-foreground">{t("impact.fundraisingNext")}</p>
-                </details>
-              </article>
             </div>
             <details className="mt-5">
               <summary className="w-fit cursor-pointer rounded text-sm font-semibold text-primary underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">{t("impact.aboutTitle")}</summary>

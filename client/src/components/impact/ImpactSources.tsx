@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ChevronDown } from "lucide-react";
 
 const sourceLinks: Record<number, { url: string; label: string }> = {
+  1: { url: "/science#study-findings", label: "med13.org/science" },
   3: { url: "https://genie.broadinstitute.org/dashboard", label: "genie.broadinstitute.org/dashboard" },
   4: { url: "https://doi.org/10.1007/s00439-018-1887-y", label: "doi.org/10.1007/s00439-018-1887-y" },
   5: { url: "https://doi.org/10.1101/gad.207720.112", label: "doi.org/10.1101/gad.207720.112" },

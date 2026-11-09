@@ -10,5 +10,5 @@ export const proofItems: readonly ProofItem[] = [
   { valueKey: "impact.metricSurveys", labelKey: "impact.metricLabels.surveys" },
   { valueKey: "impact.metricCells", labelKey: "impact.metricLabels.cells" },
   { valueKey: "impact.metricResearch", labelKey: "impact.metricLabels.research" },
-  { valueKey: "impact.fundraisingFigure", labelKey: "impact.fundraisingTitle" },
+  { valueKey: "impact.metricSystems", labelKey: "impact.metricLabels.systems" },
 ];

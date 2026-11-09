@@ -3,11 +3,11 @@ name: Impact reporting
 description: Reporting constraints supplied in the approved Impact and Progress mockup.
 ---
 
-For Impact and Progress reporting, retain denominators and snapshot dates. Generally report groups under 20 as counts; the organizer explicitly approved a rounded percentage for natural history survey progress, with its underlying participant count shown. Distinguish the study data-cut date from cash expense reporting dates and keep unaudited cash figures labeled.
+For Impact and Progress reporting, retain denominators and snapshot dates. Report groups under 20 as counts, not cohort percentages. The headline survey measure is now median completion of assigned surveys per participant, not the proportion with a scored instrument. Distinguish the study source's publication month from an actual data-cut date and from cash expense reporting dates; keep unaudited cash figures labeled.
 
 **Why:** The user-provided mockup deliberately gives families, researchers and funders the same contextualized picture without overstating small-cohort evidence or financial certainty.
 
-**How to apply:** When updating figures, change dates only when a new source supports them. Do not remove the fundraising confirmation warning until the organizer confirms the actual total and goal. Research progress and milestones must not imply a treatment guarantee or individual medical advice.
+**How to apply:** When updating figures, change dates only when a new source supports them. Withhold fundraising totals until financial reconciliation is supplied. Research progress and milestones must not imply a treatment guarantee or individual medical advice.
 
 Keep known-family counts separate from diagnosed-person counts and GenIE's modeled incidence of new disease-causing variants. Preserve numbered sources and visible warnings for claims whose sources are unresolved.
 
@@ -15,17 +15,17 @@ Keep known-family counts separate from diagnosed-person counts and GenIE's model
 
 **How to apply:** Cite the relevant source alongside the claim and describe modeled estimates as modeled, never as a count of diagnosed people.
 
-The organizer clarified that the worldwide estimate represents approximately 200 known families, combining GeneDx snapshots, Simons Searchlight, the COMBINEDBrain Matrix platform, and the foundation registry. The foundation makes efforts to deduplicate; do not claim complete deduplication. The organizer says this number grossly underestimates prevalence. The original study snapshot's nine enrolled participants represented nine separate families, but that historical equivalence must not be assumed for later cohorts.
+The November 2026 organizer-supplied copy refresh supersedes earlier family-based study headlines and describes the worldwide denominator as diagnosed people. The accompanying natural history poster now governs study figures. Historical family estimates combined GeneDx snapshots, Simons Searchlight, COMBINEDBrain Matrix and the foundation registry, with efforts to deduplicate, not complete deduplication.
 
-**Why:** Families, diagnosed individuals, and population prevalence are different units. The source combines incomplete known-family records rather than measuring prevalence.
+**Why:** The organizer explicitly changed the source of truth. Earlier family counts, later participant counts and prevalence are not interchangeable.
 
-**How to apply:** Label enrollment comparisons as families and describe the worldwide denominator as an estimate in explanatory copy, not with an approximation symbol in the displayed figure. Attribute the estimate to the combined sources, and keep its underestimation caveat visible.
+**How to apply:** Follow the latest approved poster and copy refresh. Keep census and biorepository family counts separate; do not divide them by a worldwide diagnosed-person denominator. Preserve the undercount caveat and never describe known diagnoses as measured prevalence. Do not infer one family per participant.
 
-An organizer-confirmed enrollment update does not automatically update survey progress, biobanking consent, biorepository enrollment, or a poster's participant count. Prefer explicit organizer-provided family totals for the requested headline over differently scoped poster figures.
+An organizer-confirmed enrollment update does not automatically update survey progress, recorded permissions or biorepository enrollment. For the natural history study, the November 2026 refresh explicitly makes the accompanying poster authoritative over older enrollment confirmations.
 
 **Why:** An enrollment update arrived alongside a poster reporting a different participant/family cohort. These populations and snapshot dates are not interchangeable.
 
-**How to apply:** Update enrollment across the homepage, Impact and Progress, and family page together. Keep unchanged study measures tied explicitly to their existing historical snapshot rather than recalculating them against a new family denominator.
+**How to apply:** Update enrollment across the homepage, Impact and Progress, and family page together. Update only measures the new source actually supplies; never recalculate unrelated survey or consent measures against a family denominator.
 
 Anthropic support is in-kind computing credits, not cash. The organizer requested incorporating it into total year-one support and research investment rather than showing a separate grant card.
 
@@ -33,11 +33,11 @@ Anthropic support is in-kind computing credits, not cash. The organizer requeste
 
 **How to apply:** Identify credits as in-kind resources in both support and investment totals, not cash spending or necessarily consumed credits. The investment total overlaps fundraising support; do not add them together or count the credits twice within either total. Keep historical cash expense dates separate from organizer-confirmed support.
 
-Natural history survey progress means the share of enrolled participants with at least one scored survey, not the share who completed every required survey.
+Natural history survey depth has two distinct measures: median completion of assigned surveys, and the count of participants with at least one scored instrument. Use the former for the headline and the latter as a count in supporting copy.
 
-**Why:** The organizer approved this definition and a rounded percentage after clarification.
+**Why:** The November 2026 refresh replaces the previously approved scored-instrument cohort percentage with median assigned-survey completion. Those percentages measure different things.
 
-**How to apply:** Show the underlying participant numerator and denominator alongside the percentage; do not imply full study-survey completion.
+**How to apply:** Never calculate the median from the scored-instrument numerator and enrollment denominator. Do not imply full study-survey completion. Keep detailed findings and the poster on Science; Impact retains high-level indicators with links to Science.
 
 The homepage dashboard is a summary of the Impact and Progress topline metrics, not a separate set of community-size statistics.
 
