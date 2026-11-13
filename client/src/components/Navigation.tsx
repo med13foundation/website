@@ -199,6 +199,7 @@ export default function Navigation() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
             data-testid="button-mobile-menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
@@ -207,7 +208,11 @@ export default function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="xl:hidden border-t border-border bg-background">
+        <div
+          id="mobile-navigation"
+          data-testid="mobile-navigation"
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-65px)] overflow-y-auto overscroll-contain touch-pan-y border-t border-border bg-background pb-[env(safe-area-inset-bottom)] shadow-lg xl:hidden"
+        >
           <div className="px-4 pt-2 pb-4 space-y-2">
             <div className="px-3 py-2" data-testid="mobile-science-menu">
               <p className="mb-1 text-base font-semibold text-foreground">{t("nav.science")}</p>
