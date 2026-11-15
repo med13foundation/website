@@ -7,7 +7,7 @@
 - [Denver agenda source](denver-agenda-source.md) — The organizer’s draft mixes public sessions with internal coordination; bios do not confirm every proposed talk.
 - [Symposium language access](symposium-language-access.md) — Organizer confirmed live translation via Zoom for the October 2026 symposium; avoid unsupported language claims.
 - [Media image sourcing](media-image-sourcing.md) — SPARK article pages can block fetching while official image assets remain accessible; use subject-specific searches.
-- [Impact reporting](impact-reporting.md) — Preserve denominators, source dates, and unaudited labels; report small cohorts as counts and keep unconfirmed fundraising flagged.
+- [Impact reporting](impact-reporting.md) — Latest poster governs study figures; distinguish median survey depth from cohort counts and withhold unreconciled fundraising totals.
 - [Website copy](website-copy.md) — Public website copy uses commas, colons, or sentence breaks instead of em dashes.
 - [Family research participation](family-research-participation.md) — Census is not study enrollment; biosample collection requires natural history study registration and consent.
 - [Privacy-aligned resources](privacy-resources.md) — Self-host fonts and use privacy-enhanced YouTube embeds to preserve organizer-requested privacy alignment.

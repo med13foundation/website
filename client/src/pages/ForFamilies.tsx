@@ -35,7 +35,7 @@ const opportunities = [
     introKey: "studyIntro",
     detailKey: "studyDetail",
     actionKey: "studyAction",
-    families: 9,
+    families: 10,
     whyKey: "studyWhy",
   },
   {
@@ -129,13 +129,13 @@ export default function ForFamilies() {
                 <article key={item.id} className="flex flex-col rounded-2xl border border-[#c7ded9] bg-[#f2f8f6] p-6 sm:p-8">
                   <h3 className="font-heading text-xl font-bold text-primary">{t(item.titleKey)}</h3>
                   <p className="mt-5 text-3xl font-bold tabular-nums text-primary sm:text-4xl">
-                    {t("participatingCount", { count: item.families, total: 200 })}
+                    {item.id === "natural-history" ? t("studyCount") : t("familyCount", { count: item.families })}
                   </p>
-                  <p className="mt-2 text-sm text-foreground/75">{t(item.id === "community" ? "censusCountLabel" : "enrolledCountLabel")}</p>
+                  <p className="mt-2 text-sm text-foreground/75">{t(item.id === "community" ? "censusCountLabel" : item.id === "natural-history" ? "studyCountLabel" : "enrolledCountLabel")}</p>
                   <p className="mt-5 text-sm leading-relaxed text-foreground/85">{t(item.whyKey)}</p>
                   {item.id === "natural-history" && (
                     <p className="mt-4 rounded-xl bg-white/80 p-4 text-sm leading-relaxed text-foreground/85">
-                      <strong className="text-primary">33%</strong>{" "}{t("surveyProgress")}
+                      <strong className="text-primary">29%</strong>{" "}{t("surveyProgress")}
                     </p>
                   )}
                   <a href={`#${item.id}`} className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-primary underline underline-offset-4">

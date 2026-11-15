@@ -106,14 +106,10 @@ export default function Gala() {
               <Link href="/impact" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#235b5e] underline decoration-[#d59b83] underline-offset-4 hover:text-warm">
                 {t("galaRecap.explore")} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <div className="mt-12 grid max-w-lg grid-cols-2 items-end gap-4 border-t border-[#bdcfc7] pt-6">
+              <div className="mt-12 max-w-lg border-t border-[#bdcfc7] pt-6">
                 <div>
-                  <p className="font-heading text-3xl font-bold tracking-tight text-[#235b5e] sm:text-5xl">$123,660</p>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.13em] text-[#526c68]">{t("galaRecap.raisedLabel")}</p>
-                </div>
-                <div>
-                  <p className="font-heading text-3xl font-semibold tracking-tight text-warm sm:text-4xl">$100,000</p>
-                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.13em] text-[#526c68]">{t("galaRecap.goalLabel")}</p>
+                  <p className="font-heading text-3xl font-bold tracking-tight text-[#235b5e] sm:text-5xl">60</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.13em] text-[#526c68]">{t("galaRecap.guestsLabel")}</p>
                 </div>
               </div>
             </div>

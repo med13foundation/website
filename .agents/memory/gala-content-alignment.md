@@ -9,6 +9,12 @@ Public Gala copy must be kept in lockstep with the approved prospectus and curre
 
 **How to apply:** Before changing Gala prices, dates, disclosure wording, or event CTAs, reconcile them against the current approved collateral. Use a clear “details coming soon” status rather than a speculative registration link when the destination is unavailable.
 
+Withhold public fundraising totals until reconciliation is provided, including totals previously approved for the gala recap.
+
+**Why:** The November 2026 copy refresh withdraws the earlier totals because the website, donor report and film do not reconcile. An earlier confirmation is no longer sufficient authority to restore them.
+
+**How to apply:** Keep recap film, photo credits, sponsor and donor thanks, and attendance copy, but do not reintroduce monetary totals from old materials. The embedded film itself is not editable website copy.
+
 For sponsor and auction acknowledgments, the board-approved recognition policy supplied with the September 2026 design brief takes precedence over layout convenience. Do not infer sponsor sites or publish donor names pending permission; leave unverified links inactive and omit unapproved names until confirmed.
 
 **Why:** Public recognition is contractual, and naming or linking the wrong donor can violate the agreed credit line or permissions.
