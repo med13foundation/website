@@ -45,7 +45,6 @@ export default function Science() {
         <section
           id="what-is-med13-syndrome"
           className="relative isolate scroll-mt-24 overflow-hidden bg-[#e9f5f3] px-4 pb-14 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8"
-          aria-labelledby="science-title"
         >
           <div className="pointer-events-none absolute -right-28 -top-32 -z-10 h-96 w-96 rounded-full bg-[#edab98]/25 blur-3xl" aria-hidden="true" />
           <div className="pointer-events-none absolute -bottom-40 left-[12%] -z-10 h-80 w-80 rounded-full bg-[#a9d6ce]/45 blur-3xl" aria-hidden="true" />

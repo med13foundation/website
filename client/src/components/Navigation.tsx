@@ -104,7 +104,7 @@ export default function Navigation() {
             </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger
-                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 data-testid="button-science-menu"
               >
                 {t("nav.science")}
@@ -123,7 +123,7 @@ export default function Navigation() {
             </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger
-                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none"
+                className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover-elevate px-3 py-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 data-testid="button-get-involved-menu"
               >
                 {t("nav.getInvolved")}
