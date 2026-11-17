@@ -48,11 +48,12 @@ export default function DenverMiniMeetup() {
     ["agenda5Time", "agenda5Title", "agenda5Body"],
     ["agenda6Time", "agenda6Title", "agenda6Body"],
     ["agenda7Time", "agenda7Title", "agenda7Body"],
-    ["agenda8Time", "agenda8Title", null],
+    ["agenda8Time", "agenda8Title", "agenda8Body"],
     ["agenda9Time", "agenda9Title", "agenda9Body"],
     ["agenda10Time", "agenda10Title", "agenda10Body"],
+    ["agenda11Time", "agenda11Title", "agenda11Body"],
   ] as const;
-  const speakers = ["maria", "nicolo", "katie", "kelly", "amy", "ricardo", "vanessa", "lindsay", "sarah"] as const;
+  const speakers = ["megan", "maria", "nicolo", "katie", "kelly", "amy", "ricardo", "vanessa", "lindsay", "sarah"] as const;
 
   return (
     <div className="min-h-screen bg-background">
