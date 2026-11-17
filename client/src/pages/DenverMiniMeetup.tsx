@@ -270,9 +270,19 @@ export default function DenverMiniMeetup() {
                   {speakers.map((speaker) => (
                     <details key={speaker} className="group py-4" data-testid={`denver-speaker-${speaker}`}>
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
-                        <span>
-                          <span className="block font-heading font-bold text-primary">{t(`denverMeetup.speakers.${speaker}.name`)}</span>
-                          <span className="mt-1 block text-sm text-muted-foreground">{t(`denverMeetup.speakers.${speaker}.role`)}</span>
+                        <span className="flex min-w-0 items-center gap-4">
+                          <img
+                            src={`/images/denver-speakers/${speaker}.webp`}
+                            alt={t(`denverMeetup.speakers.${speaker}.name`)}
+                            width={64}
+                            height={80}
+                            loading="lazy"
+                            className="h-20 w-16 shrink-0 rounded-lg bg-muted object-contain"
+                          />
+                          <span className="min-w-0">
+                            <span className="block font-heading font-bold text-primary">{t(`denverMeetup.speakers.${speaker}.name`)}</span>
+                            <span className="mt-1 block text-sm text-muted-foreground">{t(`denverMeetup.speakers.${speaker}.role`)}</span>
+                          </span>
                         </span>
                         <ChevronDown className="h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-180" aria-hidden="true" />
                       </summary>
