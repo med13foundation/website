@@ -5,6 +5,12 @@ description: Reporting constraints supplied in the approved Impact and Progress 
 
 For Impact and Progress reporting, retain denominators and snapshot dates. Report groups under 20 as counts, not cohort percentages. The headline survey measure is now median completion of assigned surveys per participant, not the proportion with a scored instrument. Distinguish the study source's publication month from an actual data-cut date and from cash expense reporting dates; keep unaudited cash figures labeled.
 
+Keep the 2025 published-case literature snapshot separate from current community diagnoses and the foundation's natural history cohort. Language developmental delay is not interchangeable with significant language disorders or speech disorders.
+
+**Why:** The organizer specifically corrected the claim of universal speech disorders using Yang et al. (2025), doi:10.3389/fped.2025.1699544. The review reports language delay in 22/22 with available information, but describes significant language disorders in about half.
+
+**How to apply:** Preserve feature-specific denominators and the publication year. Do not interpret the review's 28 published individuals as the current worldwide diagnosed count, or its combined behavioral finding as an autism-only rate. Do not alter descriptions of what an existing video actually displays as though the film itself had been updated.
+
 Natural history study data pulls follow a quarterly cadence. Keep study-pull dates separate from the ClinVar frozen-pull date and report only the date precision supplied by the organizer.
 
 **Why:** The organizer requested a visible study-pull date and the next quarterly pull, and supplied a month rather than an exact day.

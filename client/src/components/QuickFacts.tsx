@@ -29,6 +29,9 @@ export default function QuickFacts() {
     "quickFacts.associatedCondition1",
     "quickFacts.associatedCondition2",
     "quickFacts.associatedCondition3",
+    "quickFacts.associatedCondition4",
+    "quickFacts.associatedCondition5",
+    "quickFacts.associatedCondition6",
   ];
 
   return (
@@ -40,6 +43,9 @@ export default function QuickFacts() {
           </h2>
           <p className="text-lg text-muted-foreground">
             {t('quickFacts.subtitle')}
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            {t("quickFacts.evidenceNote")}
           </p>
         </div>
 
@@ -69,6 +75,9 @@ export default function QuickFacts() {
         </div>
 
         <div className="mt-8 max-w-4xl mx-auto space-y-5" data-testid="fact-highlights">
+          <p className="rounded-xl border border-primary/20 bg-primary/5 p-5 text-sm leading-relaxed" data-testid="text-language-distinction">
+            {t("quickFacts.languageNote")}
+          </p>
           <div data-testid="key-features-pills">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">{t('quickFacts.keyFeatures')}</p>
             <div className="flex flex-wrap gap-2">
@@ -76,7 +85,7 @@ export default function QuickFacts() {
                 <Badge
                   key={featureKey}
                   variant="outline"
-                  className="rounded-full border-primary/30 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary"
+                  className="max-w-full whitespace-normal rounded-full border-primary/30 bg-primary/10 px-3 py-1.5 text-sm font-medium text-primary"
                   data-testid={`pill-key-feature-${index}`}
                 >
                   {t(featureKey)}
@@ -91,7 +100,7 @@ export default function QuickFacts() {
                 <Badge
                   key={conditionKey}
                   variant="outline"
-                  className="rounded-full border-secondary/60 bg-secondary/30 px-3 py-1.5 text-sm font-medium text-secondary-foreground"
+                  className="max-w-full whitespace-normal rounded-full border-secondary/60 bg-secondary/30 px-3 py-1.5 text-sm font-medium text-secondary-foreground"
                   data-testid={`pill-associated-condition-${index}`}
                 >
                   {t(conditionKey)}
@@ -99,6 +108,18 @@ export default function QuickFacts() {
               ))}
             </div>
           </div>
+          <p className="border-t pt-5 text-sm leading-relaxed text-muted-foreground">
+            {t("quickFacts.sourceLabel")}{" "}
+            <a
+              href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12583948/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary underline underline-offset-4"
+              data-testid="link-facts-source"
+            >
+              {t("quickFacts.sourceCitation")}
+            </a>
+          </p>
         </div>
       </div>
     </section>
