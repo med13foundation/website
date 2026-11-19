@@ -16,7 +16,7 @@ export default function GetInvolved() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <GetInvolvedSection donationHref={CLASSY_DONATION_URL} />
       </main>
       <Footer />

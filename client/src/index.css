@@ -76,8 +76,8 @@
 
   --destructive-foreground: 224 63% 12%;
 
-  --input: 0 0% 72%;
-  --ring: 176 31% 55%;
+  --input: 0 0% 46%;
+  --ring: 224 63% 12%;
   --chart-1: 176 31% 55%;
   --chart-2: 12 100% 81%;
   --chart-3: 43 100% 70%;
@@ -256,8 +256,10 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

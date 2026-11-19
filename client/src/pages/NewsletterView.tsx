@@ -17,13 +17,13 @@ function NewsletterSkeleton() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <main id="main" tabIndex={-1} className="max-w-3xl mx-auto px-4 py-12 focus:outline-none">
         <div className="h-8 w-48 bg-muted rounded-md animate-pulse mb-6" />
         <div className="h-64 bg-muted rounded-md animate-pulse mb-4" />
         <div className="h-4 w-full bg-muted rounded-md animate-pulse mb-2" />
         <div className="h-4 w-3/4 bg-muted rounded-md animate-pulse mb-2" />
         <div className="h-4 w-1/2 bg-muted rounded-md animate-pulse" />
-      </div>
+      </main>
       <Footer />
     </div>
   );
@@ -34,7 +34,7 @@ function NewsletterNotFound() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="max-w-3xl mx-auto px-4 py-20 text-center">
+      <main id="main" tabIndex={-1} className="max-w-3xl mx-auto px-4 py-20 text-center focus:outline-none">
         <h1 className="text-2xl font-heading font-bold mb-4" data-testid="text-newsletter-not-found">
           {t("newsletter.viewNotFound")}
         </h1>
@@ -47,7 +47,7 @@ function NewsletterNotFound() {
             {t("newsletter.viewBackHome")}
           </Button>
         </Link>
-      </div>
+      </main>
       <Footer />
     </div>
   );
@@ -91,6 +91,7 @@ export default function NewsletterView() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      <main id="main" tabIndex={-1} className="focus:outline-none">
       <section className="relative py-16 sm:py-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -168,6 +169,7 @@ export default function NewsletterView() {
           </Link>
         </div>
       </article>
+      </main>
 
       <Footer />
     </div>

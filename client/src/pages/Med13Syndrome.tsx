@@ -20,7 +20,7 @@ export default function Med13Syndrome() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1} className="focus:outline-none">
         <section className="relative isolate overflow-hidden bg-[#e9f5f3] px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
           <div
             className="pointer-events-none absolute -right-20 -top-28 -z-10 h-80 w-80 rounded-full bg-[#edab98]/25 blur-3xl sm:h-[28rem] sm:w-[28rem]"
